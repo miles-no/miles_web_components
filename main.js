@@ -64,8 +64,10 @@ document.querySelector('#app').innerHTML = `
  <li><div class="wp-block-latest-posts__featured-image aligncenter"><img src="https://www.miles.no/newsite/wp-content/uploads/2022/12/GPTempDownload-1-260x260.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" style="max-width:260px;max-height:260px;"></div><a class="wp-block-latest-posts__post-title" href="https://www.miles.no/newsite/qcon-2022/">QCon 2022</a><div class="wp-block-latest-posts__post-author">av Ida Severinsen</div><time datetime="2022-12-06T12:02:30+00:00" class="wp-block-latest-posts__post-date">06/12/2022</time></li>
  </ul>
  </miles-fagblogg-teaser>
--->
-<miles-office-banner>
+
+
+
+ <miles-office-banner>
 <div class="is-layout-constrained wp-block-group miles-office-banner"><div class="wp-block-group__inner-container">
 <div id="" class="custom-block-feature-block">
 
@@ -138,7 +140,13 @@ document.querySelector('#app').innerHTML = `
 </div></div>
 </div></div>
 </miles-office-banner>
+-->
 
+
+
+<miles-business-card email="christian.skaiaa@miles.no" >
+    <img slot="image" src="https://res.cloudinary.com/miles/image/upload/c_fill,f_auto,g_face:center,h_260,w_260/v1620732575/Christian-1600x400_vp9r6z.jpg">
+</miles-business-card>
   </div>
 
 

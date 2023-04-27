@@ -1886,3 +1886,76 @@ if (!customElements.get(MilesArrowName)) {
   customElements.define(MilesArrowName, MilesArrow)
 }
 
+/**
+ * Miles Business Card
+ */
+
+const MilesBusinessCardTemplate = document.createElement("template");
+MilesBusinessCardTemplate.innerHTML = `
+  <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+
+    #card {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 1rem;
+     border: 1px solid #E5E5E5;
+    }
+
+    figure {
+      margin: 0;
+      padding: 0;
+      aspect-ratio: 1/1;
+      width: 150px;
+      overflow: hidden;
+    }
+    </style>
+    <div id="card">
+      <figure>
+        <slot name="image"></slot>
+      </figure>
+      <h3 id="name"></h3>
+      <div id="email"></div>
+      <div id="phone"></div>
+      <slot></slot>
+    </div>
+    `;
+
+class MilesBusinessCard extends HTMLElement {
+
+  constructor() {
+    super()
+    this.attachShadow({ mode: "open" })
+    this.shadowRoot.append(MilesBusinessCardTemplate.content.cloneNode(true))
+    this.email = this.shadowRoot.querySelector('#email')
+  }
+
+  static get observedAttributes() {
+    return ['email'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'email') {
+      console.log(newValue)
+      this.email.textContent = newValue
+    }
+
+  }
+
+  connectedCallback() {
+
+  }
+
+  disconnectedCallback() {
+
+  }
+}
+
+const MilesBusinessCardName = "miles-business-card";
+
+if (!customElements.get(MilesBusinessCardName)) {
+  customElements.define(MilesBusinessCardName, MilesBusinessCard)
+}
