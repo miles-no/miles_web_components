@@ -1,0 +1,63 @@
+:host {
+	--slide-container-height: 20vh;
+	--slide-container-width: 100vw;
+	--slides-offset: 0;
+
+	display: block;
+	width: var(--slide-container-width);
+	height: var(--slide-container-height);
+}
+
+section {
+	width: var(--slide-container-width);
+	height: var(--slide-container-height);
+	position: relative;
+	overflow: hidden;
+}
+
+section .slides {
+	transform: translateX(calc(var(--slides-offset) * var(--slide-container-height)));
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	transition: transform 1s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+}
+
+section .slides figure {
+	box-sizing: border-box;
+	padding:1rem;
+	height: var(--slide-container-height);
+	aspect-ratio: 1 / 1;
+	margin: 0;
+}
+
+section .slides figure img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+nav {
+	position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    bottom: 0;
+	height: 3rem;
+    background-color: var(--miles_secondary_four);
+}
+
+.nav-dot {
+	border-radius: 50%;
+	display: inline-block;
+	height:1em;
+	width: 1em;
+	background-color: var(--miles_primary_light);
+}
+
+.active {
+	background-color: var(--miles_secondary_five);
+}

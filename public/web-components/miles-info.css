@@ -1,0 +1,100 @@
+:host {
+	display: block;
+	color: inherit;
+  }
+  .podcast-teaser {
+	box-sizing: border-box;
+	width: 100vw;
+	position: relative;
+	height: 300px;
+  }
+  .bg {
+	background-color: rgb(255,48,59, 0.1);
+	width: 100%;
+	height: 66%;
+	position: absolute;
+	bottom: 0;
+  }
+  .inner {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: auto;
+	align-items: center;
+	gap: 1em;
+	padding-top: 2em;
+  }
+
+  miles-info {
+    right: 10%;
+    left: 10%;
+    position: absolute;
+    top: 0.75em;
+
+  }
+
+  @media (min-width: 768px) {
+	.inner {
+	  flex-direction: row;
+	  padding-top: 0em;
+	}
+
+	.podcast-teaser {
+	  height: 210px;
+	}
+  }
+
+
+  @media (max-width: 1024px) and (min-width: 769px)  {
+	miles-info {
+		width: 28%;
+		left: unset;
+		top: 1em;
+		right: 4em;
+	} 
+  }
+
+
+  @media (min-width: 1025px)  {
+	miles-info {
+		max-width: 250px;
+		left: unset;
+		width: unset;
+		top: 1em;
+		right: 4em;
+	} 
+  }
+
+  .left {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1em;
+  }
+  .text {
+	display: flex;
+	flex-direction: column;
+  }
+  h3, p {
+	margin: 0;
+  }
+  p {
+	font-size: 0.8em;
+	color: var(--miles_primary_dark);
+  }
+  svg {
+	height: 70px;
+	width: 70px;
+  }
+
+  a {
+	color: inherit;
+	right: 4em;
+	bottom: 1em;
+	position: absolute;
+	display: inline-block;  
+  }
+  a::after {
+	content: "→";
+  }
