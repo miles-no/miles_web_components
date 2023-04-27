@@ -144,9 +144,12 @@ document.querySelector('#app').innerHTML = `
 
 
 
-<miles-business-card email="christian.skaiaa@miles.no" >
+<miles-business-card title="Utvikler" phone="91712234" country="" email="christian.skaiaa@miles.no" name="Christian Mesloe Skaiaa">
     <img slot="image" src="https://res.cloudinary.com/miles/image/upload/c_fill,f_auto,g_face:center,h_260,w_260/v1620732575/Christian-1600x400_vp9r6z.jpg">
-</miles-business-card>
+    <p>
+    På fritiden er Christian familiemannen, ølbryggeren og matevangelisten som ikke har problemer med å spille 200 bpm på et slagverk. Når arbeidsdagen er over brukes mye av tiden til å pleie sine mange  interesser. Enten det er musikkinteressen, og studioet han har bygget seg hjemme i kjelleren, eller pleie av selvdyrkede grønnsaker ute i drivhuset eller til skogs rundt et bål sammen med kone og barn.
+    </p>
+    </miles-business-card>
   </div>
 
 

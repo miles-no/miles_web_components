@@ -1895,14 +1895,35 @@ MilesBusinessCardTemplate.innerHTML = `
   <style>
     :host {
       display: block;
-      width: 100%;
+
+      color: inherit;
+    }
+
+    #card-wrapper {
+      box-sizing: border-box;
+      width: 400px;
     }
 
     #card {
       max-width: 400px;
       margin: 0 auto;
       padding: 1rem;
-     border: 1px solid #E5E5E5;
+      border: 1px solid #E5E5E5;
+      background-color: var(--miles_secondary_four);
+
+      border-radius: 4px;
+
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+    }
+
+    h3 {
+      margin: 0 0 0 0 ;
+    }
+
+    #title {
+      margin-bottom: 0.5em;
     }
 
     figure {
@@ -1912,15 +1933,58 @@ MilesBusinessCardTemplate.innerHTML = `
       width: 150px;
       overflow: hidden;
     }
+   
+    ::slotted(img) {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    ::slotted(*) {
+      color: inherit;
+    }
+
+    #extras {
+      background-color: var(--miles_secondary_four);
+      padding: 1rem;
+    }
+
+    a, span {
+      color: inherit;
+      text-decoration: none;
+      display: inline;
+    }
+
+    span {
+      display: flex;
+      overflow: hidden;
+      line-height: 1.2em;
+      gap: 0.2em;
+    }
+
+    #group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2em;
+    }
+
+
+
     </style>
-    <div id="card">
+  <div id="card-wrapper">
+      <div id="card">
       <figure>
         <slot name="image"></slot>
       </figure>
-      <h3 id="name"></h3>
-      <div id="email"></div>
-      <div id="phone"></div>
-      <slot></slot>
+      <div id="group">
+        <h3 id="name"></h3>
+        <span id="title"></span>
+        <span>Epost: <a id="email"></a></span>
+        <span>Telefon: <a id="phone"></a></span>
+      </div>
+    </div>
+      <div id="extras">
+        <slot></slot>
+      </div>
     </div>
     `;
 
@@ -1930,17 +1994,33 @@ class MilesBusinessCard extends HTMLElement {
     super()
     this.attachShadow({ mode: "open" })
     this.shadowRoot.append(MilesBusinessCardTemplate.content.cloneNode(true))
-    this.email = this.shadowRoot.querySelector('#email')
+    this.emailEl = this.shadowRoot.querySelector('#email')
+    this.nameEl = this.shadowRoot.querySelector('#name')
+    this.phoneEl = this.shadowRoot.querySelector('#phone')
+    this.titleEl = this.shadowRoot.querySelector('#title')
   }
 
   static get observedAttributes() {
-    return ['email'];
+    return ['email', 'name', 'phone', 'title'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'email') {
-      console.log(newValue)
-      this.email.textContent = newValue
+      this.emailEl.setAttribute('href', `mailto:${newValue}`)
+      this.emailEl.textContent = newValue
+    }
+
+    if (name === 'name') {
+      this.nameEl.textContent = newValue
+    }
+
+    if (name === 'phone') {
+      this.phoneEl.setAttribute('href', `tel:${newValue}`)
+      this.phoneEl.textContent = newValue
+    }
+
+    if (name === 'title') {
+      this.titleEl.textContent = newValue
     }
 
   }
