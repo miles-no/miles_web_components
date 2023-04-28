@@ -1998,10 +1998,11 @@ class MilesBusinessCard extends HTMLElement {
     this.nameEl = this.shadowRoot.querySelector('#name')
     this.phoneEl = this.shadowRoot.querySelector('#phone')
     this.titleEl = this.shadowRoot.querySelector('#title')
+    this.firgureEl = this.shadowRoot.querySelector('figure')
   }
 
   static get observedAttributes() {
-    return ['email', 'name', 'phone', 'title'];
+    return ['email', 'name', 'phone', 'title', 'image'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -2021,6 +2022,12 @@ class MilesBusinessCard extends HTMLElement {
 
     if (name === 'title') {
       this.titleEl.textContent = newValue
+    }
+
+    if (name === 'image') {
+      const image = document.createElement('img');
+      image.setAttribute('src', newValue)
+      this.firgureEl.append(image)
     }
 
   }
