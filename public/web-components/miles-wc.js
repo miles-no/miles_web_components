@@ -2062,6 +2062,7 @@ MilesInfoBlockTemplate.innerHTML = `
       border-radius: 2em;
       padding: 2em;
       position: relative;
+      line-height: 2.5em;
     }
 
     #heading {
