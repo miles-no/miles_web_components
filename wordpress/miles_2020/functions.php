@@ -296,22 +296,23 @@ function miles_2020_scripts() {
    						get_template_directory_uri() . '/js/navigation.js',
    						array(),
    						filemtime(get_template_directory() . '/js/navigation.js'),
-   						true
-   	);
+   						true);
 
 	
 	   wp_enqueue_script( 'miles_2020-cvpartner',
    						get_template_directory_uri() . '/js/cvpartner.js',
    						array(),
    						filemtime(get_template_directory() . '/js/cvpartner.js'),
-   						true
-   	);
+   						true);
+
+	/*
 	   wp_enqueue_script( 'miles_2020-wc',
 	   get_template_directory_uri() . '/js/web-components/miles-wc.js',
 	   array(),
 	   filemtime(get_template_directory() . '/js/web-components/miles-wc.js'),
-	   true
-);
+	   true);
+	*/
+	   wp_enqueue_script( 'miles_2020-wc','https://cdn.jsdelivr.net/gh/miles-no/miles_web_components//public/web-components/miles-wc.js');
 
 
 
