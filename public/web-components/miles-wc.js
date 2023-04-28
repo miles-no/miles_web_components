@@ -2078,7 +2078,7 @@ MilesInfoBlockTemplate.innerHTML = `
     </style>
     <div id="wrapper">
     <div id="heading">
-      <slot name="heading"></slot>
+      <h2><slot name="heading"></slot></h2>
     </div>
       <slot></slot>
     </div>
@@ -2090,14 +2090,17 @@ class MilesInfoBlock extends HTMLElement {
     super()
     this.attachShadow({ mode: "open" })
     this.shadowRoot.append(MilesInfoBlockTemplate.content.cloneNode(true))
+    this.headingEl = this.shadowRoot.querySelector('h2')
   }
 
   static get observedAttributes() {
-    return [];
+    return ['heading'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-
+    if (name === 'heading') {
+      this.headingEl.textContent = newValue
+    }
   }
 
   connectedCallback() {
