@@ -8,7 +8,8 @@ function register_shortcodes_dev(): void
 }
 
 
-function miles_info_block_shortcode( $atts, $content = null ) {
+function miles_info_block_shortcode( $atts, $content = null ): string 
+{
     $heading = $atts['heading'] ?? 'default heading';
     if ( $content == null ) {
         $content = 'default content';

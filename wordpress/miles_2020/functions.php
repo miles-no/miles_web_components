@@ -307,7 +307,7 @@ function miles_2020_scripts() {
 	   true);
 	*/
 	wp_enqueue_script( 'miles_2020-wc',
-	'https://cdn.jsdelivr.net/gh/miles-no/miles_web_components//public/web-components/miles-wc.js',
+	'https://cdn.jsdelivr.net/gh/miles-no/miles_web_components/public/web-components/miles-wc.js',
 	array(),
 	'',
 	true);	
