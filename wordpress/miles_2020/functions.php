@@ -314,8 +314,11 @@ function miles_2020_scripts() {
 	   filemtime(get_template_directory() . '/js/web-components/miles-wc.js'),
 	   true);
 	*/
-	   wp_enqueue_script( 'miles_2020-wc','https://cdn.jsdelivr.net/gh/miles-no/miles_web_components//public/web-components/miles-wc.js?v1.0');
-
+	wp_enqueue_script( 'miles_2020-wc',
+	'https://cdn.jsdelivr.net/gh/miles-no/miles_web_components//public/web-components/miles-wc.js',
+	array(),
+	'https://cdn.jsdelivr.net/gh/miles-no/miles_web_components//public/web-components/miles-wc.js',
+	true);	
 
 
 	   # https://cdn.jsdelivr.net/gh/miles-no/miles_web_components//public/web-components/miles-wc.js
