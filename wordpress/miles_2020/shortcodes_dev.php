@@ -32,7 +32,7 @@ function miles_button_anchor_shortcode( $atts, $content = null ): string
 function miles_business_card_shortcode( $atts, $content = null ): string 
 {
 	$props = '';
-	    foreach ($properties as $prop => $val) {
+	    foreach ($atts as $prop => $val) {
 			$props .= ' ' . $prop . '="' . $val . '"';
     }
     if ( $content == null ) {
