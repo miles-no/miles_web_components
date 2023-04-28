@@ -1162,11 +1162,13 @@ class MilesFagbloggTeaser extends HTMLElement {
 
   connectedCallback() {
     const slotElements = this.shadowRoot.querySelector("slot").assignedElements()[0];
-    const images = slotElements.querySelectorAll('img');
+    if (slotElements) {
+      const images = slotElements.querySelectorAll('img');
 
-    Array.from(images).forEach(image => {
-      image.setAttribute('style', 'max-width: var(--maxWidth); height: auto;')
-    });
+      Array.from(images).forEach(image => {
+        image.setAttribute('style', 'max-width: var(--maxWidth); height: auto;')
+      });
+    }
   }
 
   disconnectedCallback() {
