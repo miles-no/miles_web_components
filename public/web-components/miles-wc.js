@@ -1764,7 +1764,6 @@ class MilesOfficeBanner extends HTMLElement {
     this.people = this.shadowRoot.querySelector("#people")
     this.triggerEl = this.shadowRoot.querySelector("#triggerEl");
     this.header = null;
-
   }
 
   static get observedAttributes() {

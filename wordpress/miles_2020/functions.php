@@ -307,7 +307,7 @@ function miles_2020_scripts() {
 	wp_enqueue_script( 'miles_2020-wc',
 	'https://cdn.jsdelivr.net/gh/miles-no/miles_web_components//public/web-components/miles-wc.js',
 	array(),
-	'1.0.0',
+	'1.0.'.randon_int(1, 1000),
 	true);	
    	
     // Translatable text for the navigation files IOK 2020-04-15
