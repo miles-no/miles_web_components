@@ -1,6 +1,6 @@
 <?php
 
-use function shortcode_util\toWebComponent;
+
 
 function register_shortcodes_dev(): void
 {
@@ -31,7 +31,12 @@ function miles_button_anchor_shortcode( $atts, $content = null ): string
 
 function miles_business_card_shortcode( $atts, $content = null ): string 
 {
-	return toWebComponent('miles-business-card', $attr, $content);
+	$href = $atts['name'] ?? 'no name';
+    if ( $content == null ) {
+        $content = 'default content';
+    }
+	##return toWebComponent('miles-business-card', $attr, $content);
+	return '<miles-button-anchor name="' . $name . '">' . $content . '</miles-button-anchor>';
 }
 
 
