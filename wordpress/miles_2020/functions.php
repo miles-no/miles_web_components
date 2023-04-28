@@ -7,7 +7,7 @@
  * @package Miles_2020
  */
 
-include 'shortcodes.php';
+
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
@@ -279,16 +279,6 @@ function miles_2020_scripts() {
 			array(), _S_VERSION
 	);
 
-	/*
-	wp_enqueue_style(
-			'miles_2020-style',
-			'https://cdn.jsdelivr.net/gh/miles-no/miles_web_components/style.css',
-			array(), _S_VERSION
-	);
-
-	wp_enqueue_style( 'style', 'https://cdn.jsdelivr.net/gh/miles-no/miles_web_components/style.css' );
-);
-*/
 	# https://cdn.jsdelivr.net/gh/miles-no/miles_web_components/style.css
 
 	
@@ -650,34 +640,15 @@ add_filter( 'wprss_ftp_link_post_title', '__return_true' );
 /**
  * Add custom short codes
  */
-add_action('init', 'register_shortcodes');
+include 'shortcodes.php';
+include 'shortcodes_dev.php';
 
-function register_shortcodes()
-{
-	add_shortcode('get-consultant', 'get_consultant_shortcode');
+if (function_exists('register_shortcodes') && function_exists('register_shortcodes_dev')) {
+    add_action('init', 'register_shortcodes');
+	add_action('init', 'register_shortcodes_dev');
+} else {
+    echo "shortcode functions are not available.<br />\n";
 }
-
-
-function get_consultant_shortcode($atts)
-{
-	$query = "email=" . $atts['email'];
-
-	$consultants = json_decode(
-		wpgetapi_endpoint(
-			'milesno_limes_internal_api',
-			'get_consultants',
-			array(
-				'debug' => false,
-				'query_variables' => $query,
-			),
-
-		),
-		true
-	);
-
-	return json_encode($consultants["list"][0]);
-}
-
 
 /**
  * Register Custom Blocks 
