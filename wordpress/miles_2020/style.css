@@ -4145,3 +4145,12 @@ miles-overlap-block .link_wrapper {
   .miles-office-banner {
     display: none;
   }
+
+
+  /**
+  MILES PAGES
+  */
+
+  .page-fagomrader miles-info-block {
+    margin-bottom: 4rem;
+  }
