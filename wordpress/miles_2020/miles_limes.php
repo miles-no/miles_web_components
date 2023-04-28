@@ -4,9 +4,7 @@ namespace miles_limes;
 
 function get_offices()
 {
-    error_log("start of people before get_offices", 0);
     $offices = json_decode(wpgetapi_endpoint('milesno_limes_internal_api', 'get_offices', array('debug' => false)), true);
-    error_log("start of people after get_offices", 0);
 
     return $offices["list"] ?? array();
 }
