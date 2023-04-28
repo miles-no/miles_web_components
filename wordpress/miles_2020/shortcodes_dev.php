@@ -6,6 +6,7 @@ function register_shortcodes_dev(): void
 {
     add_shortcode('miles_info_block', 'miles_info_block_shortcode');
 	add_shortcode('miles-button-anchor', 'miles_button_anchor_shortcode');
+	add_shortcode('miles-business-card', 'miles_business_card_shortcode');
 	
 }
 
