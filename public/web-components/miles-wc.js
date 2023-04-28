@@ -869,7 +869,6 @@ nav {
 const ImageSliderTemplate = document.createElement("template");
 ImageSliderTemplate.innerHTML = `
   <style>
-  
     ${sliderStyles}
   </style>
   <section>
@@ -904,9 +903,9 @@ class MilesImageSlider extends HTMLElement {
       let slottedElements = slot.assignedElements().length === 1 ? slot.assignedElements()[0].children : slot.assignedElements();
 
       if (typeof slottedElements === "object") {
-        const slottedElementsArray = Array.from(slottedElements);
-        this.numberOfSlides = slottedElements.length;
         try {
+          const slottedElementsArray = Array.from(slottedElements);
+          this.numberOfSlides = slottedElements.length;
           slottedElementsArray.forEach((element, index) => {
             const figure = document.createElement("figure");
             figure.setAttribute("data-slide-image", index);
@@ -2040,4 +2039,79 @@ const MilesBusinessCardName = "miles-business-card";
 
 if (!customElements.get(MilesBusinessCardName)) {
   customElements.define(MilesBusinessCardName, MilesBusinessCard)
+}
+
+
+/**
+ * Miles Info Block
+ */
+
+const MilesInfoBlockTemplate = document.createElement("template");
+MilesInfoBlockTemplate.innerHTML = `
+  <style>
+    :host {
+      display: block;
+      color: inherit;
+
+      padding-left: calc(8rem - 2em);
+    }
+
+    #wrapper {
+      border: 4px solid var(--miles_secondary_four);
+      color: var(--miles_secondary_three);
+
+      border-radius: 2em;
+      padding: 2em;
+      position: relative;
+    }
+
+    #heading {
+      background-color: var(--miles_secondary_four);
+      color: var(--miles_primary_light);
+      border-radius: 2em;
+      padding: 1em 2em;
+      position: relative;
+      z-index: 5;
+      left: -8rem;
+      margin-bottom: 4rem;
+    }
+
+    </style>
+    <div id="wrapper">
+    <div id="heading">
+      <slot name="heading"></slot>
+    </div>
+      <slot></slot>
+    </div>
+    `;
+
+class MilesInfoBlock extends HTMLElement {
+
+  constructor() {
+    super()
+    this.attachShadow({ mode: "open" })
+    this.shadowRoot.append(MilesInfoBlockTemplate.content.cloneNode(true))
+  }
+
+  static get observedAttributes() {
+    return [];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+
+  }
+
+  connectedCallback() {
+
+  }
+
+  disconnectedCallback() {
+
+  }
+}
+
+const MilesInfoBlockName = "miles-info-block";
+
+if (!customElements.get(MilesInfoBlockName)) {
+  customElements.define(MilesInfoBlockName, MilesInfoBlock)
 }

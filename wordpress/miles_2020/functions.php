@@ -319,10 +319,6 @@ function miles_2020_scripts() {
 	array(),
 	'1.0.0',
 	true);	
-
-
-	   # https://cdn.jsdelivr.net/gh/miles-no/miles_web_components//public/web-components/miles-wc.js
-	   // miles_web_components/blob/main/public/web-components/miles-wc.js
    	
     // Translatable text for the navigation files IOK 2020-04-15
         $miles_2020n = array(

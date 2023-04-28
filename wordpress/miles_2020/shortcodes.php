@@ -92,3 +92,13 @@ function toWebComponent($componentName, $properties, $body): string
 
     return $result;
 }
+
+
+function miles_info_block_shortcode( $atts, $content = null ) {
+    $heading = $atts['heading'] ?? 'default heading';
+    if ( $content == null ) {
+        $content = 'default content';
+    }
+    return '<miles-info-block heading="' . $heading . '">' . $content . '</miles-info-block>';
+}
+add_shortcode( 'caption', 'miles_info_block_shortcode' );

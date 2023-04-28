@@ -52,7 +52,8 @@ html, body, button, input, select, optgroup, textarea {
 
 .components {
     overflow: hidden;
-    width: 100vw;
+    width: 60vw;
+    margin:auto;
 }
 
 .components miles-office-banner {

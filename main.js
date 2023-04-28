@@ -150,6 +150,13 @@ document.querySelector('#app').innerHTML = `
     På fritiden er Christian familiemannen, ølbryggeren og matevangelisten som ikke har problemer med å spille 200 bpm på et slagverk. Når arbeidsdagen er over brukes mye av tiden til å pleie sine mange  interesser. Enten det er musikkinteressen, og studioet han har bygget seg hjemme i kjelleren, eller pleie av selvdyrkede grønnsaker ute i drivhuset eller til skogs rundt et bål sammen med kone og barn.
     </p>
     </miles-business-card>
+
+    <miles-info-block>
+    <h2 slot="heading">Systemutvikling og arkitektur</h2>
+    <p>
+    Grunnstammen i Miles består av utviklere og arkitekter. Utviklerne våre har solid kompetanse på mange områder innen utvikling og metodikk. Vi er sterke på det siste innen frontend-utvikling og har den teknologiske ekspertisen som trengs for å lage brukergrensesnitt i alt fra HTML og CSS, til javascript og rammeverk som React, Angular og Vue.Vi har også lang erfaring med de fleste skyteknologier. Alt fra de store offentlige som GCP, Azure og AWS til mindre og private skyløsninger.En stor del av utviklerne våre har lang erfaring med både objektorienterte språk som .Net, Java og Python til funksjonelle språk som Clojure, F# og Scala. Arkitektene i Miles har høy utdannelse kombinert med erfaring fra noen av de mest komplekse IT-prosjektene i Norge. Dette har gjort oss til ett av landets ledende fagmiljøer innen arkitektur.
+    </p>
+    </miles-info-block>
   </div>
 
 
