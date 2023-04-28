@@ -640,8 +640,8 @@ add_filter( 'wprss_ftp_link_post_title', '__return_true' );
 /**
  * Add custom short codes
  */
-include 'shortcodes.php';
-include 'shortcodes_dev.php';
+include_once 'shortcodes.php';
+include_once 'shortcodes_dev.php';
 
 if (function_exists('register_shortcodes') && function_exists('register_shortcodes_dev')) {
     add_action('init', 'register_shortcodes');

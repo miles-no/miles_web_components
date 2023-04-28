@@ -1,13 +1,6 @@
 <?php
-/**
- * Add custom short codes
- */
-add_action('init', 'register_shortcodes');
 
-function register_shortcodes()
-{
-    add_shortcode('get-consultant', 'get_consultant_shortcode');
-}
+namespace miles_limes;
 
 function get_offices()
 {
@@ -16,37 +9,19 @@ function get_offices()
     return $offices["list"] ?? array();
 }
 
-
-function get_consultants($office, $role)
+function get_consultants($office, $role, $email)
 {
-    if ($office && $role) {
-        $query = $office . "&" . $role;
-    } else if ($office) {
-        $query = $office;
-    } else if ($role) {
-        $query = $role;
+    $params = array();
+    if (isset($office)) {
+        $params[] = "office=" . search_office($office);
     }
-
-    $consultantList = wpgetapi_endpoint(
-        'milesno_limes_internal_api',
-        'get_consultants',
-        array(
-            'debug' => false,
-            'query_variables' => $query,
-            'header_variables' => array(
-                'Content-Type' => 'application/json; charset=utf-8'
-            ),
-        )
-    );
-
-    $consultants = json_decode($consultantList, true);
-
-    return $consultants['list'] ?? array();
-}
-
-function get_consultant($email)
-{
-    $query = "email=" . $email;
+    if (isset($role)) {
+        $params[] = "role=" . $role;
+    }
+    if (isset($email)) {
+        $params[] = "email=" . $email;
+    }
+    $query = implode("&", $params);
 
     $consultantList = wpgetapi_endpoint(
         'milesno_limes_internal_api',
@@ -75,5 +50,5 @@ function search_office($officeName)
         }
     }
 
-    return null;
+    return $officeName;
 }

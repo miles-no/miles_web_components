@@ -12,11 +12,12 @@
  * @package Miles_2020
  */
 
-
-
 /**
  * FUNCTIONS
  */
+
+use function miles_limes\get_consultants;
+use function miles_limes\get_offices;
 
 $MAX_RESULT_SIZE = 100;
 
@@ -55,11 +56,10 @@ $title = get_the_title();
 $norwegian_offices = get_offices();
 
 $parsedQuery = resolvedQueryParameters();
+$selected_office = $parsedQuery['office'];
+$selected_role = $parsedQuery['area'];
 
-$selected_office = isset($parsedQuery['office']) ? "officeId=" . $parsedQuery['office'] : "";
-$selected_role = isset($parsedQuery['area']) ? "role=" . $parsedQuery['area'] : "";
-
-$miles_persons = get_consultants($selected_office, $selected_role);
+$miles_persons = get_consultants($selected_office, $selected_role, null);
 
 ?>
 	<main id="primary" class="site-main our_people">

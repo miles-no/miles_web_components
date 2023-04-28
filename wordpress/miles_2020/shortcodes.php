@@ -1,14 +1,15 @@
 <?php
 
-
+use function miles_limes\get_consultants;
+use function shortcode_util\toWebComponent;
 
 function register_shortcodes(): void
 {
-    add_shortcode('show-consultant', 'get_consultant_shortcode');
-    add_shortcode('show-consultant-group', 'get_consultant_group_shortcode');
+    add_shortcode('show-consultant', 'shortcode_show_consultant');
+    add_shortcode('show-consultant-group', 'shortcode_show_consultant_group');
 }
 
-function get_consultant_shortcode($atts): string
+function shortcode_show_consultant($atts): string
 {
     $query = "email=" . $atts['email'];
 
@@ -27,17 +28,15 @@ function get_consultant_shortcode($atts): string
 
     $consultant = $consultantList["list"][0];
 
-    $result = toWebComponent($atts['wc_name'], array(
+    return toWebComponent($atts['wc_name'], array(
         'name' => $consultant["name"],
         'description' => $consultant["office"],
         'title' => $consultant["title"],
         'image' => $consultant["imageUrlThumbnail"]
     ), null);
-
-    return $result;
 }
 
-function get_consultant_group_shortcode($atts): string
+function shortcode_show_consultant_group($atts): string
 {
     $office = "area=" . $atts['area'];
     $area = "office=" . $atts['area'];
@@ -46,7 +45,7 @@ function get_consultant_group_shortcode($atts): string
 
     $webComponent = $atts["wp_name"];
 
-    $consultantList = get_consultants($office, $area);
+    $consultantList = get_consultants($office, $area, null);
 
     $consultantList = json_decode(
         wpgetapi_endpoint(
@@ -75,22 +74,3 @@ function get_consultant_group_shortcode($atts): string
 
     return $result;
 }
-
-function toWebComponent($componentName, $properties, $body): string
-{
-    $result = '<' . $componentName;
-    foreach ($properties as $prop => $val) {
-        $result .= ' ' . $prop . '="' . $val . '"';
-    }
-    $result .= '>';
-
-    if ($body) {
-        $result .= $body;
-    }
-
-    $result .= '</' . $componentName . '>';
-
-    return $result;
-}
-
-
