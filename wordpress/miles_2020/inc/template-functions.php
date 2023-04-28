@@ -12,6 +12,7 @@
  * @return array
  */
 function miles_2020_body_classes( $classes ) {
+	global $post;
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -21,6 +22,11 @@ function miles_2020_body_classes( $classes ) {
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		$classes[] = 'no-sidebar';
 	}
+
+	
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}	
 
 	return $classes;
 }
