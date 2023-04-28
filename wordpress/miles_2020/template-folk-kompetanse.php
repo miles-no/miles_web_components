@@ -15,9 +15,7 @@
 /**
  * FUNCTIONS
  */
-
-use function miles_limes\get_consultants;
-use function miles_limes\get_offices;
+include_once "miles_limes.php";
 
 $MAX_RESULT_SIZE = 100;
 
@@ -53,13 +51,13 @@ $custom_tags = array(
 $content = get_the_content();
 $title = get_the_title();
 
-$norwegian_offices = get_offices();
+$norwegian_offices = miles_limes\get_offices();
 
 $parsedQuery = resolvedQueryParameters();
-$selected_office = $parsedQuery['office'];
-$selected_role = $parsedQuery['area'];
+$selected_office = $parsedQuery['office'] ?? null;
+$selected_role = $parsedQuery['area'] ?? null;
 
-$miles_persons = get_consultants($selected_office, $selected_role, null);
+$miles_persons = miles_limes\get_consultants($selected_office, $selected_role, null);
 
 ?>
 	<main id="primary" class="site-main our_people">
@@ -79,7 +77,7 @@ $miles_persons = get_consultants($selected_office, $selected_role, null);
 			<span>Fagområder</span>
 			<ul>
 				<?php foreach ($custom_tags as $key => $value): ?>
-					<li <?php echo $parsedQuery['area'] ==  $value ? "class='selected'" : '' ?>>
+					<li <?php echo ($parsedQuery['area'] ?? null) == $value ? "class='selected'" : '' ?>>
 						<miles-button-anchor href="<?php echo $current_url . "?area=" . $value; ?>"><?php echo ucfirst($key); ?></miles-button-anchor>
 					</li>
 				<?php endforeach; ?>

@@ -4,7 +4,9 @@ namespace miles_limes;
 
 function get_offices()
 {
+    error_log("start of people before get_offices", 0);
     $offices = json_decode(wpgetapi_endpoint('milesno_limes_internal_api', 'get_offices', array('debug' => false)), true);
+    error_log("start of people after get_offices", 0);
 
     return $offices["list"] ?? array();
 }
@@ -12,13 +14,13 @@ function get_offices()
 function get_consultants($office, $role, $email)
 {
     $params = array();
-    if (isset($office)) {
-        $params[] = "office=" . search_office($office);
+    if ($office) {
+        $params[] = "officeId=" . search_office($office);
     }
-    if (isset($role)) {
+    if ($role) {
         $params[] = "role=" . $role;
     }
-    if (isset($email)) {
+    if ($email) {
         $params[] = "email=" . $email;
     }
     $query = implode("&", $params);
@@ -46,7 +48,7 @@ function search_office($officeName)
 
     foreach ($officeList as $office) {
         if (strtolower($office["name"]) == strtolower($officeName)) {
-            return $office;
+            return $office["officeId"];
         }
     }
 

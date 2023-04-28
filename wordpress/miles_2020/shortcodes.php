@@ -1,7 +1,7 @@
 <?php
 
-use function miles_limes\get_consultants;
-use function shortcode_util\toWebComponent;
+include_once "miles_limes.php";
+include_once "shortcode_util.php";
 
 function register_shortcodes(): void
 {
@@ -11,64 +11,37 @@ function register_shortcodes(): void
 
 function shortcode_show_consultant($atts): string
 {
-    $query = "email=" . $atts['email'];
+    $consultantList = miles_limes\get_consultants(null, null, $atts["email"]);
 
-    $consultantList = json_decode(
-        wpgetapi_endpoint(
-            'milesno_limes_internal_api',
-            'get_consultants',
-            array(
-                'debug' => false,
-                'query_variables' => $query,
-            ),
+    $consultant = $consultantList[0];
 
-        ),
-        true
-    );
-
-    $consultant = $consultantList["list"][0];
-
-    return toWebComponent($atts['wc_name'], array(
+    return shortcode_util\toWebComponent($atts['wc_name'], array(
         'name' => $consultant["name"],
         'description' => $consultant["office"],
         'title' => $consultant["title"],
-        'image' => $consultant["imageUrlThumbnail"]
+        'image' => $consultant["imageUrlThumbnail"],
+        'email' => $consultant["email"],
+        'phone' => $consultant["phone"],
     ), null);
 }
 
 function shortcode_show_consultant_group($atts): string
 {
-    $office = "area=" . $atts['area'];
-    $area = "office=" . $atts['area'];
+    $office = $atts['office'];
+    $area = $atts['area'];
+    $webComponent = $atts["wc_name"];
 
-    $query = $office . $area;
-
-    $webComponent = $atts["wp_name"];
-
-    $consultantList = get_consultants($office, $area, null);
-
-    $consultantList = json_decode(
-        wpgetapi_endpoint(
-            'milesno_limes_internal_api',
-            'get_consultants',
-            array(
-                'debug' => false,
-                'query_variables' => $query,
-            ),
-
-        ),
-        true
-    );
-
-    $consultant = $consultantList["list"][0];
+    $consultantList = miles_limes\get_consultants($office, $area, null);
 
     $result = '';
     foreach ($consultantList as $consultant) {
-        $result .= toWebComponent($webComponent, array(
+        $result .= shortcode_util\toWebComponent($webComponent, array(
             'name' => $consultant["name"],
             'description' => $consultant["office"],
             'title' => $consultant["title"],
-            'image' => $consultant["imageUrlThumbnail"]
+            'image' => $consultant["imageUrlThumbnail"],
+            'email' => $consultant["email"],
+            'phone' => $consultant["phone"],
         ), null);
     }
 
