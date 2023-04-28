@@ -213,7 +213,9 @@ function miles_fagblogg_teaser( $block_content, $block ) {
 add_filter( 'render_block', 'miles_overlap_block', 10, 3);
  
 function miles_overlap_block( $block_content, $block ) {
-  if (str_contains($block['attrs']['className'], 'miles-overlap-block')) {
+  if (!isset($block['attrs']['className'])) {
+	  return $block_content;
+  } elseif (str_contains($block['attrs']['className'], 'miles-overlap-block')) {
 	$output = '<miles-overlap-block>';
 	$output .= $block_content;
 	$output .= '</miles-overlap-block>';
@@ -307,7 +309,7 @@ function miles_2020_scripts() {
 	wp_enqueue_script( 'miles_2020-wc',
 	'https://cdn.jsdelivr.net/gh/miles-no/miles_web_components//public/web-components/miles-wc.js',
 	array(),
-	'1.0.'.randon_int(1, 1000),
+	'1.0.'.random_int(1, 1000),
 	true);	
    	
     // Translatable text for the navigation files IOK 2020-04-15
@@ -635,7 +637,6 @@ add_theme_support( 'editor-color-palette', array(
 ) );
 
 add_filter( 'wprss_ftp_link_post_title', '__return_true' );
-
 
 /**
  * Add custom short codes
