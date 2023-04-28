@@ -31,12 +31,15 @@ function miles_button_anchor_shortcode( $atts, $content = null ): string
 
 function miles_business_card_shortcode( $atts, $content = null ): string 
 {
-	$href = $atts['name'] ?? 'no name';
+	$props = '';
+	    foreach ($properties as $prop => $val) {
+			$props .= ' ' . $prop . '="' . $val . '"';
+    }
     if ( $content == null ) {
         $content = 'default content';
     }
 	##return toWebComponent('miles-business-card', $attr, $content);
-	return '<miles-button-anchor name="' . $name . '">' . $content . '</miles-button-anchor>';
+	return '<miles-business-card '.$props.'>' . $content . '</miles-business-card>';
 }
 
 
