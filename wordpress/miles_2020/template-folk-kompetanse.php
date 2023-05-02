@@ -82,7 +82,7 @@ $selected_role = $parsedQuery['area'] ?? null;
 			</ul>
 		</div>
 		<section class="cv-filter">
-			<?php echo do_shortcode('[show-consultant-group area="' . $selected_office . '" area="' . $selected_role . '" wc_name="miles-profile-card"]'); ?>
+			<?php echo do_shortcode('[show-consultant-group location="' . $selected_office . '" area="' . $selected_role . '" wc_name="miles-profile-card"]'); ?>
 		</section>
 
 	</main>
