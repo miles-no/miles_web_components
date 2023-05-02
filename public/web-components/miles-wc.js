@@ -1568,12 +1568,17 @@ MilesOfficeBannerTemplate.innerHTML = `
     }
 
     #banner {
+      height: 300px;
       overflow: hidden;
       border-radius: 30px;
       position: relative;
       box-sizing: border-box;
       font-size: 12px;
       line-height: 1.25;
+    }
+
+    #banner.open {
+      height: unset;
     }
 
     #banner img {
@@ -1697,12 +1702,12 @@ MilesOfficeBannerTemplate.innerHTML = `
 
     #triggerBg {
       margin: auto;
-      position: absolute;
+      position: relative;
       width: 100%;
       z-index: 10;
       bottom: unset;
       top: 0;
-      height: var(--headerHeight);
+      height: calc(calc(var(--headerHeight) / 2) + 5px);
       padding: 1rem;
     }
 
@@ -1726,6 +1731,11 @@ MilesOfficeBannerTemplate.innerHTML = `
     @media (min-width: 769px)  {
       #banner {
         font-size: 16px;
+        height: unset;
+      }
+
+      #banner.open {
+        height: unset;
       }
 
       #people {
@@ -1745,6 +1755,7 @@ MilesOfficeBannerTemplate.innerHTML = `
         bottom: 0;
         height: 200px;
         padding: 2rem;
+        position: absolute;
       }
 
       #triggerEl miles-arrow {
@@ -1801,17 +1812,17 @@ class MilesOfficeBanner extends HTMLElement {
       cards.forEach(card => {
         this.people.append(card)
       })
-      const rects = this.banner.getBoundingClientRect();
-      console.log('rects.width', rects.width)
-      if (rects.width < 769) {
-        this.banner.setAttribute('style', `height: calc(calc(${cards.length} * var(--headerHeight)) + 300px);`)
-      }
+
     }
 
-
-    if (this.trigger) {
-      this.trigger.setAttribute('style', 'cursor: pointer; ')
-      this.trigger.addEventListener('click', this.toggleMenu)
+    const rects = this.banner.getBoundingClientRect();
+    if (this.trigger && rects.width > 769) {
+        this.trigger.setAttribute('style', 'cursor: pointer; ')
+        this.trigger.addEventListener('click', this.toggleMenu)
+    } else {
+      this.triggerEl.querySelector('miles-arrow').classList.add('open')
+      this.menu.classList.add('open')
+      this.banner.classList.add('open')
     }
   }
 
@@ -1820,11 +1831,21 @@ class MilesOfficeBanner extends HTMLElement {
   }
 
   toggleMenu = () => {
+    const cards = this.menu.querySelectorAll('miles-business-card');
+    const rects = this.banner.getBoundingClientRect();
     this.menu.classList.toggle('open')
+    this.banner.classList.toggle('open')
     if (this.menu.classList.contains('open')) {
       this.triggerEl.querySelector('miles-arrow').classList.remove('open')
+      if (rects.width < 769) {
+        this.banner.setAttribute('style', `height: calc(calc(${cards.length} * var(--headerHeight)) + 300px);`)
+      }
+     
     } else {
+      this.banner.removeAttribute('style')
+
       this.triggerEl.querySelector('miles-arrow').classList.add('open')
+      this.banner.classList.toggle('open')
     }
     
   }
@@ -2141,4 +2162,103 @@ const MilesInfoBlockName = "miles-info-block";
 
 if (!customElements.get(MilesInfoBlockName)) {
   customElements.define(MilesInfoBlockName, MilesInfoBlock)
+}
+
+/**
+ * Miles Contact Card
+ */
+
+const MilesContactCardTemplate = document.createElement("template");
+MilesContactCardTemplate.innerHTML = `
+  <style>
+    :host { 
+      display: inline-block;
+      color: inherit;
+    }
+
+    #wrapper {
+      background-color: var(--miles_secondary_four);
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #address, #phone {
+      margin-bottom: 1rem;
+    }
+
+    </style>
+    <div id="wrapper">
+      <h2></h2>
+      <div id="address"></div>
+      <a id="email"></a>
+      <a id="phone"></a>
+      <div id="orgnrlabel">Organisasjonsnummer:</div>
+      <div aria-describedby="ordnrlabel" id="orgnr"></div>
+    </div>
+    `;
+class MilesContactCard extends HTMLElement {
+
+  constructor() {
+    super()
+    this.attachShadow({ mode: "open" })
+    this.shadowRoot.append(MilesContactCardTemplate.content.cloneNode(true))
+
+    this.nameEl = this.shadowRoot.querySelector('h2')
+    this.adresseEl = this.shadowRoot.querySelector('#address')
+    this.emailEl = this.shadowRoot.querySelector('#email')
+    this.phoneEl = this.shadowRoot.querySelector('#phone')
+    this.orgnrEl = this.shadowRoot.querySelector('#orgnr')
+  }
+
+  static get observedAttributes() {
+    return ['name', 'address', 'email', 'phone', 'orgnr', 'image'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'name') {
+      this.nameEl.textContent = newValue
+    }
+
+    if (name === 'address') {
+      this.adresseEl.textContent = newValue
+    }
+
+    if (name === 'email') {
+      this.emailEl.setAttribute('href', `mailto:${newValue}`)
+      this.emailEl.textContent = newValue
+    }
+
+    if (name === 'phone') {
+      this.phoneEl.setAttribute('href', `tel:${newValue}`)
+      this.phoneEl.textContent = newValue
+    }
+
+    if (name === 'orgnr') {
+      this.orgnrEl.textContent = newValue
+    }
+
+  }
+
+  connectedCallback() {
+
+  }
+
+  disconnectedCallback() {
+
+  }
+}
+
+const MilesContactCardName = "miles-contact-card";
+
+if (!customElements.get(MilesContactCardName)) {
+  customElements.define(MilesContactCardName, MilesContactCard)
 }

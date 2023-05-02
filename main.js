@@ -157,6 +157,9 @@ document.querySelector('#app').innerHTML = `
     Grunnstammen i Miles består av utviklere og arkitekter. Utviklerne våre har solid kompetanse på mange områder innen utvikling og metodikk. Vi er sterke på det siste innen frontend-utvikling og har den teknologiske ekspertisen som trengs for å lage brukergrensesnitt i alt fra HTML og CSS, til javascript og rammeverk som React, Angular og Vue.Vi har også lang erfaring med de fleste skyteknologier. Alt fra de store offentlige som GCP, Azure og AWS til mindre og private skyløsninger.En stor del av utviklerne våre har lang erfaring med både objektorienterte språk som .Net, Java og Python til funksjonelle språk som Clojure, F# og Scala. Arkitektene i Miles har høy utdannelse kombinert med erfaring fra noen av de mest komplekse IT-prosjektene i Norge. Dette har gjort oss til ett av landets ledende fagmiljøer innen arkitektur.
     </p>
     </miles-info-block>
+
+
+    <miles-contact-card phone="91712234" orgnr="1223445567889"  email="miles@miles.no" name="Miles AS" address="Konsulentgt 3, 6728 oslo"></miles-contact-card>
   </div>
 
 
