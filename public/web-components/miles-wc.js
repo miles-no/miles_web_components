@@ -1607,6 +1607,11 @@ MilesOfficeBannerTemplate.innerHTML = `
       top: 100px;
     }
 
+    #triggerEl miles-arrow {
+      width: 20px;
+      height: 20px;
+    }
+
     @media (max-width: 1024px) and (min-width: 769px)  { 
       #menu.open {
         top: 150px;
@@ -1631,6 +1636,8 @@ MilesOfficeBannerTemplate.innerHTML = `
         left: unset;
       }
     }
+
+
 
     #menu h2 {
       display: inline-block;
@@ -1696,7 +1703,7 @@ MilesOfficeBannerTemplate.innerHTML = `
       bottom: unset;
       top: 0;
       height: var(--headerHeight);
-      padding: 2rem;
+      padding: 1rem;
     }
 
     #triggerBg::after {
@@ -1715,9 +1722,6 @@ MilesOfficeBannerTemplate.innerHTML = `
       background: rgba(0, 0, 0, 0.8); 
     }
 
-    #triggerEl miles-arrow {
-      width: 30px;
-    }
     
     @media (min-width: 769px)  {
       #banner {
@@ -1741,6 +1745,11 @@ MilesOfficeBannerTemplate.innerHTML = `
         bottom: 0;
         height: 200px;
         padding: 2rem;
+      }
+
+      #triggerEl miles-arrow {
+        width: 30px;
+        height: 30px;
       }
     }
 
@@ -1838,9 +1847,14 @@ MilesArrowTemplate.innerHTML = `
       display: inline-block;
       transform: rotate(180deg);
       transition: transform 0.5s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+    }
 
+    #arrow {
+      justify-content: center;
+      display: flex;
       width: inherit;
       height: inherit;
+      align-items: center;
     }
 
     :host(.open) {
