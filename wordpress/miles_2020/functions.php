@@ -652,6 +652,12 @@ if (function_exists('register_shortcodes') && function_exists('register_shortcod
 }
 
 /**
+ * enable use of shortcodes in php files
+ */
+add_filter( 'widget_text', 'do_shortcode' );
+
+
+/**
  * Register Custom Blocks 
  *
  */

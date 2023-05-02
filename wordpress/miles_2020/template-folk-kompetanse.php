@@ -57,8 +57,6 @@ $parsedQuery = resolvedQueryParameters();
 $selected_office = $parsedQuery['office'] ?? null;
 $selected_role = $parsedQuery['area'] ?? null;
 
-$miles_persons = miles_limes\get_consultants($selected_office, $selected_role, null);
-
 ?>
 	<main id="primary" class="site-main our_people">
 		<h2><?php echo $title; ?></h2>
@@ -84,33 +82,7 @@ $miles_persons = miles_limes\get_consultants($selected_office, $selected_role, n
 			</ul>
 		</div>
 		<section class="cv-filter">
-			<?php
-			foreach ($miles_persons as $cv):
-				if( isset($cv['imageUrlThumbnail']) ):
-					?>
-					<miles-profile-card name="<?php echo $cv['name'];  ?>" location="<?php echo $cv['office'] . "\n" . $cv['jobtitle']; ?>" image="<?php echo $cv['imageUrlThumbnail'];  ?>" title="<?php echo $cv['title'];  ?>"></miles-profile-card>
-					<!--
-					<ul>
-						 <li>
-							<figure>
-								<img src="<?php echo $cv['imageUrlThumbnail'];  ?>" alt="<?php echo $cv['name'];  ?>">
-							</figure>
-						</li>
-						<?php if( $cv['name'] ): ?>
-							 <li><?php echo $cv['name'];  ?></li>
-						<?php endif; ?>
-						<?php if( $cv['email'] ): ?>
-						  <li><?php echo $cv['email'];  ?></li>
-						<?php endif; ?>
-						<?php if( $cv['title'] ): ?>
-							<li><?php echo $cv['title'];  ?></li>
-						<?php endif; ?>
-					</ul>
-						-->
-				<?php
-				endif;
-			endforeach;
-			?>
+			<?php echo do_shortcode('[show-consultant-group area="' . $selected_office . '" area="' . $selected_role . '" wc_name="miles-profile-card"]'); ?>
 		</section>
 
 	</main>
