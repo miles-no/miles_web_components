@@ -4107,7 +4107,7 @@ miles-fagblogg-teaser .wp-block-latest-posts__list li {
 
 
 .page-template-default .site-main .entry-content {
-  max-width: 96vw;
+  max-width: calc(100vw - 4rem);
   margin:auto;
 }
 
@@ -4148,7 +4148,6 @@ miles-overlap-block .link_wrapper {
     margin: 0;
     padding: 0;
     position: relative;
-    width: 96vw;
   }
 
   @media (min-width: 768px) {
@@ -4168,4 +4167,12 @@ miles-overlap-block .link_wrapper {
 
   .page-fagomrader miles-info-block {
     margin-bottom: 4rem;
+  }
+
+  .page-vare-kontorer miles-business-card[variant="wide"] {
+    margin-bottom: 2rem;
+  }
+
+  .page-vare-kontorer .wp-block-group miles-button-anchor {
+    margin-left: 1rem;
   }

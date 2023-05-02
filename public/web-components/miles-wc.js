@@ -1800,8 +1800,10 @@ class MilesOfficeBanner extends HTMLElement {
   }
   connectedCallback() {
     const slottedRoot = this.shadowRoot.querySelector('slot').assignedElements()[0];
+    
     this.menu.append(slottedRoot.querySelector('.miles-office-menu'))
     this.trigger = slottedRoot.querySelector('h2')
+    this.setAttribute('id', this.trigger.textContent.replace(/\s/g, '').toLowerCase())
     this.trigger.innerHTML = `<span>${this.trigger.textContent}</span><miles-arrow class="open" style="margin-left:1rem;"></miles-arrow>`
     this.triggerEl.append(this.trigger)
 
@@ -1938,6 +1940,8 @@ MilesBusinessCardTemplate.innerHTML = `
       display: block;
 
       color: inherit;
+
+      --image-width: 120px;
     }
 
     #card-wrapper {
@@ -1956,6 +1960,21 @@ MilesBusinessCardTemplate.innerHTML = `
       gap: 1em;
     }
 
+    #card.wide {
+      flex-direction: column;
+      background-color: transparent;
+    }
+
+    @media (min-width: 768px) {
+      #card.wide {
+        max-width: 100%;
+        margin: 0;
+        max-height: calc(var(--image-width) / 2);
+        flex-direction: row;
+      }
+    }
+
+
     h3 {
       margin: 0 0 0 0 ;
     }
@@ -1964,17 +1983,62 @@ MilesBusinessCardTemplate.innerHTML = `
       margin-bottom: 0.5em;
     }
 
+    #card.wide span#title {
+      order: 0;
+    }
+
+    #card.wide #name {
+      order: 1;
+    }
+
+    #card.wide span {
+      order: 2;
+    }
+
     figure {
       margin: 0;
       padding: 0;
       aspect-ratio: 1/1;
-      width: 150px;
+      width: var(--image-width); 
+      min-width:var(--image-width);
       overflow: hidden;
     }
+
+
+    
+    @media (min-width: 768px) {
+      #card.wide figure {
+        justify-content: center;
+        display: flex;
+        aspect-ratio: 2 / 3;
+        width: var(--image-width);
+        min-width: var(--image-width);
+        background-color: #ffffff;
+      }
+    }
+
    
     ::slotted(img), img {
       object-fit: cover;
       width: 100%;
+      background-color: #ffffff;
+      filter: grayscale(1);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+    }
+
+
+    #card.wide ::slotted(img), #card.wide img {
+      border-radius: 0;
+      aspect-ratio: 1 / 1;
+      min-width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      #card.wide ::slotted(img), #card.wide img {
+        width: calc(var(--image-width) / 2);
+        min-width: calc(var(--image-width) / 2);
+      }
     }
 
     ::slotted(*) {
@@ -1983,7 +2047,6 @@ MilesBusinessCardTemplate.innerHTML = `
 
     #extras {
       background-color: var(--miles_secondary_four);
-      padding: 1rem;
     }
 
     a, span {
@@ -1994,9 +2057,14 @@ MilesBusinessCardTemplate.innerHTML = `
 
     span {
       display: flex;
+      flex-direction: column;
       overflow: hidden;
       line-height: 1.2em;
       gap: 0.2em;
+    }
+
+    #card.wide span {
+      flex-direction: row;
     }
 
     #group {
@@ -2005,7 +2073,19 @@ MilesBusinessCardTemplate.innerHTML = `
       gap: 0.2em;
     }
 
+    #card.wide #group {
+      background-color: #F8EBE8;
+      width: unset;
+      padding: 1rem 2rem;
+      justify-content: center;
+    }
 
+    @media (min-width: 768px) {
+      #card.wide #group {
+        padding: 0 2rem;
+        width: 100%;
+      }
+    }
 
     </style>
   <div id="card-wrapper">
@@ -2037,10 +2117,11 @@ class MilesBusinessCard extends HTMLElement {
     this.phoneEl = this.shadowRoot.querySelector('#phone')
     this.titleEl = this.shadowRoot.querySelector('#title')
     this.firgureEl = this.shadowRoot.querySelector('figure')
+    this.card = this.shadowRoot.querySelector('#card')
   }
 
   static get observedAttributes() {
-    return ['email', 'name', 'phone', 'jobtitle', 'image'];
+    return ['email', 'name', 'phone', 'jobtitle', 'image', 'variant'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -2066,6 +2147,13 @@ class MilesBusinessCard extends HTMLElement {
       const image = document.createElement('img');
       image.setAttribute('src', newValue)
       this.firgureEl.append(image)
+    }
+
+    if (name === 'variant') {
+      if (newValue === 'wide') {
+        this.card.classList.add('wide')
+        this.style.setProperty('--image-width', '320px')
+      } 
     }
 
   }

@@ -153,58 +153,7 @@ miles-fagblogg-teaser .wp-block-latest-posts__list li {
     width: 100vw;
   }
 
-  /*
-
-  @media (min-width: 769px)  {
-    miles-office-banner {
-      width: 80vw;
-    }
-
-
-
-    miles-office-banner .custom-block-feature-block.miles-office-banner .feature-content,
-    miles-office-banner .wp-block-group.miles-office-banner .feature-content {
-      margin: auto;
-      position: absolute;
-      width: 80vw;
-      z-index: 10;
-      bottom: 0;
-      height: 200px;
-      padding: 2rem;
-    }
+ 
+  .page-vare-kontorer miles-business-card[variant="wide"] {
+    margin-bottom: 2rem;
   }
-
-  miles-office-banner .custom-block-feature-block.miles-office-banner .feature-wrapper,
-  miles-office-banner .wp-block-group.miles-office-banner .feature-wrapper {
-    margin: 0;
-    position: relative;
-    width: 80vw;
-    z-index: 10;
-    max-width: unset;
-  }
-
-
-
-  @media (max-width: 1024px) and (min-width: 769px)  {
-    miles-office-banner .custom-block-feature-block.miles-office-banner .feature-content,
-    miles-office-banner .wp-block-group.miles-office-banner .feature-content {
-      bottom:unset;
-      top:0;
-    }
-  }
-
-
-  miles-office-banner .custom-block-feature-block.miles-office-banner .feature-content:hover::after,
-  miles-office-banner .wp-block-group.miles-office-banner .feature-content:hover::after {
-    background: rgba(0, 0, 0, 0.8); 
-  }
-
-  miles-office-banner .custom-block-feature-block.miles-office-banner .feature-image img,
-  miles-office-banner .wp-block-group.miles-office-banner .feature-image img {
-    transform: scale(1.1);
-    width: 100%;
-    object-fit: cover;
-  }
-
-  */
-  
