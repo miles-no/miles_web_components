@@ -21,7 +21,7 @@ function shortcode_show_consultant($atts): string
         'title' => $consultant["title"],
         'image' => $consultant["imageUrlThumbnail"],
         'email' => $consultant["email"],
-        'phone' => $consultant["phone"],
+        'phone' => $consultant["telephone"],
     ), null);
 }
 
@@ -41,7 +41,7 @@ function shortcode_show_consultant_group($atts): string
             'title' => $consultant["title"],
             'image' => $consultant["imageUrlThumbnail"],
             'email' => $consultant["email"],
-            'phone' => $consultant["phone"],
+            'phone' => $consultant["telephone"],
         ), null);
     }
 
