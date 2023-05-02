@@ -4107,14 +4107,23 @@ miles-fagblogg-teaser .wp-block-latest-posts__list li {
 
 
 .page-template-default .site-main .entry-content {
-  max-width: 80vw;
+  max-width: 96vw;
   margin:auto;
+}
+
+@media (min-width: 768px) {
+  .page-template-default .site-main .entry-content {
+    max-width: 80vw;
+    margin:auto;
+  }
 }
 
 .home.page-template-default .site-main .entry-content {
   max-width: 100vw;
   margin:auto;
 }
+
+
 
 miles-overlap-block .feature-wrapper, 
 miles-overlap-block .miles-overlap-block {
@@ -4139,7 +4148,13 @@ miles-overlap-block .link_wrapper {
     margin: 0;
     padding: 0;
     position: relative;
+    width: 96vw;
+  }
+
+  @media (min-width: 768px) {
+    miles-office-banner {
     width: 80vw;
+    }
   }
 
   .miles-office-banner {

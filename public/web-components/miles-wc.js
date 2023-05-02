@@ -1564,7 +1564,7 @@ const MilesOfficeBannerTemplate = document.createElement("template");
 MilesOfficeBannerTemplate.innerHTML = `
   <style>
     :host {
-
+      --headerHeight: 200px;
     }
 
     #banner {
@@ -1590,7 +1590,7 @@ MilesOfficeBannerTemplate.innerHTML = `
       display: flex;
       flex-direction: column-reverse;
       justify-content: start;
-      padding: 2rem;
+      padding: 1rem;
       right: 0;
       left: 0;
       width: 100%;
@@ -1695,7 +1695,7 @@ MilesOfficeBannerTemplate.innerHTML = `
       z-index: 10;
       bottom: unset;
       top: 0;
-      height: 200px;
+      height: var(--headerHeight);
       padding: 2rem;
     }
 
@@ -1726,7 +1726,7 @@ MilesOfficeBannerTemplate.innerHTML = `
 
       #people {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 50%);
         gap: 1rem;
       }
 
@@ -1753,7 +1753,9 @@ MilesOfficeBannerTemplate.innerHTML = `
   <div id="triggerBg">
     <div id="triggerEl"></div>
   </div>
+  <div id="content">
     <slot></slot>
+  </div>
   </div>
 `;
 
@@ -1785,16 +1787,17 @@ class MilesOfficeBanner extends HTMLElement {
 
     this.banner.append(slottedRoot.querySelector('.feature-image'))
 
-    const cards = this.menu.querySelector('.miles-banner-card');
+    const cards = this.menu.querySelectorAll('miles-business-card');
     if (cards) {
-      this.people.append(cards);
-      this.people.append(cards.cloneNode(true));
-      this.people.append(cards.cloneNode(true));
-      this.people.append(cards.cloneNode(true));
-      this.people.append(cards.cloneNode(true));
+      cards.forEach(card => {
+        this.people.append(card)
+      })
+      const rects = this.banner.getBoundingClientRect();
+      console.log('rects.width', rects.width)
+      if (rects.width < 769) {
+        this.banner.setAttribute('style', `height: calc(calc(${cards.length} * var(--headerHeight)) + 300px);`)
+      }
     }
-    
-
 
 
     if (this.trigger) {
@@ -1904,14 +1907,11 @@ MilesBusinessCardTemplate.innerHTML = `
 
     #card-wrapper {
       box-sizing: border-box;
-      width: 400px;
     }
 
     #card {
       max-width: 400px;
       margin: 0 auto;
-      /* padding: 1rem; */
-      /* border: 1px solid #E5E5E5; */
       background-color: var(--miles_secondary_four);
 
       border-radius: 4px;
@@ -1937,7 +1937,7 @@ MilesBusinessCardTemplate.innerHTML = `
       overflow: hidden;
     }
    
-    ::slotted(img) {
+    ::slotted(img), img {
       object-fit: cover;
       width: 100%;
     }
@@ -2023,7 +2023,7 @@ class MilesBusinessCard extends HTMLElement {
       this.phoneEl.textContent = newValue
     }
 
-    if (name === 'title') {
+    if (name === 'jobtitle') {
       this.titleEl.textContent = newValue
     }
 

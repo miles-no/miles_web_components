@@ -37,7 +37,7 @@ function miles_business_card_shortcode( $atts, $content = null ): string
 	}
 
     if ( $content == null ) {
-        $content = 'default content';
+        $content = '';
     }
 	
 	return '<miles-business-card '.$props.'>' . $content . '</miles-business-card>';
