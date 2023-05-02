@@ -1907,8 +1907,8 @@ MilesBusinessCardTemplate.innerHTML = `
     #card {
       max-width: 400px;
       margin: 0 auto;
-      padding: 1rem;
-      border: 1px solid #E5E5E5;
+      /* padding: 1rem; */
+      /* border: 1px solid #E5E5E5; */
       background-color: var(--miles_secondary_four);
 
       border-radius: 4px;
@@ -2002,7 +2002,7 @@ class MilesBusinessCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['email', 'name', 'phone', 'title', 'image'];
+    return ['email', 'name', 'phone', 'jobtitle', 'image'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {

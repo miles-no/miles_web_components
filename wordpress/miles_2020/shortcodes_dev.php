@@ -35,11 +35,11 @@ function miles_business_card_shortcode( $atts, $content = null ): string
     foreach ($atts as $prop => $val) {
 		$props .= ' ' . $prop . '="' . $val . '"';
 	}
-	
+
     if ( $content == null ) {
         $content = 'default content';
     }
-	##return toWebComponent('miles-business-card', $attr, $content);
+	
 	return '<miles-business-card '.$props.'>' . $content . '</miles-business-card>';
 }
 
