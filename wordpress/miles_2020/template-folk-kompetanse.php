@@ -88,7 +88,7 @@ $miles_persons = miles_limes\get_consultants($selected_office, $selected_role, n
 			foreach ($miles_persons as $cv):
 				if( isset($cv['imageUrlThumbnail']) ):
 					?>
-					<miles-profile-card name="<?php echo $cv['name'];  ?>" description="<?php echo $cv['office'] . "\n" . $cv['title']; ?>" image="<?php echo $cv['imageUrlThumbnail'];  ?>" title="<?php echo $cv['title'];  ?>"></miles-profile-card>
+					<miles-profile-card name="<?php echo $cv['name'];  ?>" location="<?php echo $cv['office'] . "\n" . $cv['jobtitle']; ?>" image="<?php echo $cv['imageUrlThumbnail'];  ?>" title="<?php echo $cv['title'];  ?>"></miles-profile-card>
 					<!--
 					<ul>
 						 <li>

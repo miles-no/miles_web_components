@@ -15,14 +15,7 @@ function shortcode_show_consultant($atts): string
 
     $consultant = $consultantList[0];
 
-    return shortcode_util\toWebComponent($atts['wc_name'], array(
-        'name' => $consultant["name"],
-        'description' => $consultant["office"],
-        'title' => $consultant["title"],
-        'image' => $consultant["imageUrlThumbnail"],
-        'email' => $consultant["email"],
-        'phone' => $consultant["telephone"],
-    ), null);
+    return shortcode_util\toWebComponent($atts['wc_name'], consultant_to_webcomponent($consultant), null);
 }
 
 function shortcode_show_consultant_group($atts): string
@@ -35,15 +28,20 @@ function shortcode_show_consultant_group($atts): string
 
     $result = '';
     foreach ($consultantList as $consultant) {
-        $result .= shortcode_util\toWebComponent($webComponent, array(
-            'name' => $consultant["name"],
-            'description' => $consultant["office"],
-            'title' => $consultant["title"],
-            'image' => $consultant["imageUrlThumbnail"],
-            'email' => $consultant["email"],
-            'phone' => $consultant["telephone"],
-        ), null);
+        $result .= shortcode_util\toWebComponent($webComponent, consultant_to_webcomponent($consultant), null);
     }
 
     return $result;
+}
+
+function consultant_to_webcomponent($consultant): array
+{
+    return array(
+        'name' => $consultant["name"],
+        'location' => $consultant["office"],
+        'jobtitle' => $consultant["title"],
+        'image' => $consultant["imageUrlThumbnail"],
+        'email' => $consultant["email"],
+        'phone' => $consultant["telephone"],
+    );
 }
