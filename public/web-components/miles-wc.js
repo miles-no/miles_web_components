@@ -503,9 +503,9 @@ templateHeart.innerHTML = `
           
           .profile-card__info {
             display: flex;
-            background-color: var(--miles_primary_dark);
+            background-color: var(--miles_secondary_four);
             padding: 1.2rem;
-            min-height: 104px;
+            min-height: 140px;
             flex-direction: column;
           }
 
@@ -1248,8 +1248,8 @@ MilesBlogCardTemplate.innerHTML = `
     overflow: hidden;
   }
 
-  slot[name="title"]::slotted(h2) {
-    1.5rem;
+  slot[name="title"]::slotted(*) {
+    font-size: 1.5rem;
     margin: 0;
   }
 
@@ -1262,8 +1262,26 @@ MilesBlogCardTemplate.innerHTML = `
 
   .text {
     background-color: var(--miles_secondary_four);
+    color: var(--miles_primary_light);
     padding: 2rem;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
   }
+
+  slot[name="title"]::slotted(*) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+  }
+
+  slot[name="meta"] {
+    display: block;
+    flex-grow: 1;
+   }
 
   #updated {
     display: none;

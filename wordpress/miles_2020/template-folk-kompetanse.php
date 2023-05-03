@@ -66,7 +66,7 @@ $selected_role = $parsedQuery['area'] ?? null;
 			<ul>
 				<?php foreach ($norwegian_offices as $office): ?>
 					<li <?php echo $parsedQuery['office'][0] == $office['officeId'] && count($parsedQuery['office']) == 1 ? "class='selected'" : '' ?>>
-						<miles-button-anchor href="<?php echo $current_url . "?office=" . $office['officeId']; ?>"><?php echo ucfirst($office['name']); ?></miles-button-anchor>
+						<miles-button-anchor color="#3F1221" href="<?php echo $current_url . "?office=" . $office['officeId']; ?>"><?php echo ucfirst($office['name']); ?></miles-button-anchor>
 					</li>
 				<?php endforeach; ?>
 			</ul>
@@ -76,7 +76,7 @@ $selected_role = $parsedQuery['area'] ?? null;
 			<ul>
 				<?php foreach ($custom_tags as $key => $value): ?>
 					<li <?php echo ($parsedQuery['area'] ?? null) == $value ? "class='selected'" : '' ?>>
-						<miles-button-anchor href="<?php echo $current_url . "?area=" . $value; ?>"><?php echo ucfirst($key); ?></miles-button-anchor>
+						<miles-button-anchor color="#3F1221" href="<?php echo $current_url . "?area=" . $value; ?>"><?php echo ucfirst($key); ?></miles-button-anchor>
 					</li>
 				<?php endforeach; ?>
 			</ul>

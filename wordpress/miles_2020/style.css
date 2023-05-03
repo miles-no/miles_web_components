@@ -558,8 +558,10 @@ h1 {
 
 /* line 59, sass/base/_typography.scss */
 h2 {
-  font-size: var(--miles-h2);
-  line-height: var(--miles-h2);
+  /*
+  font-size: var(--miles-h2, 3rem);
+  line-height: var(--miles-h2, 3rem);
+  */
   /* margin: 42px 0; */
 }
 /* line 64, sass/base/_typography.scss */
@@ -3498,7 +3500,7 @@ input[type="file"]::file-selector-button {
 .archive .site-main,
 .blog .site-main .blog-grid {
   margin: auto;
-  max-width: 91.6666%;
+  max-width: 80vw;
 }
 @media (min-width: 768px) {
   /* line 9, sass/components/_archives.scss */
@@ -3506,8 +3508,8 @@ input[type="file"]::file-selector-button {
   .blog .site-main .blog-grid {
     max-width: 80vw;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 28px;
+    grid-template-columns: repeat(2, 50%);
+    gap: 2em;
   }
 }
 
@@ -3536,14 +3538,14 @@ input[type="file"]::file-selector-button {
   .archive .site-main,
   .blog .site-main .blog-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 1em;
+    grid-template-columns: repeat(3, 33%);
+    gap: 3em;
   }
 }
 /* line 26, sass/components/_archives.scss */
 .archive .site-main figure,
 .blog .site-main figure {
-  aspect-ratio: 1 / 1.5;
+  aspect-ratio: 4 / 5;
   margin: 0;
 }
 /* line 29, sass/components/_archives.scss */
@@ -3997,8 +3999,8 @@ input[type="submit"]:focus {
 }
 
 .page-template-template-folk-kompetanse {
-  color:  var(--miles_primary_light);
-  background-color: var(--miles_secondary_four);
+  color: var(--miles_secondary_three);
+  background-color: var(--miles_primary_light);
 }
 
 .prefooter {
