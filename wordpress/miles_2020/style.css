@@ -3501,6 +3501,9 @@ input[type="file"]::file-selector-button {
 .blog .site-main .blog-grid {
   margin: auto;
   max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 @media (min-width: 768px) {
   /* line 9, sass/components/_archives.scss */

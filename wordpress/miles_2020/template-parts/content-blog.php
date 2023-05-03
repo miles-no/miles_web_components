@@ -9,7 +9,8 @@
 
 ?>
 
-<miles-blog-card id="post-<?php the_ID(); ?>" url="<?php get_the_permalink(); ?>" author="<?php the_author(); ?>">
+ <?php /* echo '<a href="'. get_the_permalink() . '" class="fagblogg-thumbnail fagblogg-column">'; */ ?> 
+<miles-blog-card id="post-<?php echo the_ID(); ?>" url="<?php echo get_permalink(); ?>" author="<?php echo the_author(); ?>">
 	<?php if ( has_post_thumbnail() ) { ?>
 		<figure slot="image">
 			<?php the_post_thumbnail('feature-image'); ?>
