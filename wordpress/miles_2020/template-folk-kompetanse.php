@@ -59,7 +59,7 @@ $selected_role = $parsedQuery['area'] ?? null;
 
 ?>
 	<main id="primary" class="site-main our_people">
-		<h2><?php echo $title; ?></h2>
+		<h1><?php echo $title; ?></h1>
 		<?php echo $content; ?>
 		<div class="miles_offices_bar" aria-description="Våre kontor i Norge." aria-label="Kontor">
 			<span>Kontor</span>

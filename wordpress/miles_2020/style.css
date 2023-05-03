@@ -556,6 +556,23 @@ h1 {
   font-weight: 700;
 }
 
+h1.entry-title {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  width: 80vw;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  h1.entry-title {
+    margin-bottom: 10rem;
+    width: 100%;
+  }
+}
+
+
+
 /* line 59, sass/base/_typography.scss */
 h2 {
   /*
@@ -2293,13 +2310,20 @@ Other menus
 
 /* Featured Image
 --------------------------------------------- */
-/* line 38, sass/blocks/_core-blocks.scss */
 article.has-post-thumbnail img { /* edited 13.03.2023 HL */
-  aspect-ratio: 2 / 3;
-  /* display: none; */
   margin-right: auto;
   margin-left: auto;
   object-fit: cover;
+  aspect-ratio: 5 / 4;
+}
+
+@media (min-width: 768px) {
+  article.has-post-thumbnail img { /* edited 13.03.2023 HL */
+    margin-right: auto;
+    margin-left: auto;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 /* Nested columns - reusable block
@@ -2365,7 +2389,7 @@ blockquote.wp-block-quote {
   background: transparent url(../icons/utility/quote.svg) no-repeat top left;
   background-size: 36px auto;
   text-align: left;
-  border-left: 2px solid var(--miles_primary_dark);
+  border-left: 4px solid var(--miles_primary_dark);
   margin: 28px 0 !important;
   padding: 84px 28px;
 }
@@ -3312,13 +3336,32 @@ input[type="file"]::file-selector-button {
 
 } */
 /* line 43, sass/components/_posts-and-pages.scss */
-.single-post .entry-header,
 .single-post .post-thumbnail {
   text-align: center;
-  max-width: calc(calc(var(--content_width) / 3) * 2);
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
+
+
+
+.single-post .entry-header {
+  text-align: center;
+  max-width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) { 
+  .single-post .post-thumbnail {
+    max-width: calc(calc(var(--content_width) / 2) * 2);
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  max-width: calc(calc(var(--content_width) / 3) * 2);
+ }
+
 /* line 50, sass/components/_posts-and-pages.scss */
 .single-post .entry-header .entry-title,
 .single-post .entry-header .entry-meta,
@@ -3340,13 +3383,29 @@ input[type="file"]::file-selector-button {
   .single-post .entry-meta,
   .single-post .entry-content,
   .single-post .entry-footer {
-    max-width: 50vw;
+    max-width: calc(calc(var(--content_width) / 3) * 2);
     margin: 42px auto;
   }
 }
 /* line 69, sass/components/_posts-and-pages.scss */
 .single-post .entry-footer {
   display: none;
+}
+
+.single-post h2 {
+  margin-top: 4rem;
+}
+
+.single-post .entry-meta {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .single-post .wp-block-quote {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 /**********************

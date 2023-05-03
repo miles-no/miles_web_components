@@ -2019,6 +2019,11 @@ MilesBusinessCardTemplate.innerHTML = `
       gap: 1em;
     }
 
+    #card.author {
+      max-width: 100%;
+      background-color: transparent;
+    }
+
     #card.wide {
       flex-direction: column;
       background-color: transparent;
@@ -2131,6 +2136,12 @@ MilesBusinessCardTemplate.innerHTML = `
       flex-direction: column;
       gap: 0.2em;
     }
+    #card.author #group {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
 
     #card.wide #group {
       background-color: #F8EBE8;
@@ -2146,6 +2157,10 @@ MilesBusinessCardTemplate.innerHTML = `
       }
     }
 
+    #email_el, #phone_el {
+      display: none;
+    }
+
     </style>
   <div id="card-wrapper">
       <div id="card">
@@ -2155,8 +2170,8 @@ MilesBusinessCardTemplate.innerHTML = `
       <div id="group">
         <h3 id="name"></h3>
         <span id="title"></span>
-        <span>Epost: <a id="email"></a></span>
-        <span>Telefon: <a id="phone"></a></span>
+        <span id="email_el">Epost: <a id="email"></a></span>
+        <span id="phone_el">Telefon: <a id="phone"></a></span>
       </div>
     </div>
       <div id="extras">
@@ -2186,6 +2201,7 @@ class MilesBusinessCard extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'email') {
       this.emailEl.setAttribute('href', `mailto:${newValue}`)
+      this.phoneEl.style.display = 'block'
       this.emailEl.textContent = newValue
     }
 
@@ -2195,6 +2211,7 @@ class MilesBusinessCard extends HTMLElement {
 
     if (name === 'phone') {
       this.phoneEl.setAttribute('href', `tel:${newValue}`)
+      this.phoneEl.style.display = 'block'
       this.phoneEl.textContent = newValue
     }
 
@@ -2212,6 +2229,11 @@ class MilesBusinessCard extends HTMLElement {
       if (newValue === 'wide') {
         this.card.classList.add('wide')
         this.style.setProperty('--image-width', '320px')
+      } 
+
+      if (newValue === 'author') {
+        this.card.classList.add('author')
+        this.style.setProperty('--image-width', '180px')
       } 
     }
 
@@ -2232,6 +2254,34 @@ if (!customElements.get(MilesBusinessCardName)) {
   customElements.define(MilesBusinessCardName, MilesBusinessCard)
 }
 
+/*
+  Miles Author Card
+*/
+     
+class MilesAuthorCard extends MilesBusinessCard {
+
+  constructor() {
+    super()
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('variant', 'author')
+  }
+
+  attributeChangedCallback(name, oldval, newval) {
+
+    if(name !== 'phone' && name !== 'email') {
+      super.attributeChangedCallback(name, oldval, newval)
+    }
+  }
+}
+
+const MilesAuthorCardName = "miles-author-card";
+
+if (!customElements.get(MilesAuthorCardName)) {
+  customElements.define(MilesAuthorCardName, MilesAuthorCard)
+}
 
 /**
  * Miles Info Block
