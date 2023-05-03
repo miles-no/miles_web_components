@@ -3915,7 +3915,8 @@ input[type="submit"]:focus {
 
 #primary.our_people {
   width: 80vw;
-  margin:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #primary.our_people .miles_offices_bar::before, 
@@ -3950,14 +3951,23 @@ input[type="submit"]:focus {
   display: inline-block;
 }
 
+#primary.our_people .miles_offices_bar {
+  margin-top: 4rem;
+}
+
+#primary.our_people .miles_areas_bar {
+  margin-bottom: 4rem;
+}
+
 #primary.our_people .miles_offices_bar ul,
 #primary.our_people .miles_areas_bar ul {
   flex-wrap: wrap;
-  gap: 0.5em;
+  gap: 1em;
   line-height: 1.4em;
   padding: 0;
   display: flex;
-  margin:0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #primary.our_people .miles_offices_bar ul li,
@@ -4169,10 +4179,25 @@ miles-overlap-block .link_wrapper {
     margin-bottom: 4rem;
   }
 
+  .page-fagomrader .miles-button-row > div {
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    gap: 1em;
+    margin-bottom: 2rem;
+  }
+
   .page-vare-kontorer miles-business-card[variant="wide"] {
     margin-bottom: 2rem;
   }
 
+
   .page-vare-kontorer .wp-block-group miles-button-anchor {
     margin-left: 1rem;
   }
+
+  .page-vare-kontorer h3 {
+    font-weight: 400;
+    font-size: 2rem;
+  }
+

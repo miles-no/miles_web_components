@@ -13,20 +13,28 @@ function register_shortcodes_dev(): void
 
 function miles_info_block_shortcode( $atts, $content = null ): string 
 {
-    $heading = $atts['heading'] ?? 'default heading';
+	$props = '';
+    foreach ($atts as $prop => $val) {
+		$props .= ' ' . $prop . '="' . $val . '"';
+	}
+
     if ( $content == null ) {
-        $content = 'default content';
+        $content = '';
     }
-    return '<miles-info-block heading="' . $heading . '">' . $content . '</miles-info-block>';
+    return '<miles-info-block '.$props.'>'. $content . '</miles-info-block>';
 }
 
 function miles_button_anchor_shortcode( $atts, $content = null ): string 
 {
-    $href = $atts['href'] ?? '#';
+	$props = '';
+    foreach ($atts as $prop => $val) {
+		$props .= ' ' . $prop . '="' . $val . '"';
+	}
+
     if ( $content == null ) {
-        $content = 'default content';
+        $content = '';
     }
-    return '<miles-button-anchor href="' . $href . '">' . $content . '</miles-button-anchor>';
+    return '<miles-button-anchor '.$props.'>' . $content . '</miles-button-anchor>';
 }
 
 function miles_business_card_shortcode( $atts, $content = null ): string 
