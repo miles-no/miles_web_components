@@ -65,8 +65,8 @@ $selected_role = $parsedQuery['area'] ?? null;
 			<span>Kontor</span>
 			<ul>
 				<?php foreach ($norwegian_offices as $office): ?>
-					<li <?php echo $parsedQuery['office'][0] == $office['officeId'] && count($parsedQuery['office']) == 1 ? "class='selected'" : '' ?>>
-						<miles-button-anchor color="#3F1221" href="<?php echo ($parsedQuery['office'][0] == $office['officeId']) ? $current_url . "?office=" . $office['officeId']: $current_url ; ?>"><?php echo ucfirst($office['name']); ?></miles-button-anchor>
+					<li <?php echo $selected_office == $office['officeId'] && count($parsedQuery['office']) == 1 ? "class='selected'" : '' ?>>
+						<miles-button-anchor color="#3F1221" href="<?php echo ($selected_office == $office['officeId']) ? $current_url . "?office=" . $office['officeId']: $current_url ; ?>"><?php echo ucfirst($office['name']); ?></miles-button-anchor>
 					</li>
 				<?php endforeach; ?>
 			</ul>
