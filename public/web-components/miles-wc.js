@@ -844,6 +844,11 @@ const sliderStyles = `
 	display: block;
 	width: var(--slide-container-width);
 	height: var(--slide-container-height);
+
+  background-color: #F8EBE8;
+  height: 100%;
+  padding-top: 100px;
+  padding-bottom:100px;
 }
 
 @media (min-width: 768px) {
@@ -853,10 +858,9 @@ const sliderStyles = `
 }
 
 section {
-	width: var(--slide-container-width);
-	height: var(--slide-container-height);
-	position: relative;
-	overflow: hidden;
+  width: var(--slide-container-width);
+  height: calc(var(--slide-container-height) + 3rem);
+  position: relative;
 }
 
 section .slides {
@@ -874,6 +878,7 @@ section .slides figure {
 	height: var(--slide-container-height);
 	aspect-ratio: 1 / 1;
 	margin: 0;
+  
 }
 
 .overlay {
@@ -914,6 +919,7 @@ section .slides figure img {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+  border-radius: 30px;
 
 }
 
@@ -928,7 +934,7 @@ nav {
   gap: 1em;
   bottom: 0;
 	height: 3rem;
-  background-color: var(--miles_default_bg);
+  /* background-color: var(--miles_default_bg); */
 }
 
 .nav-dot {
@@ -939,7 +945,21 @@ nav {
 	background-color: var(--miles_secondary_four);
 }
 
+#slide-wrapper {
+  width: 100vw;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
+  h2 {
+    font-size: 3rem;
+  }
+
   .nav-dot {
     height:1em;
     width: 1em;
@@ -958,11 +978,14 @@ ImageSliderTemplate.innerHTML = `
   <style>
     ${sliderStyles}
   </style>
-  <section>
-    <div class="slides"></div>
-    <slot></slot>
-    <nav class="controls"> </nav>
-  </section>
+  <div id="slide-wrapper">
+    <h2>Våre prosjekter</h2>
+    <section>
+      <div class="slides"></div>
+      <slot></slot>
+      <nav class="controls"> </nav>
+    </section>
+  </div>
     `;
 
 
@@ -1076,14 +1099,14 @@ class MilesImageSlider extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "inview") {
-      this.style.setProperty('--slide-container-width', `calc(var(--slide-container-height) * ${parseInt(newValue)})`)
+      // this.style.setProperty('--slide-container-width', `calc(var(--slide-container-height) * ${parseInt(newValue)})`)
     }
 
     if (name === "autoplay") {
       if (newValue === "true") {
         this.startAutoPlay(true)
       } else {
-        this.startAutoPlay(true)
+        this.startAutoPlay(false)
       }
     }
   }
@@ -1114,6 +1137,7 @@ MilesFagbloggTeaserTemplate.innerHTML = `
     display: flex;
     max-width: 80vw;
     margin: auto;
+    flex-direction: column;
   }
 
   #fagblogg-teaser {
@@ -1138,7 +1162,7 @@ MilesFagbloggTeaserTemplate.innerHTML = `
     align-items: center;
     gap: 1em;
     padding-top: 2em;
-    top:160px;
+    top: 320px;
     right: 10%;
   }
   
@@ -1151,6 +1175,11 @@ MilesFagbloggTeaserTemplate.innerHTML = `
     .inner {
       flex-direction: row;
       padding-top: 0em;
+      top:160px;
+    }
+
+    #header {
+      flex-direction: row;
     }
   
     .podcast-teaser {
@@ -1261,15 +1290,22 @@ class MilesFagbloggTeaser extends HTMLElement {
     const slotElements = this.shadowRoot.querySelector("slot").assignedElements()[0];
     if (slotElements) {
       const images = slotElements.querySelectorAll('img');
+      const links = Array.from(slotElements.querySelectorAll('a'));
 
-      Array.from(images).forEach(image => {
-        image.setAttribute('style', 'max-width: var(--maxWidth); height: auto;')
+      Array.from(images).forEach((image, index) => {
+        image.setAttribute('style', 'max-width: var(--maxWidth); height: auto; cursor: pointer;')
+        image.setAttribute('data-post', links[index].href)
+        image.addEventListener('click', this.goToPost)
       });
     }
   }
 
   disconnectedCallback() {
     
+  }
+
+  goToPost = (e) => {
+    window.location.href = e.target.dataset.post;
   }
 }
 
@@ -1450,7 +1486,7 @@ MilesOverlapBlockTemplate.innerHTML = `
     }
 
     #overlap-block {
-      padding: 1rem;
+      padding: 0 2rem;
       position: relative;
     }
 
@@ -1472,7 +1508,8 @@ MilesOverlapBlockTemplate.innerHTML = `
       }
 
       #overlap-block {
-        padding: 4rem;
+        width: 80vw;
+        margin:auto;
         position: relative;
       }
 
@@ -1548,6 +1585,7 @@ MilesOverlapBlockTemplate.innerHTML = `
       }
 
       #list {
+        width: 100%;
         border-radius: 30px;
         display: flex;
         flex-direction: column;
@@ -1561,6 +1599,8 @@ MilesOverlapBlockTemplate.innerHTML = `
         left: -10vw;
         bottom: 10vw;
       }
+
+
     }
 
     #list {
@@ -1582,6 +1622,7 @@ MilesOverlapBlockTemplate.innerHTML = `
       #list ul {
         position: relative;
         top: calc(-1 * var(--topOffset));
+        padding: 0;
       }
 
       #list li {

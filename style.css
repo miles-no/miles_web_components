@@ -51,7 +51,7 @@ html, body, button, input, select, optgroup, textarea {
 }
 
 .components {
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 60vw;
     margin:auto;
 }

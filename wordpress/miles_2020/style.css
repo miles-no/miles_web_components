@@ -2026,20 +2026,38 @@ Other menus
 /* line 240, sass/navigation/_mega-menu.scss */
 .mega-menu-container,
 .mega-menu-container__footer {
-  padding-top: 8em;
+  padding-top: 6em;
   padding-bottom: 4em;
 }
+
+@media screen and (min-width: 768px) {
+  .mega-menu-container,
+  .mega-menu-container__footer {
+    padding-top: 8em;
+  }
+}
+
 /* line 245, sass/navigation/_mega-menu.scss */
 .mega-menu-container ul,
 .mega-menu-container__footer ul {
+  display: flex;
   list-style: none;
   margin: 0;
   padding-left: 0;
+  flex-direction: column;
 }
 
 .mega-menu-container ul li {
   margin-left:1em
   
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    /*     transform: scale(0.5); */
 }
 
 @keyframes widget-anim {
@@ -2652,17 +2670,22 @@ img.aligncenter {
 }
 /* line 10, sass/blocks/_custom-blocks.scss */
 .custom-block-large-banner .large-banner-image {
-  opacity: ;
   background: rgba(63, 18, 33, 0.8);
-  min-height: 35vh;
+  min-height: 80vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   margin: 0;
 }
 
+@media (min-width: 768px) {
+  .custom-block-large-banner .large-banner-image {
+    min-height: 35vh;
+  }
+}
+
 .front-slogan {
-  height: 35vh;
+  height: 80vh;
   display: flex;
   left: var(--halve_margin_offset);
   margin: auto;
@@ -2675,11 +2698,13 @@ img.aligncenter {
   justify-content: center;
 }
 
+
+
 .front-slogan h1 {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 3rem;
+  font-weight: 500;
   width: 100%;
-  line-height: unset;
+  line-height: normal;
   margin: unset;
 }
 
@@ -2695,6 +2720,8 @@ img.aligncenter {
   font-weight: 700;
   margin: 0;
 }
+
+
 
 @media (min-width: 768px) {
   .front-slogan {
@@ -2728,6 +2755,14 @@ img.aligncenter {
     font-weight: 700;
     margin: 0;
   }
+}
+
+@media (min-device-width: 375px) 
+  and (max-device-width: 900px) 
+  and (orientation: landscape) { 
+    .front-slogan {
+      transform: scale(0.5);
+    }
 }
 
 
