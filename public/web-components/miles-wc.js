@@ -1482,6 +1482,7 @@ MilesOverlapBlockTemplate.innerHTML = `
       --bottomOffset: 5rem;
       --blockRadius: 30px;
 
+      color: inherit;
       display: block;
     }
 
@@ -1493,7 +1494,6 @@ MilesOverlapBlockTemplate.innerHTML = `
     #feature-block {
       border-radius: 30px;
       background-color: #F8EBE8;
-      color: var(--miles_secondary_three);
       padding: 3rem;
       width: var(--width);
       position: relative;
@@ -1545,7 +1545,6 @@ MilesOverlapBlockTemplate.innerHTML = `
       #feature-block {
         border-radius: 30px;
         background-color: #F8EBE8;
-        color: var(--miles_secondary_three);
         padding: 3rem;
         width: var(--width);
         position: relative;

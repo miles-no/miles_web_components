@@ -11,6 +11,12 @@
   --miles_secondary_four: #450d21; /* Burgunder */
   --miles_secondary_five: #ff303b; /* korall */
 
+  --miles_link_color: #183F46;
+  --miles_link_color_hover: #94E5DB;
+
+  --miles_link_color_ondark: #94E5DB;
+  --miles_link_color_ondark_hover: #183F46;
+
   --miles_default_bg: #F5F5F5;
 
   --miles_effect_shadow_low: 0 0 4px 0 #00000033;
@@ -518,7 +524,7 @@ select,
 optgroup,
 textarea {
   font-family: 'Manrope', sans-serif;
-  color: var(--miles_secondary_three);
+  color: var(--miles_secondary_four);
   background-color: var(--miles_default_bg);
   font-size: 16px;
   line-height: var(--miles-line-height);
@@ -946,6 +952,13 @@ table {
   justify-content: space-between;
   padding: 0 14px;
 }
+
+.site-header .site-header-container a:hover,
+ .site-header .site-header-container a:active,
+  .site-header .site-header-container a:focus {
+  background-color: transparent !important;
+}
+
 @media (min-width: 768px) {
   /* line 11, sass/layout/_header.scss */
   .site-header .site-header-container {
@@ -1476,11 +1489,11 @@ a {
 }
 /* line 4, sass/navigation/_nav-links.scss */
 a:visited {
-  color: var(--miles_primary_dark);
+  color: var(--miles_link_color); 
 }
 /* line 8, sass/navigation/_nav-links.scss */
 a:hover, a:focus, a:active {
-  color: var(--miles_primary_dark);
+  background-color: var(--miles_link_color_hover);
 }
 /* line 14, sass/navigation/_nav-links.scss */
 a:focus {
@@ -2981,7 +2994,7 @@ img.aligncenter {
 .feature-content .link_wrapper a.link {
   display: inline-block;
   margin-right: 28px;
-  color: var(--miles_primary_dark);
+  color:  #183F46;
   text-decoration: none;
 }
 @media (min-width: 1350px) {
