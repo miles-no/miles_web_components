@@ -890,7 +890,7 @@ section .slides figure {
   background-position: center;
   background-color: transparent;
   transform: scale(1.5);
-  
+pointer-events: none;
 }
 
 
@@ -920,7 +920,7 @@ section .slides figure img {
 	width: 100%;
 	object-fit: cover;
   border-radius: 30px;
-
+  app-region: no-drag;
 }
 
 nav {
@@ -943,6 +943,7 @@ nav {
   height:0.5em;
   width: 0.5em;
 	background-color: var(--miles_secondary_four);
+  cursor: pointer;
 }
 
 #slide-wrapper {
@@ -997,6 +998,7 @@ class MilesImageSlider extends HTMLElement {
     shadow.appendChild(ImageSliderTemplate.content.cloneNode(true));
     this.slides = shadow.querySelector(".slides");
     this.controls = shadow.querySelector(".controls");
+    this.wrapper = shadow.querySelector("#slide-wrapper");
     this.numberOfSlides = 0;
     this.autoPlay = 0;
     this.index = 0;
@@ -1022,6 +1024,7 @@ class MilesImageSlider extends HTMLElement {
             const figure = document.createElement("figure");
             const overlay = document.createElement("div");
             overlay.setAttribute("class", "overlay")
+
             element.classList.forEach((className) => {
               if (this.logos.includes(className)) {
                 overlay.classList.add(className)
@@ -1030,8 +1033,19 @@ class MilesImageSlider extends HTMLElement {
             figure.setAttribute("data-slide-image", index);
             figure.appendChild(overlay)
             if (element.querySelector("img")) {
-
-              figure.appendChild(element.querySelector("img"))
+              const image = element.querySelector("img")
+              image.setAttribute("draggable", false)
+              figure.appendChild(image)
+              figure.setAttribute("draggable", false)
+              figure.addEventListener("mousedown", (e) => {
+                console.log(e);
+                const rects = this.wrapper.getClientRects()
+                if ((rects[0].width / 2) < e.screenX) {
+                  console.log('LEFT');
+                } else {
+                  console.log('RIGHT');
+                }
+              })
               this.slides.appendChild(figure)
       
               const navDot = document.createElement("span");
@@ -1060,6 +1074,8 @@ class MilesImageSlider extends HTMLElement {
     if (this.numberOfSlides -1 === parseInt(e.target.dataset.slide)) {
       index = 0;
     }
+
+    clearInterval(this.autoPlay);
     
     this.slides.style.setProperty("--slides-offset", index)
     this.setActiveDot(index)
