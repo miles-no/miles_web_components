@@ -533,14 +533,17 @@ templateHeart.innerHTML = `
             margin: 0;
             color: var(--miles_primary_light);
           }
-        </style>   
+        </style>
+       
         <div class="profile-card">
+        <a href="">  
           <figure>
           <img class="profile-card__image"
           src="${this.getAttribute('image')}"
           alt="${this.getAttribute('name')}"
       /> 
         </figure>
+        </a>
           <div class="profile-card__info">
             <h3>${this.getAttribute('name')}</h3>
             <div class="description jobtitle">
@@ -569,6 +572,10 @@ templateHeart.innerHTML = `
         } else {
           this.shadowRoot.querySelector('img').setAttribute('src', newValue);
         }
+      }
+
+      if (name === 'name') {
+        this.shadowRoot.querySelector('a').setAttribute('href', newValue.split(' ').join('-').toLowerCase());
       }
     }
   

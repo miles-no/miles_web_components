@@ -172,24 +172,6 @@ function miles_wrap_gallery( $block_content, $block ) {
   }
 }
 
-add_filter( 'render_block', 'miles_feature', 10, 3);
- 
-function miles_feature( $block_content, $block ) {
-     
-  if( "core/gallery" !== $block['blockName'] ) {
-    return $block_content;
-  }
-
-  if (str_contains($block['attrs']['className'], 'miles-image-slider')) {
-	$output = '<miles-image-slider inview="3" autoplay="true">';
-	$output .= $block_content;
-	$output .= '</miles-image-slider>';
-	return $output;
-  } else {
-	return $block_content;
-  }
-}
-
 
 add_filter( 'render_block', 'miles_fagblogg_teaser', 10, 3);
  
