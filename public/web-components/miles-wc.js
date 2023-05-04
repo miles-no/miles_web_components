@@ -868,6 +868,7 @@ section .slides {
 }
 
 section .slides figure {
+  position: relative;
 	box-sizing: border-box;
 	padding:1rem;
 	height: var(--slide-container-height);
@@ -875,10 +876,45 @@ section .slides figure {
 	margin: 0;
 }
 
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent;
+  transform: scale(1.5);
+  
+}
+
+
+
+.overlay.equinor {
+  background-image: url("https://www.miles.no/newsite/wp-content/uploads/2021/06/equinor-logo-1.png");
+  /* background-position: 50% 40%; */
+}
+
+.overlay.fjordkraft {
+  background-image: url("https://www.miles.no/newsite/wp-content/uploads/2021/06/fjordkraft-logo.png");
+  background-position: center;
+}
+
+.overlay.tv2 {
+  background-image: url("https://www.miles.no/newsite/wp-content/uploads/2021/06/tv2-logo-1.png");
+}
+
+.overlay.cutters {
+  background-image: url("https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png");
+}
+
+
+
 section .slides figure img {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+
 }
 
 nav {
@@ -941,6 +977,7 @@ class MilesImageSlider extends HTMLElement {
     this.numberOfSlides = 0;
     this.autoPlay = 0;
     this.index = 0;
+    this.logos = ['equinor', 'fjordkraft', 'tv2', 'cutters']
   }
 
 
@@ -958,9 +995,19 @@ class MilesImageSlider extends HTMLElement {
           const slottedElementsArray = Array.from(slottedElements);
           this.numberOfSlides = slottedElements.length;
           slottedElementsArray.forEach((element, index) => {
+
             const figure = document.createElement("figure");
+            const overlay = document.createElement("div");
+            overlay.setAttribute("class", "overlay")
+            element.classList.forEach((className) => {
+              if (this.logos.includes(className)) {
+                overlay.classList.add(className)
+              }
+            })
             figure.setAttribute("data-slide-image", index);
+            figure.appendChild(overlay)
             if (element.querySelector("img")) {
+
               figure.appendChild(element.querySelector("img"))
               this.slides.appendChild(figure)
       
