@@ -1905,6 +1905,15 @@ Other menus
   padding-left: 0;
 }
 
+.menu-topmenu a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-topmenu a:visited, .menu-topmenu a:focus, .menu-topmenu a:active {
+  color: white;
+}
+
 /* line 149, sass/navigation/_mega-menu.scss */
 .menu-topmenu .mega-menu-grid {
   display: grid;
