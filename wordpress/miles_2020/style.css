@@ -2178,10 +2178,6 @@ and (orientation: landscape) {
   /* IE 10+, Fx 29+ */
 }
 
-.widget_nav_menu:nth-child(2){
-  display:none;
-}
-
 /* line 311, sass/navigation/_mega-menu.scss */
 .widget_nav_menu:nth-child(3) {
   -webkit-animation: widget-anim 0.36s forwards;
