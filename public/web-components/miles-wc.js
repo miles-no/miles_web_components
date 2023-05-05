@@ -126,6 +126,8 @@ if (!customElements.get(MilesCloudName)) {
   customElements.define(MilesCloudName, MilesCloud)
 }
 
+
+
 /**
  * Miles heart
  */
@@ -832,6 +834,70 @@ if (!customElements.get(MilesPodcastTeaserName)) {
 }
 
 /**
+ * Miles Arrow Nav
+ */
+
+const templateArrowNav = document.createElement("template")
+templateArrowNav.innerHTML = `
+  <style>
+    :host {
+      display: inline-block;
+      color: red;
+
+      --arrow-bg-color: #ffffff;
+      --arrow-color: #b72a26;
+    }
+
+    #arrow-nav {
+      display: flex;
+      padding: 0.8rem;
+      border-radius: 50%;
+      background-color: #94E5DB;
+    }
+
+    svg {
+      display: inline-block;
+    }
+  </style>
+  <div id="arrow-nav">
+    <svg width="24" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.125 22.9234C12.5313 23.5171 11.5687 23.5171 10.975 22.9234L0 11.9484L10.975 0.973437C11.5687 0.379731 12.5313 0.379732 13.125 0.973438C13.7187 1.56714 13.7187 2.52973 13.125 3.12344L4.3 11.9484L13.125 20.7734C13.7187 21.3671 13.7187 22.3297 13.125 22.9234Z" fill="#3F1221"/>
+    </svg>
+  </div>
+  `;
+
+class MilesArrowNav extends HTMLElement {
+  constructor() {
+    super()
+    const shadow = this.attachShadow({ mode: "open" })
+    shadow.appendChild(templateArrowNav.content.cloneNode(true))
+    this.nav = shadow.querySelector("#arrow-nav")  
+  }
+
+  static get observedAttributes() { return ['width', 'height', 'color']; }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'width') {
+      this.nav.setAttribute('width', newValue)
+    }
+
+    if (name === 'height') {
+      this.nav.setAttribute('height', newValue)
+    }
+
+    if (name === 'color') {
+      this.nav.setAttribute('color', newValue)
+    }
+  }
+}
+
+const MilesArrowNavName = "miles-arrow-nav"
+
+if (!customElements.get(MilesArrowNavName)) {
+  customElements.define(MilesArrowNavName, MilesArrowNav)
+}
+
+/**
  * Miles Image Slider
  */
 
@@ -863,6 +929,51 @@ section {
   position: relative;
 }
 
+
+#leftnav, #rightnav {
+  cursor: pointer;
+  height: calc(500px - 2rem);
+  top: 1rem;
+  width: 80px;
+  position: absolute;
+  z-index: 10;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-overlay-left, #nav-overlay-right {
+  transition: opacity 0.5s ease-in-out;
+  width: 80px;
+  top: 1rem;
+  z-index: 10;
+  position: absolute;
+  height: calc(500px - 2rem);
+  top: 0rem;
+  opacity: 0;
+  background-color: #ffffff;
+ /* border-radius: 0 30px 30px 0; */
+}
+
+#nav-overlay-left:hover, #nav-overlay-right:hover {
+  opacity: 0.6;
+}
+
+miles-arrow-nav {
+  z-index: 15;
+  opacity: 0.9;
+}
+
+#nav-overlay-right {
+  right: 0;
+}
+
+#rightnav {
+  transform: rotate(180deg);
+  right: 0;
+}
+
 section .slides {
 	transform: translateX(calc(var(--slides-offset) * var(--slide-container-height)));
 	position: absolute;
@@ -890,9 +1001,8 @@ section .slides figure {
   background-position: center;
   background-color: transparent;
   transform: scale(1.5);
-pointer-events: none;
+  pointer-events: none;
 }
-
 
 
 .overlay.equinor {
@@ -913,8 +1023,6 @@ pointer-events: none;
   background-image: url("https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png");
 }
 
-
-
 section .slides figure img {
 	height: 100%;
 	width: 100%;
@@ -934,7 +1042,6 @@ nav {
   gap: 1em;
   bottom: 0;
 	height: 3rem;
-  /* background-color: var(--miles_default_bg); */
 }
 
 .nav-dot {
@@ -982,7 +1089,15 @@ ImageSliderTemplate.innerHTML = `
   <div id="slide-wrapper">
     <h2>Våre prosjekter</h2>
     <section>
+      <div id="leftnav">
+        <div id="nav-overlay-left"></div>
+        <miles-arrow-nav color="#3F1221"></miles-arrow-nav>
+      </div>
       <div class="slides"></div>
+      <div id="rightnav">
+        <div id="nav-overlay-right"></div>
+        <miles-arrow-nav color="#3F1221"></miles-arrow-nav>
+      </div>
       <slot></slot>
       <nav class="controls"> </nav>
     </section>
@@ -1003,12 +1118,35 @@ class MilesImageSlider extends HTMLElement {
     this.autoPlay = 0;
     this.index = 0;
     this.logos = ['equinor', 'fjordkraft', 'tv2', 'cutters']
+    this.rightNav = shadow.querySelector("#rightnav");
+    this.leftNav = shadow.querySelector("#leftnav");
   }
 
 
 
   connectedCallback() {
+    let options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 1.0,
+    };
+    
+    this.observer = new IntersectionObserver((entries, observer)=>{
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.startAutoPlay(true);
+        } else {
+          this.startAutoPlay(false);
+        }
+        
+      });
+    }, options);
+
+    this.observer.observe(this.wrapper);
+
     this.controls.addEventListener("click", this.goToSlide)
+    this.rightNav.addEventListener("click", this.goLeft)
+    this.leftNav.addEventListener("click", this.goRight)
 
     const slot = this.shadowRoot.querySelector("slot")
     if (slot) {
@@ -1032,20 +1170,12 @@ class MilesImageSlider extends HTMLElement {
             })
             figure.setAttribute("data-slide-image", index);
             figure.appendChild(overlay)
+
+
             if (element.querySelector("img")) {
               const image = element.querySelector("img")
               image.setAttribute("draggable", false)
               figure.appendChild(image)
-              figure.setAttribute("draggable", false)
-              figure.addEventListener("mousedown", (e) => {
-                console.log(e);
-                const rects = this.wrapper.getClientRects()
-                if ((rects[0].width / 2) < e.screenX) {
-                  console.log('LEFT');
-                } else {
-                  console.log('RIGHT');
-                }
-              })
               this.slides.appendChild(figure)
       
               const navDot = document.createElement("span");
@@ -1066,7 +1196,32 @@ class MilesImageSlider extends HTMLElement {
 
   disconnectedCallback() {
     this.controls.removeEventListener("click", this.goToSlide)
+    this.observer.unobserve(this.wrapper);
+    this.rightNav.removeEventListener("click", this.goLeft)
+    this.leftNav.removeEventListener("click", this.goRight)
     
+  }
+
+  goRight = () => {
+    this.startAutoPlay(false);
+    if (Math.abs(this.index) === 0) {
+      return;
+    } else {
+      this.index++;
+    }
+    this.setActiveDot(this.index)
+    this.slides.style.setProperty("--slides-offset", this.index)
+  }
+
+  goLeft = () => {
+    this.startAutoPlay(false);
+    if (Math.abs(this.index) === this.numberOfSlides - 1) {
+      return;
+    } else {
+      this.index--;
+    }
+    this.setActiveDot(this.index)
+    this.slides.style.setProperty("--slides-offset", this.index)
   }
 
   goToSlide = (e) => {
@@ -1075,7 +1230,7 @@ class MilesImageSlider extends HTMLElement {
       index = 0;
     }
 
-    clearInterval(this.autoPlay);
+    this.startAutoPlay(false);
     
     this.slides.style.setProperty("--slides-offset", index)
     this.setActiveDot(index)
@@ -1092,6 +1247,8 @@ class MilesImageSlider extends HTMLElement {
         this.setActiveDot(this.index)
         this.slides.style.setProperty("--slides-offset", this.index)
       }, 5000)
+    } else {
+      clearInterval(this.autoPlay);
     }
   }
 
@@ -1120,9 +1277,9 @@ class MilesImageSlider extends HTMLElement {
 
     if (name === "autoplay") {
       if (newValue === "true") {
-        this.startAutoPlay(true)
+        // this.startAutoPlay(true)
       } else {
-        this.startAutoPlay(false)
+        // this.startAutoPlay(false)
       }
     }
   }
