@@ -1936,7 +1936,7 @@ Other menus
     grid-template-columns: repeat(1, auto);
     grid-gap: 84px;
     column-gap: 84px;
-    row-gap: 84px;
+    row-gap: 1.5em;
   }
 }
 
