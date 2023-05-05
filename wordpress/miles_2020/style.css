@@ -2114,7 +2114,6 @@ and (orientation: landscape) {
 }
 /* line 267, sass/navigation/_mega-menu.scss */
 .widget_nav_menu {
-  opacity: 0;
   margin-bottom: 1em;
 }
 @media (min-width: 768px) {
