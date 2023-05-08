@@ -1,0 +1,40 @@
+{
+  "env": {
+    "es6": true,
+    "node": false,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:mdx/recommended",
+    "plugin:wc/recommended",
+    "plugin:wc/best-practice",
+    "plugin:xss/recommended"
+  ],
+    "parser": "@babel/eslint-parser",
+  "rules": {
+    // override default options
+    "no-unused-vars": 1,
+    "wc/no-invalid-element-name": "error",
+    "wc/no-typos": "warn"
+  },
+  "overrides": [],
+  "plugins": ["xss", "wc"],
+    "settings": {
+    "mdx/code-blocks": true,
+    // optional, if you want to disable language mapper, set it to `false`
+    // if you want to override the default language mapper inside, you can provide your own
+    "mdx/language-mapper": {},
+    "wc": {
+      "elementBaseClasses": ["HTMLElement"]
+    }
+  },
+    "parserOptions": {
+    "requireConfigFile": false,
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "rules": {
+      "no-unused-vars": "off"
+    }
+  }
+}

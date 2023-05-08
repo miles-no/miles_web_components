@@ -1,0 +1,18 @@
+:host {
+  display: inline-block;
+  color: red;
+
+  --arrow-bg-color: #ffffff;
+  --arrow-color: #b72a26;
+}
+
+#arrow-nav {
+  display: flex;
+  padding: 0.8rem;
+  border-radius: 50%;
+  background-color: #94e5db;
+}
+
+svg {
+  display: inline-block;
+}

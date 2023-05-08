@@ -1,0 +1,159 @@
+:host {
+  --topOffset: 1rem;
+  --bottomOffset: 5rem;
+  --blockRadius: 30px;
+
+  color: inherit;
+  display: block;
+}
+
+#overlap-block {
+  padding: 0 2rem;
+  position: relative;
+}
+
+#feature-block {
+  border-radius: 30px;
+  background-color: #f8ebe8;
+  padding: 3rem;
+  width: var(--width);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  :host {
+    --topOffset: 16rem;
+  }
+
+  #overlap-block {
+    width: 80vw;
+    margin: auto;
+    position: relative;
+  }
+
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: var(--topOffset) auto var(--bottomOffset);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .div1 {
+    grid-area: 1 / 1 / 2 / 6;
+  }
+  .div2 {
+    grid-area: 1 / 5 / 2 / 13;
+    background-color: var(--miles_secondary_four);
+  }
+
+  .inner {
+    position: relative;
+    z-index: 1;
+    grid-area: 2 / 1 / 2 / 13;
+  }
+
+  .inner #content_grid {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #feature-block {
+    border-radius: 30px;
+    background-color: #f8ebe8;
+    padding: 3rem;
+    width: var(--width);
+    position: relative;
+  }
+
+  ::slotted(div) {
+    font-size: 1.5rem;
+  }
+
+  #feature-block::after {
+    z-index: -1;
+    width: 100px;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--miles_secondary_four);
+  }
+
+  .div1,
+  .div2 {
+    border-top-left-radius: var(--blockRadius);
+    border-top-right-radius: var(--blockRadius);
+    height: var(--topOffset);
+  }
+
+  .div4 {
+    border-bottom-left-radius: var(--blockRadius);
+    border-bottom-right-radius: var(--blockRadius);
+  }
+
+  .div3 {
+    grid-area: 1 / 1 / 2 / 6;
+  }
+  .div4 {
+    grid-area: 3 / 5 / 3 / 13;
+    background-color: var(--miles_secondary_four);
+  }
+
+  #list {
+    width: 100%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    color: var(--miles_primary_light);
+    background-color: var(--miles_secondary_four);
+    padding: 3rem;
+    margin: 0;
+    position: relative;
+    z-index: 5;
+    min-width: fit-content;
+    left: -10vw;
+    bottom: 10vw;
+  }
+}
+
+#list {
+  border-radius: unset;
+  left: unset;
+  bottom: unset;
+
+  display: flex;
+  flex-direction: column;
+  color: var(--miles_primary_light);
+  background-color: var(--miles_secondary_four);
+  padding: 3rem;
+  margin: 0;
+  position: relative;
+  z-index: 5;
+  min-width: fit-content;
+}
+
+#list ul {
+  position: relative;
+  top: calc(-1 * var(--topOffset));
+  padding: 0;
+}
+
+#list li {
+  line-height: 38px;
+  list-style: none;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+miles-bulb {
+  position: absolute;
+  right: 6rem;
+  bottom: 5rem;
+  z-index: 20;
+}
+
+miles-curve {
+  margin-right: 0.5em;
+}
