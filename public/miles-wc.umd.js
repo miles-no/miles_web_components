@@ -1,22 +1,5 @@
-(function (s, o) {
-  typeof exports == 'object' && typeof module < 'u'
-    ? o(exports)
-    : typeof define == 'function' && define.amd
-    ? define(['exports'], o)
-    : ((s = typeof globalThis < 'u' ? globalThis : s || self),
-      o((s['Miles web component library'] = {})));
-})(this, function (s) {
-  'use strict';
-  var je = Object.defineProperty;
-  var Ie = (s, o, c) =>
-    o in s
-      ? je(s, o, { enumerable: !0, configurable: !0, writable: !0, value: c })
-      : (s[o] = c);
-  var d = (s, o, c) => (Ie(s, typeof o != 'symbol' ? o + '' : o, c), c);
-  const o = `@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";:root{--miles_primary_dark: #b72318;--miles_primary_light: #fbf0e5;--miles_secondary_one: #004047;--miles_secondary_two: #78e8db;--miles_secondary_three: #000000;--miles_secondary_four: #450d21;--miles_secondary_five: #ff303b;--miles_link_color: #183f46;--miles_link_color_hover: #94e5db;--miles_link_color_ondark: #94e5db;--miles_link_color_ondark_hover: #183f46;--miles_default_bg: #f5f5f5;--miles_effect_shadow_low: 0 0 4px 0 #00000033;--miles_effect_shadow_high: 0 0 16px 0 #00000033;--content_width: 80vw;--content_width_max: 1440px;--default_padding: 1rem .625rem;--default_padding_large: 2rem 1.25rem;--vertical_spacing: 4rem;--vertical_spacing_large: 8rem;--header-height: 72px;--miles-h1: 2.5rem;--miles-h2: 3rem;--miles-h3: 1.25rem;--miles-line-height: 150%;--miles-h1-lineheight: calc(var(--miles-h1) * 1.5);--miles-h2-lineheight: calc(var(--miles-h2) * 1.5);--miles-h3-lineheight: calc(var(--miles-h3) * 1.5);--halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);--halve_margin_offset_large: calc(100vw - var(--content_width))}
-`,
-    c = document.createElement('template');
-  c.innerHTML = `
+(function(s,o){typeof exports=="object"&&typeof module<"u"?o(exports):typeof define=="function"&&define.amd?define(["exports"],o):(s=typeof globalThis<"u"?globalThis:s||self,o(s["Miles web component library"]={}))})(this,function(s){"use strict";var je=Object.defineProperty;var Ie=(s,o,c)=>o in s?je(s,o,{enumerable:!0,configurable:!0,writable:!0,value:c}):s[o]=c;var d=(s,o,c)=>(Ie(s,typeof o!="symbol"?o+"":o,c),c);const o=`@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";:root{--miles_primary_dark: #b72318;--miles_primary_light: #fbf0e5;--miles_secondary_one: #004047;--miles_secondary_two: #78e8db;--miles_secondary_three: #000000;--miles_secondary_four: #450d21;--miles_secondary_five: #ff303b;--miles_link_color: #183f46;--miles_link_color_hover: #94e5db;--miles_link_color_ondark: #94e5db;--miles_link_color_ondark_hover: #183f46;--miles_default_bg: #f5f5f5;--miles_effect_shadow_low: 0 0 4px 0 #00000033;--miles_effect_shadow_high: 0 0 16px 0 #00000033;--content_width: 80vw;--content_width_max: 1440px;--default_padding: 1rem .625rem;--default_padding_large: 2rem 1.25rem;--vertical_spacing: 4rem;--vertical_spacing_large: 8rem;--header-height: 72px;--miles-h1: 2.5rem;--miles-h2: 3rem;--miles-h3: 1.25rem;--miles-line-height: 150%;--miles-h1-lineheight: calc(var(--miles-h1) * 1.5);--miles-h2-lineheight: calc(var(--miles-h2) * 1.5);--miles-h3-lineheight: calc(var(--miles-h3) * 1.5);--halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);--halve_margin_offset_large: calc(100vw - var(--content_width))}
+`,c=document.createElement("template");c.innerHTML=`
   <style>
     ${o}
 
@@ -48,27 +31,7 @@
       </g>
     </svg>
   </div>  
-  `;
-  class v extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.appendChild(c.content.cloneNode(!0)),
-        (this.svg = e.querySelector('svg'));
-    }
-    static get observedAttributes() {
-      return ['width', 'height', 'color'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'width' && this.svg.setAttribute('width', t),
-        e === 'height' && this.svg.setAttribute('height', t),
-        e === 'color' && this.svg.setAttribute('fill', t);
-    }
-  }
-  const b = 'miles-cloud';
-  customElements.get(b) || customElements.define(b, v);
-  const w = document.createElement('template');
-  w.innerHTML = ` 
+  `;class v extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.appendChild(c.content.cloneNode(!0)),this.svg=e.querySelector("svg")}static get observedAttributes(){return["width","height","color"]}attributeChangedCallback(e,i,t){e==="width"&&this.svg.setAttribute("width",t),e==="height"&&this.svg.setAttribute("height",t),e==="color"&&this.svg.setAttribute("fill",t)}}const b="miles-cloud";customElements.get(b)||customElements.define(b,v);const w=document.createElement("template");w.innerHTML=` 
   <style>
     ${o}
 
@@ -87,27 +50,7 @@
       </g>
     </svg>
   </div>
-    `;
-  class Ee extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.appendChild(w.content.cloneNode(!0)),
-        (this.svg = e.querySelector('svg'));
-    }
-    static get observedAttributes() {
-      return ['width', 'height', 'color'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'width' && this.svg.setAttribute('width', t),
-        e === 'height' && this.svg.setAttribute('height', t),
-        e === 'color' && this.svg.setAttribute('fill', t);
-    }
-  }
-  const y = 'miles-heart';
-  customElements.get(y) || customElements.define(y, Ee);
-  const x = document.createElement('template');
-  x.innerHTML = `
+    `;class Ee extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.appendChild(w.content.cloneNode(!0)),this.svg=e.querySelector("svg")}static get observedAttributes(){return["width","height","color"]}attributeChangedCallback(e,i,t){e==="width"&&this.svg.setAttribute("width",t),e==="height"&&this.svg.setAttribute("height",t),e==="color"&&this.svg.setAttribute("fill",t)}}const y="miles-heart";customElements.get(y)||customElements.define(y,Ee);const x=document.createElement("template");x.innerHTML=`
     <style>
       ${o}
 
@@ -127,27 +70,7 @@
             </g>
           </svg>
     </div>
-      `;
-  class C extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.appendChild(x.content.cloneNode(!0)),
-        (this.svg = e.querySelector('svg'));
-    }
-    static get observedAttributes() {
-      return ['width', 'height', 'color'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'width' && this.svg.setAttribute('width', t),
-        e === 'height' && this.svg.setAttribute('height', t),
-        e === 'color' && this.svg.setAttribute('fill', t);
-    }
-  }
-  const k = 'miles-curve';
-  customElements.get(k) || customElements.define(k, C);
-  const E = document.createElement('template');
-  E.innerHTML = `
+      `;class C extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.appendChild(x.content.cloneNode(!0)),this.svg=e.querySelector("svg")}static get observedAttributes(){return["width","height","color"]}attributeChangedCallback(e,i,t){e==="width"&&this.svg.setAttribute("width",t),e==="height"&&this.svg.setAttribute("height",t),e==="color"&&this.svg.setAttribute("fill",t)}}const k="miles-curve";customElements.get(k)||customElements.define(k,C);const E=document.createElement("template");E.innerHTML=`
     <style>
         ${o}
 
@@ -175,27 +98,7 @@
           </g>
         </svg>
     </div>  
-    `;
-  class M extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.appendChild(E.content.cloneNode(!0)),
-        (this.svg = e.querySelector('svg'));
-    }
-    static get observedAttributes() {
-      return ['width', 'height', 'color'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'width' && this.svg.setAttribute('width', t),
-        e === 'height' && this.svg.setAttribute('height', t),
-        e === 'color' && this.svg.setAttribute('fill', t);
-    }
-  }
-  const _ = 'miles-bulb';
-  customElements.get(_) || customElements.define(_, M);
-  const A = document.createElement('template');
-  A.innerHTML = `
+    `;class M extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.appendChild(E.content.cloneNode(!0)),this.svg=e.querySelector("svg")}static get observedAttributes(){return["width","height","color"]}attributeChangedCallback(e,i,t){e==="width"&&this.svg.setAttribute("width",t),e==="height"&&this.svg.setAttribute("height",t),e==="color"&&this.svg.setAttribute("fill",t)}}const _="miles-bulb";customElements.get(_)||customElements.define(_,M);const A=document.createElement("template");A.innerHTML=`
     <style>
       ${o}
 
@@ -223,30 +126,7 @@
           </g>
           </svg>
     </div>
-      `;
-  class L extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.appendChild(A.content.cloneNode(!0)),
-        (this.svg = e.querySelector('svg'));
-    }
-    static get observedAttributes() {
-      return ['width', 'height', 'color'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'width' && this.svg.setAttribute('width', t),
-        e === 'height' && this.svg.setAttribute('height', t),
-        e === 'color' && this.svg.setAttribute('fill', t);
-    }
-  }
-  const S = 'miles-cup';
-  customElements.get(S) || customElements.define(S, L);
-  class T extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.innerHTML = `
+      `;class L extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.appendChild(A.content.cloneNode(!0)),this.svg=e.querySelector("svg")}static get observedAttributes(){return["width","height","color"]}attributeChangedCallback(e,i,t){e==="width"&&this.svg.setAttribute("width",t),e==="height"&&this.svg.setAttribute("height",t),e==="color"&&this.svg.setAttribute("fill",t)}}const S="miles-cup";customElements.get(S)||customElements.define(S,L);class T extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.innerHTML=`
         <style>
           ${o}
 
@@ -261,16 +141,7 @@
         <path d="M47.061 37.8536C48.033 36.2606 48.6 34.3976 48.6 32.3996C48.6 26.4326 43.767 21.5996 37.8 21.5996C31.833 21.5996 27 26.4326 27 32.3996C27 38.3666 31.833 43.1996 37.8 43.1996C39.798 43.1996 41.661 42.6056 43.254 41.6606L50.193 48.5996L54 44.7926L47.061 37.8536ZM37.8 37.7996C34.83 37.7996 32.4 35.3696 32.4 32.3996C32.4 29.4296 34.83 26.9996 37.8 26.9996C40.77 26.9996 43.2 29.4296 43.2 32.3996C43.2 35.3696 40.77 37.7996 37.8 37.7996Z" fill="#3F1221"/>
         </svg>
         </div>
-      `;
-    }
-  }
-  const H = 'miles-zoom';
-  customElements.get(H) || customElements.define(H, T);
-  class q extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.innerHTML = `
+      `}}const H="miles-zoom";customElements.get(H)||customElements.define(H,T);class q extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.innerHTML=`
           <style>
             ${o}
 
@@ -291,15 +162,8 @@
           </defs>
           </svg>
           </div>
-        `;
-    }
-  }
-  const $ = 'miles-pod';
-  customElements.get($) || customElements.define($, q);
-  const Me = `:host{display:inline-block;width:inherit;box-sizing:border-box}
-`,
-    R = document.createElement('template');
-  R.innerHTML = `
+        `}}const $="miles-pod";customElements.get($)||customElements.define($,q);const Me=`:host{display:inline-block;width:inherit;box-sizing:border-box}
+`,R=document.createElement("template");R.innerHTML=`
 <style>
   	${Me}
 
@@ -323,27 +187,7 @@
     </g>
   </svg>
   </div>
-`;
-  class N extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.appendChild(R.content.cloneNode(!0)),
-        (this.svg = e.querySelector('svg'));
-    }
-    static get observedAttributes() {
-      return ['width', 'height', 'color'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'width' && this.svg.setAttribute('width', t),
-        e === 'height' && this.svg.setAttribute('height', t),
-        e === 'color' && this.svg.setAttribute('fill', t);
-    }
-  }
-  const B = 'miles-logo';
-  customElements.get(B) || customElements.define(B, N);
-  const z = document.createElement('template');
-  z.innerHTML = `
+`;class N extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.appendChild(R.content.cloneNode(!0)),this.svg=e.querySelector("svg")}static get observedAttributes(){return["width","height","color"]}attributeChangedCallback(e,i,t){e==="width"&&this.svg.setAttribute("width",t),e==="height"&&this.svg.setAttribute("height",t),e==="color"&&this.svg.setAttribute("fill",t)}}const B="miles-logo";customElements.get(B)||customElements.define(B,N);const z=document.createElement("template");z.innerHTML=`
         <style>
           ${o}
 
@@ -370,29 +214,8 @@
         <a id="buttonTarget"">
           <slot></slot>
         </a>
-      `;
-  class P extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.append(z.content.cloneNode(!0)),
-        (this.buttontarget = e.querySelector('#buttonTarget'));
-    }
-    static get observedAttributes() {
-      return ['href', 'color'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'href' && this.buttontarget.setAttribute('href', t),
-        e === 'color' && this.style.setProperty('--color', t);
-    }
-    connectedCallback() {}
-  }
-  const j = 'miles-button-anchor';
-  customElements.get(j) || customElements.define(j, P);
-  const _e = `:host{display:inline-block;--width: 215px}.profile-card{display:flex;flex-direction:column;width:var(--width);border-radius:5px;overflow:hidden}figure{border-radius:.5rem;height:var(--width);margin:0 0 .5rem;padding:0}img{background-color:#fff;filter:grayscale(1);width:100%;object-fit:cover;aspect-ratio:1 / 1}.profile-card__info{display:flex;background-color:var(--miles_secondary_four);padding:1.2rem;min-height:140px;flex-direction:column}.jobtitle{flex-grow:1}.jobtitle p{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}.description{display:flex;flex-direction:row;align-items:baseline;gap:.2rem}h3,p{margin:0;color:var(--miles_primary_light)}
-`,
-    I = document.createElement('template');
-  I.innerHTML = `
+      `;class P extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.append(z.content.cloneNode(!0)),this.buttontarget=e.querySelector("#buttonTarget")}static get observedAttributes(){return["href","color"]}attributeChangedCallback(e,i,t){e==="href"&&this.buttontarget.setAttribute("href",t),e==="color"&&this.style.setProperty("--color",t)}connectedCallback(){}}const j="miles-button-anchor";customElements.get(j)||customElements.define(j,P);const _e=`:host{display:inline-block;--width: 215px}.profile-card{display:flex;flex-direction:column;width:var(--width);border-radius:5px;overflow:hidden}figure{border-radius:.5rem;height:var(--width);margin:0 0 .5rem;padding:0}img{background-color:#fff;filter:grayscale(1);width:100%;object-fit:cover;aspect-ratio:1 / 1}.profile-card__info{display:flex;background-color:var(--miles_secondary_four);padding:1.2rem;min-height:140px;flex-direction:column}.jobtitle{flex-grow:1}.jobtitle p{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}.description{display:flex;flex-direction:row;align-items:baseline;gap:.2rem}h3,p{margin:0;color:var(--miles_primary_light)}
+`,I=document.createElement("template");I.innerHTML=`
         <style>
           	${_e}
 
@@ -418,49 +241,8 @@
           </div>
           </div>
         </div>  
-      `;
-  class Z extends HTMLElement {
-    constructor() {
-      super(),
-        this.attachShadow({ mode: 'open' }).append(I.content.cloneNode(!0)),
-        (this.officeLocation = this.shadowRoot.querySelector('#location')),
-        (this.jobTitle = this.shadowRoot.querySelector('#jobtitle')),
-        (this.consultantName = this.shadowRoot.querySelector('#name')),
-        (this.profileImage = this.shadowRoot.querySelector('#profileimage'));
-    }
-    static get observedAttributes() {
-      return ['image', 'name', 'jobtitle', 'location'];
-    }
-    attributeChangedCallback(e, i, t) {
-      if (e === 'image')
-        if (t === '' || t === null) {
-          const r =
-            'https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png';
-          this.profileImage.setAttribute('src', r),
-            this.profileImage.setAttribute('alt', 'Miles Profile Card Image');
-        } else
-          this.profileImage.setAttribute('src', t),
-            this.profileImage.setAttribute('alt', 'Miles Profile Card Image');
-      e === 'location' && (this.officeLocation.textContent = t),
-        e === 'jobtitle' && (this.jobTitle.textContent = t),
-        e === 'name' &&
-          (this.shadowRoot
-            .querySelector('a')
-            .setAttribute('href', t.split(' ').join('-').toLowerCase()),
-          (this.consultantName.textContent = t));
-    }
-    connectedCallback() {}
-    disconnectedCallback() {}
-  }
-  const O = 'miles-profile-card';
-  customElements.get(O) || customElements.define(O, Z);
-  const Ae = `:host{display:inline-block;color:var(--miles_primary_light)}.info{background-color:var(--miles_secondary_four);border-radius:0 99rem 99rem;overflow:hidden;padding:1rem 3rem;display:flex;justify-content:center;align-items:center;flex-direction:row;gap:1.5rem;color:inherit}.info__icon{font-size:1.2rem;font-weight:700}.info__description{font-weight:700;max-width:15rem;font-size:1rem}
-`;
-  class F extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.innerHTML = `
+      `;class Z extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}).append(I.content.cloneNode(!0)),this.officeLocation=this.shadowRoot.querySelector("#location"),this.jobTitle=this.shadowRoot.querySelector("#jobtitle"),this.consultantName=this.shadowRoot.querySelector("#name"),this.profileImage=this.shadowRoot.querySelector("#profileimage")}static get observedAttributes(){return["image","name","jobtitle","location"]}attributeChangedCallback(e,i,t){if(e==="image")if(t===""||t===null){const r="https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png";this.profileImage.setAttribute("src",r),this.profileImage.setAttribute("alt","Miles Profile Card Image")}else this.profileImage.setAttribute("src",t),this.profileImage.setAttribute("alt","Miles Profile Card Image");e==="location"&&(this.officeLocation.textContent=t),e==="jobtitle"&&(this.jobTitle.textContent=t),e==="name"&&(this.shadowRoot.querySelector("a").setAttribute("href",t.split(" ").join("-").toLowerCase()),this.consultantName.textContent=t)}connectedCallback(){}disconnectedCallback(){}}const O="miles-profile-card";customElements.get(O)||customElements.define(O,Z);const Ae=`:host{display:inline-block;color:var(--miles_primary_light)}.info{background-color:var(--miles_secondary_four);border-radius:0 99rem 99rem;overflow:hidden;padding:1rem 3rem;display:flex;justify-content:center;align-items:center;flex-direction:row;gap:1.5rem;color:inherit}.info__icon{font-size:1.2rem;font-weight:700}.info__description{font-weight:700;max-width:15rem;font-size:1rem}
+`;class F extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.innerHTML=`
         <style>
       	${Ae}
 
@@ -474,18 +256,8 @@
             <slot></slot>
           </span>
         </div>
-      `;
-    }
-  }
-  const D = 'miles-info';
-  customElements.get(D) || customElements.define(D, F);
-  const Le = `:host{display:block;color:inherit}.podcast-teaser{box-sizing:border-box;width:100vw;position:relative;height:300px}.bg{background-color:#ff303b1a;width:100%;height:66%;position:absolute;bottom:0}.inner{height:100%;display:flex;flex-direction:column;width:80%;margin:auto;align-items:center;gap:1em;padding-top:2em}miles-info{right:10%;left:10%;position:absolute;top:.75em}@media (min-width: 768px){.inner{flex-direction:row;padding-top:0}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{width:28%;left:unset;top:1em;right:var(--halve_margin_offset_large)}}@media (min-width: 1025px){miles-info{max-width:250px;left:unset;width:unset;top:1em;right:var(--halve_margin_offset_large)}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h3,p{margin:0}p{font-size:.8em;color:var(--miles_primary_dark)}svg{height:70px;width:70px}a{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a:after{content:"\\2192"}
-`;
-  class U extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.innerHTML = `
+      `}}const D="miles-info";customElements.get(D)||customElements.define(D,F);const Le=`:host{display:block;color:inherit}.podcast-teaser{box-sizing:border-box;width:100vw;position:relative;height:300px}.bg{background-color:#ff303b1a;width:100%;height:66%;position:absolute;bottom:0}.inner{height:100%;display:flex;flex-direction:column;width:80%;margin:auto;align-items:center;gap:1em;padding-top:2em}miles-info{right:10%;left:10%;position:absolute;top:.75em}@media (min-width: 768px){.inner{flex-direction:row;padding-top:0}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{width:28%;left:unset;top:1em;right:var(--halve_margin_offset_large)}}@media (min-width: 1025px){miles-info{max-width:250px;left:unset;width:unset;top:1em;right:var(--halve_margin_offset_large)}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h3,p{margin:0}p{font-size:.8em;color:var(--miles_primary_dark)}svg{height:70px;width:70px}a{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a:after{content:"\\2192"}
+`;class U extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.innerHTML=`
       <style>
       	${Le}
 
@@ -512,15 +284,8 @@
           Hør siste episode av MilesPodden!
           </miles-info>
         </div>
-        `;
-    }
-  }
-  const V = 'miles-podcast-teaser';
-  customElements.get(V) || customElements.define(V, U);
-  const Se = `:host{display:inline-block;color:red;--arrow-bg-color: #ffffff;--arrow-color: #b72a26}#arrow-nav{display:flex;padding:.8rem;border-radius:50%;background-color:#94e5db}svg{display:inline-block}
-`,
-    W = document.createElement('template');
-  W.innerHTML = `
+        `}}const V="miles-podcast-teaser";customElements.get(V)||customElements.define(V,U);const Se=`:host{display:inline-block;color:red;--arrow-bg-color: #ffffff;--arrow-color: #b72a26}#arrow-nav{display:flex;padding:.8rem;border-radius:50%;background-color:#94e5db}svg{display:inline-block}
+`,W=document.createElement("template");W.innerHTML=`
   <style>
 	${Se}
 
@@ -531,29 +296,8 @@
       <path d="M13.125 22.9234C12.5313 23.5171 11.5687 23.5171 10.975 22.9234L0 11.9484L10.975 0.973437C11.5687 0.379731 12.5313 0.379732 13.125 0.973438C13.7187 1.56714 13.7187 2.52973 13.125 3.12344L4.3 11.9484L13.125 20.7734C13.7187 21.3671 13.7187 22.3297 13.125 22.9234Z" fill="#3F1221"/>
     </svg>
   </div>
-  `;
-  class X extends HTMLElement {
-    constructor() {
-      super();
-      const e = this.attachShadow({ mode: 'open' });
-      e.appendChild(W.content.cloneNode(!0)),
-        (this.nav = e.querySelector('#arrow-nav'));
-    }
-    static get observedAttributes() {
-      return ['width', 'height', 'color'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'width' && this.nav.setAttribute('width', t),
-        e === 'height' && this.nav.setAttribute('height', t),
-        e === 'color' && this.nav.setAttribute('color', t);
-    }
-  }
-  const G = 'miles-arrow-nav';
-  customElements.get(G) || customElements.define(G, X);
-  const Te = `:host{--slide-container-height:calc(100vw - 2rem);--slide-container-width: 100vw;--slides-offset: 0;display:block;width:var(--slide-container-width);height:var(--slide-container-height);background-color:#f8ebe8;height:100%;padding-top:100px;padding-bottom:100px}@media (min-width: 768px){:host{--slide-container-height: 500px}}section{width:var(--slide-container-width);height:calc(var(--slide-container-height) + 3rem);position:relative}#leftnav,#rightnav{cursor:pointer;height:calc(500px - 2rem);top:1rem;width:80px;position:absolute;z-index:10;flex-direction:column;display:flex;align-items:center;justify-content:center}#nav-overlay-left,#nav-overlay-right{transition:opacity .5s ease-in-out;width:80px;top:1rem;z-index:10;position:absolute;height:calc(500px - 2rem);top:0rem;opacity:0;background-color:#fff}#nav-overlay-left:hover,#nav-overlay-right:hover{opacity:.6}miles-arrow-nav{z-index:15;opacity:.9}#nav-overlay-right{right:0}#rightnav{transform:rotate(180deg);right:0}section .slides{transform:translate(calc(var(--slides-offset) * var(--slide-container-height)));position:absolute;display:flex;flex-direction:row;transition:transform 1s cubic-bezier(.46,.03,.52,.96)}section .slides figure{position:relative;box-sizing:border-box;padding:1rem;height:var(--slide-container-height);aspect-ratio:1 / 1;margin:0}.overlay{position:absolute;height:100%;width:100%;background-repeat:no-repeat;background-size:contain;background-position:center;background-color:transparent;transform:scale(1.5);pointer-events:none}.overlay.equinor{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/equinor-logo-1.png)}.overlay.fjordkraft{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/fjordkraft-logo.png);background-position:center}.overlay.tv2{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/tv2-logo-1.png)}.overlay.cutters{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png)}section .slides figure img{height:100%;width:100%;object-fit:cover;border-radius:30px;app-region:no-drag}nav{max-width:100vw;position:absolute;width:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;gap:1em;bottom:0;height:3rem}.nav-dot{border-radius:50%;display:inline-block;height:.5em;width:.5em;background-color:var(--miles_secondary_four);cursor:pointer}#slide-wrapper{width:100vw}h2{font-size:2rem;margin:3rem auto;text-align:center}@media (min-width: 768px){h2{font-size:3rem}.nav-dot{height:1em;width:1em}}.active{background-color:var(--miles_secondary_five)}
-`,
-    J = document.createElement('template');
-  J.innerHTML = `
+  `;class X extends HTMLElement{constructor(){super();const e=this.attachShadow({mode:"open"});e.appendChild(W.content.cloneNode(!0)),this.nav=e.querySelector("#arrow-nav")}static get observedAttributes(){return["width","height","color"]}attributeChangedCallback(e,i,t){e==="width"&&this.nav.setAttribute("width",t),e==="height"&&this.nav.setAttribute("height",t),e==="color"&&this.nav.setAttribute("color",t)}}const G="miles-arrow-nav";customElements.get(G)||customElements.define(G,X);const Te=`:host{--slide-container-height:calc(100vw - 2rem);--slide-container-width: 100vw;--slides-offset: 0;display:block;width:var(--slide-container-width);height:var(--slide-container-height);background-color:#f8ebe8;height:100%;padding-top:100px;padding-bottom:100px}@media (min-width: 768px){:host{--slide-container-height: 500px}}section{width:var(--slide-container-width);height:calc(var(--slide-container-height) + 3rem);position:relative}#leftnav,#rightnav{cursor:pointer;height:calc(500px - 2rem);top:1rem;width:80px;position:absolute;z-index:10;flex-direction:column;display:flex;align-items:center;justify-content:center}#nav-overlay-left,#nav-overlay-right{transition:opacity .5s ease-in-out;width:80px;top:1rem;z-index:10;position:absolute;height:calc(500px - 2rem);top:0rem;opacity:0;background-color:#fff}#nav-overlay-left:hover,#nav-overlay-right:hover{opacity:.6}miles-arrow-nav{z-index:15;opacity:.9}#nav-overlay-right{right:0}#rightnav{transform:rotate(180deg);right:0}section .slides{transform:translate(calc(var(--slides-offset) * var(--slide-container-height)));position:absolute;display:flex;flex-direction:row;transition:transform 1s cubic-bezier(.46,.03,.52,.96)}section .slides figure{position:relative;box-sizing:border-box;padding:1rem;height:var(--slide-container-height);aspect-ratio:1 / 1;margin:0}.overlay{position:absolute;height:100%;width:100%;background-repeat:no-repeat;background-size:contain;background-position:center;background-color:transparent;transform:scale(1.5);pointer-events:none}.overlay.equinor{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/equinor-logo-1.png)}.overlay.fjordkraft{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/fjordkraft-logo.png);background-position:center}.overlay.tv2{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/tv2-logo-1.png)}.overlay.cutters{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png)}section .slides figure img{height:100%;width:100%;object-fit:cover;border-radius:30px;app-region:no-drag}nav{max-width:100vw;position:absolute;width:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;gap:1em;bottom:0;height:3rem}.nav-dot{border-radius:50%;display:inline-block;height:.5em;width:.5em;background-color:var(--miles_secondary_four);cursor:pointer}#slide-wrapper{width:100vw}h2{font-size:2rem;margin:3rem auto;text-align:center}@media (min-width: 768px){h2{font-size:3rem}.nav-dot{height:1em;width:1em}}.active{background-color:var(--miles_secondary_five)}
+`,J=document.createElement("template");J.innerHTML=`
   <style>
 	${Te}
 
@@ -575,130 +319,8 @@
       <nav class="controls"> </nav>
     </section>
   </div>
-    `;
-  class K extends HTMLElement {
-    constructor() {
-      super();
-      d(this, 'goRight', () => {
-        this.startAutoPlay(!1),
-          Math.abs(this.index) !== 0 &&
-            (this.index++,
-            this.setActiveDot(this.index),
-            this.slides.style.setProperty('--slides-offset', this.index));
-      });
-      d(this, 'goLeft', () => {
-        this.startAutoPlay(!1),
-          Math.abs(this.index) !== this.numberOfSlides - 1 &&
-            (this.index--,
-            this.setActiveDot(this.index),
-            this.slides.style.setProperty('--slides-offset', this.index));
-      });
-      d(this, 'goToSlide', i => {
-        let t = parseInt(i.target.dataset.slide) * -1;
-        this.numberOfSlides - 1 === parseInt(i.target.dataset.slide) && (t = 0),
-          this.startAutoPlay(!1),
-          this.slides.style.setProperty('--slides-offset', t),
-          this.setActiveDot(t);
-      });
-      d(this, 'startAutoPlay', i => {
-        i
-          ? (this.autoPlay = setInterval(() => {
-              Math.abs(this.index) === this.numberOfSlides - 2
-                ? (this.index = 0)
-                : this.index--,
-                this.setActiveDot(this.index),
-                this.slides.style.setProperty('--slides-offset', this.index);
-            }, 5e3))
-          : clearInterval(this.autoPlay);
-      });
-      d(this, 'setActiveDot', i => {
-        const t = this.controls.querySelectorAll('.nav-dot');
-        t.forEach(r => {
-          r.classList.remove('active');
-        }),
-          t.forEach(r => {
-            parseInt(r.getAttribute('data-slide')) === Math.abs(i) &&
-              r.classList.add('active');
-          });
-      });
-      const i = this.attachShadow({ mode: 'open' });
-      i.appendChild(J.content.cloneNode(!0)),
-        (this.slides = i.querySelector('.slides')),
-        (this.controls = i.querySelector('.controls')),
-        (this.wrapper = i.querySelector('#slide-wrapper')),
-        (this.numberOfSlides = 0),
-        (this.autoPlay = 0),
-        (this.index = 0),
-        (this.logos = ['equinor', 'fjordkraft', 'tv2', 'cutters']),
-        (this.rightNav = i.querySelector('#rightnav')),
-        (this.leftNav = i.querySelector('#leftnav'));
-    }
-    connectedCallback() {
-      let i = { root: null, rootMargin: '0px', threshold: 1 };
-      (this.observer = new IntersectionObserver(r => {
-        r.forEach(n => {
-          n.isIntersecting ? this.startAutoPlay(!0) : this.startAutoPlay(!1);
-        });
-      }, i)),
-        this.observer.observe(this.wrapper),
-        this.controls.addEventListener('click', this.goToSlide),
-        this.rightNav.addEventListener('click', this.goLeft),
-        this.leftNav.addEventListener('click', this.goRight);
-      const t = this.shadowRoot.querySelector('slot');
-      if (t) {
-        let r =
-          t.assignedElements().length === 1
-            ? t.assignedElements()[0].children
-            : t.assignedElements();
-        if (typeof r == 'object')
-          try {
-            const n = Array.from(r);
-            (this.numberOfSlides = r.length),
-              n.forEach((h, p) => {
-                const a = document.createElement('figure'),
-                  m = document.createElement('div');
-                if (
-                  (m.setAttribute('class', 'overlay'),
-                  h.classList.forEach(g => {
-                    this.logos.includes(g) && m.classList.add(g);
-                  }),
-                  a.setAttribute('data-slide-image', p),
-                  a.appendChild(m),
-                  h.querySelector('img'))
-                ) {
-                  const g = h.querySelector('img');
-                  g.setAttribute('draggable', !1),
-                    a.appendChild(g),
-                    this.slides.appendChild(a);
-                  const f = document.createElement('span');
-                  f.setAttribute('class', 'nav-dot'),
-                    f.setAttribute('data-slide', p),
-                    this.controls.appendChild(f);
-                }
-              });
-          } catch {
-            console.log(r);
-          }
-      }
-      this.setActiveDot(this.index);
-    }
-    disconnectedCallback() {
-      this.controls.removeEventListener('click', this.goToSlide),
-        this.observer.unobserve(this.wrapper),
-        this.rightNav.removeEventListener('click', this.goLeft),
-        this.leftNav.removeEventListener('click', this.goRight);
-    }
-    static get observedAttributes() {
-      return ['inview', 'autoplay'];
-    }
-    attributeChangedCallback(i, t, r) {}
-  }
-  const Q = 'miles-image-slider';
-  customElements.get(Q) || customElements.define(Q, K);
-  const He = `:host{display:block;color:inherit;--maxWidth: 350px}#header{display:flex;max-width:80vw;margin:auto;flex-direction:column}#fagblogg-teaser{box-sizing:border-box;width:100vw;position:relative;min-height:800px}.bg{width:100%;height:50%;position:absolute;top:5rem}.inner{width:80vw;justify-content:center;position:absolute;display:flex;flex-direction:column;margin:auto;align-items:center;gap:1em;padding-top:2em;top:320px;right:10%}miles-info{position:relative;max-width:300px}@media (min-width: 768px){.inner{flex-direction:row;padding-top:0;top:160px}#header{flex-direction:row}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{width:28%;left:unset;top:1em;right:var(--halve_margin_offset_large)}.bg{width:100%;height:35%;position:absolute;top:5rem}}@media (min-width: 1025px){miles-info{left:unset;width:unset}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h2,p{width:var(--content_width);margin:auto}h2{line-height:150%;font-size:var(--miles-h2);color:#000;padding-top:50px}p{font-size:.8em;color:var(--miles_primary_dark)}svg{height:70px;width:70px}a{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a:after{content:"\\2192"}
-`,
-    Y = document.createElement('template');
-  Y.innerHTML = `
+    `;class K extends HTMLElement{constructor(){super();d(this,"goRight",()=>{this.startAutoPlay(!1),Math.abs(this.index)!==0&&(this.index++,this.setActiveDot(this.index),this.slides.style.setProperty("--slides-offset",this.index))});d(this,"goLeft",()=>{this.startAutoPlay(!1),Math.abs(this.index)!==this.numberOfSlides-1&&(this.index--,this.setActiveDot(this.index),this.slides.style.setProperty("--slides-offset",this.index))});d(this,"goToSlide",i=>{let t=parseInt(i.target.dataset.slide)*-1;this.numberOfSlides-1===parseInt(i.target.dataset.slide)&&(t=0),this.startAutoPlay(!1),this.slides.style.setProperty("--slides-offset",t),this.setActiveDot(t)});d(this,"startAutoPlay",i=>{i?this.autoPlay=setInterval(()=>{Math.abs(this.index)===this.numberOfSlides-2?this.index=0:this.index--,this.setActiveDot(this.index),this.slides.style.setProperty("--slides-offset",this.index)},5e3):clearInterval(this.autoPlay)});d(this,"setActiveDot",i=>{const t=this.controls.querySelectorAll(".nav-dot");t.forEach(r=>{r.classList.remove("active")}),t.forEach(r=>{parseInt(r.getAttribute("data-slide"))===Math.abs(i)&&r.classList.add("active")})});const i=this.attachShadow({mode:"open"});i.appendChild(J.content.cloneNode(!0)),this.slides=i.querySelector(".slides"),this.controls=i.querySelector(".controls"),this.wrapper=i.querySelector("#slide-wrapper"),this.numberOfSlides=0,this.autoPlay=0,this.index=0,this.logos=["equinor","fjordkraft","tv2","cutters"],this.rightNav=i.querySelector("#rightnav"),this.leftNav=i.querySelector("#leftnav")}connectedCallback(){let i={root:null,rootMargin:"0px",threshold:1};this.observer=new IntersectionObserver(r=>{r.forEach(n=>{n.isIntersecting?this.startAutoPlay(!0):this.startAutoPlay(!1)})},i),this.observer.observe(this.wrapper),this.controls.addEventListener("click",this.goToSlide),this.rightNav.addEventListener("click",this.goLeft),this.leftNav.addEventListener("click",this.goRight);const t=this.shadowRoot.querySelector("slot");if(t){let r=t.assignedElements().length===1?t.assignedElements()[0].children:t.assignedElements();if(typeof r=="object")try{const n=Array.from(r);this.numberOfSlides=r.length,n.forEach((h,p)=>{const a=document.createElement("figure"),m=document.createElement("div");if(m.setAttribute("class","overlay"),h.classList.forEach(g=>{this.logos.includes(g)&&m.classList.add(g)}),a.setAttribute("data-slide-image",p),a.appendChild(m),h.querySelector("img")){const g=h.querySelector("img");g.setAttribute("draggable",!1),a.appendChild(g),this.slides.appendChild(a);const f=document.createElement("span");f.setAttribute("class","nav-dot"),f.setAttribute("data-slide",p),this.controls.appendChild(f)}})}catch{console.log(r)}}this.setActiveDot(this.index)}disconnectedCallback(){this.controls.removeEventListener("click",this.goToSlide),this.observer.unobserve(this.wrapper),this.rightNav.removeEventListener("click",this.goLeft),this.leftNav.removeEventListener("click",this.goRight)}static get observedAttributes(){return["inview","autoplay"]}attributeChangedCallback(i,t,r){}}const Q="miles-image-slider";customElements.get(Q)||customElements.define(Q,K);const He=`:host{display:block;color:inherit;--maxWidth: 350px}#header{display:flex;max-width:80vw;margin:auto;flex-direction:column}#fagblogg-teaser{box-sizing:border-box;width:100vw;position:relative;min-height:800px}.bg{width:100%;height:50%;position:absolute;top:5rem}.inner{width:80vw;justify-content:center;position:absolute;display:flex;flex-direction:column;margin:auto;align-items:center;gap:1em;padding-top:2em;top:320px;right:10%}miles-info{position:relative;max-width:300px}@media (min-width: 768px){.inner{flex-direction:row;padding-top:0;top:160px}#header{flex-direction:row}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{width:28%;left:unset;top:1em;right:var(--halve_margin_offset_large)}.bg{width:100%;height:35%;position:absolute;top:5rem}}@media (min-width: 1025px){miles-info{left:unset;width:unset}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h2,p{width:var(--content_width);margin:auto}h2{line-height:150%;font-size:var(--miles-h2);color:#000;padding-top:50px}p{font-size:.8em;color:var(--miles_primary_dark)}svg{height:70px;width:70px}a{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a:after{content:"\\2192"}
+`,Y=document.createElement("template");Y.innerHTML=`
   <style>
 	${He}
 
@@ -720,39 +342,8 @@
     </div>
 
   </div>
-`;
-  class ee extends HTMLElement {
-    constructor() {
-      super();
-      d(this, 'goToPost', i => {
-        window.location.href = escape(i.target.dataset.post);
-      });
-      this.attachShadow({ mode: 'open' }),
-        this.shadowRoot.append(Y.content.cloneNode(!0));
-    }
-    connectedCallback() {
-      const i = this.shadowRoot.querySelector('slot').assignedElements()[0];
-      if (i) {
-        const t = i.querySelectorAll('img'),
-          r = Array.from(i.querySelectorAll('a'));
-        Array.from(t).forEach((n, h) => {
-          n.setAttribute(
-            'style',
-            'max-width: var(--maxWidth); height: auto; cursor: pointer;'
-          ),
-            n.setAttribute('data-post', r[h].href),
-            n.addEventListener('click', this.goToPost);
-        });
-      }
-    }
-    disconnectedCallback() {}
-  }
-  const te = 'miles-fagblogg-teaser';
-  customElements.get(te) || customElements.define(te, ee);
-  const qe = `:host{display:block;color:inherit;width:inherit;height:inherit}#blog-card{display:flex;flex-direction:column;gap:.2rem;width:100%;border-radius:1rem;overflow:hidden}slot[name=title]::slotted(*){font-size:1.5rem;margin:0}a{display:block;width:100%;text-decoration:none;color:inherit}.text{background-color:var(--miles_secondary_four);color:var(--miles_primary_light);padding:2rem;height:110px;display:flex;flex-direction:column}slot[name=title]::slotted(*){overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}slot[name=meta]{display:block;flex-grow:1}#updated{display:none}::slotted(figure){margin:0;aspect-ratio:4/5;overflow:hidden}
-`,
-    ie = document.createElement('template');
-  ie.innerHTML = `
+`;class ee extends HTMLElement{constructor(){super();d(this,"goToPost",i=>{window.location.href=escape(i.target.dataset.post)});this.attachShadow({mode:"open"}),this.shadowRoot.append(Y.content.cloneNode(!0))}connectedCallback(){const i=this.shadowRoot.querySelector("slot").assignedElements()[0];if(i){const t=i.querySelectorAll("img"),r=Array.from(i.querySelectorAll("a"));Array.from(t).forEach((n,h)=>{n.setAttribute("style","max-width: var(--maxWidth); height: auto; cursor: pointer;"),n.setAttribute("data-post",r[h].href),n.addEventListener("click",this.goToPost)})}}disconnectedCallback(){}}const te="miles-fagblogg-teaser";customElements.get(te)||customElements.define(te,ee);const qe=`:host{display:block;color:inherit;width:inherit;height:inherit}#blog-card{display:flex;flex-direction:column;gap:.2rem;width:100%;border-radius:1rem;overflow:hidden}slot[name=title]::slotted(*){font-size:1.5rem;margin:0}a{display:block;width:100%;text-decoration:none;color:inherit}.text{background-color:var(--miles_secondary_four);color:var(--miles_primary_light);padding:2rem;height:110px;display:flex;flex-direction:column}slot[name=title]::slotted(*){overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}slot[name=meta]{display:block;flex-grow:1}#updated{display:none}::slotted(figure){margin:0;aspect-ratio:4/5;overflow:hidden}
+`,ie=document.createElement("template");ie.innerHTML=`
   <style>
 	${qe}
 
@@ -773,69 +364,8 @@
     <span id="updated"></span>
     </div>
   </div>
-`;
-  class oe extends HTMLElement {
-    constructor() {
-      super();
-      d(this, 'timeFormat', i =>
-        new Intl.DateTimeFormat('no', {
-          month: 'short',
-          day: 'numeric',
-          year: 'numeric',
-        }).format(i)
-      );
-      this.attachShadow({ mode: 'open' }),
-        this.shadowRoot.append(ie.content.cloneNode(!0)),
-        (this.posted = this.shadowRoot.querySelector('#posted')),
-        (this.updated = this.shadowRoot.querySelector('#updated')),
-        (this.author = this.shadowRoot.querySelector('#author'));
-    }
-    static get observedAttributes() {
-      return ['url', 'author', 'posted', 'updated'];
-    }
-    attributeChangedCallback(i, t, r) {
-      i === 'url' &&
-        this.shadowRoot.querySelectorAll('a').forEach(n => {
-          n.setAttribute('href', r);
-        }),
-        i === 'author' && (this.author.textContent = r);
-    }
-    connectedCallback() {
-      var r, n, h, p;
-      const i = this.shadowRoot
-        .querySelector('slot[name="image"]')
-        .assignedElements();
-      (r = i[0]) != null &&
-        r.children &&
-        Array.from((n = i[0]) == null ? void 0 : n.children).forEach(a => {
-          (a.style.objectFit = 'cover'),
-            (a.style.aspectRatio = '2/3'),
-            (a.style.width = '100%');
-        });
-      const t = this.shadowRoot
-        .querySelector('slot[name="meta"]')
-        .assignedElements();
-      (h = t[0]) != null &&
-        h.children &&
-        (Array.from((p = t[0]) == null ? void 0 : p.children).forEach(a => {
-          const m = Array.from(a.children[0].children);
-          (this.posted.textContent = `${this.timeFormat(
-            new Date(m[0].dateTime)
-          )}`),
-            (this.updated.textContent = `${this.timeFormat(
-              new Date(m[1].dateTime)
-            )}`);
-        }),
-        t[0].remove());
-    }
-    disconnectedCallback() {}
-  }
-  const se = 'miles-blog-card';
-  customElements.get(se) || customElements.define(se, oe);
-  const $e = `:host{--topOffset: 1rem;--bottomOffset: 5rem;--blockRadius: 30px;color:inherit;display:block}#overlap-block{padding:0 2rem;position:relative}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}@media (min-width: 768px){:host{--topOffset: 16rem}#overlap-block{width:80vw;margin:auto;position:relative}.parent{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:var(--topOffset) auto var(--bottomOffset);grid-column-gap:0px;grid-row-gap:0px}.div1{grid-area:1 / 1 / 2 / 6}.div2{grid-area:1 / 5 / 2 / 13;background-color:var(--miles_secondary_four)}.inner{position:relative;z-index:1;grid-area:2 / 1 / 2 / 13}.inner #content_grid{display:flex;flex-direction:row}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}::slotted(div){font-size:1.5rem}#feature-block:after{z-index:-1;width:100px;height:100%;content:"";position:absolute;top:0;right:0;background-color:var(--miles_secondary_four)}.div1,.div2{border-top-left-radius:var(--blockRadius);border-top-right-radius:var(--blockRadius);height:var(--topOffset)}.div4{border-bottom-left-radius:var(--blockRadius);border-bottom-right-radius:var(--blockRadius)}.div3{grid-area:1 / 1 / 2 / 6}.div4{grid-area:3 / 5 / 3 / 13;background-color:var(--miles_secondary_four)}#list{width:100%;border-radius:30px;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content;left:-10vw;bottom:10vw}}#list{border-radius:unset;left:unset;bottom:unset;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content}#list ul{position:relative;top:calc(-1 * var(--topOffset));padding:0}#list li{line-height:38px;list-style:none;padding:.5rem 0;font-size:1.5rem}miles-bulb{position:absolute;right:6rem;bottom:5rem;z-index:20}miles-curve{margin-right:.5em}
-`,
-    re = document.createElement('template');
-  re.innerHTML = `
+`;class oe extends HTMLElement{constructor(){super();d(this,"timeFormat",i=>new Intl.DateTimeFormat("no",{month:"short",day:"numeric",year:"numeric"}).format(i));this.attachShadow({mode:"open"}),this.shadowRoot.append(ie.content.cloneNode(!0)),this.posted=this.shadowRoot.querySelector("#posted"),this.updated=this.shadowRoot.querySelector("#updated"),this.author=this.shadowRoot.querySelector("#author")}static get observedAttributes(){return["url","author","posted","updated"]}attributeChangedCallback(i,t,r){i==="url"&&this.shadowRoot.querySelectorAll("a").forEach(n=>{n.setAttribute("href",r)}),i==="author"&&(this.author.textContent=r)}connectedCallback(){var r,n,h,p;const i=this.shadowRoot.querySelector('slot[name="image"]').assignedElements();(r=i[0])!=null&&r.children&&Array.from((n=i[0])==null?void 0:n.children).forEach(a=>{a.style.objectFit="cover",a.style.aspectRatio="2/3",a.style.width="100%"});const t=this.shadowRoot.querySelector('slot[name="meta"]').assignedElements();(h=t[0])!=null&&h.children&&(Array.from((p=t[0])==null?void 0:p.children).forEach(a=>{const m=Array.from(a.children[0].children);this.posted.textContent=`${this.timeFormat(new Date(m[0].dateTime))}`,this.updated.textContent=`${this.timeFormat(new Date(m[1].dateTime))}`}),t[0].remove())}disconnectedCallback(){}}const se="miles-blog-card";customElements.get(se)||customElements.define(se,oe);const $e=`:host{--topOffset: 1rem;--bottomOffset: 5rem;--blockRadius: 30px;color:inherit;display:block}#overlap-block{padding:0 2rem;position:relative}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}@media (min-width: 768px){:host{--topOffset: 16rem}#overlap-block{width:80vw;margin:auto;position:relative}.parent{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:var(--topOffset) auto var(--bottomOffset);grid-column-gap:0px;grid-row-gap:0px}.div1{grid-area:1 / 1 / 2 / 6}.div2{grid-area:1 / 5 / 2 / 13;background-color:var(--miles_secondary_four)}.inner{position:relative;z-index:1;grid-area:2 / 1 / 2 / 13}.inner #content_grid{display:flex;flex-direction:row}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}::slotted(div){font-size:1.5rem}#feature-block:after{z-index:-1;width:100px;height:100%;content:"";position:absolute;top:0;right:0;background-color:var(--miles_secondary_four)}.div1,.div2{border-top-left-radius:var(--blockRadius);border-top-right-radius:var(--blockRadius);height:var(--topOffset)}.div4{border-bottom-left-radius:var(--blockRadius);border-bottom-right-radius:var(--blockRadius)}.div3{grid-area:1 / 1 / 2 / 6}.div4{grid-area:3 / 5 / 3 / 13;background-color:var(--miles_secondary_four)}#list{width:100%;border-radius:30px;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content;left:-10vw;bottom:10vw}}#list{border-radius:unset;left:unset;bottom:unset;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content}#list ul{position:relative;top:calc(-1 * var(--topOffset));padding:0}#list li{line-height:38px;list-style:none;padding:.5rem 0;font-size:1.5rem}miles-bulb{position:absolute;right:6rem;bottom:5rem;z-index:20}miles-curve{margin-right:.5em}
+`,re=document.createElement("template");re.innerHTML=`
   <style>
 	${$e}
 
@@ -858,40 +388,8 @@
     </div>
    <!-- <miles-bulb color="var(--miles_secondary_two)" width="3rem"></miles-bulb> -->
   </div>
-`;
-  class le extends HTMLElement {
-    constructor() {
-      super(),
-        this.attachShadow({ mode: 'open' }),
-        this.shadowRoot.append(re.content.cloneNode(!0)),
-        (this.list = this.shadowRoot.querySelector('#list'));
-    }
-    connectedCallback() {
-      const e = [
-          'Systemutvikling',
-          'Prosjektledelse',
-          'Testledelse',
-          'Smidig Coaching',
-          'Design',
-          'Arkitektur',
-          'Rådgivning',
-        ],
-        i = document.createElement('ul');
-      e.forEach(t => {
-        const r = document.createElement('li');
-        (r.innerHTML = `<miles-curve color="currentColor" width="1em"></miles-curve><span>${t}</span>`),
-          i.append(r);
-      }),
-        this.list.append(i);
-    }
-    disconnectedCallback() {}
-  }
-  const ne = 'miles-overlap-block';
-  customElements.get(ne) || customElements.define(ne, le);
-  const Re = `:host{--headerHeight: 200px}#banner{height:300px;overflow:hidden;border-radius:30px;position:relative;box-sizing:border-box;font-size:12px;line-height:1.25}#banner.open{height:unset}#banner img{transform:scale(1.1);width:100%;object-fit:cover}#banner figure{margin:0}#menu{display:flex;flex-direction:column-reverse;justify-content:start;padding:1rem;right:0;left:0;width:100%;z-index:100;top:100%;position:absolute;background-color:var(--miles_secondary_four);height:100%;transition:top .5s cubic-bezier(.46,.03,.52,.96);gap:2rem}#menu.open{top:100px}#triggerEl miles-arrow{width:20px;height:20px}@media (max-width: 1024px) and (min-width: 769px){#menu.open{top:150px;width:100%;left:0;right:unset}}@media (min-width: 1025px){#menu{bottom:0;right:0;left:unset;width:50%;padding:4rem}#menu.open{top:0;width:50%;left:unset}}#menu h2{display:inline-block}#menu ul{padding:0;margin:0;list-style:none}#menu .miles-banner-card .wp-block-group__inner-container{justify-items:center;display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:1rem}#menu .miles-banner-card figure{margin:0;height:100px;aspect-ratio:1/1;border-radius:50%;overflow:hidden}#menu .miles-banner-card li:first-child{font-size:1.2rem;font-weight:600}#menu .miles-banner-card img{width:100%;height:100%}#people{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}#triggerEl h2{color:var(--miles_primary_light);font-size:2rem;line-height:150%;margin:0;text-align:left;z-index:10;position:relative}#triggerBg{margin:auto;position:relative;width:100%;z-index:10;bottom:unset;top:0;height:calc(calc(var(--headerHeight) / 2) + 5px);padding:1rem}#triggerBg:after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.2);transition:all .5s cubic-bezier(.46,.03,.52,.96);z-index:1}#triggerBg:hover:after{background:rgba(0,0,0,.8)}@media (min-width: 769px){#banner{font-size:16px;height:unset}#banner.open{height:unset}#people{display:grid;grid-template-columns:repeat(2,50%);gap:1rem}#triggerEl h2{font-size:64px;line-height:150%}#triggerBg{bottom:unset;top:unset;bottom:0;height:200px;padding:2rem;position:absolute}#triggerEl miles-arrow{width:30px;height:30px}}
-`,
-    ae = document.createElement('template');
-  ae.innerHTML = `
+`;class le extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.append(re.content.cloneNode(!0)),this.list=this.shadowRoot.querySelector("#list")}connectedCallback(){const e=["Systemutvikling","Prosjektledelse","Testledelse","Smidig Coaching","Design","Arkitektur","Rådgivning"],i=document.createElement("ul");e.forEach(t=>{const r=document.createElement("li");r.innerHTML=`<miles-curve color="currentColor" width="1em"></miles-curve><span>${t}</span>`,i.append(r)}),this.list.append(i)}disconnectedCallback(){}}const ne="miles-overlap-block";customElements.get(ne)||customElements.define(ne,le);const Re=`:host{--headerHeight: 200px}#banner{height:300px;overflow:hidden;border-radius:30px;position:relative;box-sizing:border-box;font-size:12px;line-height:1.25}#banner.open{height:unset}#banner img{transform:scale(1.1);width:100%;object-fit:cover}#banner figure{margin:0}#menu{display:flex;flex-direction:column-reverse;justify-content:start;padding:1rem;right:0;left:0;width:100%;z-index:100;top:100%;position:absolute;background-color:var(--miles_secondary_four);height:100%;transition:top .5s cubic-bezier(.46,.03,.52,.96);gap:2rem}#menu.open{top:100px}#triggerEl miles-arrow{width:20px;height:20px}@media (max-width: 1024px) and (min-width: 769px){#menu.open{top:150px;width:100%;left:0;right:unset}}@media (min-width: 1025px){#menu{bottom:0;right:0;left:unset;width:50%;padding:4rem}#menu.open{top:0;width:50%;left:unset}}#menu h2{display:inline-block}#menu ul{padding:0;margin:0;list-style:none}#menu .miles-banner-card .wp-block-group__inner-container{justify-items:center;display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:1rem}#menu .miles-banner-card figure{margin:0;height:100px;aspect-ratio:1/1;border-radius:50%;overflow:hidden}#menu .miles-banner-card li:first-child{font-size:1.2rem;font-weight:600}#menu .miles-banner-card img{width:100%;height:100%}#people{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}#triggerEl h2{color:var(--miles_primary_light);font-size:2rem;line-height:150%;margin:0;text-align:left;z-index:10;position:relative}#triggerBg{margin:auto;position:relative;width:100%;z-index:10;bottom:unset;top:0;height:calc(calc(var(--headerHeight) / 2) + 5px);padding:1rem}#triggerBg:after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.2);transition:all .5s cubic-bezier(.46,.03,.52,.96);z-index:1}#triggerBg:hover:after{background:rgba(0,0,0,.8)}@media (min-width: 769px){#banner{font-size:16px;height:unset}#banner.open{height:unset}#people{display:grid;grid-template-columns:repeat(2,50%);gap:1rem}#triggerEl h2{font-size:64px;line-height:150%}#triggerBg{bottom:unset;top:unset;bottom:0;height:200px;padding:2rem;position:absolute}#triggerEl miles-arrow{width:30px;height:30px}}
+`,ae=document.createElement("template");ae.innerHTML=`
   <style>
 	${Re}
 
@@ -908,70 +406,8 @@
     <slot></slot>
   </div>
   </div>
-`;
-  class de extends HTMLElement {
-    constructor() {
-      super();
-      d(this, 'toggleMenu', () => {
-        const i = this.menu.querySelectorAll('miles-business-card'),
-          t = this.banner.getBoundingClientRect();
-        this.menu.classList.toggle('open'),
-          this.banner.classList.toggle('open'),
-          this.menu.classList.contains('open')
-            ? (this.triggerEl
-                .querySelector('miles-arrow')
-                .classList.remove('open'),
-              t.width < 769 &&
-                this.banner.setAttribute(
-                  'style',
-                  `height: calc(calc(${i.length} * var(--headerHeight)) + 300px);`
-                ))
-            : (this.banner.removeAttribute('style'),
-              this.triggerEl.querySelector('miles-arrow').classList.add('open'),
-              this.banner.classList.toggle('open'));
-      });
-      this.attachShadow({ mode: 'open' }),
-        this.shadowRoot.append(ae.content.cloneNode(!0)),
-        (this.banner = this.shadowRoot.querySelector('#banner')),
-        (this.menu = this.shadowRoot.querySelector('#menu')),
-        (this.people = this.shadowRoot.querySelector('#people')),
-        (this.triggerEl = this.shadowRoot.querySelector('#triggerEl')),
-        (this.header = null);
-    }
-    connectedCallback() {
-      const i = this.shadowRoot.querySelector('slot').assignedElements()[0];
-      this.menu.append(i.querySelector('.miles-office-menu')),
-        (this.trigger = i.querySelector('h2')),
-        this.setAttribute(
-          'id',
-          this.trigger.textContent.replace(/\s/g, '').toLowerCase()
-        ),
-        (this.trigger.innerHTML = `<span>${this.trigger.textContent}</span><miles-arrow class="open" style="margin-left:1rem;"></miles-arrow>`),
-        this.triggerEl.append(this.trigger),
-        this.banner.append(i.querySelector('.feature-image'));
-      const t = this.menu.querySelectorAll('miles-business-card');
-      t &&
-        t.forEach(n => {
-          this.people.append(n);
-        });
-      const r = this.banner.getBoundingClientRect();
-      this.trigger && r.width > 769
-        ? (this.trigger.setAttribute('style', 'cursor: pointer; '),
-          this.trigger.addEventListener('click', this.toggleMenu))
-        : (this.triggerEl.querySelector('miles-arrow').classList.add('open'),
-          this.menu.classList.add('open'),
-          this.banner.classList.add('open'));
-    }
-    disconnectedCallback() {
-      this.trigger.removeEventListener('click', this.toggleMenu);
-    }
-  }
-  const ce = 'miles-office-banner';
-  customElements.get(ce) || customElements.define(ce, de);
-  const Ne = `:host{display:inline-block;transform:rotate(180deg);transition:transform .5s cubic-bezier(.46,.03,.52,.96)}#arrow{justify-content:center;display:flex;width:inherit;height:inherit;align-items:center}:host(.open){transform:rotate(0)}svg{width:inherit;height:inherit}
-`,
-    he = document.createElement('template');
-  he.innerHTML = `
+`;class de extends HTMLElement{constructor(){super();d(this,"toggleMenu",()=>{const i=this.menu.querySelectorAll("miles-business-card"),t=this.banner.getBoundingClientRect();this.menu.classList.toggle("open"),this.banner.classList.toggle("open"),this.menu.classList.contains("open")?(this.triggerEl.querySelector("miles-arrow").classList.remove("open"),t.width<769&&this.banner.setAttribute("style",`height: calc(calc(${i.length} * var(--headerHeight)) + 300px);`)):(this.banner.removeAttribute("style"),this.triggerEl.querySelector("miles-arrow").classList.add("open"),this.banner.classList.toggle("open"))});this.attachShadow({mode:"open"}),this.shadowRoot.append(ae.content.cloneNode(!0)),this.banner=this.shadowRoot.querySelector("#banner"),this.menu=this.shadowRoot.querySelector("#menu"),this.people=this.shadowRoot.querySelector("#people"),this.triggerEl=this.shadowRoot.querySelector("#triggerEl"),this.header=null}connectedCallback(){const i=this.shadowRoot.querySelector("slot").assignedElements()[0];this.menu.append(i.querySelector(".miles-office-menu")),this.trigger=i.querySelector("h2"),this.setAttribute("id",this.trigger.textContent.replace(/\s/g,"").toLowerCase()),this.trigger.innerHTML=`<span>${this.trigger.textContent}</span><miles-arrow class="open" style="margin-left:1rem;"></miles-arrow>`,this.triggerEl.append(this.trigger),this.banner.append(i.querySelector(".feature-image"));const t=this.menu.querySelectorAll("miles-business-card");t&&t.forEach(n=>{this.people.append(n)});const r=this.banner.getBoundingClientRect();this.trigger&&r.width>769?(this.trigger.setAttribute("style","cursor: pointer; "),this.trigger.addEventListener("click",this.toggleMenu)):(this.triggerEl.querySelector("miles-arrow").classList.add("open"),this.menu.classList.add("open"),this.banner.classList.add("open"))}disconnectedCallback(){this.trigger.removeEventListener("click",this.toggleMenu)}}const ce="miles-office-banner";customElements.get(ce)||customElements.define(ce,de);const Ne=`:host{display:inline-block;transform:rotate(180deg);transition:transform .5s cubic-bezier(.46,.03,.52,.96)}#arrow{justify-content:center;display:flex;width:inherit;height:inherit;align-items:center}:host(.open){transform:rotate(0)}svg{width:inherit;height:inherit}
+`,he=document.createElement("template");he.innerHTML=`
   <style>
 	${Ne}
 
@@ -983,20 +419,8 @@
     </svg>
     
     </div>
-   `;
-  class me extends HTMLElement {
-    constructor() {
-      super(),
-        this.attachShadow({ mode: 'open' }),
-        this.shadowRoot.append(he.content.cloneNode(!0));
-    }
-  }
-  const pe = 'miles-arrow';
-  customElements.get(pe) || customElements.define(pe, me);
-  const Be = `:host{display:block;color:inherit;--image-width: 120px}#card-wrapper{box-sizing:border-box}#card{max-width:400px;margin:0 auto;background-color:var(--miles_secondary_four);border-radius:4px;display:flex;flex-direction:row;gap:1em}#card.author{max-width:100%;background-color:transparent}#card.wide{flex-direction:column;background-color:transparent}@media (min-width: 768px){#card.wide{max-width:100%;margin:0;max-height:calc(var(--image-width) / 2);flex-direction:row}}h3{margin:0}#title{margin-bottom:.5em}#card.wide span#title{order:0}#card.wide #name{order:1}#card.wide span{order:2}figure{margin:0;padding:0;aspect-ratio:1/1;width:var(--image-width);min-width:var(--image-width);overflow:hidden}@media (min-width: 768px){#card.wide figure{justify-content:center;display:flex;aspect-ratio:2 / 3;width:var(--image-width);min-width:var(--image-width);background-color:#fff}}::slotted(img),img{object-fit:cover;width:100%;background-color:#fff;filter:grayscale(1);aspect-ratio:1 / 1;border-radius:50%}#card.wide ::slotted(img),#card.wide img{border-radius:0;aspect-ratio:1 / 1;min-width:100%}@media (min-width: 768px){#card.wide ::slotted(img),#card.wide img{width:calc(var(--image-width) / 2);min-width:calc(var(--image-width) / 2)}}::slotted(*){color:inherit}#extras{background-color:var(--miles_secondary_four)}a,span{color:inherit;text-decoration:none;display:inline}span{display:flex;flex-direction:column;overflow:hidden;line-height:1.2em;gap:.2em}#card.wide span{flex-direction:row}#group{display:flex;flex-direction:column;gap:.2em}#card.author #group{justify-content:center;display:flex;flex-direction:column;gap:.5em}#card.wide #group{background-color:#f8ebe8;width:unset;padding:1rem 2rem;justify-content:center}@media (min-width: 768px){#card.wide #group{padding:0 2rem;width:100%}}#email_el,#phone_el{display:none}
-`,
-    ge = document.createElement('template');
-  ge.innerHTML = `
+   `;class me extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.append(he.content.cloneNode(!0))}}const pe="miles-arrow";customElements.get(pe)||customElements.define(pe,me);const Be=`:host{display:block;color:inherit;--image-width: 120px}#card-wrapper{box-sizing:border-box}#card{max-width:400px;margin:0 auto;background-color:var(--miles_secondary_four);border-radius:4px;display:flex;flex-direction:row;gap:1em}#card.author{max-width:100%;background-color:transparent}#card.wide{flex-direction:column;background-color:transparent}@media (min-width: 768px){#card.wide{max-width:100%;margin:0;max-height:calc(var(--image-width) / 2);flex-direction:row}}h3{margin:0}#title{margin-bottom:.5em}#card.wide span#title{order:0}#card.wide #name{order:1}#card.wide span{order:2}figure{margin:0;padding:0;aspect-ratio:1/1;width:var(--image-width);min-width:var(--image-width);overflow:hidden}@media (min-width: 768px){#card.wide figure{justify-content:center;display:flex;aspect-ratio:2 / 3;width:var(--image-width);min-width:var(--image-width);background-color:#fff}}::slotted(img),img{object-fit:cover;width:100%;background-color:#fff;filter:grayscale(1);aspect-ratio:1 / 1;border-radius:50%}#card.wide ::slotted(img),#card.wide img{border-radius:0;aspect-ratio:1 / 1;min-width:100%}@media (min-width: 768px){#card.wide ::slotted(img),#card.wide img{width:calc(var(--image-width) / 2);min-width:calc(var(--image-width) / 2)}}::slotted(*){color:inherit}#extras{background-color:var(--miles_secondary_four)}a,span{color:inherit;text-decoration:none;display:inline}span{display:flex;flex-direction:column;overflow:hidden;line-height:1.2em;gap:.2em}#card.wide span{flex-direction:row}#group{display:flex;flex-direction:column;gap:.2em}#card.author #group{justify-content:center;display:flex;flex-direction:column;gap:.5em}#card.wide #group{background-color:#f8ebe8;width:unset;padding:1rem 2rem;justify-content:center}@media (min-width: 768px){#card.wide #group{padding:0 2rem;width:100%}}#email_el,#phone_el{display:none}
+`,ge=document.createElement("template");ge.innerHTML=`
   <style>
 	${Be}
 
@@ -1018,69 +442,8 @@
         <slot></slot>
       </div>
     </div>
-    `;
-  class u extends HTMLElement {
-    constructor() {
-      super(),
-        this.attachShadow({ mode: 'open' }),
-        this.shadowRoot.append(ge.content.cloneNode(!0)),
-        (this.emailEl = this.shadowRoot.querySelector('#email')),
-        (this.nameEl = this.shadowRoot.querySelector('#name')),
-        (this.phoneEl = this.shadowRoot.querySelector('#phone')),
-        (this.titleEl = this.shadowRoot.querySelector('#title')),
-        (this.firgureEl = this.shadowRoot.querySelector('figure')),
-        (this.card = this.shadowRoot.querySelector('#card'));
-    }
-    static get observedAttributes() {
-      return ['email', 'name', 'phone', 'jobtitle', 'image', 'variant'];
-    }
-    attributeChangedCallback(e, i, t) {
-      if (
-        (e === 'email' &&
-          (this.emailEl.setAttribute('href', `mailto:${t}`),
-          (this.phoneEl.style.display = 'block'),
-          (this.emailEl.textContent = t)),
-        e === 'name' && (this.nameEl.textContent = t),
-        e === 'phone' &&
-          (this.phoneEl.setAttribute('href', `tel:${t}`),
-          (this.phoneEl.style.display = 'block'),
-          (this.phoneEl.textContent = t)),
-        e === 'jobtitle' && (this.titleEl.textContent = t),
-        e === 'image')
-      ) {
-        const r = document.createElement('img');
-        r.setAttribute('src', t), this.firgureEl.append(r);
-      }
-      e === 'variant' &&
-        (t === 'wide' &&
-          (this.card.classList.add('wide'),
-          this.style.setProperty('--image-width', '320px')),
-        t === 'author' &&
-          (this.card.classList.add('author'),
-          this.style.setProperty('--image-width', '180px')));
-    }
-    connectedCallback() {}
-    disconnectedCallback() {}
-  }
-  const ue = 'miles-business-card';
-  customElements.get(ue) || customElements.define(ue, u);
-  class fe extends u {
-    constructor() {
-      super();
-    }
-    connectedCallback() {
-      super.connectedCallback(), this.setAttribute('variant', 'author');
-    }
-    attributeChangedCallback(e, i, t) {
-      e !== 'phone' && e !== 'email' && super.attributeChangedCallback(e, i, t);
-    }
-  }
-  const ve = 'miles-author-card';
-  customElements.get(ve) || customElements.define(ve, fe);
-  const ze = `:host{display:block;color:inherit;padding-left:calc(8rem - 2em)}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:2em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:60%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:2em;padding:1em 2em;position:relative;z-index:5;left:-8rem;margin-bottom:4rem}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
-`,
-    be = document.createElement('template');
-  be.innerHTML = `
+    `;class u extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.append(ge.content.cloneNode(!0)),this.emailEl=this.shadowRoot.querySelector("#email"),this.nameEl=this.shadowRoot.querySelector("#name"),this.phoneEl=this.shadowRoot.querySelector("#phone"),this.titleEl=this.shadowRoot.querySelector("#title"),this.firgureEl=this.shadowRoot.querySelector("figure"),this.card=this.shadowRoot.querySelector("#card")}static get observedAttributes(){return["email","name","phone","jobtitle","image","variant"]}attributeChangedCallback(e,i,t){if(e==="email"&&(this.emailEl.setAttribute("href",`mailto:${t}`),this.phoneEl.style.display="block",this.emailEl.textContent=t),e==="name"&&(this.nameEl.textContent=t),e==="phone"&&(this.phoneEl.setAttribute("href",`tel:${t}`),this.phoneEl.style.display="block",this.phoneEl.textContent=t),e==="jobtitle"&&(this.titleEl.textContent=t),e==="image"){const r=document.createElement("img");r.setAttribute("src",t),this.firgureEl.append(r)}e==="variant"&&(t==="wide"&&(this.card.classList.add("wide"),this.style.setProperty("--image-width","320px")),t==="author"&&(this.card.classList.add("author"),this.style.setProperty("--image-width","180px")))}connectedCallback(){}disconnectedCallback(){}}const ue="miles-business-card";customElements.get(ue)||customElements.define(ue,u);class fe extends u{constructor(){super()}connectedCallback(){super.connectedCallback(),this.setAttribute("variant","author")}attributeChangedCallback(e,i,t){e!=="phone"&&e!=="email"&&super.attributeChangedCallback(e,i,t)}}const ve="miles-author-card";customElements.get(ve)||customElements.define(ve,fe);const ze=`:host{display:block;color:inherit}@media (min-width: 768px){:host{padding-left:calc(8rem - 2em)}}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:2em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:100%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:2em;padding:1em 2em;position:relative;z-index:5;left:-8rem;margin-bottom:4rem}@media (min-width: 768px){#heading{max-width:60%;left:-4rem}}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
+`,be=document.createElement("template");be.innerHTML=`
   <style>
 	${ze}
 
@@ -1092,29 +455,8 @@
     </div>
       <p><slot></slot></p>
     </div>
-    `;
-  class we extends HTMLElement {
-    constructor() {
-      super(),
-        this.attachShadow({ mode: 'open' }),
-        this.shadowRoot.append(be.content.cloneNode(!0)),
-        (this.headingEl = this.shadowRoot.querySelector('h2'));
-    }
-    static get observedAttributes() {
-      return ['heading'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'heading' && (this.headingEl.textContent = t);
-    }
-    connectedCallback() {}
-    disconnectedCallback() {}
-  }
-  const ye = 'miles-info-block';
-  customElements.get(ye) || customElements.define(ye, we);
-  const Pe = `:host{display:inline-block;color:inherit}#wrapper{background-color:var(--miles_secondary_four);display:flex;flex-direction:column}h2{margin:0}a{text-decoration:none;color:inherit}#address,#phone{margin-bottom:1rem}
-`,
-    xe = document.createElement('template');
-  xe.innerHTML = `
+    `;class we extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.append(be.content.cloneNode(!0)),this.headingEl=this.shadowRoot.querySelector("h2")}static get observedAttributes(){return["heading"]}attributeChangedCallback(e,i,t){e==="heading"&&(this.headingEl.textContent=t)}connectedCallback(){}disconnectedCallback(){}}const ye="miles-info-block";customElements.get(ye)||customElements.define(ye,we);const Pe=`:host{display:inline-block;color:inherit}#wrapper{background-color:var(--miles_secondary_four);display:flex;flex-direction:column}h2{margin:0}a{text-decoration:none;color:inherit}#address,#phone{margin-bottom:1rem}
+`,xe=document.createElement("template");xe.innerHTML=`
   <style>
 	${Pe}
 
@@ -1128,59 +470,5 @@
       <div id="orgnrlabel">Organisasjonsnummer:</div>
       <div aria-describedby="ordnrlabel" id="orgnr"></div>
     </div>
-    `;
-  class Ce extends HTMLElement {
-    constructor() {
-      super(),
-        this.attachShadow({ mode: 'open' }),
-        this.shadowRoot.append(xe.content.cloneNode(!0)),
-        (this.nameEl = this.shadowRoot.querySelector('h2')),
-        (this.adresseEl = this.shadowRoot.querySelector('#address')),
-        (this.emailEl = this.shadowRoot.querySelector('#email')),
-        (this.phoneEl = this.shadowRoot.querySelector('#phone')),
-        (this.orgnrEl = this.shadowRoot.querySelector('#orgnr'));
-    }
-    static get observedAttributes() {
-      return ['name', 'address', 'email', 'phone', 'orgnr', 'image'];
-    }
-    attributeChangedCallback(e, i, t) {
-      e === 'name' && (this.nameEl.textContent = t),
-        e === 'address' && (this.adresseEl.textContent = t),
-        e === 'email' &&
-          (this.emailEl.setAttribute('href', `mailto:${t}`),
-          (this.emailEl.textContent = t)),
-        e === 'phone' &&
-          (this.phoneEl.setAttribute('href', `tel:${t}`),
-          (this.phoneEl.textContent = t)),
-        e === 'orgnr' && (this.orgnrEl.textContent = t);
-    }
-    connectedCallback() {}
-    disconnectedCallback() {}
-  }
-  const ke = 'miles-contact-card';
-  customElements.get(ke) || customElements.define(ke, Ce),
-    (s.MilesArrow = me),
-    (s.MilesArrowNav = X),
-    (s.MilesAuthorCard = fe),
-    (s.MilesBlogCard = oe),
-    (s.MilesBulb = M),
-    (s.MilesBusinessCard = u),
-    (s.MilesButtonAnchor = P),
-    (s.MilesCloud = v),
-    (s.MilesContactCard = Ce),
-    (s.MilesCup = L),
-    (s.MilesCurve = C),
-    (s.MilesFagbloggTeaser = ee),
-    (s.MilesImageSlider = K),
-    (s.MilesInfo = F),
-    (s.MilesInfoBlock = we),
-    (s.MilesLogo = N),
-    (s.MilesOfficeBanner = de),
-    (s.MilesOverlapBlock = le),
-    (s.MilesPodcastTeaser = U),
-    (s.MilesPodd = q),
-    (s.MilesProfileCard = Z),
-    (s.MilesZoom = T),
-    Object.defineProperty(s, Symbol.toStringTag, { value: 'Module' });
-});
+    `;class Ce extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.append(xe.content.cloneNode(!0)),this.nameEl=this.shadowRoot.querySelector("h2"),this.adresseEl=this.shadowRoot.querySelector("#address"),this.emailEl=this.shadowRoot.querySelector("#email"),this.phoneEl=this.shadowRoot.querySelector("#phone"),this.orgnrEl=this.shadowRoot.querySelector("#orgnr")}static get observedAttributes(){return["name","address","email","phone","orgnr","image"]}attributeChangedCallback(e,i,t){e==="name"&&(this.nameEl.textContent=t),e==="address"&&(this.adresseEl.textContent=t),e==="email"&&(this.emailEl.setAttribute("href",`mailto:${t}`),this.emailEl.textContent=t),e==="phone"&&(this.phoneEl.setAttribute("href",`tel:${t}`),this.phoneEl.textContent=t),e==="orgnr"&&(this.orgnrEl.textContent=t)}connectedCallback(){}disconnectedCallback(){}}const ke="miles-contact-card";customElements.get(ke)||customElements.define(ke,Ce),s.MilesArrow=me,s.MilesArrowNav=X,s.MilesAuthorCard=fe,s.MilesBlogCard=oe,s.MilesBulb=M,s.MilesBusinessCard=u,s.MilesButtonAnchor=P,s.MilesCloud=v,s.MilesContactCard=Ce,s.MilesCup=L,s.MilesCurve=C,s.MilesFagbloggTeaser=ee,s.MilesImageSlider=K,s.MilesInfo=F,s.MilesInfoBlock=we,s.MilesLogo=N,s.MilesOfficeBanner=de,s.MilesOverlapBlock=le,s.MilesPodcastTeaser=U,s.MilesPodd=q,s.MilesProfileCard=Z,s.MilesZoom=T,Object.defineProperty(s,Symbol.toStringTag,{value:"Module"})});
 //# sourceMappingURL=miles-wc.umd.js.map
