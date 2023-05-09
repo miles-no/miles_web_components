@@ -1,8 +1,12 @@
 :host {
   display: block;
   color: inherit;
+}
 
-  padding-left: calc(8rem - 2em);
+@media (min-width: 768px) {
+  :host {
+    padding-left: calc(8rem - 2em);
+  }
 }
 
 #wrapper {
@@ -16,7 +20,7 @@
 }
 
 #heading {
-  max-width: 60%;
+  max-width: 100%;
   background-color: var(--miles_secondary_four);
   color: var(--miles_primary_light);
   border-radius: 2em;
@@ -25,6 +29,13 @@
   z-index: 5;
   left: -8rem;
   margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  #heading {
+    max-width: 60%;
+    left: -4rem;
+  }
 }
 
 p,
