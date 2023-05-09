@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-:root {
+:host {
   --miles_primary_dark: #b72318; /* Miles-rød */
   --miles_primary_light: #fbf0e5; /* Krem */
   --miles_secondary_one: #004047; /* Sjøgrønn */
@@ -45,4 +45,6 @@
 
   --halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);
   --halve_margin_offset_large: calc(100vw - var(--content_width));
+
+  --max-page-width: 1440px;
 }

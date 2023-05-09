@@ -8,8 +8,7 @@ import cssVariables from '../styles/variables.css?inline';
 const MilesFagbloggTeaserTemplate = document.createElement('template');
 MilesFagbloggTeaserTemplate.innerHTML = `
   <style>
-	${styles}\n
-  ${cssVariables}
+  ${cssVariables}\n${styles}
   </style>
   <div id="fagblogg-teaser">
     <div class="bg">
@@ -45,10 +44,7 @@ class MilesFagbloggTeaser extends HTMLElement {
       const links = Array.from(slotElements.querySelectorAll('a'));
 
       Array.from(images).forEach((image, index) => {
-        image.setAttribute(
-          'style',
-          'max-width: var(--maxWidth); height: auto; cursor: pointer;'
-        );
+        image.setAttribute('style', 'height: auto; cursor: pointer;');
 
         image.setAttribute('data-post', links[index].href);
         image.addEventListener('click', this.goToPost);

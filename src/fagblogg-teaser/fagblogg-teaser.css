@@ -3,51 +3,52 @@
   color: inherit;
 
   --maxWidth: 350px;
+
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
 #header {
   display: flex;
-  max-width: 80vw;
-  margin: auto;
+  max-width: var(--max-page-width);
+  margin: 2rem auto;
   flex-direction: column;
 }
 
 #fagblogg-teaser {
   box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
+  max-width: var(--max-page-width);
   position: relative;
   min-height: 800px;
+  margin: auto;
 }
 .bg {
   width: 100%;
   height: 50%;
-  position: absolute;
+  position: relative;
   top: 5rem;
 }
+
 .inner {
-  width: 80vw;
-  justify-content: center;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  align-items: center;
-  gap: 1em;
-  padding-top: 2em;
-  top: 320px;
-  right: 10%;
 }
 
 miles-info {
   position: relative;
-  max-width: 300px;
+  width: 300px;
+}
+
+::slotted(ul) {
+  grid-template-columns: repeat(1, 100%) !important;
+  display: grid !important;
+  gap: 2rem !important;
 }
 
 @media (min-width: 768px) {
-  .inner {
-    flex-direction: row;
-    padding-top: 0em;
-    top: 160px;
+  ::slotted(ul) {
+    grid-template-columns: repeat(3, calc(33% - 1rem)) !important;
+    display: grid !important;
+    gap: 2rem !important;
   }
 
   #header {
@@ -61,10 +62,8 @@ miles-info {
 
 @media (max-width: 1024px) and (min-width: 769px) {
   miles-info {
-    width: 28%;
     left: unset;
     top: 1em;
-    right: var(--halve_margin_offset_large);
   }
 
   .bg {
@@ -88,25 +87,28 @@ miles-info {
   align-items: center;
   gap: 1em;
 }
+
 .text {
   display: flex;
   flex-direction: column;
 }
-h2,
-p {
-  width: var(--content_width);
-  margin: auto;
+
+h2 {
+  flex-grow: 1;
 }
+
 h2 {
   line-height: 150%;
   font-size: var(--miles-h2);
-  color: #000;
-  padding-top: 50px;
+  color: var(--miles_secondary_three);
 }
+
 p {
   font-size: 0.8em;
   color: var(--miles_primary_dark);
+  margin: auto;
 }
+
 svg {
   height: 70px;
   width: 70px;

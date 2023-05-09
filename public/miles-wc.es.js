@@ -1,7 +1,7 @@
 var ie = Object.defineProperty;
 var oe = (s, e, i) => e in s ? ie(s, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : s[e] = i;
-var n = (s, e, i) => (oe(s, typeof e != "symbol" ? e + "" : e, i), i);
-const r = `@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";:root{--miles_primary_dark: #b72318;--miles_primary_light: #fbf0e5;--miles_secondary_one: #004047;--miles_secondary_two: #78e8db;--miles_secondary_three: #000000;--miles_secondary_four: #450d21;--miles_secondary_five: #ff303b;--miles_link_color: #183f46;--miles_link_color_hover: #94e5db;--miles_link_color_ondark: #94e5db;--miles_link_color_ondark_hover: #183f46;--miles_default_bg: #f5f5f5;--miles_effect_shadow_low: 0 0 4px 0 #00000033;--miles_effect_shadow_high: 0 0 16px 0 #00000033;--content_width: 80vw;--content_width_max: 1440px;--default_padding: 1rem .625rem;--default_padding_large: 2rem 1.25rem;--vertical_spacing: 4rem;--vertical_spacing_large: 8rem;--header-height: 72px;--miles-h1: 2.5rem;--miles-h2: 3rem;--miles-h3: 1.25rem;--miles-line-height: 150%;--miles-h1-lineheight: calc(var(--miles-h1) * 1.5);--miles-h2-lineheight: calc(var(--miles-h2) * 1.5);--miles-h3-lineheight: calc(var(--miles-h3) * 1.5);--halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);--halve_margin_offset_large: calc(100vw - var(--content_width))}
+var a = (s, e, i) => (oe(s, typeof e != "symbol" ? e + "" : e, i), i);
+const r = `@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";:host{--miles_primary_dark: #b72318;--miles_primary_light: #fbf0e5;--miles_secondary_one: #004047;--miles_secondary_two: #78e8db;--miles_secondary_three: #000000;--miles_secondary_four: #450d21;--miles_secondary_five: #ff303b;--miles_link_color: #183f46;--miles_link_color_hover: #94e5db;--miles_link_color_ondark: #94e5db;--miles_link_color_ondark_hover: #183f46;--miles_default_bg: #f5f5f5;--miles_effect_shadow_low: 0 0 4px 0 #00000033;--miles_effect_shadow_high: 0 0 16px 0 #00000033;--content_width: 80vw;--content_width_max: 1440px;--default_padding: 1rem .625rem;--default_padding_large: 2rem 1.25rem;--vertical_spacing: 4rem;--vertical_spacing_large: 8rem;--header-height: 72px;--miles-h1: 2.5rem;--miles-h2: 3rem;--miles-h3: 1.25rem;--miles-line-height: 150%;--miles-h1-lineheight: calc(var(--miles-h1) * 1.5);--miles-h2-lineheight: calc(var(--miles-h2) * 1.5);--miles-h3-lineheight: calc(var(--miles-h3) * 1.5);--halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);--halve_margin_offset_large: calc(100vw - var(--content_width));--max-page-width: 1440px}
 `, B = document.createElement("template");
 B.innerHTML = `
   <style>
@@ -154,7 +154,7 @@ I.innerHTML = `
         </svg>
     </div>  
     `;
-class ne extends HTMLElement {
+class ae extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
@@ -168,7 +168,7 @@ class ne extends HTMLElement {
   }
 }
 const v = "miles-bulb";
-customElements.get(v) || customElements.define(v, ne);
+customElements.get(v) || customElements.define(v, ae);
 const Z = document.createElement("template");
 Z.innerHTML = `
     <style>
@@ -199,7 +199,7 @@ Z.innerHTML = `
           </svg>
     </div>
       `;
-class ae extends HTMLElement {
+class ne extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
@@ -213,7 +213,7 @@ class ae extends HTMLElement {
   }
 }
 const w = "miles-cup";
-customElements.get(w) || customElements.define(w, ae);
+customElements.get(w) || customElements.define(w, ne);
 class de extends HTMLElement {
   constructor() {
     super();
@@ -529,22 +529,22 @@ V.innerHTML = `
 class ke extends HTMLElement {
   constructor() {
     super();
-    n(this, "goRight", () => {
+    a(this, "goRight", () => {
       this.startAutoPlay(!1), Math.abs(this.index) !== 0 && (this.index++, this.setActiveDot(this.index), this.slides.style.setProperty("--slides-offset", this.index));
     });
-    n(this, "goLeft", () => {
+    a(this, "goLeft", () => {
       this.startAutoPlay(!1), Math.abs(this.index) !== this.numberOfSlides - 1 && (this.index--, this.setActiveDot(this.index), this.slides.style.setProperty("--slides-offset", this.index));
     });
-    n(this, "goToSlide", (i) => {
+    a(this, "goToSlide", (i) => {
       let t = parseInt(i.target.dataset.slide) * -1;
       this.numberOfSlides - 1 === parseInt(i.target.dataset.slide) && (t = 0), this.startAutoPlay(!1), this.slides.style.setProperty("--slides-offset", t), this.setActiveDot(t);
     });
-    n(this, "startAutoPlay", (i) => {
+    a(this, "startAutoPlay", (i) => {
       i ? this.autoPlay = setInterval(() => {
         Math.abs(this.index) === this.numberOfSlides - 2 ? this.index = 0 : this.index--, this.setActiveDot(this.index), this.slides.style.setProperty("--slides-offset", this.index);
       }, 5e3) : clearInterval(this.autoPlay);
     });
-    n(this, "setActiveDot", (i) => {
+    a(this, "setActiveDot", (i) => {
       const t = this.controls.querySelectorAll(".nav-dot");
       t.forEach((o) => {
         o.classList.remove("active");
@@ -572,12 +572,12 @@ class ke extends HTMLElement {
       if (typeof o == "object")
         try {
           const l = Array.from(o);
-          this.numberOfSlides = o.length, l.forEach((a, p) => {
+          this.numberOfSlides = o.length, l.forEach((n, p) => {
             const c = document.createElement("figure"), h = document.createElement("div");
-            if (h.setAttribute("class", "overlay"), a.classList.forEach((d) => {
+            if (h.setAttribute("class", "overlay"), n.classList.forEach((d) => {
               this.logos.includes(d) && h.classList.add(d);
-            }), c.setAttribute("data-slide-image", p), c.appendChild(h), a.querySelector("img")) {
-              const d = a.querySelector("img");
+            }), c.setAttribute("data-slide-image", p), c.appendChild(h), n.querySelector("img")) {
+              const d = n.querySelector("img");
               d.setAttribute("draggable", !1), c.appendChild(d), this.slides.appendChild(c);
               const m = document.createElement("span");
               m.setAttribute("class", "nav-dot"), m.setAttribute("data-slide", p), this.controls.appendChild(m);
@@ -600,13 +600,12 @@ class ke extends HTMLElement {
 }
 const A = "miles-image-slider";
 customElements.get(A) || customElements.define(A, ke);
-const Ee = `:host{display:block;color:inherit;--maxWidth: 350px}#header{display:flex;max-width:80vw;margin:auto;flex-direction:column}#fagblogg-teaser{box-sizing:border-box;width:100vw;position:relative;min-height:800px}.bg{width:100%;height:50%;position:absolute;top:5rem}.inner{width:80vw;justify-content:center;position:absolute;display:flex;flex-direction:column;margin:auto;align-items:center;gap:1em;padding-top:2em;top:320px;right:10%}miles-info{position:relative;max-width:300px}@media (min-width: 768px){.inner{flex-direction:row;padding-top:0;top:160px}#header{flex-direction:row}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{width:28%;left:unset;top:1em;right:var(--halve_margin_offset_large)}.bg{width:100%;height:35%;position:absolute;top:5rem}}@media (min-width: 1025px){miles-info{left:unset;width:unset}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h2,p{width:var(--content_width);margin:auto}h2{line-height:150%;font-size:var(--miles-h2);color:#000;padding-top:50px}p{font-size:.8em;color:var(--miles_primary_dark)}svg{height:70px;width:70px}a{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a:after{content:"\\2192"}
+const Ee = `:host{display:block;color:inherit;--maxWidth: 350px;margin-left:10vw;margin-right:10vw}#header{display:flex;max-width:var(--max-page-width);margin:2rem auto;flex-direction:column}#fagblogg-teaser{box-sizing:border-box;width:100%;max-width:var(--max-page-width);position:relative;min-height:800px;margin:auto}.bg{width:100%;height:50%;position:relative;top:5rem}miles-info{position:relative;width:300px}::slotted(ul){grid-template-columns:repeat(1,100%)!important;display:grid!important;gap:2rem!important}@media (min-width: 768px){::slotted(ul){grid-template-columns:repeat(3,calc(33% - 1rem))!important;display:grid!important;gap:2rem!important}#header{flex-direction:row}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{left:unset;top:1em}.bg{width:100%;height:35%;position:absolute;top:5rem}}@media (min-width: 1025px){miles-info{left:unset;width:unset}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h2{flex-grow:1}h2{line-height:150%;font-size:var(--miles-h2);color:var(--miles_secondary_three)}p{font-size:.8em;color:var(--miles_primary_dark);margin:auto}svg{height:70px;width:70px}a{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a:after{content:"\\2192"}
 `, W = document.createElement("template");
 W.innerHTML = `
   <style>
-	${Ee}
-
   ${r}
+${Ee}
   </style>
   <div id="fagblogg-teaser">
     <div class="bg">
@@ -628,7 +627,7 @@ W.innerHTML = `
 class _e extends HTMLElement {
   constructor() {
     super();
-    n(this, "goToPost", (i) => {
+    a(this, "goToPost", (i) => {
       window.location.href = escape(i.target.dataset.post);
     });
     this.attachShadow({ mode: "open" }), this.shadowRoot.append(W.content.cloneNode(!0));
@@ -637,11 +636,8 @@ class _e extends HTMLElement {
     const i = this.shadowRoot.querySelector("slot").assignedElements()[0];
     if (i) {
       const t = i.querySelectorAll("img"), o = Array.from(i.querySelectorAll("a"));
-      Array.from(t).forEach((l, a) => {
-        l.setAttribute(
-          "style",
-          "max-width: var(--maxWidth); height: auto; cursor: pointer;"
-        ), l.setAttribute("data-post", o[a].href), l.addEventListener("click", this.goToPost);
+      Array.from(t).forEach((l, n) => {
+        l.setAttribute("style", "height: auto; cursor: pointer;"), l.setAttribute("data-post", o[n].href), l.addEventListener("click", this.goToPost);
       });
     }
   }
@@ -677,7 +673,7 @@ X.innerHTML = `
 class Ae extends HTMLElement {
   constructor() {
     super();
-    n(this, "timeFormat", (i) => new Intl.DateTimeFormat("no", {
+    a(this, "timeFormat", (i) => new Intl.DateTimeFormat("no", {
       month: "short",
       day: "numeric",
       year: "numeric"
@@ -712,7 +708,7 @@ class Ae extends HTMLElement {
 }
 const S = "miles-blog-card";
 customElements.get(S) || customElements.define(S, Ae);
-const Le = `:host{--topOffset: 1rem;--bottomOffset: 5rem;--blockRadius: 30px;color:inherit;display:block}#overlap-block{padding:0 2rem;position:relative}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}@media (min-width: 768px){:host{--topOffset: 16rem}#overlap-block{width:80vw;margin:auto;position:relative}.parent{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:var(--topOffset) auto var(--bottomOffset);grid-column-gap:0px;grid-row-gap:0px}.div1{grid-area:1 / 1 / 2 / 6}.div2{grid-area:1 / 5 / 2 / 13;background-color:var(--miles_secondary_four)}.inner{position:relative;z-index:1;grid-area:2 / 1 / 2 / 13}.inner #content_grid{display:flex;flex-direction:row}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}::slotted(div){font-size:1.5rem}#feature-block:after{z-index:-1;width:100px;height:100%;content:"";position:absolute;top:0;right:0;background-color:var(--miles_secondary_four)}.div1,.div2{border-top-left-radius:var(--blockRadius);border-top-right-radius:var(--blockRadius);height:var(--topOffset)}.div4{border-bottom-left-radius:var(--blockRadius);border-bottom-right-radius:var(--blockRadius)}.div3{grid-area:1 / 1 / 2 / 6}.div4{grid-area:3 / 5 / 3 / 13;background-color:var(--miles_secondary_four)}#list{width:100%;border-radius:30px;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content;left:-10vw;bottom:10vw}}#list{border-radius:unset;left:unset;bottom:unset;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content}#list ul{position:relative;top:calc(-1 * var(--topOffset));padding:0}#list li{line-height:38px;list-style:none;padding:.5rem 0;font-size:1.5rem}miles-bulb{position:absolute;right:6rem;bottom:5rem;z-index:20}miles-curve{margin-right:.5em}
+const Le = `:host{--topOffset: 1rem;--bottomOffset: 5rem;--blockRadius: 30px;color:inherit;display:block}#overlap-block{padding:0 2rem;position:relative}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}@media (min-width: 768px){:host{--topOffset: 16rem}#overlap-block{width:80vw;max-width:var(--max-page-width);margin:auto;position:relative}.parent{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:var(--topOffset) auto var(--bottomOffset);grid-column-gap:0px;grid-row-gap:0px}.div1{grid-area:1 / 1 / 2 / 6}.div2{grid-area:1 / 5 / 2 / 13;background-color:var(--miles_secondary_four)}.inner{position:relative;z-index:1;grid-area:2 / 1 / 2 / 13}.inner #content_grid{display:flex;flex-direction:row}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}::slotted(div){font-size:1.5rem}#feature-block:after{z-index:-1;width:100px;height:100%;content:"";position:absolute;top:0;right:0;background-color:var(--miles_secondary_four)}.div1,.div2{border-top-left-radius:var(--blockRadius);border-top-right-radius:var(--blockRadius);height:var(--topOffset)}.div4{border-bottom-left-radius:var(--blockRadius);border-bottom-right-radius:var(--blockRadius)}.div3{grid-area:1 / 1 / 2 / 6}.div4{grid-area:3 / 5 / 3 / 13;background-color:var(--miles_secondary_four)}#list{width:100%;border-radius:30px;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content;left:-10vw;bottom:10vw}}#list{border-radius:unset;left:unset;bottom:unset;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content}#list ul{position:relative;top:calc(-1 * var(--topOffset));padding:0}#list li{line-height:38px;list-style:none;padding:.5rem 0;font-size:1.5rem}miles-bulb{position:absolute;right:6rem;bottom:5rem;z-index:20}miles-curve{margin-right:.5em}
 `, G = document.createElement("template");
 G.innerHTML = `
   <style>
@@ -785,7 +781,7 @@ J.innerHTML = `
 class He extends HTMLElement {
   constructor() {
     super();
-    n(this, "toggleMenu", () => {
+    a(this, "toggleMenu", () => {
       const i = this.menu.querySelectorAll("miles-business-card"), t = this.banner.getBoundingClientRect();
       this.menu.classList.toggle("open"), this.banner.classList.toggle("open"), this.menu.classList.contains("open") ? (this.triggerEl.querySelector("miles-arrow").classList.remove("open"), t.width < 769 && this.banner.setAttribute(
         "style",
@@ -894,7 +890,7 @@ class Ne extends Y {
 }
 const R = "miles-author-card";
 customElements.get(R) || customElements.define(R, Ne);
-const ze = `:host{display:block;color:inherit}@media (min-width: 768px){:host{padding-left:calc(8rem - 2em)}}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:2em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:100%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:2em;padding:1em 2em;position:relative;z-index:5;left:-4rem;margin-bottom:4rem}@media (min-width: 768px){#heading{max-width:60%;left:-8rem}}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
+const ze = `:host{display:block;color:inherit}@media (min-width: 768px){:host{padding-left:calc(8rem - 2em)}}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:1em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:100%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:1em;padding:1em 2em;position:relative;z-index:5;left:-4rem;margin-bottom:4rem}h2{margin:0}@media (min-width: 768px){#heading{max-width:60%;left:-8rem;border-radius:2em}#wrapper{border-radius:2em}h2{margin:revert}}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
 `, ee = document.createElement("template");
 ee.innerHTML = `
   <style>
@@ -965,12 +961,12 @@ export {
   ye as MilesArrowNav,
   Ne as MilesAuthorCard,
   Ae as MilesBlogCard,
-  ne as MilesBulb,
+  ae as MilesBulb,
   Y as MilesBusinessCard,
   pe as MilesButtonAnchor,
   se as MilesCloud,
   je as MilesContactCard,
-  ae as MilesCup,
+  ne as MilesCup,
   le as MilesCurve,
   _e as MilesFagbloggTeaser,
   ke as MilesImageSlider,

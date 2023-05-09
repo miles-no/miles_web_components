@@ -27,6 +27,7 @@
 
   #overlap-block {
     width: 80vw;
+    max-width: var(--max-page-width);
     margin: auto;
     position: relative;
   }
