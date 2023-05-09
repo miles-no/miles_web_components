@@ -16,7 +16,7 @@ MilesButtonAnchorTemplate.innerHTML = `
             color: var(--color);
             padding: 0.5rem 1rem;
             border-radius: 3rem;
-            border: 2px solid color: var(--color);
+            border: 2px solid var(--color);
             text-decoration: none;
             font-weight: bold;
             transition: all 0.5s ease;
@@ -24,7 +24,7 @@ MilesButtonAnchorTemplate.innerHTML = `
           }
           a:hover {
             color: var(--miles_primary_light);
-            background-color: color: var(--color);
+            background-color: var(--color);
           }
         </style>
         <a id="buttonTarget"">

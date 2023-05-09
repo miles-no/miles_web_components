@@ -27,14 +27,14 @@
   padding: 1em 2em;
   position: relative;
   z-index: 5;
-  left: -8rem;
+  left: -4rem;
   margin-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
   #heading {
     max-width: 60%;
-    left: -4rem;
+    left: -8rem;
   }
 }
 

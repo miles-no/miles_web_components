@@ -1,6 +1,6 @@
 var ie = Object.defineProperty;
 var oe = (s, e, i) => e in s ? ie(s, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : s[e] = i;
-var a = (s, e, i) => (oe(s, typeof e != "symbol" ? e + "" : e, i), i);
+var n = (s, e, i) => (oe(s, typeof e != "symbol" ? e + "" : e, i), i);
 const r = `@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";:root{--miles_primary_dark: #b72318;--miles_primary_light: #fbf0e5;--miles_secondary_one: #004047;--miles_secondary_two: #78e8db;--miles_secondary_three: #000000;--miles_secondary_four: #450d21;--miles_secondary_five: #ff303b;--miles_link_color: #183f46;--miles_link_color_hover: #94e5db;--miles_link_color_ondark: #94e5db;--miles_link_color_ondark_hover: #183f46;--miles_default_bg: #f5f5f5;--miles_effect_shadow_low: 0 0 4px 0 #00000033;--miles_effect_shadow_high: 0 0 16px 0 #00000033;--content_width: 80vw;--content_width_max: 1440px;--default_padding: 1rem .625rem;--default_padding_large: 2rem 1.25rem;--vertical_spacing: 4rem;--vertical_spacing_large: 8rem;--header-height: 72px;--miles-h1: 2.5rem;--miles-h2: 3rem;--miles-h3: 1.25rem;--miles-line-height: 150%;--miles-h1-lineheight: calc(var(--miles-h1) * 1.5);--miles-h2-lineheight: calc(var(--miles-h2) * 1.5);--miles-h3-lineheight: calc(var(--miles-h3) * 1.5);--halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);--halve_margin_offset_large: calc(100vw - var(--content_width))}
 `, B = document.createElement("template");
 B.innerHTML = `
@@ -324,7 +324,7 @@ O.innerHTML = `
             color: var(--color);
             padding: 0.5rem 1rem;
             border-radius: 3rem;
-            border: 2px solid color: var(--color);
+            border: 2px solid var(--color);
             text-decoration: none;
             font-weight: bold;
             transition: all 0.5s ease;
@@ -332,7 +332,7 @@ O.innerHTML = `
           }
           a:hover {
             color: var(--miles_primary_light);
-            background-color: color: var(--color);
+            background-color: var(--color);
           }
         </style>
         <a id="buttonTarget"">
@@ -529,22 +529,22 @@ V.innerHTML = `
 class ke extends HTMLElement {
   constructor() {
     super();
-    a(this, "goRight", () => {
+    n(this, "goRight", () => {
       this.startAutoPlay(!1), Math.abs(this.index) !== 0 && (this.index++, this.setActiveDot(this.index), this.slides.style.setProperty("--slides-offset", this.index));
     });
-    a(this, "goLeft", () => {
+    n(this, "goLeft", () => {
       this.startAutoPlay(!1), Math.abs(this.index) !== this.numberOfSlides - 1 && (this.index--, this.setActiveDot(this.index), this.slides.style.setProperty("--slides-offset", this.index));
     });
-    a(this, "goToSlide", (i) => {
+    n(this, "goToSlide", (i) => {
       let t = parseInt(i.target.dataset.slide) * -1;
       this.numberOfSlides - 1 === parseInt(i.target.dataset.slide) && (t = 0), this.startAutoPlay(!1), this.slides.style.setProperty("--slides-offset", t), this.setActiveDot(t);
     });
-    a(this, "startAutoPlay", (i) => {
+    n(this, "startAutoPlay", (i) => {
       i ? this.autoPlay = setInterval(() => {
         Math.abs(this.index) === this.numberOfSlides - 2 ? this.index = 0 : this.index--, this.setActiveDot(this.index), this.slides.style.setProperty("--slides-offset", this.index);
       }, 5e3) : clearInterval(this.autoPlay);
     });
-    a(this, "setActiveDot", (i) => {
+    n(this, "setActiveDot", (i) => {
       const t = this.controls.querySelectorAll(".nav-dot");
       t.forEach((o) => {
         o.classList.remove("active");
@@ -572,15 +572,15 @@ class ke extends HTMLElement {
       if (typeof o == "object")
         try {
           const l = Array.from(o);
-          this.numberOfSlides = o.length, l.forEach((d, h) => {
-            const n = document.createElement("figure"), c = document.createElement("div");
-            if (c.setAttribute("class", "overlay"), d.classList.forEach((m) => {
-              this.logos.includes(m) && c.classList.add(m);
-            }), n.setAttribute("data-slide-image", h), n.appendChild(c), d.querySelector("img")) {
-              const m = d.querySelector("img");
-              m.setAttribute("draggable", !1), n.appendChild(m), this.slides.appendChild(n);
-              const p = document.createElement("span");
-              p.setAttribute("class", "nav-dot"), p.setAttribute("data-slide", h), this.controls.appendChild(p);
+          this.numberOfSlides = o.length, l.forEach((a, p) => {
+            const c = document.createElement("figure"), h = document.createElement("div");
+            if (h.setAttribute("class", "overlay"), a.classList.forEach((d) => {
+              this.logos.includes(d) && h.classList.add(d);
+            }), c.setAttribute("data-slide-image", p), c.appendChild(h), a.querySelector("img")) {
+              const d = a.querySelector("img");
+              d.setAttribute("draggable", !1), c.appendChild(d), this.slides.appendChild(c);
+              const m = document.createElement("span");
+              m.setAttribute("class", "nav-dot"), m.setAttribute("data-slide", p), this.controls.appendChild(m);
             }
           });
         } catch {
@@ -628,7 +628,7 @@ W.innerHTML = `
 class _e extends HTMLElement {
   constructor() {
     super();
-    a(this, "goToPost", (i) => {
+    n(this, "goToPost", (i) => {
       window.location.href = escape(i.target.dataset.post);
     });
     this.attachShadow({ mode: "open" }), this.shadowRoot.append(W.content.cloneNode(!0));
@@ -637,11 +637,11 @@ class _e extends HTMLElement {
     const i = this.shadowRoot.querySelector("slot").assignedElements()[0];
     if (i) {
       const t = i.querySelectorAll("img"), o = Array.from(i.querySelectorAll("a"));
-      Array.from(t).forEach((l, d) => {
+      Array.from(t).forEach((l, a) => {
         l.setAttribute(
           "style",
           "max-width: var(--maxWidth); height: auto; cursor: pointer;"
-        ), l.setAttribute("data-post", o[d].href), l.addEventListener("click", this.goToPost);
+        ), l.setAttribute("data-post", o[a].href), l.addEventListener("click", this.goToPost);
       });
     }
   }
@@ -677,7 +677,7 @@ X.innerHTML = `
 class Ae extends HTMLElement {
   constructor() {
     super();
-    a(this, "timeFormat", (i) => new Intl.DateTimeFormat("no", {
+    n(this, "timeFormat", (i) => new Intl.DateTimeFormat("no", {
       month: "short",
       day: "numeric",
       year: "numeric"
@@ -693,18 +693,17 @@ class Ae extends HTMLElement {
     }), i === "author" && (this.author.textContent = o);
   }
   connectedCallback() {
-    var o, l, d, h;
     const i = this.shadowRoot.querySelector('slot[name="image"]').assignedElements();
-    (o = i[0]) != null && o.children && Array.from((l = i[0]) == null ? void 0 : l.children).forEach((n) => {
-      n.style.objectFit = "cover", n.style.aspectRatio = "2/3", n.style.width = "100%";
+    i[0]?.children && Array.from(i[0]?.children).forEach((o) => {
+      o.style.objectFit = "cover", o.style.aspectRatio = "2/3", o.style.width = "100%";
     });
     const t = this.shadowRoot.querySelector('slot[name="meta"]').assignedElements();
-    (d = t[0]) != null && d.children && (Array.from((h = t[0]) == null ? void 0 : h.children).forEach((n) => {
-      const c = Array.from(n.children[0].children);
+    t[0]?.children && (Array.from(t[0]?.children).forEach((o) => {
+      const l = Array.from(o.children[0].children);
       this.posted.textContent = `${this.timeFormat(
-        new Date(c[0].dateTime)
+        new Date(l[0].dateTime)
       )}`, this.updated.textContent = `${this.timeFormat(
-        new Date(c[1].dateTime)
+        new Date(l[1].dateTime)
       )}`;
     }), t[0].remove());
   }
@@ -786,7 +785,7 @@ J.innerHTML = `
 class He extends HTMLElement {
   constructor() {
     super();
-    a(this, "toggleMenu", () => {
+    n(this, "toggleMenu", () => {
       const i = this.menu.querySelectorAll("miles-business-card"), t = this.banner.getBoundingClientRect();
       this.menu.classList.toggle("open"), this.banner.classList.toggle("open"), this.menu.classList.contains("open") ? (this.triggerEl.querySelector("miles-arrow").classList.remove("open"), t.width < 769 && this.banner.setAttribute(
         "style",
@@ -895,7 +894,7 @@ class Ne extends Y {
 }
 const R = "miles-author-card";
 customElements.get(R) || customElements.define(R, Ne);
-const ze = `:host{display:block;color:inherit}@media (min-width: 768px){:host{padding-left:calc(8rem - 2em)}}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:2em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:100%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:2em;padding:1em 2em;position:relative;z-index:5;left:-8rem;margin-bottom:4rem}@media (min-width: 768px){#heading{max-width:60%;left:-4rem}}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
+const ze = `:host{display:block;color:inherit}@media (min-width: 768px){:host{padding-left:calc(8rem - 2em)}}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:2em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:100%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:2em;padding:1em 2em;position:relative;z-index:5;left:-4rem;margin-bottom:4rem}@media (min-width: 768px){#heading{max-width:60%;left:-8rem}}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
 `, ee = document.createElement("template");
 ee.innerHTML = `
   <style>
