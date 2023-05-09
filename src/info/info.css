@@ -1,0 +1,25 @@
+:host {
+  display: inline-block;
+  color: var(--miles_primary_light);
+}
+.info {
+  background-color: var(--miles_secondary_four);
+  border-radius: 0 99rem 99rem 99rem;
+  overflow: hidden;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1.5rem;
+  color: inherit;
+}
+.info__icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.info__description {
+  font-weight: bold;
+  max-width: 15rem;
+  font-size: 1rem;
+}

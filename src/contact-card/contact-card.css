@@ -1,0 +1,24 @@
+:host {
+  display: inline-block;
+  color: inherit;
+}
+
+#wrapper {
+  background-color: var(--miles_secondary_four);
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#address,
+#phone {
+  margin-bottom: 1rem;
+}

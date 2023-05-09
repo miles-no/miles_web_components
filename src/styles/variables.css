@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+  --miles_primary_dark: #b72318; /* Miles-rød */
+  --miles_primary_light: #fbf0e5; /* Krem */
+  --miles_secondary_one: #004047; /* Sjøgrønn */
+  --miles_secondary_two: #78e8db; /* Turkis */
+  --miles_secondary_three: #000000; /* Sort */
+  --miles_secondary_four: #450d21; /* Burgunder */
+  --miles_secondary_five: #ff303b; /* korall */
+
+  --miles_link_color: #183f46;
+  --miles_link_color_hover: #94e5db;
+
+  --miles_link_color_ondark: #94e5db;
+  --miles_link_color_ondark_hover: #183f46;
+
+  --miles_default_bg: #f5f5f5;
+
+  --miles_effect_shadow_low: 0 0 4px 0 #00000033;
+  --miles_effect_shadow_high: 0 0 16px 0 #00000033;
+
+  --content_width: 80vw;
+  --content_width_max: 1440px;
+
+  --default_padding: 1rem 0.625rem;
+  --default_padding_large: 2rem 1.25rem;
+
+  --vertical_spacing: 4rem;
+  --vertical_spacing_large: 8rem;
+
+  --header-height: 72px;
+
+  --miles-h1: 2.5rem;
+  --miles-h2: 3rem;
+  --miles-h3: 1.25rem;
+
+  --miles-line-height: 150%;
+
+  --miles-h1-lineheight: calc(var(--miles-h1) * 1.5);
+  --miles-h2-lineheight: calc(var(--miles-h2) * 1.5);
+  --miles-h3-lineheight: calc(var(--miles-h3) * 1.5);
+
+  --halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);
+  --halve_margin_offset_large: calc(100vw - var(--content_width));
+}
