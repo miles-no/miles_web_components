@@ -94,13 +94,17 @@ miles-info {
 }
 
 h2 {
+  margin-bottom: 0.2rem;
+  line-height: 150%;
+  font-size: var(--miles-h2);
+  color: var(--miles_secondary_four);
   flex-grow: 1;
 }
 
-h2 {
-  line-height: 150%;
-  font-size: var(--miles-h2);
-  color: var(--miles_secondary_three);
+@media (min-width: 769px) {
+  h2 {
+    margin-bottom: 1rem;
+  }
 }
 
 p {

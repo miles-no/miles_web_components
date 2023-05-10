@@ -23,6 +23,7 @@ import { MilesBusinessCard } from './business-card/index.js';
 import { MilesAuthorCard } from './author-card/index.js';
 import { MilesInfoBlock } from './info-block/index.js';
 import { MilesContactCard } from './contact-card/index.js';
+import { SiteMenu } from './site-menu/index.js';
 
 export {
   MilesBulb,
@@ -47,4 +48,5 @@ export {
   MilesAuthorCard,
   MilesInfoBlock,
   MilesContactCard,
+  SiteMenu,
 };
