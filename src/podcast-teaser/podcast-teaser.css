@@ -70,18 +70,22 @@ miles-info {
   align-items: center;
   gap: 1em;
 }
+
 .text {
   display: flex;
   flex-direction: column;
 }
+
 h3,
 p {
   margin: 0;
 }
+
 p {
   font-size: 0.8em;
   color: var(--miles_primary_dark);
 }
+
 svg {
   height: 70px;
   width: 70px;
@@ -94,6 +98,7 @@ a.more {
   position: absolute;
   display: inline-block;
 }
+
 a.more::after {
   content: '→';
 }

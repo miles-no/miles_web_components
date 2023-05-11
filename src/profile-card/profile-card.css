@@ -23,6 +23,16 @@ img {
   width: 100%;
   object-fit: cover;
   aspect-ratio: 1 / 1;
+  animation: fadeIn 1s cubic-bezier(0.46, 0.03, 0.05, 0.99);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .profile-card__info {

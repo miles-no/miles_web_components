@@ -103,11 +103,12 @@ section .slides figure {
   background-color: transparent;
   transform: scale(1.5);
   pointer-events: none;
+  z-index: 10;
 }
 
 .overlay.equinor {
   background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/equinor-logo-1.png');
-  /* background-position: 50% 40%; */
+  background-position-y: 45%;
 }
 
 .overlay.fjordkraft {
@@ -125,6 +126,7 @@ section .slides figure {
 
 .overlay.scaleaq {
   background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png');
+  transform: scale(1.2);
 }
 
 /* https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png
@@ -137,6 +139,17 @@ section .slides figure img {
   object-fit: cover;
   border-radius: 30px;
   app-region: no-drag;
+  filter: opacity(60%);
+  animation: fadeIn 1s cubic-bezier(0.46, 0.03, 0.05, 0.99);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 nav {
