@@ -123,6 +123,14 @@ section .slides figure {
   background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png');
 }
 
+.overlay.scaleaq {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png');
+}
+
+/* https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png
+https://www.miles.no/newsite/wp-content/uploads/2021/06/DNB-logo.png
+*/
+
 section .slides figure img {
   height: 100%;
   width: 100%;

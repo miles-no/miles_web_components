@@ -1,4 +1,4 @@
-import './style.css'
+import './style.css';
 
 document.querySelector('#app').innerHTML = `
   <div class="components">
@@ -11,6 +11,6 @@ document.querySelector('#app').innerHTML = `
   </miles-image-slider>
   </div>
 
+  <miles-podcast-teaser episode_title="Testledelse – hva handler dette om?" published_date="Mon, 08 May 2023 06:04:37 GMT" link="https://shows.acast.com/milespodden/episodes/645890f79b594e0011518b11" description="<p>Testing er et etterspurt fagområde.&nbsp;</p><p>De som jobber som testledere er ansvarlig for kvaliteten på det som utvikles.&nbsp;</p><p>Hvordan jobber en testleder og hva tror vi blir de største endringene for rollen om 5 år?</p><p>I studio sitter Hilde Husevåg og Gerd Stalheim Wiggen – begge testledere i Miles.</p><br><p><br></p><br /><hr><p style='color:grey; font-size:0.75em;'> Hosted on Acast. See <a style='color:grey;' target='_blank' rel='noopener noreferrer' href='https://acast.com/privacy'>acast.com/privacy</a> for more information.</p>" length="76699200"></miles-podcast-teaser>
 
-`
-
+`;

@@ -24,6 +24,7 @@
   align-items: center;
   gap: 1em;
   padding-top: 2em;
+  max-width: var(--max-page-width);
 }
 
 miles-info {
@@ -48,7 +49,7 @@ miles-info {
   miles-info {
     width: 28%;
     left: unset;
-    top: 1em;
+    top: -1em;
     right: var(--halve_margin_offset_large);
   }
 }
@@ -86,13 +87,13 @@ svg {
   width: 70px;
 }
 
-a {
+a.more {
   color: inherit;
   right: var(--halve_margin_offset_large);
   bottom: 1em;
   position: absolute;
   display: inline-block;
 }
-a::after {
+a.more::after {
   content: '→';
 }
