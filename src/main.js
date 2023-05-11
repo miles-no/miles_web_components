@@ -24,7 +24,7 @@ import { MilesAuthorCard } from './author-card/index.js';
 import { MilesInfoBlock } from './info-block/index.js';
 import { MilesContactCard } from './contact-card/index.js';
 import { SiteMenu } from './site-menu/index.js';
-
+import { MilesPodcastCard } from './podcast-card/index.js';
 export {
   MilesBulb,
   MilesCloud,
@@ -49,4 +49,5 @@ export {
   MilesInfoBlock,
   MilesContactCard,
   SiteMenu,
+  MilesPodcastCard,
 };

@@ -104,6 +104,7 @@ section .slides figure {
   transform: scale(1.5);
   pointer-events: none;
   z-index: 10;
+  filter: drop-shadow(1px 1px 0px black);
 }
 
 .overlay.equinor {
