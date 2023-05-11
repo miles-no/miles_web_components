@@ -1,9 +1,9 @@
-var re = Object.defineProperty;
-var ne = (s, e, i) => e in s ? re(s, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : s[e] = i;
-var a = (s, e, i) => (ne(s, typeof e != "symbol" ? e + "" : e, i), i);
+var ne = Object.defineProperty;
+var ae = (s, e, i) => e in s ? ne(s, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : s[e] = i;
+var a = (s, e, i) => (ae(s, typeof e != "symbol" ? e + "" : e, i), i);
 const r = `@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";:host{--miles_primary_dark: #b72318;--miles_primary_light: #fbf0e5;--miles_secondary_one: #004047;--miles_secondary_two: #78e8db;--miles_secondary_three: #000000;--miles_secondary_four: #450d21;--miles_secondary_five: #ff303b;--miles_link_color: #183f46;--miles_link_color_hover: #94e5db;--miles_link_color_ondark: #94e5db;--miles_link_color_ondark_hover: #183f46;--miles_default_bg: #f5f5f5;--miles_effect_shadow_low: 0 0 4px 0 #00000033;--miles_effect_shadow_high: 0 0 16px 0 #00000033;--content_width: 80vw;--content_width_max: 1440px;--default_padding: 1rem .625rem;--default_padding_large: 2rem 1.25rem;--vertical_spacing: 4rem;--vertical_spacing_large: 8rem;--header-height: 72px;--miles-h1: 2.5rem;--miles-h2: 3rem;--miles-h3: 1.25rem;--miles-line-height: 150%;--miles-h1-lineheight: calc(var(--miles-h1) * 1.5);--miles-h2-lineheight: calc(var(--miles-h2) * 1.5);--miles-h3-lineheight: calc(var(--miles-h3) * 1.5);--halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);--halve_margin_offset_large: calc(100vw - var(--content_width));--max-page-width: 1440px}
-`, B = document.createElement("template");
-B.innerHTML = `
+`, j = document.createElement("template");
+j.innerHTML = `
   <style>
     ${r}
 
@@ -36,11 +36,11 @@ B.innerHTML = `
     </svg>
   </div>  
   `;
-class ae extends HTMLElement {
+class le extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
-    e.appendChild(B.content.cloneNode(!0)), this.svg = e.querySelector("svg");
+    e.appendChild(j.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
     return ["width", "height", "color"];
@@ -50,9 +50,9 @@ class ae extends HTMLElement {
   }
 }
 const g = "miles-cloud";
-customElements.get(g) || customElements.define(g, ae);
-const j = document.createElement("template");
-j.innerHTML = ` 
+customElements.get(g) || customElements.define(g, le);
+const I = document.createElement("template");
+I.innerHTML = ` 
   <style>
     ${r}
 
@@ -72,11 +72,11 @@ j.innerHTML = `
     </svg>
   </div>
     `;
-class le extends HTMLElement {
+class de extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
-    e.appendChild(j.content.cloneNode(!0)), this.svg = e.querySelector("svg");
+    e.appendChild(I.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
     return ["width", "height", "color"];
@@ -86,9 +86,9 @@ class le extends HTMLElement {
   }
 }
 const u = "miles-heart";
-customElements.get(u) || customElements.define(u, le);
-const I = document.createElement("template");
-I.innerHTML = `
+customElements.get(u) || customElements.define(u, de);
+const Z = document.createElement("template");
+Z.innerHTML = `
     <style>
       ${r}
 
@@ -109,11 +109,11 @@ I.innerHTML = `
           </svg>
     </div>
       `;
-class de extends HTMLElement {
+class ce extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
-    e.appendChild(I.content.cloneNode(!0)), this.svg = e.querySelector("svg");
+    e.appendChild(Z.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
     return ["width", "height", "color"];
@@ -123,9 +123,9 @@ class de extends HTMLElement {
   }
 }
 const f = "miles-curve";
-customElements.get(f) || customElements.define(f, de);
-const Z = document.createElement("template");
-Z.innerHTML = `
+customElements.get(f) || customElements.define(f, ce);
+const F = document.createElement("template");
+F.innerHTML = `
     <style>
         ${r}
 
@@ -154,11 +154,11 @@ Z.innerHTML = `
         </svg>
     </div>  
     `;
-class ce extends HTMLElement {
+class he extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
-    e.appendChild(Z.content.cloneNode(!0)), this.svg = e.querySelector("svg");
+    e.appendChild(F.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
     return ["width", "height", "color"];
@@ -168,9 +168,9 @@ class ce extends HTMLElement {
   }
 }
 const v = "miles-bulb";
-customElements.get(v) || customElements.define(v, ce);
-const F = document.createElement("template");
-F.innerHTML = `
+customElements.get(v) || customElements.define(v, he);
+const O = document.createElement("template");
+O.innerHTML = `
     <style>
       ${r}
 
@@ -199,11 +199,11 @@ F.innerHTML = `
           </svg>
     </div>
       `;
-class he extends HTMLElement {
+class me extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
-    e.appendChild(F.content.cloneNode(!0)), this.svg = e.querySelector("svg");
+    e.appendChild(O.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
     return ["width", "height", "color"];
@@ -213,8 +213,8 @@ class he extends HTMLElement {
   }
 }
 const b = "miles-cup";
-customElements.get(b) || customElements.define(b, he);
-class me extends HTMLElement {
+customElements.get(b) || customElements.define(b, me);
+class pe extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
@@ -237,8 +237,8 @@ class me extends HTMLElement {
   }
 }
 const w = "miles-zoom";
-customElements.get(w) || customElements.define(w, me);
-class pe extends HTMLElement {
+customElements.get(w) || customElements.define(w, pe);
+class ge extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
@@ -267,12 +267,12 @@ class pe extends HTMLElement {
   }
 }
 const x = "miles-pod";
-customElements.get(x) || customElements.define(x, pe);
-const ge = `:host{display:inline-block;width:inherit;box-sizing:border-box}
-`, O = document.createElement("template");
-O.innerHTML = `
+customElements.get(x) || customElements.define(x, ge);
+const ue = `:host{display:inline-block;width:inherit;box-sizing:border-box}
+`, D = document.createElement("template");
+D.innerHTML = `
 <style>
-  	${ge}
+  	${ue}
 
   ${r}
 </style>
@@ -295,11 +295,11 @@ O.innerHTML = `
   </svg>
   </div>
 `;
-class ue extends HTMLElement {
+class fe extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
-    e.appendChild(O.content.cloneNode(!0)), this.svg = e.querySelector("svg");
+    e.appendChild(D.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
     return ["width", "height", "color"];
@@ -309,9 +309,9 @@ class ue extends HTMLElement {
   }
 }
 const y = "miles-logo";
-customElements.get(y) || customElements.define(y, ue);
-const D = document.createElement("template");
-D.innerHTML = `
+customElements.get(y) || customElements.define(y, fe);
+const k = (s) => [null, "false"].includes(s) === !1, U = document.createElement("template");
+U.innerHTML = `
         <style>
           ${r}
 
@@ -330,7 +330,7 @@ D.innerHTML = `
             transition: all 0.5s ease;
             white-space: nowrap;
           }
-          a:hover {
+          a:hover, a.selected {
             color: var(--miles_primary_light);
             background-color: var(--color);
           }
@@ -339,28 +339,34 @@ D.innerHTML = `
           <slot></slot>
         </a>
       `;
-class fe extends HTMLElement {
+class ve extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
-    e.append(D.content.cloneNode(!0)), this.buttontarget = e.querySelector("#buttonTarget");
+    e.append(U.content.cloneNode(!0)), this.buttontarget = e.querySelector("#buttonTarget");
   }
   static get observedAttributes() {
-    return ["href", "color"];
+    return ["href", "color", "selected"];
   }
   attributeChangedCallback(e, i, t) {
-    e === "href" && this.buttontarget.setAttribute("href", t), e === "color" && this.style.setProperty("--color", t);
+    e === "href" && this.buttontarget.setAttribute("href", t), e === "color" && this.style.setProperty("--color", t), e === "selected" && (this.buttontarget.setAttribute(
+      "aria-selected",
+      k(t)
+    ), this.buttontarget.classList.toggle(
+      "selected",
+      k(t)
+    ));
   }
   connectedCallback() {
   }
 }
-const k = "miles-button-anchor";
-customElements.get(k) || customElements.define(k, fe);
-const ve = `:host{display:inline-block;--width: 215px}.profile-card{display:flex;flex-direction:column;width:var(--width);border-radius:5px;overflow:hidden}figure{border-radius:.5rem;height:var(--width);margin:0 0 .5rem;padding:0}img{background-color:#fff;filter:grayscale(1);width:100%;object-fit:cover;aspect-ratio:1 / 1}.profile-card__info{display:flex;background-color:var(--miles_secondary_four);padding:1.2rem;min-height:140px;flex-direction:column}.jobtitle{flex-grow:1}.jobtitle p{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}.description{display:flex;flex-direction:row;align-items:baseline;gap:.2rem}h3,p{margin:0;color:var(--miles_primary_light)}
-`, U = document.createElement("template");
-U.innerHTML = `
+const C = "miles-button-anchor";
+customElements.get(C) || customElements.define(C, ve);
+const be = `:host{display:inline-block;--width: 215px}.profile-card{display:flex;flex-direction:column;width:var(--width);border-radius:5px;overflow:hidden}figure{border-radius:.5rem;height:var(--width);margin:0 0 .5rem;padding:0}img{background-color:#fff;filter:grayscale(1);width:100%;object-fit:cover;aspect-ratio:1 / 1}.profile-card__info{display:flex;background-color:var(--miles_secondary_four);padding:1.2rem;min-height:140px;flex-direction:column}.jobtitle{flex-grow:1}.jobtitle p{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}.description{display:flex;flex-direction:row;align-items:baseline;gap:.2rem}h3,p{margin:0;color:var(--miles_primary_light)}
+`, V = document.createElement("template");
+V.innerHTML = `
         <style>
-          	${ve}
+          	${be}
 
            ${r}
         </style>
@@ -385,9 +391,9 @@ U.innerHTML = `
           </div>
         </div>  
       `;
-class be extends HTMLElement {
+class we extends HTMLElement {
   constructor() {
-    super(), this.attachShadow({ mode: "open" }).append(U.content.cloneNode(!0)), this.officeLocation = this.shadowRoot.querySelector("#location"), this.jobTitle = this.shadowRoot.querySelector("#jobtitle"), this.consultantName = this.shadowRoot.querySelector("#name"), this.profileImage = this.shadowRoot.querySelector("#profileimage");
+    super(), this.attachShadow({ mode: "open" }).append(V.content.cloneNode(!0)), this.officeLocation = this.shadowRoot.querySelector("#location"), this.jobTitle = this.shadowRoot.querySelector("#jobtitle"), this.consultantName = this.shadowRoot.querySelector("#name"), this.profileImage = this.shadowRoot.querySelector("#profileimage");
   }
   static get observedAttributes() {
     return ["image", "name", "jobtitle", "location"];
@@ -406,17 +412,17 @@ class be extends HTMLElement {
   disconnectedCallback() {
   }
 }
-const C = "miles-profile-card";
-customElements.get(C) || customElements.define(C, be);
-const we = `:host{display:inline-block;color:var(--miles_primary_light)}.info{background-color:var(--miles_secondary_four);border-radius:0 99rem 99rem;overflow:hidden;padding:1rem 3rem;display:flex;justify-content:center;align-items:center;flex-direction:row;gap:1.5rem;color:inherit}.info__icon{font-size:1.2rem;font-weight:700}.info__description{font-weight:700;max-width:15rem;font-size:1rem}
+const E = "miles-profile-card";
+customElements.get(E) || customElements.define(E, we);
+const xe = `:host{display:inline-block;color:var(--miles_primary_light)}.info{background-color:var(--miles_secondary_four);border-radius:0 99rem 99rem;overflow:hidden;padding:1rem 3rem;display:flex;justify-content:center;align-items:center;flex-direction:row;gap:1.5rem;color:inherit}.info__icon{font-size:1.2rem;font-weight:700}.info__description{font-weight:700;max-width:15rem;font-size:1rem}
 `;
-class xe extends HTMLElement {
+class ye extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
     e.innerHTML = `
         <style>
-      	${we}
+      	${xe}
 
         ${r}
         </style>
@@ -431,13 +437,13 @@ class xe extends HTMLElement {
       `;
   }
 }
-const E = "miles-info";
-customElements.get(E) || customElements.define(E, xe);
-const ye = `:host{display:block;color:inherit}.podcast-teaser{box-sizing:border-box;width:100vw;position:relative;height:300px}.bg{background-color:#ff303b1a;width:100%;height:66%;position:absolute;bottom:0}.inner{height:100%;display:flex;flex-direction:column;width:80%;margin:auto;align-items:center;gap:1em;padding-top:2em;max-width:var(--max-page-width)}miles-info{right:10%;left:10%;position:absolute;top:.75em}@media (min-width: 768px){.inner{flex-direction:row;padding-top:0}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{width:28%;left:unset;top:-1em;right:var(--halve_margin_offset_large)}}@media (min-width: 1025px){miles-info{max-width:250px;left:unset;width:unset;top:1em;right:var(--halve_margin_offset_large)}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h3,p{margin:0}p{font-size:.8em;color:var(--miles_primary_dark)}svg{height:70px;width:70px}a.more{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a.more:after{content:"\\2192"}
-`, V = document.createElement("template");
-V.innerHTML = `
+const _ = "miles-info";
+customElements.get(_) || customElements.define(_, ye);
+const ke = `:host{display:block;color:inherit}.podcast-teaser{box-sizing:border-box;width:100vw;position:relative;height:300px}.bg{background-color:#ff303b1a;width:100%;height:66%;position:absolute;bottom:0}.inner{height:100%;display:flex;flex-direction:column;width:80%;margin:auto;align-items:center;gap:1em;padding-top:2em;max-width:var(--max-page-width)}miles-info{right:10%;left:10%;position:absolute;top:.75em}@media (min-width: 768px){.inner{flex-direction:row;padding-top:0}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{width:28%;left:unset;top:-1em;right:var(--halve_margin_offset_large)}}@media (min-width: 1025px){miles-info{max-width:250px;left:unset;width:unset;top:1em;right:var(--halve_margin_offset_large)}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h3,p{margin:0}p{font-size:.8em;color:var(--miles_primary_dark)}svg{height:70px;width:70px}a.more{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a.more:after{content:"\\2192"}
+`, W = document.createElement("template");
+W.innerHTML = `
       <style>
-      	${ye}
+      	${ke}
 
         ${r}
         </style>
@@ -465,14 +471,14 @@ V.innerHTML = `
           </miles-info>
         </div>
         `;
-class ke extends HTMLElement {
+class Ce extends HTMLElement {
   constructor() {
     super();
     a(this, "timeFormat", (i) => new Intl.DateTimeFormat("no", {
       month: "short",
       day: "numeric"
     }).format(i));
-    this.attachShadow({ mode: "open" }).appendChild(V.content.cloneNode(!0)), this.titlEl = this.shadowRoot.querySelector("#title"), this.dateEl = this.shadowRoot.querySelector("#date");
+    this.attachShadow({ mode: "open" }).appendChild(W.content.cloneNode(!0)), this.titlEl = this.shadowRoot.querySelector("#title"), this.dateEl = this.shadowRoot.querySelector("#date");
   }
   static get observedAttributes() {
     return ["episode_title", "published_date", "link"];
@@ -483,13 +489,13 @@ class ke extends HTMLElement {
     )} - MilesPodden`);
   }
 }
-const _ = "miles-podcast-teaser";
-customElements.get(_) || customElements.define(_, ke);
-const Ce = `:host{display:inline-block;color:red;--arrow-bg-color: #ffffff;--arrow-color: #b72a26}#arrow-nav{display:flex;padding:.8rem;border-radius:50%;background-color:#94e5db}svg{display:inline-block}
-`, W = document.createElement("template");
-W.innerHTML = `
+const M = "miles-podcast-teaser";
+customElements.get(M) || customElements.define(M, Ce);
+const Ee = `:host{display:inline-block;color:red;--arrow-bg-color: #ffffff;--arrow-color: #b72a26}#arrow-nav{display:flex;padding:.8rem;border-radius:50%;background-color:#94e5db}svg{display:inline-block}
+`, X = document.createElement("template");
+X.innerHTML = `
   <style>
-	${Ce}
+	${Ee}
 
   ${r}
   </style>
@@ -499,11 +505,11 @@ W.innerHTML = `
     </svg>
   </div>
   `;
-class Ee extends HTMLElement {
+class _e extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
-    e.appendChild(W.content.cloneNode(!0)), this.nav = e.querySelector("#arrow-nav");
+    e.appendChild(X.content.cloneNode(!0)), this.nav = e.querySelector("#arrow-nav");
   }
   static get observedAttributes() {
     return ["width", "height", "color"];
@@ -512,13 +518,13 @@ class Ee extends HTMLElement {
     e === "width" && this.nav.setAttribute("width", t), e === "height" && this.nav.setAttribute("height", t), e === "color" && this.nav.setAttribute("color", t);
   }
 }
-const M = "miles-arrow-nav";
-customElements.get(M) || customElements.define(M, Ee);
-const _e = `:host{--slide-container-height:calc(100vw - 2rem);--slide-container-width: 100vw;--slides-offset: 0;display:block;width:var(--slide-container-width);height:var(--slide-container-height);background-color:#f8ebe8;height:100%;padding-top:100px;padding-bottom:100px;overflow:hidden}@media (min-width: 768px){:host{--slide-container-height: 500px}}section{width:var(--slide-container-width);height:calc(var(--slide-container-height) + 3rem);position:relative}#leftnav,#rightnav{cursor:pointer;height:calc(500px - 2rem);top:1rem;width:80px;position:absolute;z-index:10;flex-direction:column;display:flex;align-items:center;justify-content:center}#nav-overlay-left,#nav-overlay-right{transition:opacity .5s ease-in-out;width:80px;top:1rem;z-index:10;position:absolute;height:calc(500px - 2rem);top:0rem;opacity:0;background-color:#fff}#nav-overlay-left:hover,#nav-overlay-right:hover{opacity:.6}miles-arrow-nav{z-index:15;opacity:.9}#nav-overlay-right{right:0}#rightnav{transform:rotate(180deg);right:0}section .slides{transform:translate(calc(var(--slides-offset) * var(--slide-container-height)));position:absolute;display:flex;flex-direction:row;transition:transform 1s cubic-bezier(.46,.03,.52,.96)}section .slides figure{position:relative;box-sizing:border-box;padding:1rem;height:var(--slide-container-height);aspect-ratio:1 / 1;margin:0}.overlay{position:absolute;height:100%;width:100%;background-repeat:no-repeat;background-size:contain;background-position:center;background-color:transparent;transform:scale(1.5);pointer-events:none}.overlay.equinor{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/equinor-logo-1.png)}.overlay.fjordkraft{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/fjordkraft-logo.png);background-position:center}.overlay.tv2{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/tv2-logo-1.png)}.overlay.cutters{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png)}.overlay.scaleaq{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png)}section .slides figure img{height:100%;width:100%;object-fit:cover;border-radius:30px;app-region:no-drag}nav{max-width:100vw;position:absolute;width:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;gap:1em;bottom:0;height:3rem}.nav-dot{border-radius:50%;display:inline-block;height:.5em;width:.5em;background-color:var(--miles_secondary_four);cursor:pointer}#slide-wrapper{width:100vw}h2{font-size:2rem;margin:3rem auto;text-align:center}@media (min-width: 768px){h2{font-size:3rem}.nav-dot{height:1em;width:1em}}.active{background-color:var(--miles_secondary_five)}
-`, X = document.createElement("template");
-X.innerHTML = `
+const L = "miles-arrow-nav";
+customElements.get(L) || customElements.define(L, _e);
+const Me = `:host{--slide-container-height:calc(100vw - 2rem);--slide-container-width: 100vw;--slides-offset: 0;display:block;width:var(--slide-container-width);height:var(--slide-container-height);background-color:#f8ebe8;height:100%;padding-top:100px;padding-bottom:100px;overflow:hidden}@media (min-width: 768px){:host{--slide-container-height: 500px}}section{width:var(--slide-container-width);height:calc(var(--slide-container-height) + 3rem);position:relative}#leftnav,#rightnav{cursor:pointer;height:calc(500px - 2rem);top:1rem;width:80px;position:absolute;z-index:10;flex-direction:column;display:flex;align-items:center;justify-content:center}#nav-overlay-left,#nav-overlay-right{transition:opacity .5s ease-in-out;width:80px;top:1rem;z-index:10;position:absolute;height:calc(500px - 2rem);top:0rem;opacity:0;background-color:#fff}#nav-overlay-left:hover,#nav-overlay-right:hover{opacity:.6}miles-arrow-nav{z-index:15;opacity:.9}#nav-overlay-right{right:0}#rightnav{transform:rotate(180deg);right:0}section .slides{transform:translate(calc(var(--slides-offset) * var(--slide-container-height)));position:absolute;display:flex;flex-direction:row;transition:transform 1s cubic-bezier(.46,.03,.52,.96)}section .slides figure{position:relative;box-sizing:border-box;padding:1rem;height:var(--slide-container-height);aspect-ratio:1 / 1;margin:0}.overlay{position:absolute;height:100%;width:100%;background-repeat:no-repeat;background-size:contain;background-position:center;background-color:transparent;transform:scale(1.5);pointer-events:none}.overlay.equinor{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/equinor-logo-1.png)}.overlay.fjordkraft{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/fjordkraft-logo.png);background-position:center}.overlay.tv2{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/tv2-logo-1.png)}.overlay.cutters{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png)}.overlay.scaleaq{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png)}section .slides figure img{height:100%;width:100%;object-fit:cover;border-radius:30px;app-region:no-drag}nav{max-width:100vw;position:absolute;width:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;gap:1em;bottom:0;height:3rem}.nav-dot{border-radius:50%;display:inline-block;height:.5em;width:.5em;background-color:var(--miles_secondary_four);cursor:pointer}#slide-wrapper{width:100vw}h2{font-size:2rem;margin:3rem auto;text-align:center}@media (min-width: 768px){h2{font-size:3rem}.nav-dot{height:1em;width:1em}}.active{background-color:var(--miles_secondary_five)}
+`, G = document.createElement("template");
+G.innerHTML = `
   <style>
-	${_e}
+	${Me}
 
   ${r}
   </style>
@@ -539,7 +545,7 @@ X.innerHTML = `
     </section>
   </div>
     `;
-class Me extends HTMLElement {
+class Le extends HTMLElement {
   constructor() {
     super();
     a(this, "goRight", () => {
@@ -566,7 +572,7 @@ class Me extends HTMLElement {
       });
     });
     const i = this.attachShadow({ mode: "open" });
-    i.appendChild(X.content.cloneNode(!0)), this.slides = i.querySelector(".slides"), this.controls = i.querySelector(".controls"), this.wrapper = i.querySelector("#slide-wrapper"), this.numberOfSlides = 0, this.autoPlay = 0, this.index = 0, this.logos = ["equinor", "fjordkraft", "tv2", "cutters", "scaleaq"], this.rightNav = i.querySelector("#rightnav"), this.leftNav = i.querySelector("#leftnav");
+    i.appendChild(G.content.cloneNode(!0)), this.slides = i.querySelector(".slides"), this.controls = i.querySelector(".controls"), this.wrapper = i.querySelector("#slide-wrapper"), this.numberOfSlides = 0, this.autoPlay = 0, this.index = 0, this.logos = ["equinor", "fjordkraft", "tv2", "cutters", "scaleaq"], this.rightNav = i.querySelector("#rightnav"), this.leftNav = i.querySelector("#leftnav");
   }
   connectedCallback() {
     let i = {
@@ -612,10 +618,10 @@ class Me extends HTMLElement {
   }
 }
 const S = "miles-image-slider";
-customElements.get(S) || customElements.define(S, Me);
+customElements.get(S) || customElements.define(S, Le);
 const Se = `:host{display:block;color:inherit;--maxWidth: 350px;margin-left:10vw;margin-right:10vw}#header{display:flex;max-width:var(--max-page-width);margin:2rem auto;flex-direction:column}#fagblogg-teaser{box-sizing:border-box;width:100%;max-width:var(--max-page-width);position:relative;min-height:800px;margin:auto}.bg{width:100%;height:50%;position:relative;top:5rem}miles-info{position:relative;width:300px}::slotted(ul){grid-template-columns:repeat(1,100%)!important;display:grid!important;gap:2rem!important}@media (min-width: 768px){::slotted(ul){grid-template-columns:repeat(3,calc(33% - 1rem))!important;display:grid!important;gap:2rem!important}#header{flex-direction:row}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{left:unset;top:1em}.bg{width:100%;height:35%;position:absolute;top:5rem}}@media (min-width: 1025px){miles-info{left:unset;width:unset}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h2{margin-bottom:.2rem;line-height:150%;font-size:var(--miles-h2);color:var(--miles_secondary_four);flex-grow:1}@media (min-width: 769px){h2{margin-bottom:1rem}}p{font-size:.8em;color:var(--miles_primary_dark);margin:auto}svg{height:70px;width:70px}a{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a:after{content:"\\2192"}
-`, G = document.createElement("template");
-G.innerHTML = `
+`, J = document.createElement("template");
+J.innerHTML = `
   <style>
   ${r}
 ${Se}
@@ -637,13 +643,13 @@ ${Se}
 
   </div>
 `;
-class Le extends HTMLElement {
+class Ae extends HTMLElement {
   constructor() {
     super();
     a(this, "goToPost", (i) => {
       window.location.href = escape(i.target.dataset.post);
     });
-    this.attachShadow({ mode: "open" }), this.shadowRoot.append(G.content.cloneNode(!0));
+    this.attachShadow({ mode: "open" }), this.shadowRoot.append(J.content.cloneNode(!0));
   }
   connectedCallback() {
     const i = this.shadowRoot.querySelector("slot").assignedElements()[0];
@@ -657,13 +663,13 @@ class Le extends HTMLElement {
   disconnectedCallback() {
   }
 }
-const L = "miles-fagblogg-teaser";
-customElements.get(L) || customElements.define(L, Le);
-const Ae = `:host{display:block;color:inherit;width:inherit;height:inherit}#blog-card{display:flex;flex-direction:column;gap:.2rem;width:100%;border-radius:1rem;overflow:hidden}slot[name=title]::slotted(*){font-size:1.5rem;margin:0}a{display:block;width:100%;text-decoration:none;color:inherit}.text{background-color:var(--miles_secondary_four);color:var(--miles_primary_light);padding:2rem;height:110px;display:flex;flex-direction:column}slot[name=title]::slotted(*){overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}slot[name=meta]{display:block;flex-grow:1}#updated{display:none}::slotted(figure){margin:0;aspect-ratio:4/5;overflow:hidden}
-`, J = document.createElement("template");
-J.innerHTML = `
+const A = "miles-fagblogg-teaser";
+customElements.get(A) || customElements.define(A, Ae);
+const Te = `:host{display:block;color:inherit;width:inherit;height:inherit}#blog-card{display:flex;flex-direction:column;gap:.2rem;width:100%;border-radius:1rem;overflow:hidden}slot[name=title]::slotted(*){font-size:1.5rem;margin:0}a{display:block;width:100%;text-decoration:none;color:inherit}.text{background-color:var(--miles_secondary_four);color:var(--miles_primary_light);padding:2rem;height:110px;display:flex;flex-direction:column}slot[name=title]::slotted(*){overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}slot[name=meta]{display:block;flex-grow:1}#updated{display:none}::slotted(figure){margin:0;aspect-ratio:4/5;overflow:hidden}
+`, K = document.createElement("template");
+K.innerHTML = `
   <style>
-	${Ae}
+	${Te}
 
   ${r}
   </style>
@@ -683,7 +689,7 @@ J.innerHTML = `
     </div>
   </div>
 `;
-class Te extends HTMLElement {
+class He extends HTMLElement {
   constructor() {
     super();
     a(this, "timeFormat", (i) => new Intl.DateTimeFormat("no", {
@@ -691,7 +697,7 @@ class Te extends HTMLElement {
       day: "numeric",
       year: "numeric"
     }).format(i));
-    this.attachShadow({ mode: "open" }), this.shadowRoot.append(J.content.cloneNode(!0)), this.posted = this.shadowRoot.querySelector("#posted"), this.updated = this.shadowRoot.querySelector("#updated"), this.author = this.shadowRoot.querySelector("#author");
+    this.attachShadow({ mode: "open" }), this.shadowRoot.append(K.content.cloneNode(!0)), this.posted = this.shadowRoot.querySelector("#posted"), this.updated = this.shadowRoot.querySelector("#updated"), this.author = this.shadowRoot.querySelector("#author");
   }
   static get observedAttributes() {
     return ["url", "author", "posted", "updated"];
@@ -719,13 +725,13 @@ class Te extends HTMLElement {
   disconnectedCallback() {
   }
 }
-const A = "miles-blog-card";
-customElements.get(A) || customElements.define(A, Te);
-const He = `:host{--topOffset: 1rem;--bottomOffset: 5rem;--blockRadius: 30px;color:inherit;display:block}#overlap-block{padding:0 2rem;position:relative}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}@media (min-width: 768px){:host{--topOffset: 16rem}#overlap-block{width:80vw;max-width:var(--max-page-width);margin:auto;position:relative}.parent{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:var(--topOffset) auto var(--bottomOffset);grid-column-gap:0px;grid-row-gap:0px}.div1{grid-area:1 / 1 / 2 / 6}.div2{grid-area:1 / 5 / 2 / 13;background-color:var(--miles_secondary_four)}.inner{position:relative;z-index:1;grid-area:2 / 1 / 2 / 13}.inner #content_grid{display:flex;flex-direction:row}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}::slotted(div){font-size:1.5rem}#feature-block:after{z-index:-1;width:100px;height:100%;content:"";position:absolute;top:0;right:0;background-color:var(--miles_secondary_four)}.div1,.div2{border-top-left-radius:var(--blockRadius);border-top-right-radius:var(--blockRadius);height:var(--topOffset)}.div4{border-bottom-left-radius:var(--blockRadius);border-bottom-right-radius:var(--blockRadius)}.div3{grid-area:1 / 1 / 2 / 6}.div4{grid-area:3 / 5 / 3 / 13;background-color:var(--miles_secondary_four)}#list{width:100%;border-radius:30px;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content;left:-10vw;bottom:10vw}}#list{border-radius:unset;left:unset;bottom:unset;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content}#list ul{position:relative;top:calc(-1 * var(--topOffset));padding:0}#list li{line-height:38px;list-style:none;padding:.5rem 0;font-size:1.5rem}miles-bulb{position:absolute;right:6rem;bottom:5rem;z-index:20}miles-curve{margin-right:.5em}
-`, K = document.createElement("template");
-K.innerHTML = `
+const T = "miles-blog-card";
+customElements.get(T) || customElements.define(T, He);
+const qe = `:host{--topOffset: 1rem;--bottomOffset: 5rem;--blockRadius: 30px;color:inherit;display:block}#overlap-block{padding:0 2rem;position:relative}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}@media (min-width: 768px){:host{--topOffset: 16rem}#overlap-block{width:80vw;max-width:var(--max-page-width);margin:auto;position:relative}.parent{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:var(--topOffset) auto var(--bottomOffset);grid-column-gap:0px;grid-row-gap:0px}.div1{grid-area:1 / 1 / 2 / 6}.div2{grid-area:1 / 5 / 2 / 13;background-color:var(--miles_secondary_four)}.inner{position:relative;z-index:1;grid-area:2 / 1 / 2 / 13}.inner #content_grid{display:flex;flex-direction:row}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}::slotted(div){font-size:1.5rem}#feature-block:after{z-index:-1;width:100px;height:100%;content:"";position:absolute;top:0;right:0;background-color:var(--miles_secondary_four)}.div1,.div2{border-top-left-radius:var(--blockRadius);border-top-right-radius:var(--blockRadius);height:var(--topOffset)}.div4{border-bottom-left-radius:var(--blockRadius);border-bottom-right-radius:var(--blockRadius)}.div3{grid-area:1 / 1 / 2 / 6}.div4{grid-area:3 / 5 / 3 / 13;background-color:var(--miles_secondary_four)}#list{width:100%;border-radius:30px;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content;left:-10vw;bottom:10vw}}#list{border-radius:unset;left:unset;bottom:unset;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content}#list ul{position:relative;top:calc(-1 * var(--topOffset));padding:0}#list li{line-height:38px;list-style:none;padding:.5rem 0;font-size:1.5rem}miles-bulb{position:absolute;right:6rem;bottom:5rem;z-index:20}miles-curve{margin-right:.5em}
+`, Q = document.createElement("template");
+Q.innerHTML = `
   <style>
-	${He}
+	${qe}
 
   ${r}
   </style>
@@ -747,9 +753,9 @@ K.innerHTML = `
    <!-- <miles-bulb color="var(--miles_secondary_two)" width="3rem"></miles-bulb> -->
   </div>
 `;
-class qe extends HTMLElement {
+class $e extends HTMLElement {
   constructor() {
-    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(K.content.cloneNode(!0)), this.list = this.shadowRoot.querySelector("#list");
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(Q.content.cloneNode(!0)), this.list = this.shadowRoot.querySelector("#list");
   }
   connectedCallback() {
     const e = [
@@ -769,13 +775,13 @@ class qe extends HTMLElement {
   disconnectedCallback() {
   }
 }
-const T = "miles-overlap-block";
-customElements.get(T) || customElements.define(T, qe);
-const $e = `:host{--headerHeight: 200px}#banner{height:300px;overflow:hidden;border-radius:30px;position:relative;box-sizing:border-box;font-size:12px;line-height:1.25}#banner.open{height:unset}#banner img{transform:scale(1.1);width:100%;object-fit:cover}#banner figure{margin:0}#menu{display:flex;flex-direction:column-reverse;justify-content:start;padding:1rem;right:0;left:0;width:100%;z-index:100;top:100%;position:absolute;background-color:var(--miles_secondary_four);height:100%;transition:top .5s cubic-bezier(.46,.03,.52,.96);gap:2rem}#menu.open{top:100px}#triggerEl miles-arrow{width:20px;height:20px}@media (max-width: 1024px) and (min-width: 769px){#menu.open{top:150px;width:100%;left:0;right:unset}}@media (min-width: 1025px){#menu{bottom:0;right:0;left:unset;width:50%;padding:4rem}#menu.open{top:0;width:50%;left:unset}}#menu h2{display:inline-block}#menu ul{padding:0;margin:0;list-style:none}#menu .miles-banner-card .wp-block-group__inner-container{justify-items:center;display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:1rem}#menu .miles-banner-card figure{margin:0;height:100px;aspect-ratio:1/1;border-radius:50%;overflow:hidden}#menu .miles-banner-card li:first-child{font-size:1.2rem;font-weight:600}#menu .miles-banner-card img{width:100%;height:100%}#people{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}#triggerEl h2{color:var(--miles_primary_light);font-size:2rem;line-height:150%;margin:0;text-align:left;z-index:10;position:relative}#triggerBg{margin:auto;position:relative;width:100%;z-index:10;bottom:unset;top:0;height:calc(calc(var(--headerHeight) / 2) + 5px);padding:1rem}#triggerBg:after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.2);transition:all .5s cubic-bezier(.46,.03,.52,.96);z-index:1}#triggerBg:hover:after{background:rgba(0,0,0,.8)}@media (min-width: 769px){#banner{font-size:16px;height:unset}#banner.open{height:unset}#people{display:grid;grid-template-columns:repeat(2,50%);gap:1rem}#triggerEl h2{font-size:64px;line-height:150%}#triggerBg{bottom:unset;top:unset;bottom:0;height:200px;padding:2rem;position:absolute}#triggerEl miles-arrow{width:30px;height:30px}}
-`, Q = document.createElement("template");
-Q.innerHTML = `
+const H = "miles-overlap-block";
+customElements.get(H) || customElements.define(H, $e);
+const ze = `:host{--headerHeight: 200px}#banner{height:300px;overflow:hidden;border-radius:30px;position:relative;box-sizing:border-box;font-size:12px;line-height:1.25}#banner.open{height:unset}#banner img{transform:scale(1.1);width:100%;object-fit:cover}#banner figure{margin:0}#menu{display:flex;flex-direction:column-reverse;justify-content:start;padding:1rem;right:0;left:0;width:100%;z-index:100;top:100%;position:absolute;background-color:var(--miles_secondary_four);height:100%;transition:top .5s cubic-bezier(.46,.03,.52,.96);gap:2rem}#menu.open{top:100px}#triggerEl miles-arrow{width:20px;height:20px}@media (max-width: 1024px) and (min-width: 769px){#menu.open{top:150px;width:100%;left:0;right:unset}}@media (min-width: 1025px){#menu{bottom:0;right:0;left:unset;width:50%;padding:4rem}#menu.open{top:0;width:50%;left:unset}}#menu h2{display:inline-block}#menu ul{padding:0;margin:0;list-style:none}#menu .miles-banner-card .wp-block-group__inner-container{justify-items:center;display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:1rem}#menu .miles-banner-card figure{margin:0;height:100px;aspect-ratio:1/1;border-radius:50%;overflow:hidden}#menu .miles-banner-card li:first-child{font-size:1.2rem;font-weight:600}#menu .miles-banner-card img{width:100%;height:100%}#people{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}#triggerEl h2{color:var(--miles_primary_light);font-size:2rem;line-height:150%;margin:0;text-align:left;z-index:10;position:relative}#triggerBg{margin:auto;position:relative;width:100%;z-index:10;bottom:unset;top:0;height:calc(calc(var(--headerHeight) / 2) + 5px);padding:1rem}#triggerBg:after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.2);transition:all .5s cubic-bezier(.46,.03,.52,.96);z-index:1}#triggerBg:hover:after{background:rgba(0,0,0,.8)}@media (min-width: 769px){#banner{font-size:16px;height:unset}#banner.open{height:unset}#people{display:grid;grid-template-columns:repeat(2,50%);gap:1rem}#triggerEl h2{font-size:64px;line-height:150%}#triggerBg{bottom:unset;top:unset;bottom:0;height:200px;padding:2rem;position:absolute}#triggerEl miles-arrow{width:30px;height:30px}}
+`, Y = document.createElement("template");
+Y.innerHTML = `
   <style>
-	${$e}
+	${ze}
 
   ${r}
   </style>
@@ -791,7 +797,7 @@ Q.innerHTML = `
   </div>
   </div>
 `;
-class ze extends HTMLElement {
+class Ne extends HTMLElement {
   constructor() {
     super();
     a(this, "toggleMenu", () => {
@@ -801,7 +807,7 @@ class ze extends HTMLElement {
         `height: calc(calc(${i.length} * var(--headerHeight)) + 300px);`
       )) : (this.banner.removeAttribute("style"), this.triggerEl.querySelector("miles-arrow").classList.add("open"), this.banner.classList.toggle("open"));
     });
-    this.attachShadow({ mode: "open" }), this.shadowRoot.append(Q.content.cloneNode(!0)), this.banner = this.shadowRoot.querySelector("#banner"), this.menu = this.shadowRoot.querySelector("#menu"), this.people = this.shadowRoot.querySelector("#people"), this.triggerEl = this.shadowRoot.querySelector("#triggerEl"), this.header = null;
+    this.attachShadow({ mode: "open" }), this.shadowRoot.append(Y.content.cloneNode(!0)), this.banner = this.shadowRoot.querySelector("#banner"), this.menu = this.shadowRoot.querySelector("#menu"), this.people = this.shadowRoot.querySelector("#people"), this.triggerEl = this.shadowRoot.querySelector("#triggerEl"), this.header = null;
   }
   connectedCallback() {
     const i = this.shadowRoot.querySelector("slot").assignedElements()[0];
@@ -820,13 +826,13 @@ class ze extends HTMLElement {
     this.trigger.removeEventListener("click", this.toggleMenu);
   }
 }
-const H = "miles-office-banner";
-customElements.get(H) || customElements.define(H, ze);
-const Ne = `:host{display:inline-block;transform:rotate(180deg);transition:transform .5s cubic-bezier(.46,.03,.52,.96)}#arrow{justify-content:center;display:flex;width:inherit;height:inherit;align-items:center}:host(.open){transform:rotate(0)}svg{width:inherit;height:inherit}
-`, Y = document.createElement("template");
-Y.innerHTML = `
+const q = "miles-office-banner";
+customElements.get(q) || customElements.define(q, Ne);
+const Re = `:host{display:inline-block;transform:rotate(180deg);transition:transform .5s cubic-bezier(.46,.03,.52,.96)}#arrow{justify-content:center;display:flex;width:inherit;height:inherit;align-items:center}:host(.open){transform:rotate(0)}svg{width:inherit;height:inherit}
+`, ee = document.createElement("template");
+ee.innerHTML = `
   <style>
-	${Ne}
+	${Re}
 
   ${r}
     </style>
@@ -837,18 +843,18 @@ Y.innerHTML = `
     
     </div>
    `;
-class Re extends HTMLElement {
+class Pe extends HTMLElement {
   constructor() {
-    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(Y.content.cloneNode(!0));
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(ee.content.cloneNode(!0));
   }
 }
-const q = "miles-arrow";
-customElements.get(q) || customElements.define(q, Re);
-const Pe = `:host{display:block;color:inherit;--image-width: 120px}#card-wrapper{box-sizing:border-box}#card{max-width:400px;margin:0 auto;background-color:var(--miles_secondary_four);border-radius:4px;display:flex;flex-direction:row;gap:1em}#card.author{max-width:100%;background-color:transparent}#card.wide{flex-direction:column;background-color:transparent}@media (min-width: 768px){#card.wide{max-width:100%;margin:0;max-height:calc(var(--image-width) / 2);flex-direction:row}}h3{margin:0}#title{margin-bottom:.5em}#card.wide span#title{order:0}#card.wide #name{order:1}#card.wide span{order:2}figure{margin:0;padding:0;aspect-ratio:1/1;width:var(--image-width);min-width:var(--image-width);overflow:hidden}@media (min-width: 768px){#card.wide figure{justify-content:center;display:flex;aspect-ratio:2 / 3;width:var(--image-width);min-width:var(--image-width);background-color:#fff}}::slotted(img),img{object-fit:cover;width:100%;background-color:#fff;filter:grayscale(1);aspect-ratio:1 / 1;border-radius:50%}#card.wide ::slotted(img),#card.wide img{border-radius:0;aspect-ratio:1 / 1;min-width:100%}@media (min-width: 768px){#card.wide ::slotted(img),#card.wide img{width:calc(var(--image-width) / 2);min-width:calc(var(--image-width) / 2)}}::slotted(*){color:inherit}#extras{background-color:var(--miles_secondary_four)}a,span{color:inherit;text-decoration:none;display:inline}span{display:flex;flex-direction:column;overflow:hidden;line-height:1.2em;gap:.2em}#card.wide span{flex-direction:row}#group{display:flex;flex-direction:column;gap:.2em}#card.author #group{justify-content:center;display:flex;flex-direction:column;gap:.5em}#card.wide #group{background-color:#f8ebe8;width:unset;padding:1rem 2rem;justify-content:center}@media (min-width: 768px){#card.wide #group{padding:0 2rem;width:100%}}#email_el,#phone_el{display:none}
-`, ee = document.createElement("template");
-ee.innerHTML = `
+const $ = "miles-arrow";
+customElements.get($) || customElements.define($, Pe);
+const Be = `:host{display:block;color:inherit;--image-width: 120px}#card-wrapper{box-sizing:border-box}#card{max-width:400px;margin:0 auto;background-color:var(--miles_secondary_four);border-radius:4px;display:flex;flex-direction:row;gap:1em}#card.author{max-width:100%;background-color:transparent}#card.wide{flex-direction:column;background-color:transparent}@media (min-width: 768px){#card.wide{max-width:100%;margin:0;max-height:calc(var(--image-width) / 2);flex-direction:row}}h3{margin:0}#title{margin-bottom:.5em}#card.wide span#title{order:0}#card.wide #name{order:1}#card.wide span{order:2}figure{margin:0;padding:0;aspect-ratio:1/1;width:var(--image-width);min-width:var(--image-width);overflow:hidden}@media (min-width: 768px){#card.wide figure{justify-content:center;display:flex;aspect-ratio:2 / 3;width:var(--image-width);min-width:var(--image-width);background-color:#fff}}::slotted(img),img{object-fit:cover;width:100%;background-color:#fff;filter:grayscale(1);aspect-ratio:1 / 1;border-radius:50%}#card.wide ::slotted(img),#card.wide img{border-radius:0;aspect-ratio:1 / 1;min-width:100%}@media (min-width: 768px){#card.wide ::slotted(img),#card.wide img{width:calc(var(--image-width) / 2);min-width:calc(var(--image-width) / 2)}}::slotted(*){color:inherit}#extras{background-color:var(--miles_secondary_four)}a,span{color:inherit;text-decoration:none;display:inline}span{display:flex;flex-direction:column;overflow:hidden;line-height:1.2em;gap:.2em}#card.wide span{flex-direction:row}#group{display:flex;flex-direction:column;gap:.2em}#card.author #group{justify-content:center;display:flex;flex-direction:column;gap:.5em}#card.wide #group{background-color:#f8ebe8;width:unset;padding:1rem 2rem;justify-content:center}@media (min-width: 768px){#card.wide #group{padding:0 2rem;width:100%}}#email_el,#phone_el{display:none}
+`, te = document.createElement("template");
+te.innerHTML = `
   <style>
-	${Pe}
+	${Be}
 
   ${r}
     </style>
@@ -869,9 +875,9 @@ ee.innerHTML = `
       </div>
     </div>
     `;
-class te extends HTMLElement {
+class ie extends HTMLElement {
   constructor() {
-    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(ee.content.cloneNode(!0)), this.emailEl = this.shadowRoot.querySelector("#email"), this.nameEl = this.shadowRoot.querySelector("#name"), this.phoneEl = this.shadowRoot.querySelector("#phone"), this.titleEl = this.shadowRoot.querySelector("#title"), this.firgureEl = this.shadowRoot.querySelector("figure"), this.card = this.shadowRoot.querySelector("#card");
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(te.content.cloneNode(!0)), this.emailEl = this.shadowRoot.querySelector("#email"), this.nameEl = this.shadowRoot.querySelector("#name"), this.phoneEl = this.shadowRoot.querySelector("#phone"), this.titleEl = this.shadowRoot.querySelector("#title"), this.firgureEl = this.shadowRoot.querySelector("figure"), this.card = this.shadowRoot.querySelector("#card");
   }
   static get observedAttributes() {
     return ["email", "name", "phone", "jobtitle", "image", "variant"];
@@ -888,9 +894,9 @@ class te extends HTMLElement {
   disconnectedCallback() {
   }
 }
-const $ = "miles-business-card";
-customElements.get($) || customElements.define($, te);
-class Be extends te {
+const z = "miles-business-card";
+customElements.get(z) || customElements.define(z, ie);
+class je extends ie {
   constructor() {
     super();
   }
@@ -901,13 +907,13 @@ class Be extends te {
     e !== "phone" && e !== "email" && super.attributeChangedCallback(e, i, t);
   }
 }
-const z = "miles-author-card";
-customElements.get(z) || customElements.define(z, Be);
-const je = `:host{display:block;color:inherit}@media (min-width: 768px){:host{padding-left:calc(8rem - 2em)}}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:1em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:100%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:1em;padding:1em 2em;position:relative;z-index:5;left:-4rem;margin-bottom:4rem}h2{margin:0}@media (min-width: 768px){#heading{max-width:60%;left:-8rem;border-radius:2em}#wrapper{border-radius:2em}h2{margin:revert}}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
-`, ie = document.createElement("template");
-ie.innerHTML = `
+const N = "miles-author-card";
+customElements.get(N) || customElements.define(N, je);
+const Ie = `:host{display:block;color:inherit}@media (min-width: 768px){:host{padding-left:calc(8rem - 2em)}}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:1em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:100%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:1em;padding:1em 2em;position:relative;z-index:5;left:-4rem;margin-bottom:4rem}h2{margin:0}@media (min-width: 768px){#heading{max-width:60%;left:-8rem;border-radius:2em}#wrapper{border-radius:2em}h2{margin:revert}}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
+`, oe = document.createElement("template");
+oe.innerHTML = `
   <style>
-	${je}
+	${Ie}
 
   ${r}
     </style>
@@ -918,9 +924,9 @@ ie.innerHTML = `
       <p><slot></slot></p>
     </div>
     `;
-class Ie extends HTMLElement {
+class Ze extends HTMLElement {
   constructor() {
-    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(ie.content.cloneNode(!0)), this.headingEl = this.shadowRoot.querySelector("h2");
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(oe.content.cloneNode(!0)), this.headingEl = this.shadowRoot.querySelector("h2");
   }
   static get observedAttributes() {
     return ["heading"];
@@ -933,13 +939,13 @@ class Ie extends HTMLElement {
   disconnectedCallback() {
   }
 }
-const N = "miles-info-block";
-customElements.get(N) || customElements.define(N, Ie);
-const Ze = `:host{display:inline-block;color:inherit}#wrapper{background-color:var(--miles_secondary_four);display:flex;flex-direction:column}h2{margin:0}a{text-decoration:none;color:inherit}#address,#phone{margin-bottom:1rem}
-`, oe = document.createElement("template");
-oe.innerHTML = `
+const R = "miles-info-block";
+customElements.get(R) || customElements.define(R, Ze);
+const Fe = `:host{display:inline-block;color:inherit}#wrapper{background-color:var(--miles_secondary_four);display:flex;flex-direction:column}h2{margin:0}a{text-decoration:none;color:inherit}#address,#phone{margin-bottom:1rem}
+`, se = document.createElement("template");
+se.innerHTML = `
   <style>
-	${Ze}
+	${Fe}
 
   ${r}
     </style>
@@ -952,9 +958,9 @@ oe.innerHTML = `
       <div aria-describedby="ordnrlabel" id="orgnr"></div>
     </div>
     `;
-class Fe extends HTMLElement {
+class Oe extends HTMLElement {
   constructor() {
-    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(oe.content.cloneNode(!0)), this.nameEl = this.shadowRoot.querySelector("h2"), this.adresseEl = this.shadowRoot.querySelector("#address"), this.emailEl = this.shadowRoot.querySelector("#email"), this.phoneEl = this.shadowRoot.querySelector("#phone"), this.orgnrEl = this.shadowRoot.querySelector("#orgnr");
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(se.content.cloneNode(!0)), this.nameEl = this.shadowRoot.querySelector("h2"), this.adresseEl = this.shadowRoot.querySelector("#address"), this.emailEl = this.shadowRoot.querySelector("#email"), this.phoneEl = this.shadowRoot.querySelector("#phone"), this.orgnrEl = this.shadowRoot.querySelector("#orgnr");
   }
   static get observedAttributes() {
     return ["name", "address", "email", "phone", "orgnr", "image"];
@@ -967,13 +973,13 @@ class Fe extends HTMLElement {
   disconnectedCallback() {
   }
 }
-const R = "miles-contact-card";
-customElements.get(R) || customElements.define(R, Fe);
-const Oe = `:host{display:inline-block}::slotted(nav){z-index:2000;position:relative;top:calc(var(--header-height) * -1)}#menu-content{display:none;position:absolute;height:fit-content;background-color:var(--miles_primary_dark);z-index:2000;top:calc(var(--header-height) - 1px);right:0;transform:translate(500px);transition:transform .5s cubic-bezier(.46,.03,.52,.96);padding:0 2rem 2rem}@media screen and (min-width: 768px){#menu-content{padding:0 6rem 6rem}}#menu-content.open{transform:translate(0);display:block;right:0}#nav-icon{display:inline-block;z-index:2000;right:2rem;top:1rem;margin-left:auto;margin-right:auto;width:40px;height:40px;position:absolute;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out;cursor:pointer}#nav-icon span{display:block;position:absolute;height:5px;width:40px;left:0;background:#ffffff;border-radius:2px;opacity:1;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}.mega-menu-open #nav-icon span{background:#fff}.fixed #nav-icon span{background:black}.mega-menu-open .fixed #nav-icon span{background:#fff}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.fixed #nav-icon span{background:#ffffff}}#nav-icon span:nth-child(1){top:17px}#nav-icon span:nth-child(2),#nav-icon span:nth-child(3){top:4px}#nav-icon span:nth-child(4){top:31px}.open-menu span:nth-child(1){top:16px;width:0%;left:50%}.open-menu span:nth-child(2){top:1em;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.open-menu span:nth-child(3){top:1em;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}.open-menu span:nth-child(4){top:18px;width:0%;left:50%}ul{padding:0;list-style-type:none;margin:0}h3,h2{color:var(--miles_primary_light);font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;padding:0}a{text-decoration:none;color:var(--miles_primary_light);padding:.2rem}a:hover,a:focus,a:active{background-color:var(--miles_link_color_hover)}.mega-menu-grid{display:flex;flex-direction:column}@media screen and (max-width: 900px) and (orientation: landscape){.mega-menu-grid{display:grid;grid-template-columns:repeat(3,1fr)}}ul.menu{display:flex;flex-direction:column;gap:.5rem}
-`, se = document.createElement("template");
-se.innerHTML = `
+const P = "miles-contact-card";
+customElements.get(P) || customElements.define(P, Oe);
+const De = `:host{display:inline-block}::slotted(nav){z-index:2000;position:relative;top:calc(var(--header-height) * -1)}#menu-content{display:none;position:absolute;height:fit-content;background-color:var(--miles_primary_dark);z-index:2000;top:calc(var(--header-height) - 1px);right:0;transform:translate(500px);transition:transform .5s cubic-bezier(.46,.03,.52,.96);padding:0 2rem 2rem}@media screen and (min-width: 768px){#menu-content{padding:0 6rem 6rem}}#menu-content.open{transform:translate(0);display:block;right:0}#nav-icon{display:inline-block;z-index:2000;right:2rem;top:1rem;margin-left:auto;margin-right:auto;width:40px;height:40px;position:absolute;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out;cursor:pointer}#nav-icon span{display:block;position:absolute;height:5px;width:40px;left:0;background:#ffffff;border-radius:2px;opacity:1;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}.mega-menu-open #nav-icon span{background:#fff}.fixed #nav-icon span{background:black}.mega-menu-open .fixed #nav-icon span{background:#fff}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.fixed #nav-icon span{background:#ffffff}}#nav-icon span:nth-child(1){top:17px}#nav-icon span:nth-child(2),#nav-icon span:nth-child(3){top:4px}#nav-icon span:nth-child(4){top:31px}.open-menu span:nth-child(1){top:16px;width:0%;left:50%}.open-menu span:nth-child(2){top:1em;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.open-menu span:nth-child(3){top:1em;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}.open-menu span:nth-child(4){top:18px;width:0%;left:50%}ul{padding:0;list-style-type:none;margin:0}h3,h2{color:var(--miles_primary_light);font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;padding:0}a{text-decoration:none;color:var(--miles_primary_light);padding:.2rem}a:hover,a:focus,a:active{background-color:var(--miles_link_color_hover)}.mega-menu-grid{display:flex;flex-direction:column}@media screen and (max-width: 900px) and (orientation: landscape){.mega-menu-grid{display:grid;grid-template-columns:repeat(3,1fr)}}ul.menu{display:flex;flex-direction:column;gap:.5rem}
+`, re = document.createElement("template");
+re.innerHTML = `
         <style>
-          	${Oe}
+          	${De}
 
            ${r}
         </style>
@@ -988,14 +994,14 @@ se.innerHTML = `
     			<slot></slot>
         </div>  
       `;
-class De extends HTMLElement {
+class Ue extends HTMLElement {
   constructor() {
     super();
     a(this, "openmenu", (i) => {
       console.log("menu toggle"), i.preventDefault(), this.burgerEl.classList.toggle("open-menu"), this.menuContent.classList.toggle("open");
     });
     const i = this.attachShadow({ mode: "open" });
-    i.append(se.content.cloneNode(!0)), this.burgerEl = i.querySelector("#nav-icon"), this.menuContent = i.querySelector("#menu-content");
+    i.append(re.content.cloneNode(!0)), this.burgerEl = i.querySelector("#nav-icon"), this.menuContent = i.querySelector("#menu-content");
   }
   /*
     static get observedAttributes() {
@@ -1015,31 +1021,31 @@ class De extends HTMLElement {
     this.burgerEl.removeEventListener("click", this.openmenu);
   }
 }
-const P = "miles-site-menu";
-customElements.get(P) || customElements.define(P, De);
+const B = "miles-site-menu";
+customElements.get(B) || customElements.define(B, Ue);
 export {
-  Re as MilesArrow,
-  Ee as MilesArrowNav,
-  Be as MilesAuthorCard,
-  Te as MilesBlogCard,
-  ce as MilesBulb,
-  te as MilesBusinessCard,
-  fe as MilesButtonAnchor,
-  ae as MilesCloud,
-  Fe as MilesContactCard,
-  he as MilesCup,
-  de as MilesCurve,
-  Le as MilesFagbloggTeaser,
-  Me as MilesImageSlider,
-  xe as MilesInfo,
-  Ie as MilesInfoBlock,
-  ue as MilesLogo,
-  ze as MilesOfficeBanner,
-  qe as MilesOverlapBlock,
-  ke as MilesPodcastTeaser,
-  pe as MilesPodd,
-  be as MilesProfileCard,
-  me as MilesZoom,
-  De as SiteMenu
+  Pe as MilesArrow,
+  _e as MilesArrowNav,
+  je as MilesAuthorCard,
+  He as MilesBlogCard,
+  he as MilesBulb,
+  ie as MilesBusinessCard,
+  ve as MilesButtonAnchor,
+  le as MilesCloud,
+  Oe as MilesContactCard,
+  me as MilesCup,
+  ce as MilesCurve,
+  Ae as MilesFagbloggTeaser,
+  Le as MilesImageSlider,
+  ye as MilesInfo,
+  Ze as MilesInfoBlock,
+  fe as MilesLogo,
+  Ne as MilesOfficeBanner,
+  $e as MilesOverlapBlock,
+  Ce as MilesPodcastTeaser,
+  ge as MilesPodd,
+  we as MilesProfileCard,
+  pe as MilesZoom,
+  Ue as SiteMenu
 };
 //# sourceMappingURL=miles-wc.es.js.map

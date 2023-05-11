@@ -1,4 +1,5 @@
 import cssVariables from '../styles/variables.css?inline';
+import { isAttributeValueTruthy } from '../shared-component-utilities/customElementUtils.js';
 /**
  * Miles Button Anchor
  */
@@ -22,7 +23,7 @@ MilesButtonAnchorTemplate.innerHTML = `
             transition: all 0.5s ease;
             white-space: nowrap;
           }
-          a:hover {
+          a:hover, a.selected {
             color: var(--miles_primary_light);
             background-color: var(--color);
           }
@@ -41,7 +42,7 @@ class MilesButtonAnchor extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['href', 'color'];
+    return ['href', 'color', 'selected'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -51,6 +52,17 @@ class MilesButtonAnchor extends HTMLElement {
 
     if (name === 'color') {
       this.style.setProperty('--color', newValue);
+    }
+
+    if (name === 'selected') {
+      this.buttontarget.setAttribute(
+        'aria-selected',
+        isAttributeValueTruthy(newValue)
+      );
+      this.buttontarget.classList.toggle(
+        'selected',
+        isAttributeValueTruthy(newValue)
+      );
     }
   }
 
