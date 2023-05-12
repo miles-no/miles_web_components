@@ -2,6 +2,8 @@ import './style.css';
 
 document.querySelector('#app').innerHTML = `
 <miles-banner image="https://www.miles.no/newsite/wp-content/uploads/2023/05/Trondheim-3-1109x810.jpg" slogan="We know a lot and we are not from Barcelona!" title="IT-konsulentselskap med kompetanse i særklasse"></miles-banner>
+
+<miles-banner image="https://www.miles.no/newsite/wp-content/uploads/2023/05/Trondheim-3-1109x810.jpg" variant="split" slogan="We know a lot and we are not from Barcelona!" title="IT-konsulentselskap med kompetanse i særklasse"></miles-banner>
   <div class="components">
   
 

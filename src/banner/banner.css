@@ -44,6 +44,22 @@
   filter: opacity(0.7);
 }
 
+@media (min-width: 450px) {
+  :host([variant='split']) .banner-content {
+    height: 100%;
+    width: 50vw;
+    filter: none;
+  }
+
+  :host([variant='split']) .banner-content p {
+    margin-bottom: 20vh;
+  }
+
+  :host([variant='split']) .banner-content h1 {
+    max-width: 80%;
+  }
+}
+
 .banner-content h1,
 .banner-content p {
   color: var(--miles_secondary_four);
