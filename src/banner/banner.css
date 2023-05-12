@@ -67,6 +67,7 @@
   margin-left: 0;
   margin-bottom: 0;
   padding: 0 2rem;
+  line-height: 120%;
 }
 
 .banner-content h1 {
@@ -88,7 +89,6 @@
 
   .banner-content h1 {
     font-size: 48px;
-    line-height: 120%;
   }
 
   .banner-content p {

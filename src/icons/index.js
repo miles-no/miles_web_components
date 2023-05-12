@@ -342,19 +342,18 @@ if (!customElements.get(MilesZoomName)) {
   customElements.define(MilesZoomName, MilesZoom);
 }
 
-/**
- * Miles Podcast Icon
- */
-class MilesPodd extends HTMLElement {
-  constructor() {
-    super();
-    const shadow = this.attachShadow({ mode: 'open' });
-    shadow.innerHTML = `
+const templatePodd = document.createElement('template');
+templatePodd.innerHTML = `
           <style>
             ${cssVariables}\n
             :host {
               display: inline-block;
               color: var(--miles_primary_light, #fbf0e5);
+              
+            }
+
+            path {
+              transition: fill 0.5s ubic-bezier(0.42, 0.16, 0.07, 0.96);
             }
           </style>
           <div class="icon">
@@ -370,6 +369,30 @@ class MilesPodd extends HTMLElement {
           </svg>
           </div>
         `;
+
+/**
+ * Miles Podcast Icon
+ */
+class MilesPodd extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.appendChild(templatePodd.content.cloneNode(true));
+    this.svgEl = shadow.querySelector('path');
+  }
+
+  static get observedAttributes() {
+    return ['color'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'color') {
+      if (newValue && newValue.length > 0) {
+        this.svgEl.setAttribute('fill', newValue);
+      } else {
+        this.svgEl.setAttribute('fill', 'currentColor');
+      }
+    }
   }
 }
 

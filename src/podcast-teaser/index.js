@@ -15,7 +15,7 @@ template.innerHTML = `
         <div class="bg">
           <div class="inner">
             <div class="left">
-              <a href="/milespodden">
+              <a href="/newsite/milespodden">
                 <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="46" cy="46" r="46" fill="#EB4645"/>
                 <path d="M32 27V65L70 46L32 27Z" fill="#FCF8F3"/>
@@ -26,12 +26,13 @@ template.innerHTML = `
                 <p id="date">22. Mars - MilesPodden</p>
               </div>
             </div>
-            <a class="more" href="/milespodden">Hør alle episodene</a>
+            <a class="more" href="/newsite/milespodden">Hør alle episodene</a>
           </div>
         </div>
-          <miles-info>
+          <miles-info link="/newsite/milespodden">
           <miles-pod slot="icon"></miles-pod>
-          Hør siste episode av MilesPodden!
+             <div>Interessert i faglig påfyll?</div>
+            <div>Sjekk ut podcasten vår! </div>
           </miles-info>
         </div>
         `;

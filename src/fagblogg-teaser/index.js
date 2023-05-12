@@ -14,10 +14,10 @@ MilesFagbloggTeaserTemplate.innerHTML = `
     <div class="bg">
       <div id="header">
         <h2>Miles fagblogg</h2>
-        <miles-info >
-        <miles-pod slot="icon"></miles-pod>
+        <miles-info link="/newsite/milespodden">
+        <miles-pod id="mic" slot="icon"></miles-pod>
           <div>Interessert i faglig påfyll?</div>
-          <div>Sjekk ut faagpodden vår</div>
+          <div>Sjekk ut podcasten vår! </div>
         </miles-info>
       </div>
       <div class="inner">
@@ -33,6 +33,7 @@ class MilesFagbloggTeaser extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.append(MilesFagbloggTeaserTemplate.content.cloneNode(true));
+    this.mic = this.shadowRoot.querySelector('#mic');
   }
 
   connectedCallback() {
