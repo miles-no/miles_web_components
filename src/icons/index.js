@@ -353,7 +353,7 @@ templatePodd.innerHTML = `
             }
 
             path {
-              transition: fill 0.5s ubic-bezier(0.42, 0.16, 0.07, 0.96);
+              transition: fill 0.5s cubic-bezier(0.42, 0.16, 0.07, 0.96);
             }
           </style>
           <div class="icon">
