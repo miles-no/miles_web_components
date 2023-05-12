@@ -1068,7 +1068,7 @@ class Qe extends HTMLElement {
 }
 const j = "miles-podcast-card";
 customElements.get(j) || customElements.define(j, Qe);
-const Ye = `:host{display:inline-block}#banner{width:100vw;height:1024px;background-repeat:no-repeat;background-size:cover;position:relative}.banner-content{display:flex;flex-direction:column;justify-content:center;height:40%;width:100vw;position:absolute;bottom:0;background-color:var(--miles_primary_light);filter:opacity(.7)}.banner-content h1,.banner-content p{color:var(--miles_secondary_four);max-width:50%;margin-left:10%;margin-bottom:0}.banner-content h1{font-size:64px;line-height:120%}.banner-content p{font-size:2rem}
+const Ye = `:host{display:inline-block}#banner{background-position:center;width:100vw;height:1024px;background-repeat:no-repeat;background-size:cover;position:relative}.banner-content{display:flex;flex-direction:column;justify-content:center;height:40%;width:100vw;position:absolute;bottom:0;background-color:var(--miles_primary_light);filter:opacity(.7)}.banner-content h1,.banner-content p{color:var(--miles_secondary_four);max-width:50%;margin-left:10%;margin-bottom:0}.banner-content h1{font-size:32px;line-height:120%}.banner-content p{font-size:1.5rem}@media (min-width: 768px){.banner-content h1{font-size:48px;line-height:120%}.banner-content p{font-size:2rem}}
 `, de = document.createElement("template");
 de.innerHTML = `
       <style>

@@ -3,6 +3,7 @@
 }
 
 #banner {
+  background-position: center;
   width: 100vw;
   height: 1024px;
   background-repeat: no-repeat;
@@ -31,11 +32,22 @@
 }
 
 .banner-content h1 {
-  /* font-size: var(--miles-h1); */
-  font-size: 64px;
+  font-size: 32px;
   line-height: 120%;
 }
 
 .banner-content p {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .banner-content h1 {
+    /* font-size: var(--miles-h1); */
+    font-size: 48px;
+    line-height: 120%;
+  }
+
+  .banner-content p {
+    font-size: 2rem;
+  }
 }
