@@ -1,14 +1,35 @@
 :host {
   display: inline-block;
+  overflow: hidden;
 }
 
 #banner {
-  background-position: center;
+  background-position: unset;
   width: 100vw;
-  height: 1024px;
+  height: 70vw;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+@media (max-width: 450px) {
+  #banner {
+    height: 650px;
+    background-position: left;
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  #banner {
+    height: 50vw;
+  }
+}
+
+@media (min-width: 768px) {
+  #banner {
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 .banner-content {
@@ -26,9 +47,10 @@
 .banner-content h1,
 .banner-content p {
   color: var(--miles_secondary_four);
-  max-width: 50%;
-  margin-left: 10%;
+  max-width: 100%;
+  margin-left: 0;
   margin-bottom: 0;
+  padding: 0 2rem;
 }
 
 .banner-content h1 {
@@ -38,16 +60,23 @@
 
 .banner-content p {
   font-size: 1.5rem;
+  margin-top: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
+  .banner-content h1,
+  .banner-content p {
+    max-width: 50%;
+    margin-left: 4rem;
+  }
+
   .banner-content h1 {
-    /* font-size: var(--miles-h1); */
     font-size: 48px;
     line-height: 120%;
   }
 
   .banner-content p {
     font-size: 2rem;
+    margin-top: 1rem;
   }
 }
