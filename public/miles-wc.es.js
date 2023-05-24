@@ -250,7 +250,7 @@ X.innerHTML = `
             }
 
             path {
-              transition: fill 0.5s ubic-bezier(0.42, 0.16, 0.07, 0.96);
+              transition: fill 0.5s cubic-bezier(0.42, 0.16, 0.07, 0.96);
             }
           </style>
           <div class="icon">
@@ -277,8 +277,6 @@ class we extends HTMLElement {
   }
   attributeChangedCallback(e, i, t) {
     e === "color" && (t && t.length > 0 ? this.svgEl.setAttribute("fill", t) : this.svgEl.setAttribute("fill", "currentColor"));
-  }
-  connectedCallback() {
   }
 }
 const y = "miles-pod";
@@ -435,10 +433,10 @@ class Me extends HTMLElement {
   constructor() {
     super();
     n(this, "removeColor", (i) => {
-      this.mic.removeAttribute("color"), console.log("remove color");
+      this.mic.removeAttribute("color");
     });
     n(this, "addColor", (i) => {
-      this.mic.setAttribute("color", "#ff303b"), console.log("add color");
+      this.mic.setAttribute("color", "#ff303b");
     });
     n(this, "goTo", () => {
       window.location.href = escape(this.link);
@@ -802,7 +800,8 @@ class Be extends HTMLElement {
       "Smidig Coaching",
       "Design",
       "Arkitektur",
-      "Rådgivning"
+      "Rådgivning",
+      "Team as a service"
     ], i = document.createElement("ul");
     e.forEach((t) => {
       const o = document.createElement("li");
