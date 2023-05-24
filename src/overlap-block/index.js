@@ -46,6 +46,7 @@ class MilesOverlapBlock extends HTMLElement {
       'Design',
       'Arkitektur',
       'Rådgivning',
+      'Team as a service',
     ];
     const listElement = document.createElement('ul');
 
