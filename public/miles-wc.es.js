@@ -1,12 +1,8 @@
 var he = Object.defineProperty;
-var me = (s, e, i) =>
-  e in s
-    ? he(s, e, { enumerable: !0, configurable: !0, writable: !0, value: i })
-    : (s[e] = i);
-var a = (s, e, i) => (me(s, typeof e != 'symbol' ? e + '' : e, i), i);
+var me = (s, e, i) => e in s ? he(s, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : s[e] = i;
+var n = (s, e, i) => (me(s, typeof e != "symbol" ? e + "" : e, i), i);
 const r = `@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";:host{--miles_primary_dark: #b72318;--miles_primary_light: #fbf0e5;--miles_secondary_one: #004047;--miles_secondary_two: #78e8db;--miles_secondary_three: #000000;--miles_secondary_four: #450d21;--miles_secondary_five: #ff303b;--miles_link_color: #183f46;--miles_link_color_hover: #94e5db;--miles_link_color_ondark: #94e5db;--miles_link_color_ondark_hover: #183f46;--miles_default_bg: #f5f5f5;--miles_effect_shadow_low: 0 0 4px 0 #00000033;--miles_effect_shadow_high: 0 0 16px 0 #00000033;--content_width: 80vw;--content_width_max: 1440px;--default_padding: 1rem .625rem;--default_padding_large: 2rem 1.25rem;--vertical_spacing: 4rem;--vertical_spacing_large: 8rem;--header-height: 72px;--miles-h1: 2.5rem;--miles-h2: 3rem;--miles-h3: 1.25rem;--miles-line-height: 150%;--miles-h1-lineheight: calc(var(--miles-h1) * 1.5);--miles-h2-lineheight: calc(var(--miles-h2) * 1.5);--miles-h3-lineheight: calc(var(--miles-h3) * 1.5);--halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);--halve_margin_offset_large: calc(100vw - var(--content_width));--max-page-width: 1440px}
-`,
-  F = document.createElement('template');
+`, F = document.createElement("template");
 F.innerHTML = `
   <style>
     ${r}
@@ -43,21 +39,19 @@ F.innerHTML = `
 class pe extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.appendChild(F.content.cloneNode(!0)), (this.svg = e.querySelector('svg'));
+    const e = this.attachShadow({ mode: "open" });
+    e.appendChild(F.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
-    return ['width', 'height', 'color'];
+    return ["width", "height", "color"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'width' && this.svg.setAttribute('width', t),
-      e === 'height' && this.svg.setAttribute('height', t),
-      e === 'color' && this.svg.setAttribute('fill', t);
+    e === "width" && this.svg.setAttribute("width", t), e === "height" && this.svg.setAttribute("height", t), e === "color" && this.svg.setAttribute("fill", t);
   }
 }
-const g = 'miles-cloud';
+const g = "miles-cloud";
 customElements.get(g) || customElements.define(g, pe);
-const Z = document.createElement('template');
+const Z = document.createElement("template");
 Z.innerHTML = ` 
   <style>
     ${r}
@@ -81,21 +75,19 @@ Z.innerHTML = `
 class ge extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.appendChild(Z.content.cloneNode(!0)), (this.svg = e.querySelector('svg'));
+    const e = this.attachShadow({ mode: "open" });
+    e.appendChild(Z.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
-    return ['width', 'height', 'color'];
+    return ["width", "height", "color"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'width' && this.svg.setAttribute('width', t),
-      e === 'height' && this.svg.setAttribute('height', t),
-      e === 'color' && this.svg.setAttribute('fill', t);
+    e === "width" && this.svg.setAttribute("width", t), e === "height" && this.svg.setAttribute("height", t), e === "color" && this.svg.setAttribute("fill", t);
   }
 }
-const u = 'miles-heart';
+const u = "miles-heart";
 customElements.get(u) || customElements.define(u, ge);
-const O = document.createElement('template');
+const O = document.createElement("template");
 O.innerHTML = `
     <style>
       ${r}
@@ -120,21 +112,19 @@ O.innerHTML = `
 class ue extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.appendChild(O.content.cloneNode(!0)), (this.svg = e.querySelector('svg'));
+    const e = this.attachShadow({ mode: "open" });
+    e.appendChild(O.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
-    return ['width', 'height', 'color'];
+    return ["width", "height", "color"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'width' && this.svg.setAttribute('width', t),
-      e === 'height' && this.svg.setAttribute('height', t),
-      e === 'color' && this.svg.setAttribute('fill', t);
+    e === "width" && this.svg.setAttribute("width", t), e === "height" && this.svg.setAttribute("height", t), e === "color" && this.svg.setAttribute("fill", t);
   }
 }
-const f = 'miles-curve';
+const f = "miles-curve";
 customElements.get(f) || customElements.define(f, ue);
-const D = document.createElement('template');
+const D = document.createElement("template");
 D.innerHTML = `
     <style>
         ${r}
@@ -167,22 +157,20 @@ D.innerHTML = `
 class fe extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.appendChild(D.content.cloneNode(!0)), (this.svg = e.querySelector('svg'));
+    const e = this.attachShadow({ mode: "open" });
+    e.appendChild(D.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
-    return ['width', 'height', 'color'];
+    return ["width", "height", "color"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'width' && this.svg.setAttribute('width', t),
-      e === 'height' && this.svg.setAttribute('height', t),
-      e === 'color' && this.svg.setAttribute('fill', t);
+    e === "width" && this.svg.setAttribute("width", t), e === "height" && this.svg.setAttribute("height", t), e === "color" && this.svg.setAttribute("fill", t);
   }
 }
-const v = 'miles-bulb';
+const v = "miles-bulb";
 customElements.get(v) || customElements.define(v, fe);
-const V = document.createElement('template');
-V.innerHTML = `
+const U = document.createElement("template");
+U.innerHTML = `
     <style>
       ${r}
 
@@ -214,24 +202,22 @@ V.innerHTML = `
 class ve extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.appendChild(V.content.cloneNode(!0)), (this.svg = e.querySelector('svg'));
+    const e = this.attachShadow({ mode: "open" });
+    e.appendChild(U.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
-    return ['width', 'height', 'color'];
+    return ["width", "height", "color"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'width' && this.svg.setAttribute('width', t),
-      e === 'height' && this.svg.setAttribute('height', t),
-      e === 'color' && this.svg.setAttribute('fill', t);
+    e === "width" && this.svg.setAttribute("width", t), e === "height" && this.svg.setAttribute("height", t), e === "color" && this.svg.setAttribute("fill", t);
   }
 }
-const b = 'miles-cup';
+const b = "miles-cup";
 customElements.get(b) || customElements.define(b, ve);
 class be extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
+    const e = this.attachShadow({ mode: "open" });
     e.innerHTML = `
         <style>
           ${r}
@@ -250,10 +236,10 @@ class be extends HTMLElement {
       `;
   }
 }
-const w = 'miles-zoom';
+const w = "miles-zoom";
 customElements.get(w) || customElements.define(w, be);
-const U = document.createElement('template');
-U.innerHTML = `
+const X = document.createElement("template");
+X.innerHTML = `
           <style>
             ${r}
 
@@ -264,7 +250,7 @@ U.innerHTML = `
             }
 
             path {
-              transition: fill 0.5s ubic-bezier(0.42, 0.16, 0.07, 0.96);
+              transition: all 1s cubic-bezier(0.42, 0.16, 0.07, 0.96);
             }
           </style>
           <div class="icon">
@@ -283,27 +269,20 @@ U.innerHTML = `
 class we extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.appendChild(U.content.cloneNode(!0)),
-      (this.svgEl = e.querySelector('path'));
+    const e = this.attachShadow({ mode: "open" });
+    e.appendChild(X.content.cloneNode(!0)), this.svgEl = e.querySelector("path");
   }
   static get observedAttributes() {
-    return ['color'];
+    return ["color"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'color' &&
-      (t && t.length > 0
-        ? (this.svgEl.setAttribute('fill', t),
-          (this.svgEl.style.transform = 'scale(1.03)'))
-        : (this.svgEl.setAttribute('fill', 'currentColor'),
-          (this.svgEl.style.transform = 'scale(1)')));
+    e === "color" && (t && t.length > 0 ? (this.svgEl.setAttribute("fill", t), this.svgEl.style.transform = "scale(1.03)") : (this.svgEl.setAttribute("fill", "currentColor"), this.svgEl.style.transform = "scale(1)"));
   }
 }
-const y = 'miles-pod';
+const y = "miles-pod";
 customElements.get(y) || customElements.define(y, we);
 const ye = `:host{display:inline-block;width:inherit;box-sizing:border-box}
-`,
-  W = document.createElement('template');
+`, W = document.createElement("template");
 W.innerHTML = `
 <style>
   	${ye}
@@ -332,23 +311,20 @@ W.innerHTML = `
 class xe extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.appendChild(W.content.cloneNode(!0)), (this.svg = e.querySelector('svg'));
+    const e = this.attachShadow({ mode: "open" });
+    e.appendChild(W.content.cloneNode(!0)), this.svg = e.querySelector("svg");
   }
   static get observedAttributes() {
-    return ['width', 'height', 'color'];
+    return ["width", "height", "color"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'width' && this.svg.setAttribute('width', t),
-      e === 'height' && this.svg.setAttribute('height', t),
-      e === 'color' && this.svg.setAttribute('fill', t);
+    e === "width" && this.svg.setAttribute("width", t), e === "height" && this.svg.setAttribute("height", t), e === "color" && this.svg.setAttribute("fill", t);
   }
 }
-const x = 'miles-logo';
+const x = "miles-logo";
 customElements.get(x) || customElements.define(x, xe);
-const k = s => [null, 'false'].includes(s) === !1,
-  X = document.createElement('template');
-X.innerHTML = `
+const k = (s) => [null, "false"].includes(s) === !1, G = document.createElement("template");
+G.innerHTML = `
         <style>
           ${r}
 
@@ -379,28 +355,29 @@ X.innerHTML = `
 class ke extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.append(X.content.cloneNode(!0)),
-      (this.buttontarget = e.querySelector('#buttonTarget'));
+    const e = this.attachShadow({ mode: "open" });
+    e.append(G.content.cloneNode(!0)), this.buttontarget = e.querySelector("#buttonTarget");
   }
   static get observedAttributes() {
-    return ['href', 'color', 'selected'];
+    return ["href", "color", "selected"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'href' && this.buttontarget.setAttribute('href', t),
-      e === 'color' && this.style.setProperty('--color', t),
-      e === 'selected' &&
-        (this.buttontarget.setAttribute('aria-selected', k(t)),
-        this.buttontarget.classList.toggle('selected', k(t)));
+    e === "href" && this.buttontarget.setAttribute("href", t), e === "color" && this.style.setProperty("--color", t), e === "selected" && (this.buttontarget.setAttribute(
+      "aria-selected",
+      k(t)
+    ), this.buttontarget.classList.toggle(
+      "selected",
+      k(t)
+    ));
   }
-  connectedCallback() {}
+  connectedCallback() {
+  }
 }
-const C = 'miles-button-anchor';
+const C = "miles-button-anchor";
 customElements.get(C) || customElements.define(C, ke);
 const Ce = `:host{display:inline-block;--width: 215px}.profile-card{display:flex;flex-direction:column;width:var(--width);border-radius:5px;overflow:hidden}figure{border-radius:.5rem;height:var(--width);margin:0 0 .5rem;padding:0}img{background-color:#fff;filter:grayscale(1);width:100%;object-fit:cover;aspect-ratio:1 / 1;animation:fadeIn 1s cubic-bezier(.46,.03,.05,.99)}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}.profile-card__info{display:flex;background-color:var(--miles_secondary_four);padding:1.2rem;min-height:140px;flex-direction:column}.jobtitle{flex-grow:1}.jobtitle p{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}.description{display:flex;flex-direction:row;align-items:baseline;gap:.2rem}h3,p{margin:0;color:var(--miles_primary_light)}
-`,
-  G = document.createElement('template');
-G.innerHTML = `
+`, J = document.createElement("template");
+J.innerHTML = `
         <style>
           	${Ce}
 
@@ -429,56 +406,43 @@ G.innerHTML = `
       `;
 class Ee extends HTMLElement {
   constructor() {
-    super(),
-      this.attachShadow({ mode: 'open' }).append(G.content.cloneNode(!0)),
-      (this.officeLocation = this.shadowRoot.querySelector('#location')),
-      (this.jobTitle = this.shadowRoot.querySelector('#jobtitle')),
-      (this.consultantName = this.shadowRoot.querySelector('#name')),
-      (this.profileImage = this.shadowRoot.querySelector('#profileimage'));
+    super(), this.attachShadow({ mode: "open" }).append(J.content.cloneNode(!0)), this.officeLocation = this.shadowRoot.querySelector("#location"), this.jobTitle = this.shadowRoot.querySelector("#jobtitle"), this.consultantName = this.shadowRoot.querySelector("#name"), this.profileImage = this.shadowRoot.querySelector("#profileimage");
   }
   static get observedAttributes() {
-    return ['image', 'name', 'jobtitle', 'location'];
+    return ["image", "name", "jobtitle", "location"];
   }
   attributeChangedCallback(e, i, t) {
-    if (e === 'image')
-      if (t === '' || t === null) {
-        const o =
-          'https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png';
-        this.profileImage.setAttribute('src', o),
-          this.profileImage.setAttribute('alt', 'Miles Profile Card Image');
+    if (e === "image")
+      if (t === "" || t === null) {
+        const o = "https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png";
+        this.profileImage.setAttribute("src", o), this.profileImage.setAttribute("alt", "Miles Profile Card Image");
       } else
-        this.profileImage.setAttribute('src', t),
-          this.profileImage.setAttribute('alt', 'Miles Profile Card Image');
-    e === 'location' && (this.officeLocation.textContent = t),
-      e === 'jobtitle' && (this.jobTitle.textContent = t),
-      e === 'name' &&
-        (this.shadowRoot
-          .querySelector('a')
-          .setAttribute('href', t.split(' ').join('-').toLowerCase()),
-        (this.consultantName.textContent = t));
+        this.profileImage.setAttribute("src", t), this.profileImage.setAttribute("alt", "Miles Profile Card Image");
+    e === "location" && (this.officeLocation.textContent = t), e === "jobtitle" && (this.jobTitle.textContent = t), e === "name" && (this.shadowRoot.querySelector("a").setAttribute("href", t.split(" ").join("-").toLowerCase()), this.consultantName.textContent = t);
   }
-  connectedCallback() {}
-  disconnectedCallback() {}
+  connectedCallback() {
+  }
+  disconnectedCallback() {
+  }
 }
-const E = 'miles-profile-card';
+const E = "miles-profile-card";
 customElements.get(E) || customElements.define(E, Ee);
 const _e = `:host{display:inline-block;color:var(--miles_primary_light)}.info{background-color:var(--miles_secondary_four);border-radius:0 99rem 99rem;overflow:hidden;padding:1rem 3rem;display:flex;justify-content:center;align-items:center;flex-direction:row;gap:1.5rem;color:inherit}.info__icon{font-size:1.2rem;font-weight:700}.info__description{font-weight:700;max-width:15rem;font-size:1rem}.info--link{cursor:pointer}
 `;
 class Me extends HTMLElement {
   constructor() {
     super();
-    n(this, 'removeColor', i => {
-      this.mic.removeAttribute('color'), console.log('remove color');
+    n(this, "removeColor", (i) => {
+      this.mic.removeAttribute("color");
     });
-    n(this, 'addColor', i => {
-      this.mic.setAttribute('color', '#ff303b'), console.log('add color');
+    n(this, "addColor", (i) => {
+      this.mic.setAttribute("color", "#ff303b");
     });
-    a(this, 'goTo', () => {
+    n(this, "goTo", () => {
       window.location.href = escape(this.link);
     });
-    const i = this.attachShadow({ mode: 'open' });
-    (this.link = null),
-      (i.innerHTML = `
+    const i = this.attachShadow({ mode: "open" });
+    this.link = null, i.innerHTML = `
         <style>
       	${_e}
 
@@ -492,37 +456,26 @@ class Me extends HTMLElement {
             <slot></slot>
           </span>
         </div>
-      `);
+      `;
   }
   static get observedAttributes() {
-    return ['link'];
+    return ["link"];
   }
   attributeChangedCallback(i, t, o) {
-    i === 'link' &&
-      ((this.link = o),
-      this.shadowRoot.querySelector('.info').classList.add('info--link'),
-      (this.mic = this.shadowRoot
-        .querySelector('slot[name="icon"]')
-        .assignedNodes()[0]));
+    i === "link" && (this.link = o, this.shadowRoot.querySelector(".info").classList.add("info--link"), this.mic = this.shadowRoot.querySelector('slot[name="icon"]').assignedNodes()[0]);
   }
   connectedCallback() {
-    this.link &&
-      (this.addEventListener('click', this.goTo),
-      this.addEventListener('mouseenter', this.addColor),
-      this.addEventListener('mouseleave', this.removeColor));
+    this.link && (this.addEventListener("click", this.goTo), this.addEventListener("mouseenter", this.addColor), this.addEventListener("mouseleave", this.removeColor));
   }
   disconnectedCallback() {
-    this.removeEventListener('click', this.goTo),
-      this.removeEventListener('mouseenter', this.addColor),
-      this.removeEventListener('mouseleave', this.removeColor);
+    this.removeEventListener("click", this.goTo), this.removeEventListener("mouseenter", this.addColor), this.removeEventListener("mouseleave", this.removeColor);
   }
 }
-const _ = 'miles-info';
+const _ = "miles-info";
 customElements.get(_) || customElements.define(_, Me);
 const Se = `:host{display:block;color:inherit}.podcast-teaser{box-sizing:border-box;width:100vw;position:relative;height:300px}.bg{background-color:#ff303b1a;width:100%;height:66%;position:absolute;bottom:0}.inner{height:100%;display:flex;flex-direction:column;width:80%;margin:auto;align-items:center;gap:1em;padding-top:2em;max-width:var(--max-page-width)}miles-info{right:10%;left:10%;position:absolute;top:.75em}@media (min-width: 768px){.inner{flex-direction:row;padding-top:0}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{width:28%;left:unset;top:-1em;right:var(--halve_margin_offset_large)}}@media (min-width: 1025px){miles-info{max-width:250px;left:unset;width:unset;top:1em;right:var(--halve_margin_offset_large)}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h3,p{margin:0}p{font-size:.8em;color:var(--miles_primary_dark)}svg{height:70px;width:70px}a.more{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a.more:after{content:"\\2192"}
-`,
-  J = document.createElement('template');
-J.innerHTML = `
+`, K = document.createElement("template");
+K.innerHTML = `
       <style>
       	${Se}
 
@@ -556,33 +509,26 @@ J.innerHTML = `
 class Le extends HTMLElement {
   constructor() {
     super();
-    a(this, 'timeFormat', i =>
-      new Intl.DateTimeFormat('no', {
-        month: 'short',
-        day: 'numeric',
-      }).format(i)
-    );
-    this.attachShadow({ mode: 'open' }).appendChild(J.content.cloneNode(!0)),
-      (this.titlEl = this.shadowRoot.querySelector('#title')),
-      (this.dateEl = this.shadowRoot.querySelector('#date'));
+    n(this, "timeFormat", (i) => new Intl.DateTimeFormat("no", {
+      month: "short",
+      day: "numeric"
+    }).format(i));
+    this.attachShadow({ mode: "open" }).appendChild(K.content.cloneNode(!0)), this.titlEl = this.shadowRoot.querySelector("#title"), this.dateEl = this.shadowRoot.querySelector("#date");
   }
   static get observedAttributes() {
-    return ['episode_title', 'published_date', 'link'];
+    return ["episode_title", "published_date", "link"];
   }
   attributeChangedCallback(i, t, o) {
-    i === 'episode_title' && (this.titlEl.textContent = o),
-      i === 'published_date' &&
-        (this.dateEl.textContent = `${this.timeFormat(
-          new Date(o)
-        )} - MilesPodden`);
+    i === "episode_title" && (this.titlEl.textContent = o), i === "published_date" && (this.dateEl.textContent = `${this.timeFormat(
+      new Date(o)
+    )} - MilesPodden`);
   }
 }
-const M = 'miles-podcast-teaser';
+const M = "miles-podcast-teaser";
 customElements.get(M) || customElements.define(M, Le);
 const Ae = `:host{display:inline-block;color:red;--arrow-bg-color: #ffffff;--arrow-color: #b72a26}#arrow-nav{display:flex;padding:.8rem;border-radius:50%;background-color:#94e5db}svg{display:inline-block}
-`,
-  K = document.createElement('template');
-K.innerHTML = `
+`, Q = document.createElement("template");
+Q.innerHTML = `
   <style>
 	${Ae}
 
@@ -597,25 +543,21 @@ K.innerHTML = `
 class Te extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.appendChild(K.content.cloneNode(!0)),
-      (this.nav = e.querySelector('#arrow-nav'));
+    const e = this.attachShadow({ mode: "open" });
+    e.appendChild(Q.content.cloneNode(!0)), this.nav = e.querySelector("#arrow-nav");
   }
   static get observedAttributes() {
-    return ['width', 'height', 'color'];
+    return ["width", "height", "color"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'width' && this.nav.setAttribute('width', t),
-      e === 'height' && this.nav.setAttribute('height', t),
-      e === 'color' && this.nav.setAttribute('color', t);
+    e === "width" && this.nav.setAttribute("width", t), e === "height" && this.nav.setAttribute("height", t), e === "color" && this.nav.setAttribute("color", t);
   }
 }
-const S = 'miles-arrow-nav';
+const S = "miles-arrow-nav";
 customElements.get(S) || customElements.define(S, Te);
-const qe = `:host{--slide-container-height:calc(100vw - 2rem);--slide-container-width: 100vw;--slides-offset: 0;display:block;width:var(--slide-container-width);height:var(--slide-container-height);background-color:#f8ebe8;height:100%;padding-top:100px;padding-bottom:100px;overflow:hidden}@media (min-width: 768px){:host{--slide-container-height: 500px}}section{width:var(--slide-container-width);height:calc(var(--slide-container-height) + 3rem);position:relative}#leftnav,#rightnav{cursor:pointer;height:calc(500px - 2rem);top:1rem;width:80px;position:absolute;z-index:10;flex-direction:column;display:flex;align-items:center;justify-content:center}#nav-overlay-left,#nav-overlay-right{transition:opacity .5s ease-in-out;width:80px;top:1rem;z-index:10;position:absolute;height:calc(500px - 2rem);top:0rem;opacity:0;background-color:#fff}#nav-overlay-left:hover,#nav-overlay-right:hover{opacity:.6}miles-arrow-nav{z-index:15;opacity:.9}#nav-overlay-right{right:0}#rightnav{transform:rotate(180deg);right:0}section .slides{margin-left:0;position:absolute;display:flex;flex-direction:row;transition:width 1s cubic-bezier(.46,.03,.52,.96)}section .slides figure{box-sizing:content-box;padding-left:0;transition:padding-left 1s cubic-bezier(.46,.03,.52,.96)}section .slides.next figure:last-child{box-sizing:content-box;padding-left:500px}section .slides.next{margin-left:calc(var(--slide-container-height) * -1)}section .slides figure{position:relative;box-sizing:border-box;padding:1rem;height:var(--slide-container-height);aspect-ratio:1 / 1;margin:0}.overlay{position:absolute;height:100%;width:100%;background-repeat:no-repeat;background-size:contain;background-position:center;background-color:transparent;transform:scale(1.5);pointer-events:none;z-index:10;filter:drop-shadow(1px 1px 0px black)}.overlay.equinor{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/equinor-logo-1.png);background-position-y:45%}.overlay.fjordkraft{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/fjordkraft-logo.png);background-position:center}.overlay.tv2{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/tv2-logo-1.png)}.overlay.cutters{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png)}.overlay.scaleaq{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png);transform:scale(1.2)}section .slides figure img{height:100%;width:100%;object-fit:cover;border-radius:30px;app-region:no-drag;filter:opacity(60%);animation:fadeIn 1s cubic-bezier(.46,.03,.05,.99);transition:filter .5s cubic-bezier(.46,.03,.05,.99)}section .slides figure img:hover{filter:opacity(100%)}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}nav{max-width:100vw;position:absolute;width:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;gap:1em;bottom:0;height:3rem}.nav-dot{border-radius:50%;display:inline-block;height:.5em;width:.5em;background-color:var(--miles_secondary_four);cursor:pointer}#slide-wrapper{width:100vw}h2{font-size:2rem;margin:3rem auto;text-align:center}@media (min-width: 768px){h2{font-size:3rem}.nav-dot{height:1em;width:1em}}.active{background-color:var(--miles_secondary_five)}
-`,
-  Q = document.createElement('template');
-Q.innerHTML = `
+const qe = `:host{--slide-container-height:calc(100vw - 2rem);--slide-container-width: 100vw;--slides-offset: 0;display:block;width:var(--slide-container-width);height:var(--slide-container-height);background-color:#f8ebe8;height:100%;padding-top:100px;padding-bottom:100px;overflow:hidden}@media (min-width: 768px){:host{--slide-container-height: 500px}}section{width:var(--slide-container-width);height:calc(var(--slide-container-height) + 3rem);position:relative}#leftnav,#rightnav{cursor:pointer;height:calc(500px - 2rem);top:1rem;width:80px;position:absolute;z-index:10;flex-direction:column;display:flex;align-items:center;justify-content:center}#nav-overlay-left,#nav-overlay-right{transition:opacity .5s ease-in-out;width:80px;top:1rem;z-index:10;position:absolute;height:calc(500px - 2rem);top:0rem;opacity:0;background-color:#fff}#nav-overlay-left:hover,#nav-overlay-right:hover{opacity:.6}miles-arrow-nav{z-index:15;opacity:.9}#nav-overlay-right{right:0}#rightnav{transform:rotate(180deg);right:0}section .slides{transform:translate(calc(var(--slides-offset) * var(--slide-container-height)));position:absolute;display:flex;flex-direction:row;transition:transform 1s cubic-bezier(.46,.03,.52,.96)}section .slides figure{position:relative;box-sizing:border-box;padding:1rem;height:var(--slide-container-height);aspect-ratio:1 / 1;margin:0}.overlay{position:absolute;height:100%;width:100%;background-repeat:no-repeat;background-size:contain;background-position:center;background-color:transparent;transform:scale(1.5);pointer-events:none;z-index:10;filter:drop-shadow(1px 1px 0px black)}.overlay.equinor{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/equinor-logo-1.png);background-position-y:45%}.overlay.fjordkraft{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/fjordkraft-logo.png);background-position:center}.overlay.tv2{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/tv2-logo-1.png)}.overlay.cutters{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png)}.overlay.scaleaq{background-image:url(https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png);transform:scale(1.2)}section .slides figure img{height:100%;width:100%;object-fit:cover;border-radius:30px;app-region:no-drag;filter:opacity(60%);animation:fadeIn 1s cubic-bezier(.46,.03,.05,.99)}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}nav{max-width:100vw;position:absolute;width:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;gap:1em;bottom:0;height:3rem}.nav-dot{border-radius:50%;display:inline-block;height:.5em;width:.5em;background-color:var(--miles_secondary_four);cursor:pointer}#slide-wrapper{width:100vw}h2{font-size:2rem;margin:3rem auto;text-align:center}@media (min-width: 768px){h2{font-size:3rem}.nav-dot{height:1em;width:1em}}.active{background-color:var(--miles_secondary_five)}
+`, Y = document.createElement("template");
+Y.innerHTML = `
   <style>
 	${qe}
 
@@ -641,125 +583,60 @@ Q.innerHTML = `
 class He extends HTMLElement {
   constructor() {
     super();
-    a(this, 'goRight', () => {
-      this.startAutoPlay(!1),
-        Math.abs(this.index) !== 0 &&
-          (this.index++,
-          this.setActiveDot(this.index),
-          this.slides.style.setProperty('--slides-offset', this.index));
+    n(this, "goRight", () => {
+      this.startAutoPlay(!1), Math.abs(this.index) !== 0 && (this.index++, this.setActiveDot(this.index), this.slides.style.setProperty("--slides-offset", this.index));
     });
-    a(this, 'goLeft', () => {
-      this.shiftSlides(1e3), this.slides.classList.add('next');
+    n(this, "goLeft", () => {
+      this.startAutoPlay(!1), Math.abs(this.index) !== this.numberOfSlides - 1 && (this.index--, this.setActiveDot(this.index), this.slides.style.setProperty("--slides-offset", this.index));
     });
-    a(this, 'goToSlide', i => {
+    n(this, "goToSlide", (i) => {
       let t = parseInt(i.target.dataset.slide) * -1;
-      this.numberOfSlides - 1 === parseInt(i.target.dataset.slide) && (t = 0),
-        this.startAutoPlay(!1),
-        this.slides.style.setProperty('--slides-offset', t),
-        this.setActiveDot(t);
+      this.numberOfSlides - 1 === parseInt(i.target.dataset.slide) && (t = 0), this.startAutoPlay(!1), this.slides.style.setProperty("--slides-offset", t), this.setActiveDot(t);
     });
-    a(this, 'shiftSlides', i => {
-      this.slides.classList.add('next'),
-        setTimeout(() => {
-          const t = this.slides.querySelector('figure'),
-            o = t.cloneNode(!0);
-          this.slides.appendChild(o),
-            this.slides.classList.remove('next'),
-            t.remove();
-        }, i);
+    n(this, "startAutoPlay", (i) => {
+      i ? this.autoPlay = setInterval(() => {
+        Math.abs(this.index) === this.numberOfSlides - 2 ? this.index = 0 : this.index--, this.setActiveDot(this.index), this.slides.style.setProperty("--slides-offset", this.index);
+      }, 5e3) : clearInterval(this.autoPlay);
     });
-    a(this, 'startAutoPlay', i => {
-      const t = parseInt(this.getAttribute('speed')) || 5e3;
-      i
-        ? (this.autoPlay = setInterval(() => {
-            this.index--,
-              this.setActiveDot(this.index),
-              this.index < -2 && this.shiftSlides(t);
-          }, t))
-        : clearInterval(this.autoPlay);
+    n(this, "setActiveDot", (i) => {
+      const t = this.controls.querySelectorAll(".nav-dot");
+      t.forEach((o) => {
+        o.classList.remove("active");
+      }), t.forEach((o) => {
+        parseInt(o.getAttribute("data-slide")) === Math.abs(i) && o.classList.add("active");
+      });
     });
-    a(this, 'setActiveDot', i => {
-      const t = this.controls.querySelectorAll('.nav-dot');
-      t.forEach(o => {
-        o.classList.remove('active');
-      }),
-        t.forEach(o => {
-          parseInt(o.getAttribute('data-slide')) === Math.abs(i) &&
-            o.classList.add('active');
-        });
-    });
-    const i = this.attachShadow({ mode: 'open' });
-    i.appendChild(Q.content.cloneNode(!0)),
-      (this.slides = i.querySelector('.slides')),
-      (this.controls = i.querySelector('.controls')),
-      (this.wrapper = i.querySelector('#slide-wrapper')),
-      (this.numberOfSlides = 0),
-      (this.autoPlay = 0),
-      (this.index = 0),
-      (this.logos = ['equinor', 'fjordkraft', 'tv2', 'cutters', 'scaleaq']),
-      (this.rightNav = i.querySelector('#rightnav')),
-      (this.leftNav = i.querySelector('#leftnav'));
+    const i = this.attachShadow({ mode: "open" });
+    i.appendChild(Y.content.cloneNode(!0)), this.slides = i.querySelector(".slides"), this.controls = i.querySelector(".controls"), this.wrapper = i.querySelector("#slide-wrapper"), this.numberOfSlides = 0, this.autoPlay = 0, this.index = 0, this.logos = ["equinor", "fjordkraft", "tv2", "cutters", "scaleaq"], this.rightNav = i.querySelector("#rightnav"), this.leftNav = i.querySelector("#leftnav");
   }
   connectedCallback() {
     let i = {
-      root: this.wrapper,
-      rootMargin: '0px',
-      threshold: 1,
-      trackVisibility: !0,
-      delay: 1e3,
+      root: null,
+      rootMargin: "0px",
+      threshold: 1
     };
-    (this.observer = new IntersectionObserver(o => {
-      (this.slidesInView = []),
-        console.log('LENGTH: ', o.length),
-        o.forEach(n => {
-          n.isIntersecting
-            ? (console.log(n.target.dataset), this.slidesInView.push(n.target))
-            : this.slidesInView.indexOf(n.target) !== -1 &&
-              this.slidesInView.splice(this.slidesInView.indexOf(n.target), 1);
-        }),
-        console.log('IMVIEW: ', this.slidesInView);
-    }, i)),
-      this.controls.addEventListener('click', this.goToSlide),
-      this.rightNav.addEventListener('click', this.goLeft),
-      this.leftNav.addEventListener('click', this.goRight);
-    const t = this.shadowRoot.querySelector('slot');
+    this.observer = new IntersectionObserver((o) => {
+      o.forEach((a) => {
+        a.isIntersecting ? this.startAutoPlay(!0) : this.startAutoPlay(!1);
+      });
+    }, i), this.observer.observe(this.wrapper), this.controls.addEventListener("click", this.goToSlide), this.rightNav.addEventListener("click", this.goLeft), this.leftNav.addEventListener("click", this.goRight);
+    const t = this.shadowRoot.querySelector("slot");
     if (t) {
-      let o =
-        t.assignedElements().length === 1
-          ? t.assignedElements()[0].children
-          : t.assignedElements();
-      if (typeof o == 'object')
+      let o = t.assignedElements().length === 1 ? t.assignedElements()[0].children : t.assignedElements();
+      if (typeof o == "object")
         try {
-          const n = Array.from(o);
-          (this.numberOfSlides = o.length),
-            n.forEach((l, m) => {
-              const d = document.createElement('figure'),
-                c = document.createElement('div');
-              if (
-                (c.setAttribute('class', 'overlay'),
-                l.classList.forEach(h => {
-                  this.logos.includes(h) && c.classList.add(h);
-                }),
-                d.setAttribute('data-slide-image', m),
-                d.appendChild(c),
-                l.querySelector('img'))
-              ) {
-                const h = l.querySelector('img');
-                h.setAttribute('draggable', !1),
-                  d.appendChild(h),
-                  this.slides.appendChild(d);
-                const p = document.createElement('span');
-                p.setAttribute('class', 'nav-dot'),
-                  p.setAttribute('data-slide', m),
-                  this.controls.appendChild(p);
-              }
-            }),
-            this.slides.querySelectorAll('figure').forEach((l, m, d) => {
-              console.log(d.length);
-              const c = l.cloneNode(!0);
-              c.setAttribute('data-slide-image', `${m + d.length}`),
-                this.slides.appendChild(c);
-            });
+          const a = Array.from(o);
+          this.numberOfSlides = o.length, a.forEach((l, p) => {
+            const c = document.createElement("figure"), h = document.createElement("div");
+            if (h.setAttribute("class", "overlay"), l.classList.forEach((d) => {
+              this.logos.includes(d) && h.classList.add(d);
+            }), c.setAttribute("data-slide-image", p), c.appendChild(h), l.querySelector("img")) {
+              const d = l.querySelector("img");
+              d.setAttribute("draggable", !1), c.appendChild(d), this.slides.appendChild(c);
+              const m = document.createElement("span");
+              m.setAttribute("class", "nav-dot"), m.setAttribute("data-slide", p), this.controls.appendChild(m);
+            }
+          });
         } catch {
           console.log(o);
         }
@@ -767,25 +644,19 @@ class He extends HTMLElement {
     this.setActiveDot(this.index);
   }
   disconnectedCallback() {
-    this.controls.removeEventListener('click', this.goToSlide),
-      this.observer.unobserve(this.wrapper),
-      this.rightNav.removeEventListener('click', this.goLeft),
-      this.leftNav.removeEventListener('click', this.goRight);
+    this.controls.removeEventListener("click", this.goToSlide), this.observer.unobserve(this.wrapper), this.rightNav.removeEventListener("click", this.goLeft), this.leftNav.removeEventListener("click", this.goRight);
   }
   static get observedAttributes() {
-    return ['inview', 'autoplay'];
+    return ["inview", "autoplay"];
   }
   attributeChangedCallback(i, t, o) {
-    i === 'autoplay' &&
-      (o === 'true' ? this.startAutoPlay(!0) : this.startAutoPlay(!1));
   }
 }
-const L = 'miles-image-slider';
+const L = "miles-image-slider";
 customElements.get(L) || customElements.define(L, He);
 const $e = `:host{display:block;color:inherit;--maxWidth: 350px;margin-left:10vw;margin-right:10vw}#header{display:flex;max-width:var(--max-page-width);margin:2rem auto;flex-direction:column}#fagblogg-teaser{box-sizing:border-box;width:100%;max-width:var(--max-page-width);position:relative;min-height:800px;margin:auto}.bg{width:100%;height:50%;position:relative;top:5rem}miles-info{position:relative;width:300px}::slotted(ul){grid-template-columns:repeat(1,100%)!important;display:grid!important;gap:2rem!important}@media (min-width: 768px){::slotted(ul){grid-template-columns:repeat(3,calc(33% - 1rem))!important;display:grid!important;gap:2rem!important}#header{flex-direction:row}.podcast-teaser{height:210px}}@media (max-width: 1024px) and (min-width: 769px){miles-info{left:unset;top:1em}.bg{width:100%;height:35%;position:absolute;top:5rem}}@media (min-width: 1025px){miles-info{left:unset;width:unset}}.left{display:flex;flex-direction:row;align-items:center;gap:1em}.text{display:flex;flex-direction:column}h2{margin-bottom:.2rem;line-height:150%;font-size:var(--miles-h2);color:var(--miles_secondary_four);flex-grow:1}@media (min-width: 769px){h2{margin-bottom:1rem}}p{font-size:.8em;color:var(--miles_primary_dark);margin:auto}svg{height:70px;width:70px}a{color:inherit;right:var(--halve_margin_offset_large);bottom:1em;position:absolute;display:inline-block}a:after{content:"\\2192"}
-`,
-  Y = document.createElement('template');
-Y.innerHTML = `
+`, V = document.createElement("template");
+V.innerHTML = `
   <style>
   ${r}
 ${$e}
@@ -810,35 +681,30 @@ ${$e}
 class ze extends HTMLElement {
   constructor() {
     super();
-    a(this, 'goToPost', i => {
+    n(this, "goToPost", (i) => {
       window.location.href = escape(i.target.dataset.post);
     });
-    this.attachShadow({ mode: 'open' }),
-      this.shadowRoot.append(Y.content.cloneNode(!0)),
-      (this.mic = this.shadowRoot.querySelector('#mic'));
+    this.attachShadow({ mode: "open" }), this.shadowRoot.append(V.content.cloneNode(!0)), this.mic = this.shadowRoot.querySelector("#mic");
   }
   connectedCallback() {
-    const i = this.shadowRoot.querySelector('slot').assignedElements()[0];
+    const i = this.shadowRoot.querySelector("slot").assignedElements()[0];
     if (i) {
-      const t = i.querySelectorAll('img'),
-        o = Array.from(i.querySelectorAll('a'));
-      Array.from(t).forEach((n, l) => {
-        n.setAttribute('style', 'height: auto; cursor: pointer;'),
-          n.setAttribute('data-post', o[l].href),
-          n.addEventListener('click', this.goToPost);
+      const t = i.querySelectorAll("img"), o = Array.from(i.querySelectorAll("a"));
+      Array.from(t).forEach((a, l) => {
+        a.setAttribute("style", "height: auto; cursor: pointer;"), a.setAttribute("data-post", o[l].href), a.addEventListener("click", this.goToPost);
       });
     }
   }
-  disconnectedCallback() {}
+  disconnectedCallback() {
+  }
 }
-const A = 'miles-fagblogg-teaser';
+const A = "miles-fagblogg-teaser";
 customElements.get(A) || customElements.define(A, ze);
-const Ne = `:host{display:block;color:inherit;width:inherit;height:inherit}#blog-card{display:flex;flex-direction:column;gap:.2rem;width:100%;border-radius:1rem;overflow:hidden}slot[name=title]::slotted(*){font-size:1.5rem;margin:0}a{display:block;width:100%;text-decoration:none;color:inherit}.text{background-color:var(--miles_secondary_four);color:var(--miles_primary_light);padding:2rem;height:110px;display:flex;flex-direction:column}slot[name=title]::slotted(*){overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}slot[name=meta]{display:block;flex-grow:1}#updated{display:none}::slotted(figure){margin:0;aspect-ratio:4/5;overflow:hidden}
-`,
-  ee = document.createElement('template');
+const Re = `:host{display:block;color:inherit;width:inherit;height:inherit}#blog-card{display:flex;flex-direction:column;gap:.2rem;width:100%;border-radius:1rem;overflow:hidden}slot[name=title]::slotted(*){font-size:1.5rem;margin:0}a{display:block;width:100%;text-decoration:none;color:inherit}.text{background-color:var(--miles_secondary_four);color:var(--miles_primary_light);padding:2rem;height:110px;display:flex;flex-direction:column}slot[name=title]::slotted(*){overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}slot[name=meta]{display:block;flex-grow:1}#updated{display:none}::slotted(figure){margin:0;aspect-ratio:4/5;overflow:hidden}
+`, ee = document.createElement("template");
 ee.innerHTML = `
   <style>
-	${Ne}
+	${Re}
 
   ${r}
   </style>
@@ -858,64 +724,46 @@ ee.innerHTML = `
     </div>
   </div>
 `;
-class Re extends HTMLElement {
+class Ne extends HTMLElement {
   constructor() {
     super();
-    a(this, 'timeFormat', i =>
-      new Intl.DateTimeFormat('no', {
-        month: 'short',
-        day: 'numeric',
-        year: 'numeric',
-      }).format(i)
-    );
-    this.attachShadow({ mode: 'open' }),
-      this.shadowRoot.append(ee.content.cloneNode(!0)),
-      (this.posted = this.shadowRoot.querySelector('#posted')),
-      (this.updated = this.shadowRoot.querySelector('#updated')),
-      (this.author = this.shadowRoot.querySelector('#author'));
+    n(this, "timeFormat", (i) => new Intl.DateTimeFormat("no", {
+      month: "short",
+      day: "numeric",
+      year: "numeric"
+    }).format(i));
+    this.attachShadow({ mode: "open" }), this.shadowRoot.append(ee.content.cloneNode(!0)), this.posted = this.shadowRoot.querySelector("#posted"), this.updated = this.shadowRoot.querySelector("#updated"), this.author = this.shadowRoot.querySelector("#author");
   }
   static get observedAttributes() {
-    return ['url', 'author', 'posted', 'updated'];
+    return ["url", "author", "posted", "updated"];
   }
   attributeChangedCallback(i, t, o) {
-    i === 'url' &&
-      this.shadowRoot.querySelectorAll('a').forEach(n => {
-        n.setAttribute('href', o);
-      }),
-      i === 'author' && (this.author.textContent = o);
+    i === "url" && this.shadowRoot.querySelectorAll("a").forEach((a) => {
+      a.setAttribute("href", o);
+    }), i === "author" && (this.author.textContent = o);
   }
   connectedCallback() {
-    const i = this.shadowRoot
-      .querySelector('slot[name="image"]')
-      .assignedElements();
-    i[0]?.children &&
-      Array.from(i[0]?.children).forEach(o => {
-        (o.style.objectFit = 'cover'),
-          (o.style.aspectRatio = '2/3'),
-          (o.style.width = '100%');
-      });
-    const t = this.shadowRoot
-      .querySelector('slot[name="meta"]')
-      .assignedElements();
-    t[0]?.children &&
-      (Array.from(t[0]?.children).forEach(o => {
-        const n = Array.from(o.children[0].children);
-        (this.posted.textContent = `${this.timeFormat(
-          new Date(n[0].dateTime)
-        )}`),
-          (this.updated.textContent = `${this.timeFormat(
-            new Date(n[1].dateTime)
-          )}`);
-      }),
-      t[0].remove());
+    const i = this.shadowRoot.querySelector('slot[name="image"]').assignedElements();
+    i[0]?.children && Array.from(i[0]?.children).forEach((o) => {
+      o.style.objectFit = "cover", o.style.aspectRatio = "2/3", o.style.width = "100%";
+    });
+    const t = this.shadowRoot.querySelector('slot[name="meta"]').assignedElements();
+    t[0]?.children && (Array.from(t[0]?.children).forEach((o) => {
+      const a = Array.from(o.children[0].children);
+      this.posted.textContent = `${this.timeFormat(
+        new Date(a[0].dateTime)
+      )}`, this.updated.textContent = `${this.timeFormat(
+        new Date(a[1].dateTime)
+      )}`;
+    }), t[0].remove());
   }
-  disconnectedCallback() {}
+  disconnectedCallback() {
+  }
 }
-const T = 'miles-blog-card';
-customElements.get(T) || customElements.define(T, Re);
+const T = "miles-blog-card";
+customElements.get(T) || customElements.define(T, Ne);
 const Pe = `:host{--topOffset: 1rem;--bottomOffset: 5rem;--blockRadius: 30px;color:inherit;display:block}#overlap-block{padding:0 2rem;position:relative}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}@media (min-width: 768px){:host{--topOffset: 16rem}#overlap-block{width:80vw;max-width:var(--max-page-width);margin:auto;position:relative}.parent{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:var(--topOffset) auto var(--bottomOffset);grid-column-gap:0px;grid-row-gap:0px}.div1{grid-area:1 / 1 / 2 / 6}.div2{grid-area:1 / 5 / 2 / 13;background-color:var(--miles_secondary_four)}.inner{position:relative;z-index:1;grid-area:2 / 1 / 2 / 13}.inner #content_grid{display:flex;flex-direction:row}#feature-block{border-radius:30px;background-color:#f8ebe8;padding:3rem;width:var(--width);position:relative}::slotted(div){font-size:1.5rem}#feature-block:after{z-index:-1;width:100px;height:100%;content:"";position:absolute;top:0;right:0;background-color:var(--miles_secondary_four)}.div1,.div2{border-top-left-radius:var(--blockRadius);border-top-right-radius:var(--blockRadius);height:var(--topOffset)}.div4{border-bottom-left-radius:var(--blockRadius);border-bottom-right-radius:var(--blockRadius)}.div3{grid-area:1 / 1 / 2 / 6}.div4{grid-area:3 / 5 / 3 / 13;background-color:var(--miles_secondary_four)}#list{width:100%;border-radius:30px;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content;left:-10vw;bottom:10vw}}#list{border-radius:unset;left:unset;bottom:unset;display:flex;flex-direction:column;color:var(--miles_primary_light);background-color:var(--miles_secondary_four);padding:3rem;margin:0;position:relative;z-index:5;min-width:fit-content}#list ul{position:relative;top:calc(-1 * var(--topOffset));padding:0}#list li{line-height:38px;list-style:none;padding:.5rem 0;font-size:1.5rem}miles-bulb{position:absolute;right:6rem;bottom:5rem;z-index:20}miles-curve{margin-right:.5em}
-`,
-  te = document.createElement('template');
+`, te = document.createElement("template");
 te.innerHTML = `
   <style>
 	${Pe}
@@ -942,40 +790,34 @@ te.innerHTML = `
 `;
 class Be extends HTMLElement {
   constructor() {
-    super(),
-      this.attachShadow({ mode: 'open' }),
-      this.shadowRoot.append(te.content.cloneNode(!0)),
-      (this.list = this.shadowRoot.querySelector('#list'));
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(te.content.cloneNode(!0)), this.list = this.shadowRoot.querySelector("#list");
   }
   connectedCallback() {
     const e = [
-        'Systemutvikling',
-        'Prosjektledelse',
-        'Testledelse',
-        'Smidig Coaching',
-        'Design',
-        'Arkitektur',
-        'Rådgivning',
-        'Team as a service',
-      ],
-      i = document.createElement('ul');
-    e.forEach(t => {
-      const o = document.createElement('li');
-      (o.innerHTML = `<miles-curve color="currentColor" width="1em"></miles-curve><span>${t}</span>`),
-        i.append(o);
-    }),
-      this.list.append(i);
+      "Systemutvikling",
+      "Prosjektledelse",
+      "Testledelse",
+      "Smidig Coaching",
+      "Design",
+      "Arkitektur",
+      "Rådgivning",
+      "Team as a service"
+    ], i = document.createElement("ul");
+    e.forEach((t) => {
+      const o = document.createElement("li");
+      o.innerHTML = `<miles-curve color="currentColor" width="1em"></miles-curve><span>${t}</span>`, i.append(o);
+    }), this.list.append(i);
   }
-  disconnectedCallback() {}
+  disconnectedCallback() {
+  }
 }
-const q = 'miles-overlap-block';
+const q = "miles-overlap-block";
 customElements.get(q) || customElements.define(q, Be);
-const Ie = `:host{--headerHeight: 200px}#banner{height:300px;overflow:hidden;border-radius:30px;position:relative;box-sizing:border-box;font-size:12px;line-height:1.25}#banner.open{height:unset}#banner img{transform:scale(1.1);width:100%;object-fit:cover}#banner figure{margin:0}#menu{display:flex;flex-direction:column-reverse;justify-content:start;padding:1rem;right:0;left:0;width:100%;z-index:100;top:100%;position:absolute;background-color:var(--miles_secondary_four);height:100%;transition:top .5s cubic-bezier(.46,.03,.52,.96);gap:2rem}#menu.open{top:100px}#triggerEl miles-arrow{width:20px;height:20px}@media (max-width: 1024px) and (min-width: 769px){#menu.open{top:150px;width:100%;left:0;right:unset}}@media (min-width: 1025px){#menu{bottom:0;right:0;left:unset;width:50%;padding:4rem}#menu.open{top:0;width:50%;left:unset}}#menu h2{display:inline-block}#menu ul{padding:0;margin:0;list-style:none}#menu .miles-banner-card .wp-block-group__inner-container{justify-items:center;display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:1rem}#menu .miles-banner-card figure{margin:0;height:100px;aspect-ratio:1/1;border-radius:50%;overflow:hidden}#menu .miles-banner-card li:first-child{font-size:1.2rem;font-weight:600}#menu .miles-banner-card img{width:100%;height:100%}#people{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}#triggerEl h2{color:var(--miles_primary_light);font-size:2rem;line-height:150%;margin:0;text-align:left;z-index:10;position:relative}#triggerBg{margin:auto;position:relative;width:100%;z-index:10;bottom:unset;top:0;height:calc(calc(var(--headerHeight) / 2) + 5px);padding:1rem}#triggerBg:after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.2);transition:all .5s cubic-bezier(.46,.03,.52,.96);z-index:1}#triggerBg:hover:after{background:rgba(0,0,0,.8)}@media (min-width: 769px){#banner{font-size:16px;height:unset}#banner.open{height:unset}#people{display:grid;grid-template-columns:repeat(2,50%);gap:1rem}#triggerEl h2{font-size:64px;line-height:150%}#triggerBg{bottom:unset;top:unset;bottom:0;height:200px;padding:2rem;position:absolute}#triggerEl miles-arrow{width:30px;height:30px}}
-`,
-  ie = document.createElement('template');
+const je = `:host{--headerHeight: 200px}#banner{height:300px;overflow:hidden;border-radius:30px;position:relative;box-sizing:border-box;font-size:12px;line-height:1.25}#banner.open{height:unset}#banner img{transform:scale(1.1);width:100%;object-fit:cover}#banner figure{margin:0}#menu{display:flex;flex-direction:column-reverse;justify-content:start;padding:1rem;right:0;left:0;width:100%;z-index:100;top:100%;position:absolute;background-color:var(--miles_secondary_four);height:100%;transition:top .5s cubic-bezier(.46,.03,.52,.96);gap:2rem}#menu.open{top:100px}#triggerEl miles-arrow{width:20px;height:20px}@media (max-width: 1024px) and (min-width: 769px){#menu.open{top:150px;width:100%;left:0;right:unset}}@media (min-width: 1025px){#menu{bottom:0;right:0;left:unset;width:50%;padding:4rem}#menu.open{top:0;width:50%;left:unset}}#menu h2{display:inline-block}#menu ul{padding:0;margin:0;list-style:none}#menu .miles-banner-card .wp-block-group__inner-container{justify-items:center;display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:1rem}#menu .miles-banner-card figure{margin:0;height:100px;aspect-ratio:1/1;border-radius:50%;overflow:hidden}#menu .miles-banner-card li:first-child{font-size:1.2rem;font-weight:600}#menu .miles-banner-card img{width:100%;height:100%}#people{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}#triggerEl h2{color:var(--miles_primary_light);font-size:2rem;line-height:150%;margin:0;text-align:left;z-index:10;position:relative}#triggerBg{margin:auto;position:relative;width:100%;z-index:10;bottom:unset;top:0;height:calc(calc(var(--headerHeight) / 2) + 5px);padding:1rem}#triggerBg:after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.2);transition:all .5s cubic-bezier(.46,.03,.52,.96);z-index:1}#triggerBg:hover:after{background:rgba(0,0,0,.8)}@media (min-width: 769px){#banner{font-size:16px;height:unset}#banner.open{height:unset}#people{display:grid;grid-template-columns:repeat(2,50%);gap:1rem}#triggerEl h2{font-size:64px;line-height:150%}#triggerBg{bottom:unset;top:unset;bottom:0;height:200px;padding:2rem;position:absolute}#triggerEl miles-arrow{width:30px;height:30px}}
+`, ie = document.createElement("template");
 ie.innerHTML = `
   <style>
-	${Ie}
+	${je}
 
   ${r}
   </style>
@@ -991,68 +833,39 @@ ie.innerHTML = `
   </div>
   </div>
 `;
-class je extends HTMLElement {
+class Ie extends HTMLElement {
   constructor() {
     super();
-    a(this, 'toggleMenu', () => {
-      const i = this.menu.querySelectorAll('miles-business-card'),
-        t = this.banner.getBoundingClientRect();
-      this.menu.classList.toggle('open'),
-        this.banner.classList.toggle('open'),
-        this.menu.classList.contains('open')
-          ? (this.triggerEl
-              .querySelector('miles-arrow')
-              .classList.remove('open'),
-            t.width < 769 &&
-              this.banner.setAttribute(
-                'style',
-                `height: calc(calc(${i.length} * var(--headerHeight)) + 300px);`
-              ))
-          : (this.banner.removeAttribute('style'),
-            this.triggerEl.querySelector('miles-arrow').classList.add('open'),
-            this.banner.classList.toggle('open'));
+    n(this, "toggleMenu", () => {
+      const i = this.menu.querySelectorAll("miles-business-card"), t = this.banner.getBoundingClientRect();
+      this.menu.classList.toggle("open"), this.banner.classList.toggle("open"), this.menu.classList.contains("open") ? (this.triggerEl.querySelector("miles-arrow").classList.remove("open"), t.width < 769 && this.banner.setAttribute(
+        "style",
+        `height: calc(calc(${i.length} * var(--headerHeight)) + 300px);`
+      )) : (this.banner.removeAttribute("style"), this.triggerEl.querySelector("miles-arrow").classList.add("open"), this.banner.classList.toggle("open"));
     });
-    this.attachShadow({ mode: 'open' }),
-      this.shadowRoot.append(ie.content.cloneNode(!0)),
-      (this.banner = this.shadowRoot.querySelector('#banner')),
-      (this.menu = this.shadowRoot.querySelector('#menu')),
-      (this.people = this.shadowRoot.querySelector('#people')),
-      (this.triggerEl = this.shadowRoot.querySelector('#triggerEl')),
-      (this.header = null);
+    this.attachShadow({ mode: "open" }), this.shadowRoot.append(ie.content.cloneNode(!0)), this.banner = this.shadowRoot.querySelector("#banner"), this.menu = this.shadowRoot.querySelector("#menu"), this.people = this.shadowRoot.querySelector("#people"), this.triggerEl = this.shadowRoot.querySelector("#triggerEl"), this.header = null;
   }
   connectedCallback() {
-    const i = this.shadowRoot.querySelector('slot').assignedElements()[0];
-    this.menu.append(i.querySelector('.miles-office-menu')),
-      (this.trigger = i.querySelector('h2')),
-      this.setAttribute(
-        'id',
-        this.trigger.textContent.replace(/\s/g, '').toLowerCase()
-      ),
-      (this.trigger.innerHTML = `<span>${this.trigger.textContent}</span><miles-arrow class="open" style="margin-left:1rem;"></miles-arrow>`),
-      this.triggerEl.append(this.trigger),
-      this.banner.append(i.querySelector('.feature-image'));
-    const t = this.menu.querySelectorAll('miles-business-card');
-    t &&
-      t.forEach(n => {
-        this.people.append(n);
-      });
+    const i = this.shadowRoot.querySelector("slot").assignedElements()[0];
+    this.menu.append(i.querySelector(".miles-office-menu")), this.trigger = i.querySelector("h2"), this.setAttribute(
+      "id",
+      this.trigger.textContent.replace(/\s/g, "").toLowerCase()
+    ), this.trigger.innerHTML = `<span>${this.trigger.textContent}</span><miles-arrow class="open" style="margin-left:1rem;"></miles-arrow>`, this.triggerEl.append(this.trigger), this.banner.append(i.querySelector(".feature-image"));
+    const t = this.menu.querySelectorAll("miles-business-card");
+    t && t.forEach((a) => {
+      this.people.append(a);
+    });
     const o = this.banner.getBoundingClientRect();
-    this.trigger && o.width > 769
-      ? (this.trigger.setAttribute('style', 'cursor: pointer; '),
-        this.trigger.addEventListener('click', this.toggleMenu))
-      : (this.triggerEl.querySelector('miles-arrow').classList.add('open'),
-        this.menu.classList.add('open'),
-        this.banner.classList.add('open'));
+    this.trigger && o.width > 769 ? (this.trigger.setAttribute("style", "cursor: pointer; "), this.trigger.addEventListener("click", this.toggleMenu)) : (this.triggerEl.querySelector("miles-arrow").classList.add("open"), this.menu.classList.add("open"), this.banner.classList.add("open"));
   }
   disconnectedCallback() {
-    this.trigger.removeEventListener('click', this.toggleMenu);
+    this.trigger.removeEventListener("click", this.toggleMenu);
   }
 }
-const H = 'miles-office-banner';
-customElements.get(H) || customElements.define(H, je);
+const H = "miles-office-banner";
+customElements.get(H) || customElements.define(H, Ie);
 const Fe = `:host{display:inline-block;transform:rotate(180deg);transition:transform .5s cubic-bezier(.46,.03,.52,.96)}#arrow{justify-content:center;display:flex;width:inherit;height:inherit;align-items:center}:host(.open){transform:rotate(0)}svg{width:inherit;height:inherit}
-`,
-  oe = document.createElement('template');
+`, oe = document.createElement("template");
 oe.innerHTML = `
   <style>
 	${Fe}
@@ -1068,16 +881,13 @@ oe.innerHTML = `
    `;
 class Ze extends HTMLElement {
   constructor() {
-    super(),
-      this.attachShadow({ mode: 'open' }),
-      this.shadowRoot.append(oe.content.cloneNode(!0));
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(oe.content.cloneNode(!0));
   }
 }
-const $ = 'miles-arrow';
+const $ = "miles-arrow";
 customElements.get($) || customElements.define($, Ze);
 const Oe = `:host{display:block;color:var(--miles_secondary_four, inherit);--image-width: 120px}#card-wrapper{box-sizing:border-box}#card{letter-spacing:.02em;max-width:400px;margin:0 auto;background-color:var(--miles_secondary_four);border-radius:4px;display:flex;flex-direction:row;gap:1em}#card.author{max-width:100%;background-color:transparent}#card.wide{flex-direction:column;background-color:transparent}@media (min-width: 768px){#card.wide{max-width:100%;margin:0;max-height:calc(var(--image-width) / 2);flex-direction:row}}h3{margin:0;font-size:24px;font-style:normal;font-weight:700}#title{margin-bottom:.5em;line-height:22px}#card.wide span#title{order:0}#card.wide span{order:2}figure{margin:0;padding:0;aspect-ratio:1/1;width:var(--image-width);min-width:var(--image-width);overflow:hidden}@media (min-width: 768px){#card.wide figure{justify-content:center;display:flex;aspect-ratio:2 / 3;width:var(--image-width);min-width:var(--image-width);background-color:#fff}}::slotted(img),img{object-fit:cover;width:100%;background-color:#fff;filter:grayscale(1);aspect-ratio:1 / 1;border-radius:50%}#card.wide ::slotted(img),#card.wide img{border-radius:0;aspect-ratio:1 / 1;min-width:100%}@media (min-width: 768px){#card.wide ::slotted(img),#card.wide img{width:calc(var(--image-width) / 2);min-width:calc(var(--image-width) / 2)}}::slotted(*){color:inherit}#extras{background-color:var(--miles_secondary_four)}a,span{color:inherit;text-decoration:none;display:inline}span{display:flex;flex-direction:column;overflow:hidden;line-height:1.2em;gap:.2em}#card.wide span{flex-direction:row}#group{display:flex;flex-direction:column;gap:.2em}#card.author #group{justify-content:center;display:flex;flex-direction:column;gap:.5em}#card.wide #group{background-color:#f8ebe8;width:unset;padding:1rem 2rem;justify-content:center}@media (min-width: 768px){#card.wide #group{padding:0 2rem;width:100%}}
-`,
-  se = document.createElement('template');
+`, se = document.createElement("template");
 se.innerHTML = `
   <style>
 	${Oe}
@@ -1103,68 +913,43 @@ se.innerHTML = `
     `;
 class re extends HTMLElement {
   constructor() {
-    super(),
-      this.attachShadow({ mode: 'open' }),
-      this.shadowRoot.append(se.content.cloneNode(!0)),
-      (this.emailEl = this.shadowRoot.querySelector('#email_el')),
-      (this.nameEl = this.shadowRoot.querySelector('#name')),
-      (this.phoneEl = this.shadowRoot.querySelector('#phone_el')),
-      (this.titleEl = this.shadowRoot.querySelector('#title')),
-      (this.firgureEl = this.shadowRoot.querySelector('figure')),
-      (this.card = this.shadowRoot.querySelector('#card'));
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(se.content.cloneNode(!0)), this.emailEl = this.shadowRoot.querySelector("#email_el"), this.nameEl = this.shadowRoot.querySelector("#name"), this.phoneEl = this.shadowRoot.querySelector("#phone_el"), this.titleEl = this.shadowRoot.querySelector("#title"), this.firgureEl = this.shadowRoot.querySelector("figure"), this.card = this.shadowRoot.querySelector("#card");
   }
   static get observedAttributes() {
-    return ['email', 'name', 'phone', 'jobtitle', 'image', 'variant'];
+    return ["email", "name", "phone", "jobtitle", "image", "variant"];
   }
   attributeChangedCallback(e, i, t) {
-    if (
-      (e === 'email' &&
-        (this.emailEl.setAttribute('href', `mailto:${t}`),
-        (this.phoneEl.style.display = 'block'),
-        (this.emailEl.textContent = t)),
-      e === 'name' && (this.nameEl.textContent = t),
-      e === 'phone' &&
-        (this.phoneEl.setAttribute('href', `tel:${t}`),
-        (this.shadowRoot.querySelector('#phone').style.display = 'block'),
-        (this.phoneEl.textContent = t)),
-      e === 'jobtitle' && (this.titleEl.textContent = t),
-      e === 'image')
-    ) {
-      const o = document.createElement('img');
-      o.setAttribute('src', t), this.firgureEl.append(o);
+    if (e === "email" && (this.emailEl.setAttribute("href", `mailto:${t}`), this.phoneEl.style.display = "block", this.emailEl.textContent = t), e === "name" && (this.nameEl.textContent = t), e === "phone" && (this.phoneEl.setAttribute("href", `tel:${t}`), this.shadowRoot.querySelector("#phone").style.display = "block", this.phoneEl.textContent = t), e === "jobtitle" && (this.titleEl.textContent = t), e === "image") {
+      const o = document.createElement("img");
+      o.setAttribute("src", t), this.firgureEl.append(o);
     }
-    e === 'variant' &&
-      (t === 'wide' &&
-        (this.card.classList.add('wide'),
-        this.style.setProperty('--image-width', '320px')),
-      t === 'author' &&
-        (this.card.classList.add('author'),
-        this.style.setProperty('--image-width', '180px')));
+    e === "variant" && (t === "wide" && (this.card.classList.add("wide"), this.style.setProperty("--image-width", "320px")), t === "author" && (this.card.classList.add("author"), this.style.setProperty("--image-width", "180px")));
   }
-  connectedCallback() {}
-  disconnectedCallback() {}
+  connectedCallback() {
+  }
+  disconnectedCallback() {
+  }
 }
-const z = 'miles-business-card';
+const z = "miles-business-card";
 customElements.get(z) || customElements.define(z, re);
 class De extends re {
   constructor() {
     super();
   }
   connectedCallback() {
-    super.connectedCallback(), this.setAttribute('variant', 'author');
+    super.connectedCallback(), this.setAttribute("variant", "author");
   }
   attributeChangedCallback(e, i, t) {
-    e !== 'phone' && e !== 'email' && super.attributeChangedCallback(e, i, t);
+    e !== "phone" && e !== "email" && super.attributeChangedCallback(e, i, t);
   }
 }
-const N = 'miles-author-card';
-customElements.get(N) || customElements.define(N, De);
-const Ve = `:host{display:block;color:inherit}@media (min-width: 768px){:host{padding-left:calc(8rem - 2em)}}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:1em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:100%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:1em;padding:1em 2em;position:relative;z-index:5;left:-4rem;margin-bottom:4rem}h2{margin:0}@media (min-width: 768px){#heading{max-width:60%;left:-8rem;border-radius:2em}#wrapper{border-radius:2em}h2{margin:revert}}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
-`,
-  ne = document.createElement('template');
+const R = "miles-author-card";
+customElements.get(R) || customElements.define(R, De);
+const Ue = `:host{display:block;color:inherit}@media (min-width: 768px){:host{padding-left:calc(8rem - 2em)}}#wrapper{border:4px solid var(--miles_secondary_four);color:var(--miles_secondary_three);border-radius:1em;padding:2em;position:relative;line-height:2.5em}#heading{max-width:100%;background-color:var(--miles_secondary_four);color:var(--miles_primary_light);border-radius:1em;padding:1em 2em;position:relative;z-index:5;left:-4rem;margin-bottom:4rem}h2{margin:0}@media (min-width: 768px){#heading{max-width:60%;left:-8rem;border-radius:2em}#wrapper{border-radius:2em}h2{margin:revert}}p,p::slotted(*){font-size:1rem;line-height:2.5rem;font-weight:400}
+`, ne = document.createElement("template");
 ne.innerHTML = `
   <style>
-	${Ve}
+	${Ue}
 
   ${r}
     </style>
@@ -1175,27 +960,25 @@ ne.innerHTML = `
       <p><slot></slot></p>
     </div>
     `;
-class Ue extends HTMLElement {
+class Xe extends HTMLElement {
   constructor() {
-    super(),
-      this.attachShadow({ mode: 'open' }),
-      this.shadowRoot.append(ne.content.cloneNode(!0)),
-      (this.headingEl = this.shadowRoot.querySelector('h2'));
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(ne.content.cloneNode(!0)), this.headingEl = this.shadowRoot.querySelector("h2");
   }
   static get observedAttributes() {
-    return ['heading'];
+    return ["heading"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'heading' && (this.headingEl.textContent = t);
+    e === "heading" && (this.headingEl.textContent = t);
   }
-  connectedCallback() {}
-  disconnectedCallback() {}
+  connectedCallback() {
+  }
+  disconnectedCallback() {
+  }
 }
-const R = 'miles-info-block';
-customElements.get(R) || customElements.define(R, Ue);
+const N = "miles-info-block";
+customElements.get(N) || customElements.define(N, Xe);
 const We = `:host{display:inline-block;color:inherit}#wrapper{background-color:var(--miles_secondary_four);display:flex;flex-direction:column}h2{margin:0}a{text-decoration:none;color:inherit}#address,#phone{margin-bottom:1rem}
-`,
-  ae = document.createElement('template');
+`, ae = document.createElement("template");
 ae.innerHTML = `
   <style>
 	${We}
@@ -1211,42 +994,28 @@ ae.innerHTML = `
       <div aria-describedby="ordnrlabel" id="orgnr"></div>
     </div>
     `;
-class Xe extends HTMLElement {
+class Ge extends HTMLElement {
   constructor() {
-    super(),
-      this.attachShadow({ mode: 'open' }),
-      this.shadowRoot.append(ae.content.cloneNode(!0)),
-      (this.nameEl = this.shadowRoot.querySelector('h2')),
-      (this.adresseEl = this.shadowRoot.querySelector('#address')),
-      (this.emailEl = this.shadowRoot.querySelector('#email')),
-      (this.phoneEl = this.shadowRoot.querySelector('#phone')),
-      (this.orgnrEl = this.shadowRoot.querySelector('#orgnr'));
+    super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(ae.content.cloneNode(!0)), this.nameEl = this.shadowRoot.querySelector("h2"), this.adresseEl = this.shadowRoot.querySelector("#address"), this.emailEl = this.shadowRoot.querySelector("#email"), this.phoneEl = this.shadowRoot.querySelector("#phone"), this.orgnrEl = this.shadowRoot.querySelector("#orgnr");
   }
   static get observedAttributes() {
-    return ['name', 'address', 'email', 'phone', 'orgnr', 'image'];
+    return ["name", "address", "email", "phone", "orgnr", "image"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'name' && (this.nameEl.textContent = t),
-      e === 'address' && (this.adresseEl.textContent = t),
-      e === 'email' &&
-        (this.emailEl.setAttribute('href', `mailto:${t}`),
-        (this.emailEl.textContent = t)),
-      e === 'phone' &&
-        (this.phoneEl.setAttribute('href', `tel:${t}`),
-        (this.phoneEl.textContent = t)),
-      e === 'orgnr' && (this.orgnrEl.textContent = t);
+    e === "name" && (this.nameEl.textContent = t), e === "address" && (this.adresseEl.textContent = t), e === "email" && (this.emailEl.setAttribute("href", `mailto:${t}`), this.emailEl.textContent = t), e === "phone" && (this.phoneEl.setAttribute("href", `tel:${t}`), this.phoneEl.textContent = t), e === "orgnr" && (this.orgnrEl.textContent = t);
   }
-  connectedCallback() {}
-  disconnectedCallback() {}
+  connectedCallback() {
+  }
+  disconnectedCallback() {
+  }
 }
-const P = 'miles-contact-card';
-customElements.get(P) || customElements.define(P, Xe);
-const Ge = `:host{display:inline-block}::slotted(nav){z-index:2000;position:relative;top:calc(var(--header-height) * -1)}#menu-content{display:none;position:absolute;height:fit-content;background-color:var(--miles_primary_dark);z-index:2000;top:calc(var(--header-height) - 1px);right:0;transform:translate(500px);transition:transform .5s cubic-bezier(.46,.03,.52,.96);padding:0 2rem 2rem}@media screen and (min-width: 768px){#menu-content{padding:0 6rem 6rem}}#menu-content.open{transform:translate(0);display:block;right:0}#nav-icon{display:inline-block;z-index:2000;right:2rem;top:1rem;margin-left:auto;margin-right:auto;width:40px;height:40px;position:absolute;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out;cursor:pointer}#nav-icon span{display:block;position:absolute;height:5px;width:40px;left:0;background:#ffffff;border-radius:2px;opacity:1;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}.mega-menu-open #nav-icon span{background:#fff}.fixed #nav-icon span{background:black}.mega-menu-open .fixed #nav-icon span{background:#fff}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.fixed #nav-icon span{background:#ffffff}}#nav-icon span:nth-child(1){top:17px}#nav-icon span:nth-child(2),#nav-icon span:nth-child(3){top:4px}#nav-icon span:nth-child(4){top:31px}.open-menu span:nth-child(1){top:16px;width:0%;left:50%}.open-menu span:nth-child(2){top:1em;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.open-menu span:nth-child(3){top:1em;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}.open-menu span:nth-child(4){top:18px;width:0%;left:50%}ul{padding:0;list-style-type:none;margin:0}h3,h2{color:var(--miles_primary_light);font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;padding:0}a{text-decoration:none;color:var(--miles_primary_light);padding:.2rem}a:hover,a:focus,a:active{background-color:var(--miles_link_color_hover)}.mega-menu-grid{display:flex;flex-direction:column}@media screen and (max-width: 900px) and (orientation: landscape){.mega-menu-grid{display:grid;grid-template-columns:repeat(3,1fr)}}ul.menu{display:flex;flex-direction:column;gap:.5rem}
-`,
-  le = document.createElement('template');
+const P = "miles-contact-card";
+customElements.get(P) || customElements.define(P, Ge);
+const Je = `:host{display:inline-block}::slotted(nav){z-index:2000;position:relative;top:calc(var(--header-height) * -1)}#menu-content{display:none;position:absolute;height:fit-content;background-color:var(--miles_primary_dark);z-index:2000;top:calc(var(--header-height) - 1px);right:0;transform:translate(500px);transition:transform .5s cubic-bezier(.46,.03,.52,.96);padding:0 2rem 2rem}@media screen and (min-width: 768px){#menu-content{padding:0 6rem 6rem}}#menu-content.open{transform:translate(0);display:block;right:0}#nav-icon{display:inline-block;z-index:2000;right:2rem;top:1rem;margin-left:auto;margin-right:auto;width:40px;height:40px;position:absolute;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out;cursor:pointer}#nav-icon span{display:block;position:absolute;height:5px;width:40px;left:0;background:#ffffff;border-radius:2px;opacity:1;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}.mega-menu-open #nav-icon span{background:#fff}.fixed #nav-icon span{background:black}.mega-menu-open .fixed #nav-icon span{background:#fff}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.fixed #nav-icon span{background:#ffffff}}#nav-icon span:nth-child(1){top:17px}#nav-icon span:nth-child(2),#nav-icon span:nth-child(3){top:4px}#nav-icon span:nth-child(4){top:31px}.open-menu span:nth-child(1){top:16px;width:0%;left:50%}.open-menu span:nth-child(2){top:1em;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.open-menu span:nth-child(3){top:1em;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}.open-menu span:nth-child(4){top:18px;width:0%;left:50%}ul{padding:0;list-style-type:none;margin:0}h3,h2{color:var(--miles_primary_light);font-size:1.5rem;font-weight:700;margin:2rem 0 1rem;padding:0}a{text-decoration:none;color:var(--miles_primary_light);padding:.2rem}a:hover,a:focus,a:active{background-color:var(--miles_link_color_hover)}.mega-menu-grid{display:flex;flex-direction:column}@media screen and (max-width: 900px) and (orientation: landscape){.mega-menu-grid{display:grid;grid-template-columns:repeat(3,1fr)}}ul.menu{display:flex;flex-direction:column;gap:.5rem}
+`, le = document.createElement("template");
 le.innerHTML = `
         <style>
-          	${Ge}
+          	${Je}
 
            ${r}
         </style>
@@ -1261,19 +1030,14 @@ le.innerHTML = `
     			<slot></slot>
         </div>  
       `;
-class Je extends HTMLElement {
+class Ke extends HTMLElement {
   constructor() {
     super();
-    a(this, 'openmenu', i => {
-      console.log('menu toggle'),
-        i.preventDefault(),
-        this.burgerEl.classList.toggle('open-menu'),
-        this.menuContent.classList.toggle('open');
+    n(this, "openmenu", (i) => {
+      console.log("menu toggle"), i.preventDefault(), this.burgerEl.classList.toggle("open-menu"), this.menuContent.classList.toggle("open");
     });
-    const i = this.attachShadow({ mode: 'open' });
-    i.append(le.content.cloneNode(!0)),
-      (this.burgerEl = i.querySelector('#nav-icon')),
-      (this.menuContent = i.querySelector('#menu-content'));
+    const i = this.attachShadow({ mode: "open" });
+    i.append(le.content.cloneNode(!0)), this.burgerEl = i.querySelector("#nav-icon"), this.menuContent = i.querySelector("#menu-content");
   }
   /*
     static get observedAttributes() {
@@ -1285,26 +1049,20 @@ class Je extends HTMLElement {
     }
     */
   connectedCallback() {
-    this.shadowRoot
-      .querySelector('slot')
-      .assignedElements()
-      .forEach(i => {
-        i.tagName === 'NAV' &&
-          (i.querySelector('a[href="#"]').remove(), this.menuContent.append(i));
-      }),
-      this.burgerEl.addEventListener('click', this.openmenu);
+    this.shadowRoot.querySelector("slot").assignedElements().forEach((i) => {
+      i.tagName === "NAV" && (i.querySelector('a[href="#"]').remove(), this.menuContent.append(i));
+    }), this.burgerEl.addEventListener("click", this.openmenu);
   }
   disconnectedCallback() {
-    this.burgerEl.removeEventListener('click', this.openmenu);
+    this.burgerEl.removeEventListener("click", this.openmenu);
   }
 }
-const B = 'miles-site-menu';
-customElements.get(B) || customElements.define(B, Je);
-const Ke = '',
-  de = document.createElement('template');
+const B = "miles-site-menu";
+customElements.get(B) || customElements.define(B, Ke);
+const Qe = "", de = document.createElement("template");
 de.innerHTML = `
       <style>
-      	${Ke}
+      	${Qe}
 
         ${r}
         </style>
@@ -1322,52 +1080,35 @@ de.innerHTML = `
         </div>
         </div>
         `;
-class Qe extends HTMLElement {
+class Ye extends HTMLElement {
   constructor() {
     super();
-    a(this, 'timeFormat', i =>
-      new Intl.DateTimeFormat('no', {
-        month: 'short',
-        day: 'numeric',
-      }).format(i)
-    );
-    a(this, 'createPlayer', i => {
-      const t = document.createElement('audio');
-      return (
-        t.setAttribute('controls', ''),
-        t.setAttribute('preload', 'none'),
-        t.setAttribute('src', i),
-        t
-      );
+    n(this, "timeFormat", (i) => new Intl.DateTimeFormat("no", {
+      month: "short",
+      day: "numeric"
+    }).format(i));
+    n(this, "createPlayer", (i) => {
+      const t = document.createElement("audio");
+      return t.setAttribute("controls", ""), t.setAttribute("preload", "none"), t.setAttribute("src", i), t;
     });
-    this.attachShadow({ mode: 'open' }).appendChild(de.content.cloneNode(!0)),
-      (this.titlEl = this.shadowRoot.querySelector('#title')),
-      (this.dateEl = this.shadowRoot.querySelector('#date')),
-      (this.summaryEl = this.shadowRoot.querySelector('#summary')),
-      (this.descriptionEl = this.shadowRoot.querySelector('#description')),
-      (this.playerEl = this.shadowRoot.querySelector('#player'));
+    this.attachShadow({ mode: "open" }).appendChild(de.content.cloneNode(!0)), this.titlEl = this.shadowRoot.querySelector("#title"), this.dateEl = this.shadowRoot.querySelector("#date"), this.summaryEl = this.shadowRoot.querySelector("#summary"), this.descriptionEl = this.shadowRoot.querySelector("#description"), this.playerEl = this.shadowRoot.querySelector("#player");
   }
   static get observedAttributes() {
-    return ['episode_title', 'published_date', 'link', 'description', 'url'];
+    return ["episode_title", "published_date", "link", "description", "url"];
   }
   attributeChangedCallback(i, t, o) {
-    i === 'episode_title' && (this.titlEl.textContent = o),
-      i === 'published_date' &&
-        (this.dateEl.textContent = `${this.timeFormat(
-          new Date(o)
-        )} - MilesPodden`),
-      i === 'description' && (this.descriptionEl.textContent = o),
-      i === 'url' && this.playerEl.appendChild(this.createPlayer(o));
+    i === "episode_title" && (this.titlEl.textContent = o), i === "published_date" && (this.dateEl.textContent = `${this.timeFormat(
+      new Date(o)
+    )} - MilesPodden`), i === "description" && (this.descriptionEl.textContent = o), i === "url" && this.playerEl.appendChild(this.createPlayer(o));
   }
 }
-const I = 'miles-podcast-card';
-customElements.get(I) || customElements.define(I, Qe);
-const Ye = `:host{display:inline-block;overflow:hidden}#banner{background-position:unset;width:100vw;height:70vw;background-repeat:no-repeat;background-size:cover;position:relative}@media (max-width: 450px){#banner{height:650px;background-position:left}}@media screen and (max-width: 900px) and (orientation: landscape){#banner{height:50vw}}@media (min-width: 768px){#banner{background-position:center;background-repeat:no-repeat}}.banner-content{display:flex;flex-direction:column;justify-content:center;height:40%;width:100vw;position:absolute;bottom:0;background-color:var(--miles_primary_light);filter:opacity(.7)}@media (min-width: 450px){:host([variant="split"]) .banner-content{height:100%;width:50vw;filter:none}:host([variant="split"]) .banner-content p{margin-bottom:20vh}:host([variant="split"]) .banner-content h1{max-width:80%}}.banner-content h1,.banner-content p{color:var(--miles_secondary_four);max-width:100%;margin-left:0;margin-bottom:0;padding:0 2rem;line-height:120%}.banner-content h1{font-size:32px;line-height:120%}.banner-content p{font-size:1.5rem;margin-top:0}@media (min-width: 900px){.banner-content h1,.banner-content p{max-width:50%;margin-left:4rem}.banner-content h1{font-size:48px}.banner-content p{font-size:2rem;margin-top:1rem}}
-`,
-  ce = document.createElement('template');
+const j = "miles-podcast-card";
+customElements.get(j) || customElements.define(j, Ye);
+const Ve = `:host{display:inline-block;overflow:hidden}#banner{background-position:unset;width:100vw;height:70vw;background-repeat:no-repeat;background-size:cover;position:relative}@media (max-width: 450px){#banner{height:650px;background-position:left}}@media screen and (max-width: 900px) and (orientation: landscape){#banner{height:50vw}}@media (min-width: 768px){#banner{background-position:center;background-repeat:no-repeat}}.banner-content{display:flex;flex-direction:column;justify-content:center;height:40%;width:100vw;position:absolute;bottom:0;background-color:var(--miles_primary_light);filter:opacity(.7)}@media (min-width: 450px){:host([variant="split"]) .banner-content{height:100%;width:50vw;filter:none}:host([variant="split"]) .banner-content p{margin-bottom:20vh}:host([variant="split"]) .banner-content h1{max-width:80%}}.banner-content h1,.banner-content p{color:var(--miles_secondary_four);max-width:100%;margin-left:0;margin-bottom:0;padding:0 2rem;line-height:120%}.banner-content h1{font-size:32px;line-height:120%}.banner-content p{font-size:1.5rem;margin-top:0}@media (min-width: 900px){.banner-content h1,.banner-content p{max-width:50%;margin-left:4rem}.banner-content h1{font-size:48px}.banner-content p{font-size:2rem;margin-top:1rem}}
+`, ce = document.createElement("template");
 ce.innerHTML = `
       <style>
-      	${Ye}
+      	${Ve}
 
         ${r}
         </style>
@@ -1381,48 +1122,43 @@ ce.innerHTML = `
 class et extends HTMLElement {
   constructor() {
     super();
-    const e = this.attachShadow({ mode: 'open' });
-    e.appendChild(ce.content.cloneNode(!0)),
-      (this.bannerEl = e.querySelector('#banner')),
-      (this.titleEl = e.querySelector('#title')),
-      (this.sloganEl = e.querySelector('#slogan'));
+    const e = this.attachShadow({ mode: "open" });
+    e.appendChild(ce.content.cloneNode(!0)), this.bannerEl = e.querySelector("#banner"), this.titleEl = e.querySelector("#title"), this.sloganEl = e.querySelector("#slogan");
   }
   static get observedAttributes() {
-    return ['image', 'title', 'slogan', 'url', 'variant'];
+    return ["image", "title", "slogan", "url", "variant"];
   }
   attributeChangedCallback(e, i, t) {
-    e === 'image' && (this.bannerEl.style.backgroundImage = `url(${t})`),
-      e === 'title' && (this.titleEl.textContent = t),
-      e === 'slogan' && (this.sloganEl.textContent = t);
+    e === "image" && (this.bannerEl.style.backgroundImage = `url(${t})`), e === "title" && (this.titleEl.textContent = t), e === "slogan" && (this.sloganEl.textContent = t);
   }
 }
-const j = 'miles-banner';
-customElements.get(j) || customElements.define(j, et);
+const I = "miles-banner";
+customElements.get(I) || customElements.define(I, et);
 export {
   Ze as MilesArrow,
   Te as MilesArrowNav,
   De as MilesAuthorCard,
   et as MilesBanner,
-  Re as MilesBlogCard,
+  Ne as MilesBlogCard,
   fe as MilesBulb,
   re as MilesBusinessCard,
   ke as MilesButtonAnchor,
   pe as MilesCloud,
-  Xe as MilesContactCard,
+  Ge as MilesContactCard,
   ve as MilesCup,
   ue as MilesCurve,
   ze as MilesFagbloggTeaser,
   He as MilesImageSlider,
   Me as MilesInfo,
-  Ue as MilesInfoBlock,
+  Xe as MilesInfoBlock,
   xe as MilesLogo,
-  je as MilesOfficeBanner,
+  Ie as MilesOfficeBanner,
   Be as MilesOverlapBlock,
-  Qe as MilesPodcastCard,
+  Ye as MilesPodcastCard,
   Le as MilesPodcastTeaser,
   we as MilesPodd,
   Ee as MilesProfileCard,
   be as MilesZoom,
-  Je as SiteMenu,
+  Ke as SiteMenu
 };
 //# sourceMappingURL=miles-wc.es.js.map
