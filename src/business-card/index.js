@@ -34,9 +34,9 @@ class MilesBusinessCard extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.append(MilesBusinessCardTemplate.content.cloneNode(true));
-    this.emailEl = this.shadowRoot.querySelector('#email');
+    this.emailEl = this.shadowRoot.querySelector('#email_el');
     this.nameEl = this.shadowRoot.querySelector('#name');
-    this.phoneEl = this.shadowRoot.querySelector('#phone');
+    this.phoneEl = this.shadowRoot.querySelector('#phone_el');
     this.titleEl = this.shadowRoot.querySelector('#title');
     this.firgureEl = this.shadowRoot.querySelector('figure');
     this.card = this.shadowRoot.querySelector('#card');
@@ -59,7 +59,7 @@ class MilesBusinessCard extends HTMLElement {
 
     if (name === 'phone') {
       this.phoneEl.setAttribute('href', `tel:${newValue}`);
-      this.phoneEl.style.display = 'block';
+      this.shadowRoot.querySelector('#phone').style.display = 'block';
       this.phoneEl.textContent = newValue;
     }
 

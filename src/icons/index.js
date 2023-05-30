@@ -353,7 +353,7 @@ templatePodd.innerHTML = `
             }
 
             path {
-              transition: fill 0.5s cubic-bezier(0.42, 0.16, 0.07, 0.96);
+              transition: all 1s cubic-bezier(0.42, 0.16, 0.07, 0.96);
             }
           </style>
           <div class="icon">
@@ -389,8 +389,10 @@ class MilesPodd extends HTMLElement {
     if (name === 'color') {
       if (newValue && newValue.length > 0) {
         this.svgEl.setAttribute('fill', newValue);
+        this.svgEl.style.transform = 'scale(1.03)';
       } else {
         this.svgEl.setAttribute('fill', 'currentColor');
+        this.svgEl.style.transform = 'scale(1)';
       }
     }
   }

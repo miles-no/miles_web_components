@@ -1,7 +1,7 @@
 :host {
   display: block;
 
-  color: inherit;
+  color: var(--miles_secondary_four, inherit);
 
   --image-width: 120px;
 }
@@ -11,6 +11,7 @@
 }
 
 #card {
+  letter-spacing: 0.02em;
   max-width: 400px;
   margin: 0 auto;
   background-color: var(--miles_secondary_four);
@@ -43,10 +44,14 @@
 
 h3 {
   margin: 0 0 0 0;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
 }
 
 #title {
   margin-bottom: 0.5em;
+  line-height: 22px;
 }
 
 #card.wide span#title {
@@ -54,7 +59,7 @@ h3 {
 }
 
 #card.wide #name {
-  order: 1;
+  /*  order: 1; */
 }
 
 #card.wide span {
@@ -157,9 +162,4 @@ span {
     padding: 0 2rem;
     width: 100%;
   }
-}
-
-#email_el,
-#phone_el {
-  display: none;
 }
