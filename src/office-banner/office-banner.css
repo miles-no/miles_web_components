@@ -135,7 +135,7 @@
 #triggerBg {
   margin: auto;
   position: relative;
-  width: 100%;
+  width: calc(100% - 4rem);
   z-index: 10;
   bottom: unset;
   top: 0;
@@ -150,13 +150,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background-color: var(--miles_secondary_four);
   transition: all 0.5s cubic-bezier(0.46, 0.03, 0.52, 0.96);
   z-index: 1;
 }
 
 #triggerBg:hover::after {
-  background: rgba(0, 0, 0, 0.8);
+  filter: opacity(0.5);
 }
 
 @media (min-width: 769px) {

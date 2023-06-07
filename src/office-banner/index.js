@@ -33,6 +33,7 @@ class MilesOfficeBanner extends HTMLElement {
     this.menu = this.shadowRoot.querySelector('#menu');
     this.people = this.shadowRoot.querySelector('#people');
     this.triggerEl = this.shadowRoot.querySelector('#triggerEl');
+    this.triggerBg = this.shadowRoot.querySelector('#triggerBg');
     this.header = null;
   }
 
@@ -62,7 +63,7 @@ class MilesOfficeBanner extends HTMLElement {
     const rects = this.banner.getBoundingClientRect();
     if (this.trigger && rects.width > 769) {
       this.trigger.setAttribute('style', 'cursor: pointer; ');
-      this.trigger.addEventListener('click', this.toggleMenu);
+      this.triggerBg.addEventListener('click', this.toggleMenu);
     } else {
       this.triggerEl.querySelector('miles-arrow').classList.add('open');
       this.menu.classList.add('open');
@@ -71,7 +72,7 @@ class MilesOfficeBanner extends HTMLElement {
   }
 
   disconnectedCallback() {
-    this.trigger.removeEventListener('click', this.toggleMenu);
+    this.triggerBg.removeEventListener('click', this.toggleMenu);
   }
 
   toggleMenu = () => {
