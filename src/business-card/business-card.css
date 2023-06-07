@@ -31,6 +31,7 @@
 #card.wide {
   flex-direction: column;
   background-color: transparent;
+  gap: 0.3em;
 }
 
 @media (min-width: 768px) {
@@ -39,6 +40,7 @@
     margin: 0;
     max-height: calc(var(--image-width) / 2);
     flex-direction: row;
+    gap: 1em;
   }
 }
 
@@ -83,7 +85,7 @@ figure {
   margin: 0;
   padding: 0;
   aspect-ratio: 1/1;
-  width: var(--image-width);
+  width: 100%;
   min-width: var(--image-width);
   overflow: hidden;
 }
