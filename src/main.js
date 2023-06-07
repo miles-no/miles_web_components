@@ -26,6 +26,8 @@ import { MilesContactCard } from './contact-card/index.js';
 import { SiteMenu } from './site-menu/index.js';
 import { MilesPodcastCard } from './podcast-card/index.js';
 import { MilesBanner } from './banner/index.js';
+import { MilesPhone } from './icons/index.js';
+import { MilesEmail } from './icons/index.js';
 
 export {
   MilesBulb,
@@ -53,4 +55,6 @@ export {
   SiteMenu,
   MilesPodcastCard,
   MilesBanner,
+  MilesPhone,
+  MilesEmail,
 };

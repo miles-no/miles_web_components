@@ -19,8 +19,16 @@ MilesBusinessCardTemplate.innerHTML = `
       <div id="group">
         <h3 id="name"></h3>
         <span id="title"></span>
-        <span id="email_el">Epost: <a id="email"></a></span>
-        <span id="phone_el">Telefon: <a id="phone"></a></span>
+        <span id="email_el">
+          <miles-email></miles-email>
+          <span>Epost:</span>
+          <a id="email"></a>
+        </span>
+        <span id="phone_el">
+             <miles-phone></miles-phone>
+              <span>Telefon:</span>
+              <a id="phone"></a>
+          </span>
       </div>
     </div>
       <div id="extras">
@@ -37,6 +45,8 @@ class MilesBusinessCard extends HTMLElement {
     this.emailEl = this.shadowRoot.querySelector('#email_el');
     this.nameEl = this.shadowRoot.querySelector('#name');
     this.phoneEl = this.shadowRoot.querySelector('#phone_el');
+    this.phoneAnchor = this.shadowRoot.querySelector('#phone');
+    this.mailAnchor = this.shadowRoot.querySelector('#email');
     this.titleEl = this.shadowRoot.querySelector('#title');
     this.firgureEl = this.shadowRoot.querySelector('figure');
     this.card = this.shadowRoot.querySelector('#card');
@@ -48,9 +58,8 @@ class MilesBusinessCard extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'email') {
-      this.emailEl.setAttribute('href', `mailto:${newValue}`);
-      this.phoneEl.style.display = 'block';
-      this.emailEl.textContent = newValue;
+      this.mailAnchor.setAttribute('href', `mailto:${newValue}`);
+      this.mailAnchor.textContent = newValue;
     }
 
     if (name === 'name') {
@@ -58,9 +67,9 @@ class MilesBusinessCard extends HTMLElement {
     }
 
     if (name === 'phone') {
-      this.phoneEl.setAttribute('href', `tel:${newValue}`);
+      this.phoneAnchor.setAttribute('href', `tel:${newValue}`);
       this.shadowRoot.querySelector('#phone').style.display = 'block';
-      this.phoneEl.textContent = newValue;
+      this.phoneAnchor.textContent = newValue;
     }
 
     if (name === 'jobtitle') {
@@ -85,10 +94,6 @@ class MilesBusinessCard extends HTMLElement {
       }
     }
   }
-
-  connectedCallback() {}
-
-  disconnectedCallback() {}
 }
 
 const MilesBusinessCardName = 'miles-business-card';

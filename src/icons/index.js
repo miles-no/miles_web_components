@@ -404,5 +404,109 @@ if (!customElements.get(MilesPoddName)) {
   customElements.define(MilesPoddName, MilesPodd);
 }
 
+/**
+ * Miles Phone Icon
+ */
+
+const templatePhone = document.createElement('template');
+templatePhone.innerHTML = `
+      <style> 
+        :host {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      </style>
+      <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 22C1.1 22 0.75 21.85 0.45 21.55C0.15 21.25 0 20.9 0 20.5V1.5C0 1.1 0.15 0.75 0.45 0.45C0.75 0.15 1.1 0 1.5 0H12.5C12.9 0 13.25 0.15 13.55 0.45C13.85 0.75 14 1.1 14 1.5V20.5C14 20.9 13.85 21.25 13.55 21.55C13.25 21.85 12.9 22 12.5 22H1.5ZM1.5 19.75V20.5H12.5V19.75H1.5ZM1.5 18.25H12.5V3.75H1.5V18.25ZM1.5 2.25H12.5V1.5H1.5V2.25Z" fill="#3F1221"/>
+      </svg>
+`;
+
+class MilesPhone extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.appendChild(templatePhone.content.cloneNode(true));
+    this.svgEl = shadow.querySelector('path');
+  }
+
+  static get observedAttributes() {
+    return ['color'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'color') {
+      if (newValue && newValue.length > 0) {
+        this.svgEl.setAttribute('fill', newValue);
+      } else {
+        this.svgEl.setAttribute('fill', 'currentColor');
+      }
+    }
+  }
+}
+
+const MilesPhoneName = 'miles-phone';
+
+if (!customElements.get(MilesPhoneName)) {
+  customElements.define(MilesPhoneName, MilesPhone);
+}
+
+/**
+ * Miles Email Icon
+ */
+
+const templateEmail = document.createElement('template');
+templateEmail.innerHTML = `
+      <style>
+        :host {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      </style>
+      <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.5 16C1.1 16 0.75 15.85 0.45 15.55C0.15 15.25 0 14.9 0 14.5V1.5C0 1.1 0.15 0.75 0.45 0.45C0.75 0.15 1.1 0 1.5 0H18.5C18.9 0 19.25 0.15 19.55 0.45C19.85 0.75 20 1.1 20 1.5V14.5C20 14.9 19.85 15.25 19.55 15.55C19.25 15.85 18.9 16 18.5 16H1.5ZM18.5 2.875L10.4 8.175C10.3333 8.20833 10.2708 8.2375 10.2125 8.2625C10.1542 8.2875 10.0833 8.3 10 8.3C9.91667 8.3 9.84583 8.2875 9.7875 8.2625C9.72917 8.2375 9.66667 8.20833 9.6 8.175L1.5 2.875V14.5H18.5V2.875ZM10 6.95L18.4 1.5H1.625L10 6.95ZM1.5 3.05V2.06708V2.08538V1.5V2.075V2.0522V3.05Z" fill="#3F1221"/>
+</svg>
+
+`;
+
+class MilesEmail extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.appendChild(templateEmail.content.cloneNode(true));
+    this.svgEl = shadow.querySelector('path');
+  }
+
+  static get observedAttributes() {
+    return ['color'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'color') {
+      if (newValue && newValue.length > 0) {
+        this.svgEl.setAttribute('fill', newValue);
+      } else {
+        this.svgEl.setAttribute('fill', 'currentColor');
+      }
+    }
+  }
+}
+
+const MilesEmailName = 'miles-email';
+
+if (!customElements.get(MilesEmailName)) {
+  customElements.define(MilesEmailName, MilesEmail);
+}
+
 export default MilesPoddName;
-export { MilesZoom, MilesPodd, MilesCloud, MilesCup, MilesBulb, MilesCurve };
+export {
+  MilesZoom,
+  MilesPodd,
+  MilesCloud,
+  MilesCup,
+  MilesBulb,
+  MilesCurve,
+  MilesPhone,
+  MilesEmail,
+};
