@@ -50,6 +50,7 @@ h3 {
 }
 
 #title {
+  margin-top: 0.3em;
   margin-bottom: 0.5em;
   line-height: 22px;
   font-weight: 700;
