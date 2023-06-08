@@ -28,7 +28,10 @@ import { MilesPodcastCard } from './podcast-card/index.js';
 import { MilesBanner } from './banner/index.js';
 import { MilesPhone } from './icons/index.js';
 import { MilesEmail } from './icons/index.js';
-
+import { MilesAudioPlayer } from './audioplayer/index.js';
+import { MilesPlay } from './icons/index.js';
+import { MilesPause } from './icons/index.js';
+import { MilesAudioSeek } from './icons/index.js';
 export {
   MilesBulb,
   MilesCloud,
@@ -57,4 +60,8 @@ export {
   MilesBanner,
   MilesPhone,
   MilesEmail,
+  MilesAudioPlayer,
+  MilesPlay,
+  MilesPause,
+  MilesAudioSeek,
 };

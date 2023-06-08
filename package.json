@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.js\"",
-    "prettier-watch": "onchange \"**/*{js,css,html}\" -- prettier --write --ignore-unknown {{changed}}"
+    "prettier-watch": "onchange -v 'src/**/*.js' 'src/**/*.css' -- npm run build"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.8",
