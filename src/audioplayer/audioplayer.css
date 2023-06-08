@@ -31,6 +31,8 @@ miles-seek {
 
 #progresstime {
   color: var(--miles_primary_light);
+  white-space: nowrap;
+  min-width: 100px;
 }
 
 button {

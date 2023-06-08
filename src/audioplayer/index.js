@@ -13,11 +13,11 @@ MilesAudioPlayerTemplate.innerHTML = `
     </style>
 	<div id="milesplayer">
 		<audio id="player" controls></audio>
-    <miles-seek direction="backward"></miles-seek>
+    <button id="backward"><miles-seek direction="backward"></miles-seek></button>
         <div class="progress-indicator">
           <input type="range" max="100" value="0" id="progressbar">
         </div>
-      <miles-seek direction="forward"></miles-seek>
+      <button id="forward"><miles-seek direction="forward"></miles-seek></button>
     <div id="progresstime"></div>
 		<button id="play" data-playing="false"><miles-play></miles-play></button>
 	</div>
@@ -33,12 +33,8 @@ class MilesAudioPlayer extends HTMLElement {
     this.playButtonEl = this.shadowRoot.querySelector('#play');
     this.progresstimeEl = this.shadowRoot.querySelector('#progresstime');
     this.progressbarEl = this.shadowRoot.querySelector('#progressbar');
-    this.backwardSeekEl = this.shadowRoot.querySelector(
-      'miles-seek[direction="backward"]'
-    );
-    this.forwardSeekEl = this.shadowRoot.querySelector(
-      'miles-seek[direction="forward"]'
-    );
+    this.backwardSeekEl = this.shadowRoot.querySelector('#backward');
+    this.forwardSeekEl = this.shadowRoot.querySelector('#forward');
 
     this.audioContext;
   }
@@ -158,12 +154,10 @@ class MilesAudioPlayer extends HTMLElement {
   };
 
   play = () => {
-    // Check if context is in suspended state (autoplay policy)
     if (this.audioContext.state === 'suspended') {
       this.audioContext.resume();
     }
 
-    // Play or pause track depending on state
     if (this.playButtonEl.dataset.playing === 'false') {
       this.audioPlayerEl.play();
       this.playButtonEl.dataset.playing = 'true';
