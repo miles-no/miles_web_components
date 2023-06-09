@@ -266,7 +266,7 @@ W.innerHTML = `
           </svg>
           </div>
         `;
-class ke extends HTMLElement {
+class Ee extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
@@ -280,7 +280,7 @@ class ke extends HTMLElement {
   }
 }
 const y = "miles-pod";
-customElements.get(y) || customElements.define(y, ke);
+customElements.get(y) || customElements.define(y, Ee);
 const G = document.createElement("template");
 G.innerHTML = `
       <style> 
@@ -294,7 +294,7 @@ G.innerHTML = `
         <path d="M1.5 22C1.1 22 0.75 21.85 0.45 21.55C0.15 21.25 0 20.9 0 20.5V1.5C0 1.1 0.15 0.75 0.45 0.45C0.75 0.15 1.1 0 1.5 0H12.5C12.9 0 13.25 0.15 13.55 0.45C13.85 0.75 14 1.1 14 1.5V20.5C14 20.9 13.85 21.25 13.55 21.55C13.25 21.85 12.9 22 12.5 22H1.5ZM1.5 19.75V20.5H12.5V19.75H1.5ZM1.5 18.25H12.5V3.75H1.5V18.25ZM1.5 2.25H12.5V1.5H1.5V2.25Z" fill="#3F1221"/>
       </svg>
 `;
-class Ee extends HTMLElement {
+class ke extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
@@ -308,7 +308,7 @@ class Ee extends HTMLElement {
   }
 }
 const x = "miles-phone";
-customElements.get(x) || customElements.define(x, Ee);
+customElements.get(x) || customElements.define(x, ke);
 const J = document.createElement("template");
 J.innerHTML = `
       <style>
@@ -378,9 +378,9 @@ class Se extends HTMLElement {
     e === "width" && this.svg.setAttribute("width", t), e === "height" && this.svg.setAttribute("height", t), e === "color" && this.svg.setAttribute("fill", t);
   }
 }
-const k = "miles-logo";
-customElements.get(k) || customElements.define(k, Se);
-const E = (s) => [null, "false"].includes(s) === !1, Q = document.createElement("template");
+const E = "miles-logo";
+customElements.get(E) || customElements.define(E, Se);
+const k = (s) => [null, "false"].includes(s) === !1, Q = document.createElement("template");
 Q.innerHTML = `
         <style>
           ${r}
@@ -421,10 +421,10 @@ class Ae extends HTMLElement {
   attributeChangedCallback(e, i, t) {
     e === "href" && this.buttontarget.setAttribute("href", t), e === "color" && this.style.setProperty("--color", t), e === "selected" && (this.buttontarget.setAttribute(
       "aria-selected",
-      E(t)
+      k(t)
     ), this.buttontarget.classList.toggle(
       "selected",
-      E(t)
+      k(t)
     ));
   }
   connectedCallback() {
@@ -442,28 +442,28 @@ Y.innerHTML = `
         </style>
        
         <div class="profile-card">
-        <a href="">  
-          <figure>
-          <img class="profile-card__image" id="profileimage" /> 
-        </figure>
-        </a>
+          <a href="">  
+            <figure>
+              <img class="profile-card__image" id="profileimage" /> 
+            </figure>
+          </a>
           <div class="profile-card__info">
-            <h3 id="name"</h3>
+            <h3 id="name"></h3>
             <div class="description jobtitle">
               <p id="jobtitle"></p>
             </div>
             <div class="description location">
-            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13.6 6.61789V1.62965H11.2V4.07671L8 0.688477L0 9.15907H2.4V16.6885H6.4V11.0414H9.6V16.6885H13.6V9.15907H16L13.6 6.61789ZM6.4 7.27671C6.4 6.24142 7.12 5.39436 8 5.39436C8.88 5.39436 9.6 6.24142 9.6 7.27671H6.4Z" fill="#EB4645"/>
-            </svg>
-            <p id="location"></p>
-          </div>
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.6 6.61789V1.62965H11.2V4.07671L8 0.688477L0 9.15907H2.4V16.6885H6.4V11.0414H9.6V16.6885H13.6V9.15907H16L13.6 6.61789ZM6.4 7.27671C6.4 6.24142 7.12 5.39436 8 5.39436C8.88 5.39436 9.6 6.24142 9.6 7.27671H6.4Z" fill="#EB4645"/>
+              </svg>
+              <p id="location"></p>
+            </div>
           </div>
         </div>  
       `;
 class Te extends HTMLElement {
   constructor() {
-    super(), this.attachShadow({ mode: "open" }).append(Y.content.cloneNode(!0)), this.officeLocation = this.shadowRoot.querySelector("#location"), this.jobTitle = this.shadowRoot.querySelector("#jobtitle"), this.consultantName = this.shadowRoot.querySelector("#name"), this.profileImage = this.shadowRoot.querySelector("#profileimage");
+    super(), this.attachShadow({ mode: "open" }).append(Y.content.cloneNode(!0)), this.officeLocationEl = this.shadowRoot.querySelector("#location"), this.jobTitleEl = this.shadowRoot.querySelector("#jobtitle"), this.consultantNameEl = this.shadowRoot.querySelector("#name"), this.profileImageEl = this.shadowRoot.querySelector("#profileimage");
   }
   static get observedAttributes() {
     return ["image", "name", "jobtitle", "location"];
@@ -472,10 +472,10 @@ class Te extends HTMLElement {
     if (e === "image")
       if (t === "" || t === null) {
         const o = "https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png";
-        this.profileImage.setAttribute("src", o), this.profileImage.setAttribute("alt", "Miles Profile Card Image");
+        this.profileImageEl.setAttribute("src", o), this.profileImageEl.setAttribute("alt", "Miles Profile Card Image");
       } else
-        this.profileImage.setAttribute("src", t), this.profileImage.setAttribute("alt", "Miles Profile Card Image");
-    e === "location" && (this.officeLocation.textContent = t), e === "jobtitle" && (this.jobTitle.textContent = t), e === "name" && (this.shadowRoot.querySelector("a").setAttribute("href", t.split(" ").join("-").toLowerCase()), this.consultantName.textContent = t);
+        this.profileImageEl.setAttribute("src", t), this.profileImageEl.setAttribute("alt", "Miles Profile Card Image");
+    e === "location" && (this.officeLocationEl.textContent = t), e === "jobtitle" && (this.jobTitleEl.textContent = t), e === "name" && (this.shadowRoot.querySelector("a").setAttribute("href", t.split(" ").join("-").toLowerCase()), this.consultantNameEl.textContent = t);
   }
   connectedCallback() {
   }
@@ -1216,10 +1216,10 @@ export {
   Se as MilesLogo,
   Ue as MilesOfficeBanner,
   De as MilesOverlapBlock,
-  Ee as MilesPhone,
+  ke as MilesPhone,
   st as MilesPodcastCard,
   ze as MilesPodcastTeaser,
-  ke as MilesPodd,
+  Ee as MilesPodd,
   Te as MilesProfileCard,
   Ce as MilesZoom,
   it as SiteMenu
