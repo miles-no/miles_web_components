@@ -13,13 +13,13 @@ MilesAudioPlayerTemplate.innerHTML = `
     </style>
 	<div id="milesplayer">
 		<audio id="player" controls></audio>
-    <button id="backward"><miles-seek direction="backward"></miles-seek></button>
+    <button id="backward" aria-label="seek" aria-description="seek 15 seconds backwards"><miles-seek direction="backward"></miles-seek></button>
         <div class="progress-indicator">
           <input type="range" max="100" value="0" id="progressbar">
         </div>
-      <button id="forward"><miles-seek direction="forward"></miles-seek></button>
+      <button id="forward" aria-label="seek" aria-description="seek 15 seconds forward"><miles-seek direction="forward"></miles-seek></button>
     <div id="progresstime"></div>
-		<button id="play" data-playing="false"><miles-play></miles-play></button>
+		<button id="play" aria-label="play" aria-description="Play and pause sound playback" data-playing="false"><miles-play></miles-play></button>
 	</div>
 `;
 
@@ -58,12 +58,6 @@ class MilesAudioPlayer extends HTMLElement {
     track.connect(this.audioContext.destination);
 
     this.playButtonEl.addEventListener('click', this.play);
-    this.audioPlayerEl.addEventListener(
-      'durationchange',
-      this.durationChnagehandler
-    );
-
-    this.audioPlayerEl.addEventListener('progress', this.durationChnagehandler);
 
     this.audioPlayerEl.addEventListener('timeupdate', this.timeUpdateHandler);
 
@@ -80,14 +74,6 @@ class MilesAudioPlayer extends HTMLElement {
 
   disconnectedCallback() {
     this.playButtonEl.removeEventListener('click', this.play);
-    this.audioPlayerEl.removeEventListener(
-      'durationchange',
-      this.durationChnagehandler
-    );
-    this.audioPlayerEl.removeEventListener(
-      'progress',
-      this.durationChnagehandler
-    );
 
     this.audioPlayerEl.removeEventListener(
       'loadedmetadata',
@@ -113,10 +99,6 @@ class MilesAudioPlayer extends HTMLElement {
 
   backwardSeek = seconds => {
     this.audioPlayerEl.currentTime = this.audioPlayerEl.currentTime - seconds;
-  };
-
-  durationChnagehandler = event => {
-    console.log(event.target.duration);
   };
 
   timeUpdateHandler = () => {
@@ -162,10 +144,12 @@ class MilesAudioPlayer extends HTMLElement {
       this.audioPlayerEl.play();
       this.playButtonEl.dataset.playing = 'true';
       this.playButtonEl.innerHTML = '<miles-pause></miles-pause>';
+      this.playButtonEl.setAttribute('aria-label', 'pause');
     } else if (this.playButtonEl.dataset.playing === 'true') {
       this.audioPlayerEl.pause();
       this.playButtonEl.dataset.playing = 'false';
       this.playButtonEl.innerHTML = '<miles-play></miles-play>';
+      this.playButtonEl.setAttribute('aria-label', 'play');
     }
   };
 }

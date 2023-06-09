@@ -433,7 +433,7 @@ oe.innerHTML = `
   </svg>
   </div>
 `;
-class Ne extends HTMLElement {
+class Be extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
@@ -447,7 +447,7 @@ class Ne extends HTMLElement {
   }
 }
 const _ = "miles-logo";
-customElements.get(_) || customElements.define(_, Ne);
+customElements.get(_) || customElements.define(_, Be);
 const L = (s) => [null, "false"].includes(s) === !1, se = document.createElement("template");
 se.innerHTML = `
         <style>
@@ -477,7 +477,7 @@ se.innerHTML = `
           <slot></slot>
         </a>
       `;
-class Be extends HTMLElement {
+class Ne extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
@@ -499,7 +499,7 @@ class Be extends HTMLElement {
   }
 }
 const S = "miles-button-anchor";
-customElements.get(S) || customElements.define(S, Be);
+customElements.get(S) || customElements.define(S, Ne);
 const Ze = `:host{display:inline-block;--width: 215px}.profile-card{display:flex;flex-direction:column;width:var(--width);border-radius:5px;overflow:hidden}figure{border-radius:.5rem;height:var(--width);margin:0 0 .5rem;padding:0}img{background-color:#fff;filter:grayscale(1);width:100%;object-fit:cover;aspect-ratio:1 / 1;animation:fadeIn 1s cubic-bezier(.46,.03,.05,.99)}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}.profile-card__info{display:flex;background-color:var(--miles_secondary_four);padding:1.2rem;min-height:140px;flex-direction:column}.jobtitle{flex-grow:1}.jobtitle p{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical}.description{display:flex;flex-direction:row;align-items:baseline;gap:.2rem}h3,p{margin:0;color:var(--miles_primary_light)}
 `, re = document.createElement("template");
 re.innerHTML = `
@@ -987,8 +987,8 @@ class it extends HTMLElement {
     this.triggerBg.removeEventListener("click", this.toggleMenu);
   }
 }
-const N = "miles-office-banner";
-customElements.get(N) || customElements.define(N, it);
+const B = "miles-office-banner";
+customElements.get(B) || customElements.define(B, it);
 const ot = `:host{display:inline-block;transform:rotate(180deg);transition:transform .5s cubic-bezier(.46,.03,.52,.96)}#arrow{justify-content:center;display:flex;width:inherit;height:inherit;align-items:center}:host(.open){transform:rotate(0)}svg{width:inherit;height:inherit}
 `, pe = document.createElement("template");
 pe.innerHTML = `
@@ -1009,8 +1009,8 @@ class st extends HTMLElement {
     super(), this.attachShadow({ mode: "open" }), this.shadowRoot.append(pe.content.cloneNode(!0));
   }
 }
-const B = "miles-arrow";
-customElements.get(B) || customElements.define(B, st);
+const N = "miles-arrow";
+customElements.get(N) || customElements.define(N, st);
 const rt = `:host{display:block;color:var(--miles_secondary_four, inherit);--image-width: 120px}#card-wrapper{box-sizing:border-box}#card{letter-spacing:.02em;max-width:400px;margin:0 auto;background-color:var(--miles_secondary_four);border-radius:4px;display:flex;flex-direction:row;gap:1em}#card.author{max-width:100%;background-color:transparent}#card.wide{flex-direction:column;background-color:transparent;gap:.3em}@media (min-width: 768px){#card.wide{max-width:100%;margin:0;max-height:calc(var(--image-width) / 2);flex-direction:row;gap:1em}}h3{margin:0;font-size:24px;font-style:normal;font-weight:700}#title{margin-top:.3em;margin-bottom:.5em;line-height:22px;font-weight:700}#card.wide span#title{order:0}#phone_el,#email_el{display:grid;grid-template-columns:1.2em max-content auto;gap:10px}figure{margin:0;padding:0;aspect-ratio:1/1;width:100%;min-width:var(--image-width);overflow:hidden}@media (min-width: 768px){#card.wide figure{justify-content:center;display:flex;aspect-ratio:2 / 3;width:var(--image-width);min-width:var(--image-width);background-color:#fff}}::slotted(img),img{object-fit:cover;width:100%;background-color:#fff;filter:grayscale(1);aspect-ratio:1 / 1;border-radius:50%}#card.wide ::slotted(img),#card.wide img{border-radius:0;aspect-ratio:1 / 1;min-width:100%}@media (min-width: 768px){#card.wide ::slotted(img),#card.wide img{width:calc(var(--image-width) / 2);min-width:calc(var(--image-width) / 2)}}::slotted(*){color:inherit}#extras{background-color:var(--miles_secondary_four)}a,span{color:inherit;text-decoration:none;display:inline}span{display:flex;flex-direction:column;overflow:hidden;line-height:1.2em;gap:.2em}#card.wide span{flex-direction:row}#group{display:flex;flex-direction:column;gap:.2em}#card.author #group{justify-content:center;display:flex;flex-direction:column;gap:.5em}#card.wide #group{background-color:#f8ebe8;width:unset;padding:1rem 2rem;justify-content:center}@media (min-width: 768px){#card.wide #group{padding:0 2rem;width:100%}}
 `, ge = document.createElement("template");
 ge.innerHTML = `
@@ -1273,13 +1273,13 @@ xe.innerHTML = `
     </style>
 	<div id="milesplayer">
 		<audio id="player" controls></audio>
-    <button id="backward"><miles-seek direction="backward"></miles-seek></button>
+    <button id="backward" aria-label="seek" aria-description="seek 15 seconds backwards"><miles-seek direction="backward"></miles-seek></button>
         <div class="progress-indicator">
           <input type="range" max="100" value="0" id="progressbar">
         </div>
-      <button id="forward"><miles-seek direction="forward"></miles-seek></button>
+      <button id="forward" aria-label="seek" aria-description="seek 15 seconds forward"><miles-seek direction="forward"></miles-seek></button>
     <div id="progresstime"></div>
-		<button id="play" data-playing="false"><miles-play></miles-play></button>
+		<button id="play" aria-label="play" aria-description="Play and pause sound playback" data-playing="false"><miles-play></miles-play></button>
 	</div>
 `;
 class bt extends HTMLElement {
@@ -1290,9 +1290,6 @@ class bt extends HTMLElement {
     });
     a(this, "backwardSeek", (i) => {
       this.audioPlayerEl.currentTime = this.audioPlayerEl.currentTime - i;
-    });
-    a(this, "durationChnagehandler", (i) => {
-      console.log(i.target.duration);
     });
     a(this, "timeUpdateHandler", () => {
       this.progresstimeEl.textContent = `${this.getTimeString(
@@ -1314,7 +1311,7 @@ class bt extends HTMLElement {
       i.style.backgroundSize = (n - t) * 100 / (o - t) + "% 100%";
     });
     a(this, "play", () => {
-      this.audioContext.state === "suspended" && this.audioContext.resume(), this.playButtonEl.dataset.playing === "false" ? (this.audioPlayerEl.play(), this.playButtonEl.dataset.playing = "true", this.playButtonEl.innerHTML = "<miles-pause></miles-pause>") : this.playButtonEl.dataset.playing === "true" && (this.audioPlayerEl.pause(), this.playButtonEl.dataset.playing = "false", this.playButtonEl.innerHTML = "<miles-play></miles-play>");
+      this.audioContext.state === "suspended" && this.audioContext.resume(), this.playButtonEl.dataset.playing === "false" ? (this.audioPlayerEl.play(), this.playButtonEl.dataset.playing = "true", this.playButtonEl.innerHTML = "<miles-pause></miles-pause>", this.playButtonEl.setAttribute("aria-label", "pause")) : this.playButtonEl.dataset.playing === "true" && (this.audioPlayerEl.pause(), this.playButtonEl.dataset.playing = "false", this.playButtonEl.innerHTML = "<miles-play></miles-play>", this.playButtonEl.setAttribute("aria-label", "play"));
     });
     this.attachShadow({ mode: "open" }), this.shadowRoot.append(xe.content.cloneNode(!0)), this.audioEl = this.shadowRoot.querySelector("#milesplayer"), this.audioPlayerEl = this.shadowRoot.querySelector("#player"), this.playButtonEl = this.shadowRoot.querySelector("#play"), this.progresstimeEl = this.shadowRoot.querySelector("#progresstime"), this.progressbarEl = this.shadowRoot.querySelector("#progressbar"), this.backwardSeekEl = this.shadowRoot.querySelector("#backward"), this.forwardSeekEl = this.shadowRoot.querySelector("#forward"), this.audioContext;
   }
@@ -1328,22 +1325,13 @@ class bt extends HTMLElement {
     const i = window.AudioContext || window.webkitAudioContext;
     this.audioContext = new i(), this.audioContext.createMediaElementSource(
       this.audioPlayerEl
-    ).connect(this.audioContext.destination), this.playButtonEl.addEventListener("click", this.play), this.audioPlayerEl.addEventListener(
-      "durationchange",
-      this.durationChnagehandler
-    ), this.audioPlayerEl.addEventListener("progress", this.durationChnagehandler), this.audioPlayerEl.addEventListener("timeupdate", this.timeUpdateHandler), this.audioPlayerEl.addEventListener(
+    ).connect(this.audioContext.destination), this.playButtonEl.addEventListener("click", this.play), this.audioPlayerEl.addEventListener("timeupdate", this.timeUpdateHandler), this.audioPlayerEl.addEventListener(
       "loadedmetadata",
       this.loadMetadataHandler
     ), this.progressbarEl.addEventListener("change", this.progressChangeHandler), this.forwardSeekEl.addEventListener("click", () => this.forwardSeek(15)), this.backwardSeekEl.addEventListener("click", () => this.backwardSeek(15));
   }
   disconnectedCallback() {
     this.playButtonEl.removeEventListener("click", this.play), this.audioPlayerEl.removeEventListener(
-      "durationchange",
-      this.durationChnagehandler
-    ), this.audioPlayerEl.removeEventListener(
-      "progress",
-      this.durationChnagehandler
-    ), this.audioPlayerEl.removeEventListener(
       "loadedmetadata",
       this.loadMetadataHandler
     ), this.progressbarEl.removeEventListener(
@@ -1368,7 +1356,7 @@ export {
   Ke as MilesBlogCard,
   Le as MilesBulb,
   ue as MilesBusinessCard,
-  Be as MilesButtonAnchor,
+  Ne as MilesButtonAnchor,
   ke as MilesCloud,
   ct as MilesContactCard,
   Se as MilesCup,
@@ -1378,7 +1366,7 @@ export {
   Xe as MilesImageSlider,
   Ve as MilesInfo,
   lt as MilesInfoBlock,
-  Ne as MilesLogo,
+  Be as MilesLogo,
   it as MilesOfficeBanner,
   et as MilesOverlapBlock,
   $e as MilesPause,
