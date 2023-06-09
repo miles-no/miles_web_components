@@ -21,7 +21,7 @@ miles-pause {
   display: flex;
   align-items: center;
   height: var(--player-height);
-  transform: scale(0.5);
+  width: var(--player-height);
 }
 
 miles-seek {
