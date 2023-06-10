@@ -1,0 +1,50 @@
+:host {
+  color: var(--miles_primary_light);
+
+  width: fit-content;
+  display: inline-block;
+}
+
+.podcast-card {
+  background-color: var(--miles_secondary_four);
+  padding: 2.2em;
+  display: flex;
+  flex-direction: row;
+  gap: 2.2em;
+
+  border-radius: 30px;
+}
+
+#title {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#date {
+  padding: 0;
+  margin: 0;
+
+  font-size: 0.8em;
+}
+
+#title::before {
+  content: attr(data-episode);
+  margin-right: 0.5em;
+}
+
+.image {
+  box-sizing: border-box;
+  flex-direction: row;
+  height: 156px;
+  width: 156px;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-top: 1em;
+}

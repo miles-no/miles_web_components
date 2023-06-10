@@ -19,9 +19,11 @@ document.querySelector('#app').innerHTML = `
 <miles-podcast-card url="https://sphinx.acast.com/p/open/s/63d28f41cd0f720011930608/e/645890f79b594e0011518b11/media.mp3" episode_title="Hvordan vil kunstig intelligens (AI) prege verden om 5 år?" published_date="Wed, 12 Apr 2023 06:00:07 GMT" link="https://shows.acast.com/milespodden/episodes/64354fa7c06561001192101b" description="" length="87411068">
   <p><em>Hvilket mulighetsrom finnes for norske bedrifter og hvilke faresignaler ser vi?</em></p><p><em>Dette og mye mer snakker vi om i denne episoden av MilesPodden.</em></p><p><em>I studio sitter Morten Goodwin, professor ved universitetet i Agder og Alfonso Canterla, Senior Data Scientist i Miles.</em></p><br><p><em>Podkasten er produsert av Gjenklangstudio.no</em></p><br /><hr><p style='color:grey; font-size:0.75em;'> Hosted on Acast. See <a style='color:grey;' target='_blank' rel='noopener noreferrer' href='https://acast.com/privacy'>acast.com/privacy</a> for more information.</p>
 </miles-podcast-card>
+<miles-business-card variant="wide" name="Janne Syversen" email="janne.syvertsen@miles.no" phone="+47 468 26 082" jobtitle="Pressekontakt / markedstjener" image="https://www.miles.no/newsite/wp-content/uploads/2022/10/Janne-Syversen_okt.jpg" style="--image-width: 320px;"></miles-business-card>
 
 -->
-<miles-business-card variant="wide" name="Janne Syversen" email="janne.syvertsen@miles.no" phone="+47 468 26 082" jobtitle="Pressekontakt / markedstjener" image="https://www.miles.no/newsite/wp-content/uploads/2022/10/Janne-Syversen_okt.jpg" style="--image-width: 320px;"></miles-business-card>
+
+<miles-podcast-card episode_number="6" episode_title="Bli kjent med ny konserntjener i Miles!" published_date="Mon, 05 Jun 2023 10:47:38 GMT" url="https://sphinx.acast.com/p/open/s/63d28f41cd0f720011930608/e/647dbd4bd035fa0011b20a66/media.mp3" length="37301367"><p>Hun heter Camilla Amundsen, har lang fartstid fra IT-bransjen og er klar for å drive selskapet videre.</p><p>Hvorfor tok hun jobben, hvilke ambisjoner har hun for veien videre og er hun egentlig et A eller B-menneske?</p></miles-podcast-card>
 
 
   `;
