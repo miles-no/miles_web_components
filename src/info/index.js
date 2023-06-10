@@ -53,11 +53,11 @@ class MilesInfo extends HTMLElement {
     this.removeEventListener('mouseleave', this.removeColor);
   }
 
-  removeColor = e => {
+  removeColor = () => {
     this.mic.removeAttribute('color');
   };
 
-  addColor = e => {
+  addColor = () => {
     this.mic.setAttribute('color', '#ff303b');
   };
 

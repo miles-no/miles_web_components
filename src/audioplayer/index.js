@@ -87,6 +87,8 @@ class MilesAudioPlayer extends HTMLElement {
   }
 
   getTimeString(time) {
+    if (isNaN(time)) return '00:00';
+
     const secs = `${parseInt(`${time % 60}`, 10)}`.padStart(2, '0');
     const min = parseInt(`${(time / 60) % 60}`, 10);
 
