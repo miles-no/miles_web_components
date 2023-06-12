@@ -1,6 +1,9 @@
 :host {
   display: inline-block;
   color: inherit;
+
+  /* Fix this */
+  grid-column: 1 / -1;
 }
 
 #wrapper {
