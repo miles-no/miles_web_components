@@ -2,7 +2,10 @@
   color: var(--miles_primary_light);
 
   width: fit-content;
+  max-width: 1140px;
   display: inline-block;
+
+  margin-bottom: 1em;
 }
 
 .podcast-card {

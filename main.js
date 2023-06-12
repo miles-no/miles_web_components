@@ -28,5 +28,8 @@ document.querySelector('#app').innerHTML = `
   <p>Hvorfor tok hun jobben, hvilke ambisjoner har hun for veien videre og er hun egentlig et A eller B-menneske?</p>
 </miles-podcast-card>
 
-
+<miles-podcast-card episode_number="6" episode_title="Bli kjent med ny konserntjener i Miles!" published_date="Mon, 05 Jun 2023 10:47:38 GMT" url="https://sphinx.acast.com/p/open/s/63d28f41cd0f720011930608/e/647dbd4bd035fa0011b20a66/media.mp3" length="37301367">
+  <p>Hun heter Camilla Amundsen, har lang fartstid fra IT-bransjen og er klar for å drive selskapet videre.</p>
+  <p>Hvorfor tok hun jobben, hvilke ambisjoner har hun for veien videre og er hun egentlig et A eller B-menneske?</p>
+</miles-podcast-card>
   `;
