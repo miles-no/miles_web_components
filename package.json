@@ -8,18 +8,31 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.js\"",
-    "prettier-watch": "onchange -v 'src/**/*.js' 'src/**/*.css' -- npm run build"
+    "prettier-watch": "onchange -v 'src/**/*.js' 'src/**/*.css' -- npm run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.8",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
+    "@storybook/addon-essentials": "^7.0.20",
+    "@storybook/addon-links": "^7.0.20",
+    "@storybook/blocks": "^7.0.20",
+    "@storybook/html-vite": "^7.0.20",
+    "@storybook/web-components": "^7.0.20",
+    "@storybook/web-components-vite": "^7.0.20",
     "eslint": "^8.33.0",
     "eslint-mdx": "^2.0.5",
     "eslint-plugin-mdx": "^2.0.5",
+    "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-wc": "^1.4.0",
     "eslint-plugin-xss": "^0.1.12",
+    "lit": "^2.7.5",
     "onchange": "^7.1.0",
     "prettier": "2.8.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.20",
     "vite": "^4.2.0"
   }
 }
