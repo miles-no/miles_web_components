@@ -1188,7 +1188,7 @@ class mt extends HTMLElement {
 }
 const F = "miles-site-menu";
 customElements.get(F) || customElements.define(F, mt);
-const pt = `:host{color:var(--miles_primary_light);width:fit-content;max-width:1140px;display:inline-block;margin-bottom:1em}.podcast-card{background-color:var(--miles_secondary_four);padding:2.2em;display:flex;flex-direction:row;gap:2.2em;border-radius:30px}#title{margin:0;font-size:1.5em;font-weight:700}#date{padding:0;margin:0;font-size:.8em}#title:before{content:attr(data-episode);margin-right:.5em}.image{box-sizing:border-box;flex-direction:row;height:156px;width:156px;background-color:#fff;padding:.5rem;border-radius:10px;display:flex;align-items:center}.text{margin-top:1em}
+const pt = `:host{color:var(--miles_primary_light);width:100%;max-width:1140px;display:inline-block;margin-bottom:1em}.podcast-card{background-color:var(--miles_secondary_four);padding:2.2em;display:flex;flex-direction:row;gap:2.2em;border-radius:30px}#title{margin:0;font-size:1.5em;font-weight:700}#date{padding:0;margin:0;font-size:.8em}#title:before{content:attr(data-episode);margin-right:.5em}.image{box-sizing:border-box;flex-direction:row;height:156px;width:156px;background-color:#fff;padding:.5rem;border-radius:10px;display:flex;align-items:center}.text{margin-top:1em}
 `, we = document.createElement("template");
 we.innerHTML = `
       <style>
