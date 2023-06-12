@@ -40,7 +40,9 @@ template.innerHTML = `
 	 		<p id="description"></p>	
 		  	<slot></slot>
 		  </div>
-		  <div id="player"></div>
+		  <div id="player">
+        <slot name="player"></slot>
+      </div>
         </div>
         </div>
         `;

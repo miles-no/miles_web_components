@@ -598,7 +598,9 @@ ${at}
 	 		<p id="description"></p>	
 		  	<slot></slot>
 		  </div>
-		  <div id="player"></div>
+		  <div id="player">
+        <slot name="player"></slot>
+      </div>
         </div>
         </div>
         `;class Oe extends HTMLElement{constructor(){super();n(this,"timeFormat",i=>new Intl.DateTimeFormat("no",{month:"short",day:"numeric"}).format(i));n(this,"createPlayer",i=>{const t=document.createElement("miles-audio-player");return t.setAttribute("src",i),t});this.attachShadow({mode:"open"}).appendChild(Fe.content.cloneNode(!0)),this.titlEl=this.shadowRoot.querySelector("#title"),this.dateEl=this.shadowRoot.querySelector("#date"),this.summaryEl=this.shadowRoot.querySelector("#summary"),this.descriptionEl=this.shadowRoot.querySelector("#description"),this.playerEl=this.shadowRoot.querySelector("#player")}static get observedAttributes(){return["episode_number","episode_title","published_date","link","description","url"]}attributeChangedCallback(i,t,o){i==="episode_number"&&this.titlEl.setAttribute("data-episode",`#${o}`),i==="episode_title"&&(this.titlEl.textContent=o),i==="published_date"&&(this.dateEl.textContent=`${this.timeFormat(new Date(o))} - MilesPodden`),i==="description"&&(this.descriptionEl.textContent=o),i==="url"&&this.playerEl.appendChild(this.createPlayer(o))}}const De="miles-podcast-card";customElements.get(De)||customElements.define(De,Oe);const ft=`:host{display:inline-block;overflow:hidden}#banner{background-position:unset;width:100vw;height:70vw;background-repeat:no-repeat;background-size:cover;position:relative}@media (max-width: 450px){#banner{height:650px;background-position:left}}@media screen and (max-width: 900px) and (orientation: landscape){#banner{height:50vw}}@media (min-width: 768px){#banner{background-position:center;background-repeat:no-repeat}}.banner-content{display:flex;flex-direction:column;justify-content:center;height:40%;width:100vw;position:absolute;bottom:0;background-color:var(--miles_primary_light);filter:opacity(.7)}@media (min-width: 450px){:host([variant="split"]) .banner-content{height:100%;width:50vw;filter:none}:host([variant="split"]) .banner-content p{margin-bottom:20vh}:host([variant="split"]) .banner-content h1{max-width:80%}}.banner-content h1,.banner-content p{color:var(--miles_secondary_four);max-width:100%;margin-left:0;margin-bottom:0;padding:0 2rem;line-height:120%}.banner-content h1{font-size:32px;line-height:120%}.banner-content p{font-size:1.5rem;margin-top:0}@media (min-width: 900px){.banner-content h1,.banner-content p{max-width:50%;margin-left:4rem}.banner-content h1{font-size:48px}.banner-content p{font-size:2rem;margin-top:1rem}}
@@ -622,7 +624,7 @@ ${at}
   ${r}
     </style>
 	<div id="milesplayer">
-		<audio id="player" controls></audio>
+		<audio id="player" crossorigin controls></audio>
     <button id="backward" aria-label="seek" aria-description="seek 15 seconds backwards"><miles-seek direction="backward"></miles-seek></button>
         <div class="progress-indicator">
           <input type="range" max="100" value="0" id="progressbar">

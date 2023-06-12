@@ -1225,7 +1225,9 @@ we.innerHTML = `
 	 		<p id="description"></p>	
 		  	<slot></slot>
 		  </div>
-		  <div id="player"></div>
+		  <div id="player">
+        <slot name="player"></slot>
+      </div>
         </div>
         </div>
         `;
@@ -1299,7 +1301,7 @@ Ce.innerHTML = `
   ${r}
     </style>
 	<div id="milesplayer">
-		<audio id="player" controls></audio>
+		<audio id="player" crossorigin controls></audio>
     <button id="backward" aria-label="seek" aria-description="seek 15 seconds backwards"><miles-seek direction="backward"></miles-seek></button>
         <div class="progress-indicator">
           <input type="range" max="100" value="0" id="progressbar">
