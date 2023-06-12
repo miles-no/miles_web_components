@@ -1,5 +1,6 @@
 :host {
   --headerHeight: 200px;
+  color: var(--miles_primary_light);
 }
 
 #banner {
@@ -171,7 +172,7 @@
     height: unset;
   }
 
-  #people {
+  #people::slotted(*) {
     display: grid;
     grid-template-columns: repeat(2, 50%);
     gap: 1rem;

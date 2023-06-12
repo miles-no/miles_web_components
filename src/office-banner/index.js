@@ -12,15 +12,16 @@ MilesOfficeBannerTemplate.innerHTML = `
   ${cssVariables}
   </style>
   <div id="banner">
-  <div id="menu">
-    <div id="people"></div>
-  </div>
-  <div id="triggerBg">
-    <div id="triggerEl"></div>
-  </div>
-  <div id="content">
-    <slot></slot>
-  </div>
+    <slot name="bannerimage"></slot>
+    <div id="menu">
+      <div id="people"><slot></slot></div>
+    </div>
+    <div id="triggerBg">
+      <div id="triggerEl"><slot name="bannerheading"></slot><miles-arrow class="open" ></miles-arrow></div>
+    </div>
+    <div id="content">
+      
+    </div>
   </div>
 `;
 
@@ -38,31 +39,9 @@ class MilesOfficeBanner extends HTMLElement {
   }
 
   connectedCallback() {
-    const slottedRoot = this.shadowRoot
-      .querySelector('slot')
-      .assignedElements()[0];
-
-    this.menu.append(slottedRoot.querySelector('.miles-office-menu'));
-    this.trigger = slottedRoot.querySelector('h2');
-    this.setAttribute(
-      'id',
-      this.trigger.textContent.replace(/\s/g, '').toLowerCase()
-    );
-    this.trigger.innerHTML = `<span>${this.trigger.textContent}</span><miles-arrow class="open" style="margin-left:1rem;"></miles-arrow>`;
-    this.triggerEl.append(this.trigger);
-
-    this.banner.append(slottedRoot.querySelector('.feature-image'));
-
-    const cards = this.menu.querySelectorAll('miles-business-card');
-    if (cards) {
-      cards.forEach(card => {
-        this.people.append(card);
-      });
-    }
-
     const rects = this.banner.getBoundingClientRect();
-    if (this.trigger && rects.width > 769) {
-      this.trigger.setAttribute('style', 'cursor: pointer; ');
+    if (this.triggerEl && rects.width > 769) {
+      this.triggerEl.setAttribute('style', 'cursor: pointer; ');
       this.triggerBg.addEventListener('click', this.toggleMenu);
     } else {
       this.triggerEl.querySelector('miles-arrow').classList.add('open');

@@ -1,7 +1,7 @@
 :host {
   display: block;
 
-  color: var(--miles_secondary_four, inherit);
+  color: var(--miles_primary_light, inherit);
 
   --image-width: 120px;
 }
