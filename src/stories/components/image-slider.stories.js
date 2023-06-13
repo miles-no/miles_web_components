@@ -1,15 +1,16 @@
-import { propsToAttrs } from '../../storybook.utils.js';
+import { propsToAttrs } from '../storybook.utils.js';
 
 export default {
   title: 'Miles/Components',
   tags: ['autodocs'],
   render: args =>
-    `<miles-info-block  ${propsToAttrs(args)}></miles-info-block>`,
+    `<miles-image-slider  ${propsToAttrs(args)}></miles-image-slider>`,
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
-export const InfoBlock = {
+export const ImageSlider = {
   args: {
-    heading: 'This is a amazing heading',
+    inview: 'true',
+    autoplay: 'true',
   },
 };

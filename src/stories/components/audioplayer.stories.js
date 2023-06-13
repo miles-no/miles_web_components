@@ -1,15 +1,15 @@
-import { propsToAttrs } from '../../storybook.utils.js';
+import { propsToAttrs } from '../storybook.utils.js';
 
 export default {
   title: 'Miles/Components',
   tags: ['autodocs'],
   render: args =>
-    `<miles-info-block  ${propsToAttrs(args)}></miles-info-block>`,
+    `<miles-audio-player  ${propsToAttrs(args)}></miles-audio-player>`,
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
-export const InfoBlock = {
+export const AudioPlayer = {
   args: {
-    heading: 'This is a amazing heading',
+    src: 'https://archive.org/embed/NeverGonnaGiveYouUp',
   },
 };
