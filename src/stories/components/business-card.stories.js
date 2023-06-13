@@ -3,7 +3,6 @@ import { propsToAttrs } from '../storybook.utils.js';
 export default {
   title: 'Miles/Components',
   tags: ['autodocs'],
-
   render: args =>
     `<miles-business-card  ${propsToAttrs(args)}></miles-business-card>`,
 };
