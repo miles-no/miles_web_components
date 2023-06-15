@@ -12,18 +12,24 @@ export function propsToAttrs(attributes, trueBooleanAttr) {
   const attributePrefixes = /^(no|is|has)(.*)$/g;
 
   if (trueBooleanAttr) {
-    return Object.entries(attributes)
-      .filter(([_, value]) => value != null && value !== false)
-      .map(([key, value]) => {
-        return attributeWords.includes(key) || key.match(attributePrefixes)
-          ? `${key}`
-          : `${key}="${value}"`;
-      })
-      .join(' ');
+    return (
+      Object.entries(attributes)
+        // eslint-disable-next-line no-unused-vars
+        .filter(([_, value]) => value != null && value !== false)
+        .map(([key, value]) => {
+          return attributeWords.includes(key) || key.match(attributePrefixes)
+            ? `${key}`
+            : `${key}="${value}"`;
+        })
+        .join(' ')
+    );
   }
 
-  return Object.entries(attributes)
-    .filter(([_, value]) => value != null && value !== false)
-    .map(([key, value]) => `${key}="${value}"`)
-    .join(' ');
+  return (
+    Object.entries(attributes)
+      // eslint-disable-next-line no-unused-vars
+      .filter(([_, value]) => value != null && value !== false)
+      .map(([key, value]) => `${key}="${value}"`)
+      .join(' ')
+  );
 }
