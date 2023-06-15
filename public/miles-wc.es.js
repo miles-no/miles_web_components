@@ -1,7 +1,7 @@
 var xe = Object.defineProperty;
 var Ee = (s, e, i) => e in s ? xe(s, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : s[e] = i;
 var a = (s, e, i) => (Ee(s, typeof e != "symbol" ? e + "" : e, i), i);
-const r = `@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";:host{--miles_primary_dark: #b72318;--miles_primary_light: #fbf0e5;--miles_secondary_one: #004047;--miles_secondary_two: #78e8db;--miles_secondary_three: #000000;--miles_secondary_four: #450d21;--miles_secondary_five: #ff303b;--miles_link_color: #183f46;--miles_link_color_hover: #94e5db;--miles_link_color_ondark: #94e5db;--miles_link_color_ondark_hover: #183f46;--miles_default_bg: #f5f5f5;--miles_effect_shadow_low: 0 0 4px 0 #00000033;--miles_effect_shadow_high: 0 0 16px 0 #00000033;--content_width: 80vw;--content_width_max: 1440px;--default_padding: 1rem .625rem;--default_padding_large: 2rem 1.25rem;--vertical_spacing: 4rem;--vertical_spacing_large: 8rem;--header-height: 72px;--miles-h1: 2.5rem;--miles-h2: 3rem;--miles-h3: 1.25rem;--miles-line-height: 150%;--miles-h1-lineheight: calc(var(--miles-h1) * 1.5);--miles-h2-lineheight: calc(var(--miles-h2) * 1.5);--miles-h3-lineheight: calc(var(--miles-h3) * 1.5);--halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);--halve_margin_offset_large: calc(100vw - var(--content_width));--max-page-width: 1440px}
+const r = `@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap";:host{--miles_primary_dark: #b72318;--miles_primary_light: #fbf0e5;--miles_secondary_one: #004047;--miles_secondary_two: #78e8db;--miles_secondary_three: #000000;--miles_secondary_four: #450d21;--miles_secondary_five: #ff303b;--miles_link_color: #183f46;--miles_link_color_hover: #94e5db;--miles_link_color_ondark: #94e5db;--miles_link_color_ondark_hover: #183f46;--miles_default_bg: #f5f5f5;--miles_effect_shadow_low: 0 0 4px 0 #00000033;--miles_effect_shadow_high: 0 0 16px 0 #00000033;--content_width_max: 1440px;--content_width: clamp(320px, 80vw, var(--content_width_max));--default_padding: 1rem .625rem;--default_padding_large: 2rem 1.25rem;--vertical_spacing: 4rem;--vertical_spacing_large: 8rem;--header-height: 72px;--miles-h1: 2.5rem;--miles-h2: 3rem;--miles-h3: 1.25rem;--miles-line-height: 150%;--miles-h1-lineheight: calc(var(--miles-h1) * 1.5);--miles-h2-lineheight: calc(var(--miles-h2) * 1.5);--miles-h3-lineheight: calc(var(--miles-h3) * 1.5);--halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);--halve_margin_offset_large: calc(100vw - var(--content_width));--max-page-width: 1440px}
 `, U = document.createElement("template");
 U.innerHTML = `
   <style>
@@ -1262,7 +1262,7 @@ class gt extends HTMLElement {
 }
 const O = "miles-podcast-card";
 customElements.get(O) || customElements.define(O, gt);
-const ut = `:host{display:inline-block;overflow:hidden}#banner{background-position:unset;width:100vw;height:70vw;background-repeat:no-repeat;background-size:cover;position:relative}@media (max-width: 450px){#banner{height:650px;background-position:left}}@media screen and (max-width: 900px) and (orientation: landscape){#banner{height:50vw}}@media (min-width: 768px){#banner{background-position:center;background-repeat:no-repeat}}.banner-content{display:flex;flex-direction:column;justify-content:center;height:40%;width:100vw;position:absolute;bottom:0;background-color:var(--miles_primary_light);filter:opacity(.7)}@media (min-width: 450px){:host([variant="split"]) .banner-content{height:100%;width:50vw;filter:none}:host([variant="split"]) .banner-content p{margin-bottom:20vh}:host([variant="split"]) .banner-content h1{max-width:80%}}.banner-content h1,.banner-content p{color:var(--miles_secondary_four);max-width:100%;margin-left:0;margin-bottom:0;padding:0 2rem;line-height:120%}.banner-content h1{font-size:32px;line-height:120%}.banner-content p{font-size:1.5rem;margin-top:0}@media (min-width: 900px){.banner-content h1,.banner-content p{max-width:50%;margin-left:4rem}.banner-content h1{font-size:48px}.banner-content p{font-size:2rem;margin-top:1rem}}
+const ut = `:host{display:inline-block;overflow:hidden;width:100%}#banner{background-color:var(--miles_primary_light);display:flex;height:clamp(360px,70vh,800px);position:relative}.banner-image{background-position:center;background-repeat:no-repeat;background-size:cover;height:100%;width:100%}.banner-content{bottom:0;display:flex;flex-direction:column;justify-content:center;padding:2rem;position:absolute;z-index:1}.banner-content:before{background-color:var(--miles_primary_light);content:"";height:100%;left:0;opacity:.7;position:absolute;top:0;width:100%;z-index:0}@media (min-width: 480px){.banner-content{width:100%}:host([variant="split"]) .banner-content{background:none;filter:none;height:100%;position:relative;width:50%;justify-content:center}:host([variant="split"]) .banner-image{width:50%}:host([variant="split"]) .banner-content h1{max-width:80%}}.banner-content h1,.banner-content p{color:var(--miles_secondary_four);max-width:100%;margin-left:0;margin-bottom:0;padding:0;line-height:120%;position:relative;z-index:1}.banner-content h1{font-size:32px;line-height:120%;margin-top:0}.banner-content p{font-size:1.5rem;margin-top:0}@media (min-width: 900px){.banner-content h1,.banner-content p{max-width:50%}.banner-content h1{font-size:48px}.banner-content p{font-size:2rem;margin-top:1rem}}
 `, ye = document.createElement("template");
 ye.innerHTML = `
       <style>
@@ -1275,13 +1275,14 @@ ye.innerHTML = `
 				<h1 id="title"></h1>
 				<p id="slogan"></p>
 			</div>
+			<div class="banner-image"></div>
         </div>
         `;
 class ft extends HTMLElement {
   constructor() {
     super();
     const e = this.attachShadow({ mode: "open" });
-    e.appendChild(ye.content.cloneNode(!0)), this.bannerEl = e.querySelector("#banner"), this.titleEl = e.querySelector("#title"), this.sloganEl = e.querySelector("#slogan");
+    e.appendChild(ye.content.cloneNode(!0)), this.bannerEl = e.querySelector(".banner-image"), this.titleEl = e.querySelector("#title"), this.sloganEl = e.querySelector("#slogan");
   }
   static get observedAttributes() {
     return ["image", "title", "slogan", "url", "variant"];
