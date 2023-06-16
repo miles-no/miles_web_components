@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://skaihigh.github.com/miles-no/miles_web_components",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +11,9 @@
     "lint": "eslint \"src/**/*.js\"",
     "prettier-watch": "onchange -v 'src/**/*.js' 'src/**/*.css' -- npm run build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.8",
@@ -27,6 +30,7 @@
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-wc": "^1.4.0",
     "eslint-plugin-xss": "^0.1.12",
+    "gh-pages": "^5.0.0",
     "lit": "^2.7.5",
     "onchange": "^7.1.0",
     "prettier": "2.8.8",
