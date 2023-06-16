@@ -10,7 +10,7 @@
 
 #header {
   display: flex;
-  max-width: var(--max-page-width);
+  max-width: var(--content_width_max);
   margin: 2rem auto;
   flex-direction: column;
 }
@@ -18,7 +18,7 @@
 #fagblogg-teaser {
   box-sizing: border-box;
   width: 100%;
-  max-width: var(--max-page-width);
+  max-width: var(--content_width_max);
   position: relative;
   min-height: 800px;
   margin: auto;

@@ -16,6 +16,7 @@ template.innerHTML = `
 				<h1 id="title"></h1>
 				<p id="slogan"></p>
 			</div>
+			<div class="banner-image"></div>
         </div>
         `;
 
@@ -24,7 +25,7 @@ class MilesBanner extends HTMLElement {
     super();
     const shadow = this.attachShadow({ mode: 'open' });
     shadow.appendChild(template.content.cloneNode(true));
-    this.bannerEl = shadow.querySelector('#banner');
+    this.bannerEl = shadow.querySelector('.banner-image');
     this.titleEl = shadow.querySelector('#title');
     this.sloganEl = shadow.querySelector('#slogan');
   }

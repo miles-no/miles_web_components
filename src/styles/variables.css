@@ -22,8 +22,8 @@
   --miles_effect_shadow_low: 0 0 4px 0 #00000033;
   --miles_effect_shadow_high: 0 0 16px 0 #00000033;
 
-  --content_width: 80vw;
   --content_width_max: 1440px;
+  --content_width: clamp(320px, 80vw, var(--content_width_max));
 
   --default_padding: 1rem 0.625rem;
   --default_padding_large: 2rem 1.25rem;
@@ -45,6 +45,4 @@
 
   --halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);
   --halve_margin_offset_large: calc(100vw - var(--content_width));
-
-  --max-page-width: 1440px;
 }
