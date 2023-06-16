@@ -8,8 +8,8 @@ import cssVariables from '../styles/variables.css?inline';
 const MilesBusinessCardTemplate = document.createElement('template');
 MilesBusinessCardTemplate.innerHTML = `
   <style>
-	${styles}\n
-  ${cssVariables}
+	${styles}
+    ${cssVariables}
     </style>
   <div id="card-wrapper">
       <div id="card">
