@@ -8,7 +8,7 @@ import cssVariables from '../styles/variables.css?inline';
 const template = document.createElement('template');
 template.innerHTML = `
       <style>
-      	${styles}\n
+      	${styles}
         ${cssVariables}
         </style>
         <div id="banner">
@@ -25,7 +25,8 @@ class MilesBanner extends HTMLElement {
     super();
     const shadow = this.attachShadow({ mode: 'open' });
     shadow.appendChild(template.content.cloneNode(true));
-    this.bannerEl = shadow.querySelector('.banner-image');
+    this.banner = shadow.querySelector('.banner-image');
+    this.bannerImage = shadow.querySelector('.banner-image');
     this.titleEl = shadow.querySelector('#title');
     this.sloganEl = shadow.querySelector('#slogan');
   }
@@ -36,7 +37,7 @@ class MilesBanner extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'image') {
-      this.bannerEl.style.backgroundImage = `url(${newValue})`;
+      this.bannerImage.style.backgroundImage = `url(${newValue})`;
     }
 
     if (name === 'title') {
@@ -45,6 +46,10 @@ class MilesBanner extends HTMLElement {
 
     if (name === 'slogan') {
       this.sloganEl.textContent = newValue;
+    }
+
+    if (name === 'reversed' && newValue === 'true') {
+      this.banner.classList.add('reversed');
     }
   }
 }
