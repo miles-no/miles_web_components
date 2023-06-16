@@ -16,6 +16,6 @@ export const BusinessCard = {
     variant: 'wide',
     jobtitle: 'tjener',
     image:
-      'https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png',
+      'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png',
   },
 };

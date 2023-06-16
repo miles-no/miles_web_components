@@ -32,7 +32,7 @@ class MilesBanner extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ['image', 'title', 'slogan', 'url', 'variant', 'reverse'];
+		return ['image', 'title', 'slogan', 'variant', 'reverse'];
 	}
 
 	attributeChangedCallback(name, oldValue, newValue) {

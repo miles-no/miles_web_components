@@ -1,7 +1,7 @@
 :host {
   display: block;
 
-  color: var(--miles_primary_light, inherit);
+  color: inherit;
 
   --image-width: 120px;
 }
@@ -36,6 +36,7 @@
 @media (min-width: 768px) {
   #card.wide {
     max-width: 100%;
+    color: var(--miles_secondary_four);
     margin: 0;
     max-height: calc(var(--image-width) / 2);
     flex-direction: row;
