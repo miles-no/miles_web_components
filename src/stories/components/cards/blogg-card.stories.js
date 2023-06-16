@@ -9,6 +9,9 @@ export default {
       </figure>
     <h2 slot="title">Sertifisering i innovasjonsledelse</h2>
         </miles-blog-card>`,
+  decorators: [
+    Story => `<div style="max-width: 400px; margin: 0 auto;">${Story()}</div>`,
+  ],
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
