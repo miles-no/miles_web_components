@@ -1,200 +1,181 @@
 :host {
   --headerHeight: 200px;
-  color: var(--miles_primary_light);
+  --max-banner-height: 620px;
+  --banner-border-radius: 30px;
+  --banner-animation: all .47s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  color: #fcf8f3;
 }
 
-#banner {
-  height: 300px;
-  overflow: hidden;
-  border-radius: 30px;
-  position: relative;
+*, *::before, *::after {
   box-sizing: border-box;
-  font-size: 12px;
-  line-height: 1.25;
-
-  &.open {
-    height: unset;
-  }
-
-  img {
-    transform: scale(1.1);
-    width: 100%;
-    object-fit: cover;
-  }
-  figure {
-    margin: 0;
-  }
+  font-family: 'Manrope', sans-serif;
 }
 
-#menu {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: start;
-  padding: 1rem;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  top: 100%;
-  position: absolute;
-  background-color: var(--miles_secondary_four);
-  height: 100%;
-  transition: top 0.5s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-  gap: 2rem;
+.office-banner {
+  background: var(--miles_secondary_four);
+  border-radius: var(--banner-border-radius);
+  overflow: hidden;
+  position: relative;
+  min-height: 320px;
 
-  &.open {
-    top: 100px;
-      @media (max-width: 1024px) and (min-width: 769px) {
-        top: 150px;
-        width: 100%;
-        left: 0;
-        right: unset;
-      }
-    @media (min-width: 1025px) {
+  @media (min-width: 811px) {
+    height: var(--max-banner-height);
+  }
+
+  $this: &;
+
+  &__background {
+    background: {
+      repeat: no-repeat;
+      position: center center;
+      size: cover;
+    }
+    border-radius: var(--banner-border-radius);
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: var(--banner-animation);
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__content {
+    padding: 2rem;
+    position: relative;
+    transition: var(--banner-animation);
+    z-index: 5;
+
+    @media (min-width: 811px) {
+      transform: translateY(calc(100% - 60px - 6rem));
+      height: 100%;
+    }
+
+    &::before {
+      background: var(--miles_secondary_four);
+      content: '';
+      width: 100%;
+      height: 100%;
+      left: 0;
       top: 0;
-      width: 50%;
-      left: unset;
+      transition: var(--banner-animation);
+      position: absolute;
+      opacity: .7;
+      z-index: -1;
     }
   }
-  h2 {
-    display: inline-block;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    overflow: hidden;
+
+    @media (min-width: 811px) {
+      align-items: flex-start;
+      flex-direction: row;
+      max-height: 100%;
+      overflow: hidden;
+    }
   }
 
-  @media (min-width: 1025px) {
-      bottom: 0;
-      right: 0;
-      left: unset;
-      width: 50%;
-      padding: 4rem;
-  }
-}
-
-#triggerEl miles-arrow {
-  width: 20px;
-  height: 20px;
-}
-
-/*@media (max-width: 1024px) and (min-width: 769px) {
-  #menu.open {
-    top: 150px;
-    width: 100%;
-    left: 0;
-    right: unset;
-  }
-}*/
-
-#menu ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-#menu .miles-banner-card .wp-block-group__inner-container {
-  justify-items: center;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-#menu .miles-banner-card figure {
-  margin: 0;
-  height: 100px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-#menu .miles-banner-card li:first-child {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-#menu .miles-banner-card img {
-  width: 100%;
-  height: 100%;
-}
-
-::slotted(div) {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-miles-contact-card {
-  grid-column: 1 / -1;
-}
-
-#triggerEl h2 {
-  color: var(--miles_primary_light);
-  font-size: 2rem;
-  line-height: 150%;
-  margin: 0;
-  text-align: left;
-  z-index: 10;
-  position: relative;
-}
-
-#triggerBg {
-  display: flex;
-  align-items: center;
-  margin: auto;
-  position: relative;
-  width: calc(100% - 4rem);
-  z-index: 10;
-  bottom: unset;
-  top: 0;
-  height: calc(calc(var(--headerHeight) / 2) + 5px);
-  padding: 1rem;
-}
-
-#triggerBg::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--miles_secondary_four);
-  transition: all 0.5s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-  z-index: 1;
-}
-
-#triggerBg:hover::after {
-  filter: opacity(0.5);
-}
-
-@media (min-width: 769px) {
-  #banner {
-    font-size: 16px;
-    height: unset;
-  }
-
-  #banner.open {
-    height: unset;
-  }
-
-  #people::slotted(*) {
+  .anim {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 0fr;
+    transition: var(--banner-animation);
+
+    @media (min-width: 811px) {
+      max-height: calc(100% - 60px - 2rem);
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 60px;
+    margin: 0;
+
+    @media (min-width: 811px) {
+      font-size: 56px;
+    }
+  }
+
+  &__trigger {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
     gap: 1rem;
+    justify-content: flex-start;
+    padding: 1rem 0;
+    transition: var(--banner-animation);
+    width: fit-content;
+
+    @media (min-width: 811px) {
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
   }
 
-  #triggerEl h2 {
-    font-size: 64px;
-    line-height: 150%;
+  &__trigger-arrow {
+    height: 24px;
+    transform: rotate(180deg);
+    transition: var(--banner-animation);
+    width: 24px;
+
+    @media (min-width: 811px) {
+      height: 40px;
+      transform: rotate(0);
+      width: 40px;
+    }
   }
 
-  #triggerBg {
-    top: unset;
-    bottom: 0;
-    height: 200px;
-    padding: 2rem;
-    position: absolute;
+  &__office {
+    @media (min-width: 811px) {
+      flex: 0 0 33%;
+    }
   }
 
-  #triggerEl miles-arrow {
-    width: 30px;
-    height: 30px;
+  &__people {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    gap: 2rem;
+    max-height: 100%;
+
+    @media (min-width: 811px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100% / 2, max(200px, 100% / 3)), 1fr));
+    }
+  }
+
+  &--open {
+    aspect-ratio: auto;
+
+    #{$this}__background {
+      filter: blur(5px);
+    }
+
+    #{$this}__content {
+      transform: translateY(0);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    #{$this}__trigger {
+      margin-bottom: 0;
+    }
+    #{$this}__trigger-arrow {
+      transform: rotate(0);
+
+      @media (min-width: 811px) {
+        transform: rotate(180deg);
+      }
+    }
+
+    .anim {
+      grid-template-rows: 1fr;
+    }
   }
 }
