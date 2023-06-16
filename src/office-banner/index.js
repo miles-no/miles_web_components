@@ -1,4 +1,4 @@
-import styles from './office-banner.css?inline';
+import styles from './office-banner.scss';
 import cssVariables from '../styles/variables.css?inline';
 
 /**
