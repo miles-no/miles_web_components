@@ -11,11 +11,17 @@ export default {
 
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
 export const BusinessCard = {
+  argTypes: {
+    variant: {
+      control: 'radio',
+      options: [null, 'wide'],
+    },
+  },
   args: {
     name: 'Ola Nordmann',
     email: 'ola.miles.no',
     phone: '917 12 345',
-    variant: 'wide',
+    variant: null,
     jobtitle: 'Pressekontakt / markedstjener',
     style: '--image-width: 320px; width: 100%;',
     image:
