@@ -10,10 +10,10 @@ export default {
 export const Banner = {
   args: {
     image:
-      'https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png',
+      'https://www.miles.no/wp-content/uploads/2021/11/Lily-258.jpg',
     title: 'Welcome to our website!',
     slogan: 'Discover our latest products',
-    url: 'https://example.com/products',
-    variant: 'wide',
+    variant: 'split',
+    reverse: true,
   },
 };

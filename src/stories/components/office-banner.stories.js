@@ -8,4 +8,10 @@ export default {
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
-export const OfficeBanner = {};
+export const OfficeBanner = {
+  args: {
+    background:
+        'https://www.miles.no/wp-content/uploads/2021/06/Trondheim.jpg',
+    city: 'Trondheim'
+  },
+};

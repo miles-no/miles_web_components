@@ -1,7 +1,7 @@
 :host {
   display: block;
 
-  color: var(--miles_secondary_four, inherit);
+  color: inherit;
 
   --image-width: 120px;
 }
@@ -13,8 +13,7 @@
 #card {
   letter-spacing: 0.02em;
   max-width: 400px;
-  margin: 0 auto;
-  background-color: var(--miles_secondary_four);
+  margin: 0;
 
   border-radius: 4px;
 
@@ -37,6 +36,7 @@
 @media (min-width: 768px) {
   #card.wide {
     max-width: 100%;
+    color: var(--miles_secondary_four);
     margin: 0;
     max-height: calc(var(--image-width) / 2);
     flex-direction: row;
@@ -82,12 +82,12 @@ h3 {
 }
 
 figure {
-  margin: 0;
-  padding: 0;
   aspect-ratio: 1/1;
-  width: 100%;
-  min-width: var(--image-width);
+  flex: 0 0 auto;
+  margin: 0;
   overflow: hidden;
+  padding: 0;
+  width: clamp(48px, 16vw, 90px);
 }
 
 @media (min-width: 768px) {
