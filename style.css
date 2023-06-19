@@ -15,8 +15,6 @@ textarea {
   line-height: 28px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-
-  background-color: var(--miles_default_bg);
 }
 
 .components {
