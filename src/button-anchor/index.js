@@ -11,6 +11,7 @@ MilesButtonAnchorTemplate.innerHTML = `
           :host {
             display: inline-block;
             color: var(--miles_primary_dark);
+            background-color: inherit;
           }
           a {
             display: inline-block;
