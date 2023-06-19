@@ -76,12 +76,11 @@ class SiteMenu extends HTMLElement {
   handleKeys = event => {
     // keyCode 13 is the enter key
     if (event.keyCode === 13) {
-      this.openmenu(event);
+      this.openmenu(event, true);
     }
   };
 
-  openmenu = event => {
-    console.log('menu toggle');
+  openmenu = (event, fromKeyboard) => {
     event.preventDefault();
 
     const expanded =
@@ -90,7 +89,7 @@ class SiteMenu extends HTMLElement {
     this.burgerEl.classList.toggle('open-menu');
     this.menuContent.classList.toggle('open');
     // Move focus to the first element in the menu when it's open
-    if (!expanded) {
+    if (!expanded && fromKeyboard) {
       this.menuContent.querySelector('a').focus();
     }
   };

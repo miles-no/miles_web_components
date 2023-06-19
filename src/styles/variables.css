@@ -45,6 +45,4 @@
 
   --halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);
   --halve_margin_offset_large: calc(100vw - var(--content_width));
-
-  --max-page-width: 1440px;
 }

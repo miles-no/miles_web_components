@@ -8,14 +8,13 @@ import cssVariables from '../styles/variables.css?inline';
 const MilesArrowTemplate = document.createElement('template');
 MilesArrowTemplate.innerHTML = `
   <style>
-	${styles}\n
+	${styles}
   ${cssVariables}
     </style>
     <div id="arrow">
-    <svg width="24" height="41" viewBox="0 0 24 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3.20039 40.8984L0.400391 38.0484L17.5504 20.8984L0.400391 3.74844L3.20039 0.898438L23.2004 20.8984L3.20039 40.8984Z" fill="#FCF8F3"/>
-    </svg>
-    
+      <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.69141 28.7704L21.1914 11.2266L38.6914 28.7704L36.1977 31.2266L21.1914 16.1827L6.18516 31.2266L3.69141 28.7704Z" fill="#FCF8F3"/>
+      </svg>
     </div>
    `;
 

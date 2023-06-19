@@ -19,14 +19,16 @@ document.querySelector('#app').innerHTML = `
 <miles-podcast-card url="https://sphinx.acast.com/p/open/s/63d28f41cd0f720011930608/e/645890f79b594e0011518b11/media.mp3" episode_title="Hvordan vil kunstig intelligens (AI) prege verden om 5 år?" published_date="Wed, 12 Apr 2023 06:00:07 GMT" link="https://shows.acast.com/milespodden/episodes/64354fa7c06561001192101b" description="" length="87411068">
   <p><em>Hvilket mulighetsrom finnes for norske bedrifter og hvilke faresignaler ser vi?</em></p><p><em>Dette og mye mer snakker vi om i denne episoden av MilesPodden.</em></p><p><em>I studio sitter Morten Goodwin, professor ved universitetet i Agder og Alfonso Canterla, Senior Data Scientist i Miles.</em></p><br><p><em>Podkasten er produsert av Gjenklangstudio.no</em></p><br /><hr><p style='color:grey; font-size:0.75em;'> Hosted on Acast. See <a style='color:grey;' target='_blank' rel='noopener noreferrer' href='https://acast.com/privacy'>acast.com/privacy</a> for more information.</p>
 </miles-podcast-card>
-<miles-business-card variant="wide" name="Janne Syversen" email="janne.syvertsen@miles.no" phone="+47 468 26 082" jobtitle="Pressekontakt / markedstjener" image="https://www.miles.no/newsite/wp-content/uploads/2022/10/Janne-Syversen_okt.jpg" style="--image-width: 320px;"></miles-business-card>
 
 -->
+
+
+
 
 <!--
 <miles-podcast-card episode_number="6" episode_title="Bli kjent med ny konserntjener i Miles!" published_date="Mon, 05 Jun 2023 10:47:38 GMT" url="https://sphinx.acast.com/p/open/s/63d28f41cd0f720011930608/e/647dbd4bd035fa0011b20a66/media.mp3" length="37301367">
-  <p>Hun heter Camilla Amundsen, har lang fartstid fra IT-bransjen og er klar for å drive selskapet videre.</p>
-  <p>Hvorfor tok hun jobben, hvilke ambisjoner har hun for veien videre og er hun egentlig et A eller B-menneske?</p>
+<p>Hun heter Camilla Amundsen, har lang fartstid fra IT-bransjen og er klar for å drive selskapet videre.</p>
+<p>Hvorfor tok hun jobben, hvilke ambisjoner har hun for veien videre og er hun egentlig et A eller B-menneske?</p>
 </miles-podcast-card>
 
 <miles-podcast-card episode_number="6" episode_title="Bli kjent med ny konserntjener i Miles!" published_date="Mon, 05 Jun 2023 10:47:38 GMT" url="https://sphinx.acast.com/p/open/s/63d28f41cd0f720011930608/e/647dbd4bd035fa0011b20a66/media.mp3" length="37301367">
@@ -34,7 +36,6 @@ document.querySelector('#app').innerHTML = `
   <p>Hvorfor tok hun jobben, hvilke ambisjoner har hun for veien videre og er hun egentlig et A eller B-menneske?</p>
 </miles-podcast-card>
 -->
-
 <miles-site-menu>
   <nav class="main-navigation site-nav">
     <ul id="menu-topmenu" class="menu-topmenu">
@@ -145,4 +146,24 @@ document.querySelector('#app').innerHTML = `
     </ul>
   </nav>
 </miles-site-menu>
-`;
+
+<miles-office-banner>
+\t\t\t\t\t<figure slot="bannerimage">
+\t\t\t\t<img width="1200" height="720" src="https://www.miles.no/newsite/wp-content/uploads//2020/10/Bergen.jpg" class="attachment-full size-full" alt="Oversiktsbilde over Bergen" decoding="async" loading="lazy" srcset="https://www.miles.no/newsite/wp-content/uploads/2020/10/Bergen.jpg 1200w, https://www.miles.no/newsite/wp-content/uploads/2020/10/Bergen-917x550.jpg 917w, https://www.miles.no/newsite/wp-content/uploads/2020/10/Bergen-768x461.jpg 768w, https://www.miles.no/newsite/wp-content/uploads/2020/10/Bergen-500x300.jpg 500w" sizes="(max-width: 1200px) 100vw, 1200px">\t\t\t</figure>
+\t\t
+
+\t\t\t\t\t<h2 slot="bannerheading">Bergen</h2>
+\t\t
+
+\t\t<div class="miles-office-menu">
+\t\t\t
+
+<miles-contact-card name="Testplace" email="ronny@njaastad.no" address="Morvikveien 252" orgnr="sd234423" phone="90066303"></miles-contact-card>
+
+<miles-business-card cvemail="bjorn@miles.no" name="Bjørn Olav Semindseth" email="bjorn@miles.no" phone="906 52 950" jobtitle="Daglig tjener Miles Oslo" image="https://www.miles.no/newsite/wp-content/uploads/2020/10/bjorn-olav.png"></miles-business-card>
+
+<miles-business-card cvemail="annika.fjeldstad@miles.no" phone="400 00 140" jobtitle="HR og rekruttering" image="https://www.miles.no/newsite/wp-content/uploads/2021/05/Annika-1.jpg" name="Annika R. Fjeldstad" office="Oslo" officeid="4f61bfce875b52672f00000a" country="no" email="annika.fjeldstad@miles.no"></miles-business-card>
+\t\t</div>
+
+</miles-office-banner>
+  `;

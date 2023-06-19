@@ -24,7 +24,7 @@
   align-items: center;
   gap: 1em;
   padding-top: 2em;
-  max-width: var(--max-page-width);
+  max-width: var(--content_width_max);
 }
 
 miles-info {
