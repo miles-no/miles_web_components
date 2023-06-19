@@ -7,6 +7,8 @@ export default {
     `<miles-business-card  ${propsToAttrs(args)}></miles-business-card>`,
 };
 
+//
+
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
 export const BusinessCard = {
   args: {
@@ -14,7 +16,8 @@ export const BusinessCard = {
     email: 'ola.miles.no',
     phone: '917 12 345',
     variant: 'wide',
-    jobtitle: 'tjener',
+    jobtitle: 'Pressekontakt / markedstjener',
+    style: '--image-width: 320px; width: 100%;',
     image:
       'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png',
   },

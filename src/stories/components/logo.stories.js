@@ -11,6 +11,6 @@ export const Logo = {
   args: {
     width: '400px',
     height: '200px',
-    color: 'red',
+    color: '#ff303b',
   },
 };

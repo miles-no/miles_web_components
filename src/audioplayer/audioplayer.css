@@ -8,14 +8,44 @@
 #milesplayer {
   align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1em;
 
-  height: var(--player-height);
   background-color: var(--miles_secondary_four);
 
   /* temp */
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  #milesplayer {
+    flex-direction: row;
+    height: var(--player-height);
+  }
+}
+
+.end,
+.start {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.end {
+  flex-shrink: 3;
+}
+
+@media (min-width: 768px) {
+  .end,
+  .start {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 
 miles-play,
@@ -35,6 +65,13 @@ miles-seek {
   color: var(--miles_primary_light);
   white-space: nowrap;
   min-width: 100px;
+  flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  #progresstime {
+    flex-grow: initial;
+  }
 }
 
 button {
@@ -52,7 +89,7 @@ audio {
 }
 
 .progress-indicator {
-  width: 500px;
+  width: 100%;
 }
 
 /* Range element */

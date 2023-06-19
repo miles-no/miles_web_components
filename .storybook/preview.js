@@ -5,6 +5,7 @@
  */
 import '../src/main.js';
 import '../src/styles/variables.css';
+import './wp-styles.css';
 
 const preview = {
   parameters: {
@@ -16,6 +17,12 @@ const preview = {
       },
     },
   },
+  decorators: [
+    Story =>
+      `<div style="display: flex;">
+       ${Story()}
+      </div>`,
+  ],
 };
 
 export default preview;
