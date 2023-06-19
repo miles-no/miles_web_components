@@ -1,8 +1,16 @@
 import { propsToAttrs } from '../../storybook.utils.js';
 
 export default {
-  title: 'Miles/Components',
+  title: 'Miles/Components/Cards/Business',
   tags: ['autodocs'],
+  argTypes: {
+    // 👇 All Button stories expect a label arg
+    variant: {
+      control: 'select',
+      options: ['wide', 'default'],
+      description: 'Overwritten description',
+    },
+  },
   render: args =>
     `<miles-business-card  ${propsToAttrs(args)}></miles-business-card>`,
 };
@@ -10,7 +18,7 @@ export default {
 //
 
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
-export const BusinessCard = {
+export const Card = {
   args: {
     name: 'Ola Nordmann',
     email: 'ola.miles.no',
@@ -18,7 +26,6 @@ export const BusinessCard = {
     variant: 'wide',
     jobtitle: 'Pressekontakt / markedstjener',
     style: '--image-width: 320px; width: 100%;',
-    image:
-      'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png',
+    image: 'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png',
   },
 };

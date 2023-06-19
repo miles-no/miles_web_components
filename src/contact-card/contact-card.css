@@ -1,23 +1,21 @@
 :host {
   display: inline-block;
   color: inherit;
-
-  /* Fix this */
-  grid-column: 1 / -1;
+  background-color: inherit;
 }
 
 #wrapper {
-  background-color: var(--miles_secondary_four);
+  background-color: inherit;
   display: flex;
   flex-direction: column;
 }
 
 h2 {
   margin: 0;
+  line-height: 33px;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
 }
 

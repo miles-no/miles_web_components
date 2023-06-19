@@ -1,7 +1,7 @@
 import { propsToAttrs } from '../../storybook.utils.js';
 
 export default {
-  title: 'Miles/Components',
+  title: 'Miles/Components/Cards/Blog',
   tags: ['autodocs'],
   render: args => `<miles-blog-card  ${propsToAttrs(args)}>
     <figure slot="image">
