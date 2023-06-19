@@ -34,12 +34,16 @@ class MilesContactCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['name', 'address', 'email', 'phone', 'orgnr', 'image'];
+    return ['map', 'name', 'address', 'email', 'phone', 'orgnr'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'name') {
       this.nameEl.textContent = newValue;
+    }
+
+    if (name === 'map') {
+      this.adresseEl.dataset.mapurl = newValue;
     }
 
     if (name === 'address') {
@@ -61,7 +65,11 @@ class MilesContactCard extends HTMLElement {
     }
   }
 
-  connectedCallback() {}
+  connectedCallback() {
+    if (this.adresseEl.dataset.mapurl) {
+      this.adresseEl.innerHTML = `<a href="${this.adresseEl.dataset.mapurl}">${this.adresseEl.textContent}</a>`;
+    }
+  }
 
   disconnectedCallback() {}
 }
