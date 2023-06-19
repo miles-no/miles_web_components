@@ -14,3 +14,6 @@ Dette prosjektet er et forsøk på å lage rammeverk agnostiske webkomponenter f
 - `npm run build`
 
 Prosjektet har også linting og prettier. Se package.json 
+
+You will find the web components used in miles in thos storybook:
+https://miles-no.github.io/miles_web_components/?path=/docs/miles-components--docs
