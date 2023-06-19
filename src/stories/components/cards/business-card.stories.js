@@ -23,7 +23,6 @@ export const BusinessCard = {
     phone: '917 12 345',
     variant: null,
     jobtitle: 'Pressekontakt / markedstjener',
-    style: '--image-width: 320px; width: 100%;',
     image:
       'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png',
   },

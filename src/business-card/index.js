@@ -20,12 +20,12 @@ MilesBusinessCardTemplate.innerHTML = `
         <h3 id="name"></h3>
         <span id="title"></span>
         <span id="email_el">
-          <miles-email></miles-email>
+          <miles-email class="icon"></miles-email>
           <span>Epost:</span>
           <a id="email"></a>
         </span>
         <span id="phone_el">
-             <miles-phone></miles-phone>
+             <miles-phone class="icon"></miles-phone>
               <span>Telefon:</span>
               <a id="phone"></a>
           </span>
@@ -85,12 +85,10 @@ class MilesBusinessCard extends HTMLElement {
     if (name === 'variant') {
       if (newValue === 'wide') {
         this.card.classList.add('wide');
-        this.style.setProperty('--image-width', '320px');
       }
 
       if (newValue === 'author') {
         this.card.classList.add('author');
-        this.style.setProperty('--image-width', '180px');
       }
     }
   }
