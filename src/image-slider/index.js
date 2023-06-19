@@ -12,7 +12,7 @@ ImageSliderTemplate.innerHTML = `
   ${cssVariables}
   </style>
   <div id="slide-wrapper">
-    <h2>Våre prosjekter</h2>
+    <h2>Noen av våre kunder</h2>
     <section>
       <div id="leftnav">
         <div id="nav-overlay-left"></div>
