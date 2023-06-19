@@ -62,11 +62,12 @@ class SiteMenu extends HTMLElement {
     this.burgerEl.addEventListener('keydown', this.handleKeys);
     this.burgerEl.addEventListener('click', this.openmenu);
 
-    window.addEventListener('keydown', event => {
+    function closeMenu(event) {
       if (event.key === 'Escape') {
         this.closemenu(event);
       }
-    });
+    }
+    window.addEventListener('keydown', closeMenu);
   }
 
   disconnectedCallback() {
