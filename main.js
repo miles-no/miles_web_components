@@ -150,8 +150,8 @@ document.querySelector('#app').innerHTML = `
 
 <miles-office-banner city="Test" background="https://www.miles.no/wp-content/uploads/2021/06/Trondheim.jpg">
     <miles-contact-card slot="office" name="Testplace" email="ronny@njaastad.no" address="Morvikveien 252" orgnr="sd234423" phone="90066303"></miles-contact-card>
-    <miles-business-card cvemail="bjorn@miles.no" name="Bjørn Olav Semindseth" email="bjorn@miles.no" phone="906 52 950" jobtitle="Daglig tjener Miles Oslo" image="https://www.miles.no/newsite/wp-content/uploads/2020/10/bjorn-olav.png"></miles-business-card>
-    <miles-business-card cvemail="annika.fjeldstad@miles.no" phone="400 00 140" jobtitle="HR og rekruttering" image="https://www.miles.no/newsite/wp-content/uploads/2021/05/Annika-1.jpg" name="Annika R. Fjeldstad" office="Oslo" officeid="4f61bfce875b52672f00000a" country="no" email="annika.fjeldstad@miles.no"></miles-business-card>
+    <miles-business-card cvemail="bjorn@miles.no" name="Bjørn Olav Semindseth" email="bjorn@miles.no" phone="906 52 950" jobtitle="Daglig tjener Miles Oslo" image="https://www.miles.no/wp-content/uploads/2020/10/bjorn-olav.png"></miles-business-card>
+    <miles-business-card cvemail="annika.fjeldstad@miles.no" phone="400 00 140" jobtitle="HR og rekruttering" image="https://www.miles.no/wp-content/uploads/2021/05/Annika-1.jpg" name="Annika R. Fjeldstad" office="Oslo" officeid="4f61bfce875b52672f00000a" country="no" email="annika.fjeldstad@miles.no"></miles-business-card>
 </miles-office-banner>
 
 </miles-office-banner>
