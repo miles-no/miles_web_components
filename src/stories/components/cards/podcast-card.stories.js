@@ -15,6 +15,6 @@ export const PodcastCard = {
     published_date: '2022-01-01',
     link: 'https://example.com',
     description: 'This is a description of my podcast episode',
-    url: 'https://example.com/image.png',
+    url: 'https://sphinx.acast.com/p/open/s/63d28f41cd0f720011930608/e/64802452d9a829001153defb/media.mp3',
   },
 };

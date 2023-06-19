@@ -13,13 +13,17 @@ MilesAudioPlayerTemplate.innerHTML = `
     </style>
 	<div id="milesplayer">
 		<audio id="player" crossorigin controls></audio>
-    <button id="backward" aria-label="seek" aria-description="seek 15 seconds backwards"><miles-seek direction="backward"></miles-seek></button>
+    <div class="start">
+          <button id="backward" aria-label="seek" aria-description="seek 15 seconds backwards"><miles-seek direction="backward"></miles-seek></button>
         <div class="progress-indicator">
           <input type="range" max="100" value="0" id="progressbar">
         </div>
       <button id="forward" aria-label="seek" aria-description="seek 15 seconds forward"><miles-seek direction="forward"></miles-seek></button>
-    <div id="progresstime"></div>
-		<button id="play" aria-label="play" aria-description="Play and pause sound playback" data-playing="false"><miles-play></miles-play></button>
+    </div>
+    <div class="end">
+      <div id="progresstime"></div>
+		  <button id="play" aria-label="play" aria-description="Play and pause sound playback" data-playing="false"><miles-play></miles-play></button>
+    </div>
 	</div>
 `;
 
