@@ -147,23 +147,12 @@ document.querySelector('#app').innerHTML = `
   </nav>
 </miles-site-menu>
 
-<miles-office-banner>
-\t\t\t\t\t<figure slot="bannerimage">
-\t\t\t\t<img width="1200" height="720" src="https://www.miles.no/newsite/wp-content/uploads//2020/10/Bergen.jpg" class="attachment-full size-full" alt="Oversiktsbilde over Bergen" decoding="async" loading="lazy" srcset="https://www.miles.no/newsite/wp-content/uploads/2020/10/Bergen.jpg 1200w, https://www.miles.no/newsite/wp-content/uploads/2020/10/Bergen-917x550.jpg 917w, https://www.miles.no/newsite/wp-content/uploads/2020/10/Bergen-768x461.jpg 768w, https://www.miles.no/newsite/wp-content/uploads/2020/10/Bergen-500x300.jpg 500w" sizes="(max-width: 1200px) 100vw, 1200px">\t\t\t</figure>
-\t\t
 
-\t\t\t\t\t<h2 slot="bannerheading">Bergen</h2>
-\t\t
-
-\t\t<div class="miles-office-menu">
-\t\t\t
-
-<miles-contact-card name="Testplace" email="ronny@njaastad.no" address="Morvikveien 252" orgnr="sd234423" phone="90066303"></miles-contact-card>
-
-<miles-business-card cvemail="bjorn@miles.no" name="Bjørn Olav Semindseth" email="bjorn@miles.no" phone="906 52 950" jobtitle="Daglig tjener Miles Oslo" image="https://www.miles.no/newsite/wp-content/uploads/2020/10/bjorn-olav.png"></miles-business-card>
-
-<miles-business-card cvemail="annika.fjeldstad@miles.no" phone="400 00 140" jobtitle="HR og rekruttering" image="https://www.miles.no/newsite/wp-content/uploads/2021/05/Annika-1.jpg" name="Annika R. Fjeldstad" office="Oslo" officeid="4f61bfce875b52672f00000a" country="no" email="annika.fjeldstad@miles.no"></miles-business-card>
-\t\t</div>
+<miles-office-banner city="Test" background="https://www.miles.no/wp-content/uploads/2021/06/Trondheim.jpg">
+    <miles-contact-card slot="office" name="Testplace" email="ronny@njaastad.no" address="Morvikveien 252" orgnr="sd234423" phone="90066303"></miles-contact-card>
+    <miles-business-card cvemail="bjorn@miles.no" name="Bjørn Olav Semindseth" email="bjorn@miles.no" phone="906 52 950" jobtitle="Daglig tjener Miles Oslo" image="https://www.miles.no/wp-content/uploads/2020/10/bjorn-olav.png"></miles-business-card>
+    <miles-business-card cvemail="annika.fjeldstad@miles.no" phone="400 00 140" jobtitle="HR og rekruttering" image="https://www.miles.no/wp-content/uploads/2021/05/Annika-1.jpg" name="Annika R. Fjeldstad" office="Oslo" officeid="4f61bfce875b52672f00000a" country="no" email="annika.fjeldstad@miles.no"></miles-business-card>
+</miles-office-banner>
 
 </miles-office-banner>
   `;

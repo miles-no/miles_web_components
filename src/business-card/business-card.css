@@ -1,9 +1,7 @@
 :host {
   display: block;
-
   color: inherit;
-
-  --image-width: 120px;
+  width: 100%;
 }
 
 #card-wrapper {
@@ -14,9 +12,7 @@
   letter-spacing: 0.02em;
   max-width: 400px;
   margin: 0;
-
   border-radius: 4px;
-
   display: flex;
   flex-direction: row;
   gap: 1em;
@@ -38,7 +34,6 @@
     max-width: 100%;
     color: var(--miles_secondary_four);
     margin: 0;
-    max-height: calc(var(--image-width) / 2);
     flex-direction: row;
     gap: 1em;
   }
@@ -77,27 +72,48 @@ h3 {
   gap: 10px;
 }
 
+#card:not(.wide) #phone_el,
+#card:not(.wide) #email_el {
+  display: flex;
+  flex-direction: row;
+}
+
+#card:not(.wide) #phone_el .icon,
+#card:not(.wide) #email_el .icon {
+  display: none;
+}
+
 #phone_el:first-child,
 #email_el:first-child {
 }
 
 figure {
   aspect-ratio: 1/1;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
   flex: 0 0 auto;
   margin: 0;
   overflow: hidden;
   padding: 0;
-  width: clamp(48px, 16vw, 90px);
+  width: 90px;
+}
+
+#card.wide figure {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   #card.wide figure {
-    justify-content: center;
-    display: flex;
-    aspect-ratio: 2 / 3;
-    width: var(--image-width);
-    min-width: var(--image-width);
+    aspect-ratio: 16/9;
     background-color: #ffffff;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 0;
+    display: flex;
+    justify-content: center;
+    max-width: 320px;
   }
 }
 
@@ -116,14 +132,6 @@ img {
   border-radius: 0;
   aspect-ratio: 1 / 1;
   min-width: 100%;
-}
-
-@media (min-width: 768px) {
-  #card.wide ::slotted(img),
-  #card.wide img {
-    width: calc(var(--image-width) / 2);
-    min-width: calc(var(--image-width) / 2);
-  }
 }
 
 ::slotted(*) {

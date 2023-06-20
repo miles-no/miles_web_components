@@ -1,11 +1,18 @@
 import { propsToAttrs } from '../storybook.utils.js';
+import { Card } from './cards/contact-card.stories';
+import { BusinessCard } from './cards/business-card.stories';
 
 export default {
   title: 'Miles/Components',
   tags: ['autodocs'],
-  render: args =>
-    `<miles-office-banner ${propsToAttrs(args)}></miles-office-banner>`,
+  render: (args) =>
+    `<miles-office-banner ${propsToAttrs(args)}>
+        <miles-contact-card ${propsToAttrs(Card.args)} slot="office"></miles-contact-card>
+        <miles-business-card ${propsToAttrs(BusinessCard.args)} variant=""></miles-business-card>
+        <miles-business-card ${propsToAttrs(BusinessCard.args)} variant=""></miles-business-card>
+    </miles-office-banner>`,
 };
+
 
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
 export const OfficeBanner = {
