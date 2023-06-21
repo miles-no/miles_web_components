@@ -1,4 +1,4 @@
-import styles from './business-card.css?inline';
+import styles from './business-card.scss?inline';
 import cssVariables from '../styles/variables.css?inline';
 
 /**
@@ -12,9 +12,9 @@ MilesBusinessCardTemplate.innerHTML = `
     ${cssVariables}
     </style>
   <div id="card-wrapper">
-      <div id="card">
+    <div id="card">
       <figure>
-        <slot name="image"></slot>
+          <slot name="image"></slot>
       </figure>
       <div id="group">
         <h3 id="name"></h3>
@@ -25,16 +25,16 @@ MilesBusinessCardTemplate.innerHTML = `
           <a id="email"></a>
         </span>
         <span id="phone_el">
-             <miles-phone class="icon"></miles-phone>
-              <span>Telefon:</span>
-              <a id="phone"></a>
-          </span>
+          <miles-phone class="icon"></miles-phone>
+          <span>Telefon:</span>
+          <a id="phone"></a>
+        </span>
       </div>
     </div>
-      <div id="extras">
+    <div id="extras">
         <slot></slot>
-      </div>
     </div>
+  </div>
     `;
 
 class MilesBusinessCard extends HTMLElement {
