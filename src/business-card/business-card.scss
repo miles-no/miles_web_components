@@ -93,16 +93,25 @@
 
   h3 {
     margin: 0 0 0 0;
-    font-size: 24px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
+
+    @media (min-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   #title {
-    margin-top: 0.3em;
-    margin-bottom: 0.5em;
-    line-height: 22px;
+    font-size: 14px;
     font-weight: 700;
+    line-height: 22px;
+    margin-bottom: 0.5em;
+    margin-top: 0.3em;
+
+    @media (min-width: 768px) {
+      font-size: inherit;
+    }
   }
 
   figure {
@@ -113,7 +122,11 @@
     margin: 0;
     overflow: hidden;
     padding: 0;
-    width: 90px;
+  width: 64px;
+
+    @media (min-width: 768px) {
+      width: 90px;
+    }
   }
 
   #phone_el,
@@ -128,6 +141,11 @@
     #email_el {
       display: flex;
       flex-direction: row;
+      font-size: 14px;
+
+      @media (min-width: 768px) {
+        font-size: inherit;
+      }
 
       .icon {
         display: none;
