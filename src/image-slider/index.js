@@ -44,7 +44,17 @@ class MilesImageSlider extends HTMLElement {
     this.numberOfSlides = 0;
     this.autoPlay = 0;
     this.index = 0;
-    this.logos = ['equinor', 'fjordkraft', 'tv2', 'cutters', 'scaleaq'];
+    this.logos = [
+      'equinor',
+      'fjordkraft',
+      'tv2',
+      'cutters',
+      'scaleaq',
+      'altibox',
+      'dnb',
+      'storebrand',
+      'politiet',
+    ];
     this.rightNav = shadow.querySelector('#rightnav');
     this.leftNav = shadow.querySelector('#leftnav');
   }

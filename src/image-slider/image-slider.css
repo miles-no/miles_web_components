@@ -135,6 +135,22 @@ section .slides figure {
   transform: scale(1.2);
 }
 
+.overlay.altibox {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/altibox-logo.png');
+}
+
+.overlay.dnb {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/DNB-logo.png');
+}
+
+.overlay.storebrand {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/Storebrand-logo.png');
+}
+
+.overlay.politiet {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/PolitietIKT-logo.png');
+}
+
 /* https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png
 https://www.miles.no/newsite/wp-content/uploads/2021/06/DNB-logo.png
 */
