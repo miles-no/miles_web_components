@@ -21,6 +21,7 @@
     "@storybook/addon-essentials": "^7.0.20",
     "@storybook/addon-links": "^7.0.20",
     "@storybook/blocks": "^7.0.20",
+    "@storybook/builder-vite": "^7.0.22",
     "@storybook/html-vite": "^7.0.20",
     "@storybook/web-components": "^7.0.20",
     "@storybook/web-components-vite": "^7.0.20",

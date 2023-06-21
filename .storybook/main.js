@@ -3,11 +3,11 @@ const config = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
   framework: {
-    name: '@storybook/html-vite',
-    options: {}
+    name: '@storybook/web-components-vite',
+    options: {},
   },
   docs: {
-    autodocs: 'tag'
-  }
+    autodocs: 'tag',
+  },
 };
 export default config;
