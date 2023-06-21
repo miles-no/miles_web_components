@@ -27,6 +27,11 @@ section {
   position: relative;
 }
 
+button {
+  border: 0;
+  background: transparent;
+}
+
 #leftnav,
 #rightnav {
   cursor: pointer;
@@ -71,7 +76,7 @@ miles-arrow-nav {
 
 #rightnav {
   transform: rotate(180deg);
-  right: 0;
+  right: 2em;
 }
 
 section .slides {

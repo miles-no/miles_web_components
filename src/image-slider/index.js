@@ -16,12 +16,16 @@ ImageSliderTemplate.innerHTML = `
     <section>
       <div id="leftnav">
         <div id="nav-overlay-left"></div>
-        <miles-arrow-nav color="#3F1221"></miles-arrow-nav>
+        <button  aria-label="Previous" aria-description="go to previous image">
+          <miles-arrow-nav color="#3F1221"></miles-arrow-nav>
+        </button>
       </div>
       <div class="slides"></div>
       <div id="rightnav">
         <div id="nav-overlay-right"></div>
-        <miles-arrow-nav color="#3F1221"></miles-arrow-nav>
+        <button aria-description="go to next image"  aria-label="Next">
+          <miles-arrow-nav color="#3F1221"></miles-arrow-nav>
+        </button>
       </div>
       <slot></slot>
       <nav class="controls"> </nav>
