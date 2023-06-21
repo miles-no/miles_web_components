@@ -16,7 +16,6 @@
     "deploy-storybook": "gh-pages -d storybook-static"
   },
   "devDependencies": {
-     "@storybook/addon-a11y": "^7.0.22",
     "@babel/eslint-parser": "^7.21.8",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@storybook/addon-essentials": "^7.0.20",
