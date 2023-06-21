@@ -76,7 +76,13 @@ miles-arrow-nav {
 
 #rightnav {
   transform: rotate(180deg);
-  right: 2em;
+  right: 0em;
+}
+
+@media (min-width: 768px) {
+  #rightnav {
+    right: 1em;
+  }
 }
 
 section .slides {
