@@ -1,4 +1,4 @@
-import styles from './profile-card.css?inline';
+import styles from './profile-card.scss?inline';
 import cssVariables from '../styles/variables.css?inline';
 
 const MilesProfileCardTemplate = document.createElement('template');
@@ -52,7 +52,7 @@ class MilesProfileCard extends HTMLElement {
     if (name === 'image') {
       if (newValue === '' || newValue === null) {
         const dummyUrl =
-          'https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png';
+          'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png';
         this.profileImageEl.setAttribute('src', dummyUrl);
         this.profileImageEl.setAttribute('alt', 'Miles Profile Card Image');
       } else {
