@@ -7,11 +7,7 @@ const config = {
     '@storybook/addon-a11y',
   ],
   framework: {
-<<<<<<< Updated upstream
     name: '@storybook/web-components-vite',
-=======
-    name: '@storybook/html-vite',
->>>>>>> Stashed changes
     options: {},
   },
   docs: {
