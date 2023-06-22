@@ -11,11 +11,8 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  max-width: 260px;
   width: 100%;
-
-  @media (min-width: 600px) {
-    width: 260px;
-  }
 
   &__info {
     display: flex;
