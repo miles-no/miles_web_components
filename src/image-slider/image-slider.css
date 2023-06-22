@@ -27,6 +27,11 @@ section {
   position: relative;
 }
 
+button {
+  border: 0;
+  background: transparent;
+}
+
 #leftnav,
 #rightnav {
   cursor: pointer;
@@ -71,7 +76,13 @@ miles-arrow-nav {
 
 #rightnav {
   transform: rotate(180deg);
-  right: 0;
+  right: 0em;
+}
+
+@media (min-width: 768px) {
+  #rightnav {
+    right: 1em;
+  }
 }
 
 section .slides {
@@ -128,6 +139,22 @@ section .slides figure {
 .overlay.scaleaq {
   background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png');
   transform: scale(1.2);
+}
+
+.overlay.altibox {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/altibox-logo.png');
+}
+
+.overlay.dnb {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/DNB-logo.png');
+}
+
+.overlay.storebrand {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/Storebrand-logo.png');
+}
+
+.overlay.politiet {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/PolitietIKT-logo.png');
 }
 
 /* https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png
