@@ -43,15 +43,20 @@
     --miles-h2-lineheight: calc(var(--miles-h2) * 1.5);
     --miles-h3-lineheight: calc(var(--miles-h3) * 1.5);
 
-    --halve_margin_offset: calc(calc(100vw - var(--content_width)) / 2);
+    --halve_margin_offset: calc(100vw - var(--content_width) / 2);
     --halve_margin_offset_large: calc(100vw - var(--content_width));
+
+    --page-wrap: clamp(320px, 100%, var(--content_width_max));
+    --mobile-horizontal-space: 1rem; /* 1rem = 16px (based on body font-size */
+    --cv-filter-max-columns: 5; /* The maximum number of columns inside cv-filter (Folkene) */
+    --profile-card-width: 16rem;
 }
 
 /*!
-Theme Name: Miles 2020
+Theme Name: Miles 2023
 Theme URI: http://underscores.me/
-Author: ignitas.no
-Author URI: http://www.ignitas.no
+Author: ignitas.no and Miles
+Author URI: http://www.ignitas.no, www.miles.no
 Description: Description
 Version: 1.0.0
 Tested up to: 5.4
@@ -64,7 +69,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
 
-Miles 2020 is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Miles 2023 is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -80,22 +85,22 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
    - Elements
    - Mixins
    - Variables
-   
- # Layout  
+
+ # Layout
    - Footer
-    - Header 
-	- Grid  
-	- Utilities
+    - Header
+    - Grid
+    - Utilities
 
 # Navigation
     - Nav-links
-    - Menus 
-    
+    - Menus
+
 # Blocks
    - Core-blocks
    - Custom-blocks
    - Base
-   
+
 # Components
    - Sidebar-content
    - Content-sidebar
@@ -105,7 +110,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
    - Widgets
    - Forms
    - Search
-   
+
 # CPT
 --------------------------------------------------------------*/
 /* Inherit box-sizing to more easily change it's value on a component level.
@@ -114,16 +119,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
-}
-
-html {
     box-sizing: border-box;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
-	 ========================================================================== */
+     ========================================================================== */
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -133,7 +134,7 @@ html {
 }
 
 /* Sections
-	 ========================================================================== */
+     ========================================================================== */
 /**
  * Remove the margin in all browsers.
  */
@@ -161,7 +162,7 @@ h1 {
 }
 
 /* Grouping content
-	 ========================================================================== */
+     ========================================================================== */
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -184,7 +185,7 @@ pre {
 }
 
 /* Text-level semantics
-	 ========================================================================== */
+     ========================================================================== */
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -257,7 +258,7 @@ sup {
 }
 
 /* Embedded content
-	 ========================================================================== */
+     ========================================================================== */
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -267,7 +268,7 @@ img {
 }
 
 /* Forms
-	 ========================================================================== */
+     ========================================================================== */
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -350,7 +351,7 @@ fieldset {
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
  * 3. Remove the padding so developers are not caught out when they zero out
- *		`fieldset` elements in all browsers.
+ *      `fieldset` elements in all browsers.
  */
 /* line 254, sass/_normalize.scss */
 legend {
@@ -427,7 +428,7 @@ textarea {
 }
 
 /* Interactive
-	 ========================================================================== */
+     ========================================================================== */
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -445,7 +446,7 @@ summary {
 }
 
 /* Misc
-	 ========================================================================== */
+     ========================================================================== */
 /**
  * Add the correct display in IE 10+.
  */
@@ -549,11 +550,13 @@ h1 {
 }
 
 h1.entry-title {
+    font-weight: 600;
+    margin-bottom: 5rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5rem;
-    width: 80vw;
-    font-weight: 600;
+    padding-left: var(--mobile-horizontal-space);
+    padding-right: var(--mobile-horizontal-space);
+    width: var(--page-wrap);
 }
 
 @media screen and (min-width: 768px) {
@@ -837,8 +840,8 @@ table {
 
 .footer__content {
     margin: auto;
-    width: var(--content_width);
-    max-width: var(--content_width_max);
+    width: var(--page-wrap);
+    padding: 0 var(--mobile-horizontal-space);
 }
 
 /* line 8, sass/layout/_footer.scss */
@@ -918,23 +921,19 @@ table {
 }
 /* line 1, sass/layout/_header.scss */
 .site-header {
-    /* position: relative; */
-    /* transition: top 0.3s ease-in-out 0s, visibility 0s linear 0.3s, left 0s; */
     background-color: var(--miles_primary_dark);
     color: white;
-    height: var(--header-height);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
 }
-/* line 6, sass/layout/_header.scss */
-.open-menu .site-header {
-    /* background-color: var(--miles_primary_light); */
-    /* height: 100vh; */
-}
-/* line 11, sass/layout/_header.scss */
+
 .site-header .site-header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 14px;
+    padding: 0 var(--mobile-horizontal-space);
 }
 
 .site-header .site-header-container a:hover,
@@ -946,17 +945,14 @@ table {
 @media (min-width: 768px) {
     /* line 11, sass/layout/_header.scss */
     .site-header .site-header-container {
-        max-width: var(--content_width-max);
-        width: var(--content_width);
+        width: var(--page-wrap);
         margin: auto;
-        padding: 0;
     }
 }
 /* line 22, sass/layout/_header.scss */
 .site-header .site-branding {
-    height: 80px;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
 }
 /* line 30, sass/layout/_header.scss */
 .site-header .site-description,
@@ -965,32 +961,8 @@ table {
 }
 
 .site-header .site-branding a[rel='home'] {
-    height: 80px;
     display: flex;
-    position: absolute;
     z-index: 50;
-}
-
-.fixed {
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    mix-blend-mode: normal;
-    /* position: fixed; */
-}
-
-@media (min-width: 768px) {
-    .site-header .site-branding a[rel='home'] {
-       /* position: fixed; */
-    }
-
-    .fixed {
-        position: relative;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        mix-blend-mode: normal;
-    }
 }
 
 @media screen and (max-width: 900px) and (orientation: landscape) {
@@ -1006,30 +978,10 @@ table {
 .open-menu .fixed .miles-logo .st0 {
     fill: white;
 }
-/* line 52, sass/layout/_header.scss */
-.fixed:after {
-    content: ' ';
-    display: block;
-    width: 100%;
-    height: 10px;
-    /* position: absolute; */
-    bottom: -10px;
-}
-
-.logged-in .fixed {
-   /*  transform: translate(0, 46px); */
-}
-
 #wpadminbar {
     position: fixed !important;
 }
 
-@media (min-width: 768px) {
-    /* line 63, sass/layout/_header.scss */
-    .logged-in .fixed {
-      /*  transform: translate(0, 32px); */
-    }
-}
 /* line 66, sass/layout/_header.scss */
 .fixed .cities-navigation {
     display: none;
@@ -1039,10 +991,7 @@ table {
 .miles-logo .st0 {
     fill: #fff;
 }
-/* line 77, sass/layout/_header.scss */
-.open-menu .miles-logo .st0 {
-    /* fill: white; */
-}
+
 /* line 79, sass/layout/_header.scss */
 .fixed .miles-logo .st0 {
     fill: var(--miles_primary_dark) !important;
@@ -1056,76 +1005,56 @@ table {
 
 /* line 1, sass/layout/_grid.scss */
 .site-main {
-    position: relative;
-    top: 6rem;
     margin-bottom: 6rem;
-}
-
-.home .site-main {
-    top: 0;
-}
-
-/* line 5, sass/layout/_grid.scss */
-body {
+    min-height: 100%;
     overflow-x: hidden;
 }
-/* line 8, sass/layout/_grid.scss */
-body.open-menu {
-    overflow-y: hidden;
+
+.site-main > p {
+    max-width: 70rem;
 }
 
 /*--------------------------------------------------------------
-## block widths 
+## block widths
 --------------------------------------------------------------*/
 /* line 20, sass/layout/_grid.scss */
 .search-container,
 .error-404,
 .entry-content {
-    /*
-  margin-left: 14px;
-  margin-right: 14px;
-  */
-    max-width: 100vw;
+    max-width: 100svw;
+    padding: 0 var(--mobile-horizontal-space);
 }
 @media (min-width: 768px) {
-    /* line 20, sass/layout/_grid.scss */
     .search-container,
     .error-404,
     .entry-content {
         margin: 0 auto;
-        margin: 0 auto;
-        /* max-width: var(--content_width_max);
-    width: var(--content_width);
-    */
-        width: 100vw;
+        width: var(--page-wrap);
     }
+}
+
+.entry-content > miles-banner {
+    width: 100dvw;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+}
+
+.pre-entry-content {
+    margin: 6rem auto 0;
+    padding: 0 var(--mobile-horizontal-space);
+    width: var(--page-wrap);
+}
+
+.pre-entry-content > p {
+    max-width: 70rem;
 }
 
 /* line 33, sass/layout/_grid.scss */
-.custom-block-large-banner {
-    margin-right: calc(50% - 50vw);
-    margin-left: calc(50% - 50vw);
-    max-width: 100vw;
-    width: 100vw;
-}
-
-@media (min-width: 768px) {
-    /* line 40, sass/layout/_grid.scss */
-    .alignfull,
-    .custom-block-feature-block {
-        margin-right: calc(50% - 50vw);
-        margin-left: calc(50% - 50vw);
-        max-width: 100vw;
-        width: 100vw;
-    }
-}
-
-@media (min-width: 768px) {
-    /* line 50, sass/layout/_grid.scss */
-    .alignwide {
-        margin-left: calc(25% - 25vw);
-        margin-right: calc(25% - 25vw);
-    }
+.alignfull,
+.custom-block-feature-block {
+    max-width: 100%;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -1615,8 +1544,8 @@ a.fagblogg-thumbnail:hover {
     text-decoration: underline;
 }
 
-/********* 
-Other menus 
+/*********
+Other menus
 ************/
 /* Cities menu.  desktop*/
 /* line 10, sass/navigation/_other-menus.scss */
@@ -1689,9 +1618,6 @@ Other menus
 .cities-navigation ul.menu li > ul.sub-menu li > ul.sub-menu {
     right: 100%;
     top: -7px;
-    -webkit-transition: all 200ms ease-in-out 0s;
-    -moz-transition: all 200ms ease-in-out 0s;
-    -o-transition: all 200ms ease-in-out 0s;
     transition: all 200ms ease-in-out 0s;
     opacity: 0;
 }
@@ -1733,9 +1659,6 @@ Other menus
 .cities-navigation ul.menu li:hover > ul {
     position: absolute;
     left: auto;
-    -webkit-transition: all 300ms ease-in-out 0s;
-    -moz-transition: all 300ms ease-in-out 0s;
-    -o-transition: all 300ms ease-in-out 0s;
     transition: all 300ms ease-in-out 0s;
     opacity: 1;
     display: block;
@@ -1770,7 +1693,7 @@ Other menus
 }
 
 /**********************
-	Hamburger icon
+    Hamburger icon
 **************/
 /* line 6, sass/navigation/_mega-menu.scss */
 .menu-toggle {
@@ -1795,13 +1718,7 @@ Other menus
     position: relative;
     /* border-radius: 25px; */
     /* box-shadow: 0 0 28px rgba(0, 0, 0, 0.2); */
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
     transition: 0.25s ease-in-out;
     cursor: pointer;
 }
@@ -1821,13 +1738,7 @@ Other menus
     background: #ffffff;
     border-radius: 2px;
     opacity: 1;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: 0.25s ease-in-out;
-    -moz-transition: 0.25s ease-in-out;
-    -o-transition: 0.25s ease-in-out;
     transition: 0.25s ease-in-out;
 }
 /* line 71, sass/navigation/_mega-menu.scss */
@@ -1874,17 +1785,11 @@ Other menus
 /* line 111, sass/navigation/_mega-menu.scss */
 .main-navigation .open-menu #nav-icon span:nth-child(2) {
     top: 1em;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 /* line 118, sass/navigation/_mega-menu.scss */
 .main-navigation .open-menu #nav-icon span:nth-child(3) {
     top: 1em;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
 /* line 125, sass/navigation/_mega-menu.scss */
@@ -2058,7 +1963,7 @@ Other menus
 }
 
 /*===============================
-  MEGA MENU SUB MENUS 
+  MEGA MENU SUB MENUS
 ==================================*/
 /* line 240, sass/navigation/_mega-menu.scss */
 .mega-menu-container,
@@ -2142,9 +2047,6 @@ Other menus
     color: white;
     line-height: 42px;
     font-size: 20px;
-    -webkit-transition: all 120ms ease-in-out 0s;
-    -moz-transition: all 120ms ease-in-out 0s;
-    -o-transition: all 120ms ease-in-out 0s;
     transition: all 120ms ease-in-out 0s;
     text-decoration: none;
 }
@@ -2171,48 +2073,20 @@ Other menus
 }
 /* line 311, sass/navigation/_mega-menu.scss */
 .widget_nav_menu:nth-child(1) {
-    -webkit-animation: widget-anim 0.12s forwards;
-    /* Safari 4+ */
-    -moz-animation: widget-anim 0.12s forwards;
-    /* Fx 5+ */
-    -o-animation: widget-anim 0.12s forwards;
-    /* Opera 12+ */
     animation: widget-anim 0.12s forwards;
-    /* IE 10+, Fx 29+ */
 }
 /* line 311, sass/navigation/_mega-menu.scss */
 .widget_nav_menu:nth-child(2) {
-    -webkit-animation: widget-anim 0.24s forwards;
-    /* Safari 4+ */
-    -moz-animation: widget-anim 0.24s forwards;
-    /* Fx 5+ */
-    -o-animation: widget-anim 0.24s forwards;
-    /* Opera 12+ */
     animation: widget-anim 0.24s forwards;
-    /* IE 10+, Fx 29+ */
 }
 
 /* line 311, sass/navigation/_mega-menu.scss */
 .widget_nav_menu:nth-child(3) {
-    -webkit-animation: widget-anim 0.36s forwards;
-    /* Safari 4+ */
-    -moz-animation: widget-anim 0.36s forwards;
-    /* Fx 5+ */
-    -o-animation: widget-anim 0.36s forwards;
-    /* Opera 12+ */
     animation: widget-anim 0.36s forwards;
-    /* IE 10+, Fx 29+ */
 }
 /* line 311, sass/navigation/_mega-menu.scss */
 .widget_nav_menu:nth-child(4) {
-    -webkit-animation: widget-anim 0.48s forwards;
-    /* Safari 4+ */
-    -moz-animation: widget-anim 0.48s forwards;
-    /* Fx 5+ */
-    -o-animation: widget-anim 0.48s forwards;
-    /* Opera 12+ */
     animation: widget-anim 0.48s forwards;
-    /* IE 10+, Fx 29+ */
 }
 
 /*--------------------------------------------------------------
@@ -2909,23 +2783,10 @@ img.aligncenter {
     clear: both;
 }
 
-/*
-@media screen and (min-width: 768px) {
-  .feature-wrapper {
-      display: flex;
-      flex-direction: column;
-      width: var(--content_width);
-      max-width: var(--content_width_max);
-      margin: 2rem auto  2rem auto;
-    }
-}
-*/
 
 .feature-wrapper {
     display: flex;
     flex-direction: column;
-    width: var(--content_width);
-    max-width: var(--content_width_max);
     margin: 2rem auto 2rem auto;
 }
 
@@ -3113,10 +2974,10 @@ img.aligncenter {
     text-decoration: none;
     color: #2b353f;
     font-size: 20px;
-    /*@media (min-width: $large) { 
+    /*@media (min-width: $large) {
    font-size: 20px;
-  } 
-  @media (min-width: $mobile) { 
+  }
+  @media (min-width: $mobile) {
    font-size: 18px;
   } */
 }
@@ -3218,14 +3079,14 @@ img.aligncenter {
 }
 /* line 335, sass/blocks/_custom-blocks.scss */
 .has-miles-red-background-color
-    .wp-block-pb-accordion-item
-    .c-accordion__title:after,
+.wp-block-pb-accordion-item
+.c-accordion__title:after,
 .has-dark-blue-background-color
-    .wp-block-pb-accordion-item
-    .c-accordion__title:after,
+.wp-block-pb-accordion-item
+.c-accordion__title:after,
 .has-black-background-color
-    .wp-block-pb-accordion-item
-    .c-accordion__title:after {
+.wp-block-pb-accordion-item
+.c-accordion__title:after {
     color: white;
 }
 
@@ -3330,31 +3191,27 @@ img.aligncenter {
     grid-template-areas: 'header' 'main' 'footer';
 }
 
-#masthead {
-    width: 100vw;
-}
-
 /* line 1, sass/components/_icons.scss */
 .icon {
     /*&.facebook a{
-  	background-image: url('/wp-content/themes/miles/image/icon-socials-facebook.svg');
+    background-image: url('/wp-content/themes/miles/image/icon-socials-facebook.svg');
   }
   &.twitter a{
-  //	background-size: 28px auto ;
-  	background-image: url('/wp-content/themes/miles/image/icon-socials-twitter.svg');
+  //    background-size: 28px auto ;
+    background-image: url('/wp-content/themes/miles/image/icon-socials-twitter.svg');
   }
   &.github a{
-  	background-image: url('/wp-content/themes/miles/image/icon-socials-github.svg');
+    background-image: url('/wp-content/themes/miles/image/icon-socials-github.svg');
   }
   &.blog a{
-  	background-image: url('/wp-content/themes/miles/image/icon-socials-facebook.svg');
+    background-image: url('/wp-content/themes/miles/image/icon-socials-facebook.svg');
   }
   &.linkedin a{
-  	background-image: url('/wp-content/themes/miles/image/icon-socials-linkedin.svg');
+    background-image: url('/wp-content/themes/miles/image/icon-socials-linkedin.svg');
   }
   &.instagram a{
-  	background-image: url('/wp-content/themes/miles/image/icon-socials-instagram.svg');
-  }	 */
+    background-image: url('/wp-content/themes/miles/image/icon-socials-instagram.svg');
+  }  */
 }
 /* line 3, sass/components/_icons.scss */
 .icon a {
@@ -3452,11 +3309,7 @@ input[type='file']::file-selector-button {
 /******************
 # Single
 ****************/
-/*.site-main{
-    max-width: $col_10;
-    margin:auto;
 
-} */
 /* line 43, sass/components/_posts-and-pages.scss */
 .single-post .post-thumbnail {
     text-align: center;
@@ -3467,18 +3320,11 @@ input[type='file']::file-selector-button {
 
 .single-post .entry-header {
     text-align: center;
-    max-width: 80vw;
+    width: var(--page-wrap);
     margin-left: auto;
     margin-right: auto;
-}
-@media screen and (min-width: 768px) {
-    .single-post .post-thumbnail {
-        max-width: calc(calc(var(--content_width) / 2) * 2);
-    }
-}
-
-@media screen and (min-width: 768px) {
-    max-width: calc(calc(var(--content_width) / 3) * 2);
+    padding-left: var(--mobile-horizontal-space);
+    padding-right: var(--mobile-horizontal-space);
 }
 
 /* line 50, sass/components/_posts-and-pages.scss */
@@ -3509,6 +3355,11 @@ input[type='file']::file-selector-button {
 /* line 69, sass/components/_posts-and-pages.scss */
 .single-post .entry-footer {
     display: none;
+}
+
+footer.entry-footer {
+    margin: 0 auto;
+    width: var(--page-wrap);
 }
 
 .single-post h2 {
@@ -3669,9 +3520,11 @@ input[type='file']::file-selector-button {
 .archive header,
 .blog > header,
 .blog .latestpodcast {
-    width: 80vw;
+    width: var(--page-wrap);
     grid-column: 1 / -1;
     margin: auto;
+    padding-left: var(--mobile-horizontal-space);
+    padding-right: var(--mobile-horizontal-space);
 }
 
 #main_content_header {
@@ -3680,27 +3533,20 @@ input[type='file']::file-selector-button {
     max-width: var(--content_width_max);
 }
 
-.blog .latestpodcast {
-}
-
 /* line 9, sass/components/_archives.scss */
 .archive .site-main,
 .blog .site-main .blog-grid {
     margin: auto;
-    max-width: 80vw;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    width: var(--page-wrap);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(260px,(100% - 3 * 1.5rem) / 4), 1fr));
+    gap: 1.5rem;
+    padding-left: var(--mobile-horizontal-space);
+    padding-right: var(--mobile-horizontal-space);
 }
-@media (min-width: 768px) {
-    /* line 9, sass/components/_archives.scss */
-    .archive .site-main,
-    .blog .site-main .blog-grid {
-        max-width: 80vw;
-        display: grid;
-        grid-template-columns: repeat(2, calc(50% - 2rem));
-        gap: 2em;
-    }
+
+.blog .site-main .blog-grid > * {
+    max-width: 100%;
 }
 
 .blog-wrapper {
@@ -3723,15 +3569,6 @@ input[type='file']::file-selector-button {
     color: inherit;
 }
 
-@media (min-width: 1025px) {
-    /* line 9, sass/components/_archives.scss */
-    .archive .site-main,
-    .blog .site-main .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(3, calc(33% - 3rem));
-        gap: 3em;
-    }
-}
 /* line 26, sass/components/_archives.scss */
 .archive .site-main figure,
 .blog .site-main figure {
@@ -3920,61 +3757,61 @@ textarea {
 }
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-    /*	input[type='checkbox'],
-  	input[type='radio'] {
-  		-webkit-appearance: none;
-  		-moz-appearance: none;
-  		width: 20px;
-  		height: 20px;
-  		border: 1px solid $silver;	
-  		position: relative;	
-  		background-color: white;
-  		border-radius: 5px;
-  	//	--active: #275EFE;
-      //	--active-inner: #fff;
-      //	--focus: 2px rgba(39, 94, 254, .25);
-      //	--border: #BBC1E1;
-      //	--border-hover: #275EFE;
-      //	--background: #fff;
-      //	--disabled: #F6F8FF;
-      //	--disabled-inner: #E1E6F9;
-  	}
-  	
-  	input[type='radio'] {
-      	border-radius: 100%;
-  	}
-    
-  	input[type="checkbox"]:focus,
-  	input[type='radio']:focus {
-  		border: $miles-red solid 1px;	
-  		outline: $miles-red;
+    /*  input[type='checkbox'],
+    input[type='radio'] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $silver;
+        position: relative;
+        background-color: white;
+        border-radius: 5px;
+    //  --active: #275EFE;
+      //    --active-inner: #fff;
+      //    --focus: 2px rgba(39, 94, 254, .25);
+      //    --border: #BBC1E1;
+      //    --border-hover: #275EFE;
+      //    --background: #fff;
+      //    --disabled: #F6F8FF;
+      //    --disabled-inner: #E1E6F9;
+    }
+
+    input[type='radio'] {
+        border-radius: 100%;
+    }
+
+    input[type="checkbox"]:focus,
+    input[type='radio']:focus {
+        border: $miles-red solid 1px;
+        outline: $miles-red;
       }
-     
-  	input[type='checkbox']:hover,
-  	input[type='radio']:hover {
-  		border: 1px solid rgba(black, 0.5);	
-  	}
-  	
+
+    input[type='checkbox']:hover,
+    input[type='radio']:hover {
+        border: 1px solid rgba(black, 0.5);
+    }
+
     input[type="checkbox"]:checked,
     input[type='radio']:checked {
-  		background: $silver;
-    } 
-  
-  	input[type="checkbox"]:checked + span.wpcf7-list-item-label:before, //causes a bug in the behaviour - needs fixing
-  	input[type='radio']:checked + span.wpcf7-list-item-label:before { 
-      	width: $base-margin;
-      	height: $base-margin;
-      	position: absolute;
-      	left: 4px;
-      	content: "✓";
-      	display:inline-block;
-      	color: white;
-      	z-index: 11;
-      	font-size: 14px;
-      	font-weight: bold;
-      	
-      	&:hover {border-color: $silver;}
-  	}  */
+        background: $silver;
+    }
+
+    input[type="checkbox"]:checked + span.wpcf7-list-item-label:before, //causes a bug in the behaviour - needs fixing
+    input[type='radio']:checked + span.wpcf7-list-item-label:before {
+        width: $base-margin;
+        height: $base-margin;
+        position: absolute;
+        left: 4px;
+        content: "✓";
+        display:inline-block;
+        color: white;
+        z-index: 11;
+        font-size: 14px;
+        font-weight: bold;
+
+        &:hover {border-color: $silver;}
+    }  */
     /* line 157, sass/components/_forms.scss */
     input[type='file']::-webkit-file-upload-button {
         -webkit-appearance: none;
@@ -4066,10 +3903,30 @@ input[type='submit']:focus {
 
 .cv-filter {
     margin: 4em auto;
-    gap: 1em;
-    flex-wrap: wrap;
-    width: 80vw;
-    display: flex;
+    gap: 3rem 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--profile-card-width), (100% - (var(--cv-filter-max-columns) - 1) * 2rem) / var(--cv-filter-max-columns)), 1fr));
+    display: grid;
+}
+
+@media (max-width: 576px) {
+    .cv-filter {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .cv-filter > miles-profile-card {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 400px) {
+    .cv-filter {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cv-filter > miles-profile-card {
+        flex: 1 1 100%;
+    }
 }
 
 .cv-filter ul {
@@ -4104,51 +3961,38 @@ input[type='submit']:focus {
 }
 
 #primary.our_people {
-    width: 80vw;
+    width: var(--page-wrap);
     margin-left: auto;
     margin-right: auto;
+    margin-top: 6rem;
+    padding-right: var(--mobile-horizontal-space);
+    padding-left: var(--mobile-horizontal-space);
 }
 
-#primary.our_people .miles_offices_bar::before,
-#primary.our_people .miles_areas_bar::before {
-    /* bottom: unset; */
-    /* display: block; */
-    /* content: attr(aria-label); */
-    /* position: relative; */
-    /* width: initial; */
-}
-
-#primary.our_people .miles_offices_bar,
-#primary.our_people .miles_areas_bar {
+#primary.our_people .cv-filter-tags {
+    align-items: baseline;
     margin: 0 0 1em 0;
     display: flex;
     flex-direction: column;
 }
 
 @media (min-width: 600px) {
-    #primary.our_people .miles_offices_bar,
-    #primary.our_people .miles_areas_bar {
+    #primary.our_people .cv-filter-tags {
         flex-direction: row;
     }
 }
 
-#primary.our_people .miles_offices_bar > span,
-#primary.our_people .miles_areas_bar > span {
+#primary.our_people .cv-filter-tags > span {
     font-weight: 600;
     padding-right: 1em;
     display: inline-block;
 }
 
-#primary.our_people .miles_offices_bar {
+#primary.our_people .cv-filter-tags {
     margin-top: 4rem;
 }
 
-#primary.our_people .miles_areas_bar {
-    margin-bottom: 4rem;
-}
-
-#primary.our_people .miles_offices_bar ul,
-#primary.our_people .miles_areas_bar ul {
+#primary.our_people .cv-filter-tags ul {
     flex-wrap: wrap;
     gap: 1em;
     line-height: 1.4em;
@@ -4158,8 +4002,7 @@ input[type='submit']:focus {
     margin-right: 0;
 }
 
-#primary.our_people .miles_offices_bar ul li,
-#primary.our_people .miles_areas_bar ul li {
+#primary.our_people .cv-filter-tags ul li {
     /*
   color: var(--miles_primary_dark);
   border-radius: 2em;
@@ -4170,8 +4013,7 @@ input[type='submit']:focus {
     list-style-type: none;
 }
 
-#primary.our_people .miles_offices_bar ul li a,
-#primary.our_people .miles_areas_bar ul li a {
+#primary.our_people .cv-filter-tags ul li a {
     text-decoration: none;
     color: inherit;
 }
@@ -4252,36 +4094,21 @@ miles-fagblogg-teaser .wp-block-latest-posts__list {
     }
 }
 
-miles-fagblogg-teaser
-    .wp-block-latest-posts__list
-    li
-    .wp-block-latest-posts__post-title,
-miles-fagblogg-teaser
-    .wp-block-latest-posts__list
-    li
-    .wp-block-latest-posts__post-author,
-miles-fagblogg-teaser
-    .wp-block-latest-posts__list
-    li
-    .wp-block-latest-posts__post-date {
+miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-title,
+miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-author,
+miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-date {
     padding: 0 2rem;
     color: var(--miles_primary_light);
     background-color: var(--miles_secondary_four);
     display: block;
 }
 
-miles-fagblogg-teaser
-    .wp-block-latest-posts__list
-    li
-    .wp-block-latest-posts__post-date {
+miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-date {
     border-radius: 0 0 30px 30px;
     padding-bottom: 2rem;
 }
 
-miles-fagblogg-teaser
-    .wp-block-latest-posts__list
-    li
-    .wp-block-latest-posts__post-title {
+miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-title {
     padding-top: 1.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -4313,20 +4140,8 @@ miles-fagblogg-teaser .wp-block-latest-posts__list li a {
     color: var(--miles_secondary_three);
 }
 
-.page-template-default .site-main .entry-content {
-    max-width: calc(100vw - 4rem);
-    margin: auto;
-}
-
-@media (min-width: 768px) {
-    .page-template-default .site-main .entry-content {
-        max-width: 80vw;
-        margin: auto;
-    }
-}
-
 .home.page-template-default .site-main .entry-content {
-    max-width: 100vw;
+    width: 100%;
     margin: auto;
 }
 
@@ -4355,7 +4170,7 @@ miles-office-banner {
 
 @media (min-width: 768px) {
     miles-office-banner {
-        width: 80vw;
+        width: var(--page-wrap);
     }
 }
 
