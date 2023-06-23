@@ -8,22 +8,22 @@ import cssVariables from '../styles/variables.css?inline';
 const MilesBlogCardTemplate = document.createElement('template');
 MilesBlogCardTemplate.innerHTML = `
   <style>
-	${styles}\n
-  ${cssVariables}
+    ${styles}
+
+     ${cssVariables}
   </style>
-  <div id="blog-card">
+  <div id="blog-card-container">
     <a href="#">
-      <slot name="image"></slot>
+      <figure id="image-container">
+        <slot name="image"></slot>
+      </figure>
     </a>
-    <div class="text">
-    <a href="#">
-      <slot name="title"></slot>
-    </a>
-    <slot name="meta"></slot>
-    
-    <div>Skrevet av <span id="author"></span></div>
-    <div><span id="posted"></span></div>
-    <span id="updated"></span>
+    <div id="group">
+      <a href="#">
+        <h2 id="title">Sertifisering i innovasjonsledelse</h2>
+      </a>
+      <div>Publisert <span id="posted"></span></div>
+      <div>Av <span id="author"></span></div>
     </div>
   </div>
 `;
@@ -34,12 +34,21 @@ class MilesBlogCard extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.append(MilesBlogCardTemplate.content.cloneNode(true));
     this.posted = this.shadowRoot.querySelector('#posted');
-    this.updated = this.shadowRoot.querySelector('#updated');
     this.author = this.shadowRoot.querySelector('#author');
+    this.titleEl = this.shadowRoot.querySelector('#title');
+    this.firgureEl = this.shadowRoot.querySelector('figure');
   }
 
+  timeFormat = date => {
+    return new Intl.DateTimeFormat('no', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    }).format(date);
+  };
+
   static get observedAttributes() {
-    return ['url', 'author', 'posted', 'updated'];
+    return ['url', 'author', 'posted', 'image', 'title'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -52,46 +61,22 @@ class MilesBlogCard extends HTMLElement {
     if (name === 'author') {
       this.author.textContent = newValue;
     }
-  }
 
-  connectedCallback() {
-    const imageEl = this.shadowRoot
-      .querySelector('slot[name="image"]')
-      .assignedElements();
-    if (imageEl[0]?.children) {
-      Array.from(imageEl[0]?.children).forEach(el => {
-        el.style.objectFit = 'cover';
-        el.style.aspectRatio = '2/3';
-        el.style.width = '100%';
-      });
+    if (name === 'title') {
+      this.titleEl.textContent = newValue;
     }
 
-    const postedEl = this.shadowRoot
-      .querySelector('slot[name="meta"]')
-      .assignedElements();
-    if (postedEl[0]?.children) {
-      Array.from(postedEl[0]?.children).forEach(el => {
-        const timeArray = Array.from(el.children[0].children);
-        this.posted.textContent = `${this.timeFormat(
-          new Date(timeArray[0].dateTime)
-        )}`;
-        this.updated.textContent = `${this.timeFormat(
-          new Date(timeArray[1].dateTime)
-        )}`;
-      });
-      postedEl[0].remove();
+    if (name === 'image') {
+      const image = document.createElement('img');
+      image.setAttribute('src', newValue);
+      image.setAttribute('alt', 'Image for blog card'); // possible to set via WP?
+      this.firgureEl.append(image);
+    }
+
+    if (name === 'posted') {
+      this.posted.textContent = `${this.timeFormat(new Date(newValue))}`;
     }
   }
-
-  timeFormat = date => {
-    return new Intl.DateTimeFormat('no', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
-    }).format(date);
-  };
-
-  disconnectedCallback() {}
 }
 
 const MilesBlogCardName = 'miles-blog-card';
