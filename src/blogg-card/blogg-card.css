@@ -5,18 +5,20 @@
   height: inherit;
 }
 
-#blog-card {
+#blog-card-container {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.25rem;
   width: 100%;
-  border-radius: 1rem;
+  border-radius: 1.875rem;
   overflow: hidden;
 }
 
-slot[name='title']::slotted(*) {
-  font-size: 1.5rem;
+h2 {
   margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 a {
@@ -26,35 +28,33 @@ a {
   color: inherit;
 }
 
-.text {
-  background-color: var(--miles_secondary_four);
-  color: var(--miles_primary_light);
+#group {
+  background-color: #f1d4d2; /* global variable? C Milesrød 20 (from Figma) */
   padding: 2rem;
-  height: 110px;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+  color: var(--miles_secondary_four);
+  height: 12rem;
+  box-sizing: border-box;
 }
 
-slot[name='title']::slotted(*) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-slot[name='meta'] {
+figure {
+  margin: 0;
   display: block;
-  flex-grow: 1;
+  overflow: hidden;
+  height: 23rem;
+}
+
+::slotted(img),
+img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  background-color: #ffffff;
+  height: 100%;
 }
 
 #updated {
   display: none;
-}
-
-::slotted(figure) {
-  margin: 0;
-  aspect-ratio: 4/5;
-  overflow: hidden;
 }
