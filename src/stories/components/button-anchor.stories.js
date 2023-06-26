@@ -4,7 +4,6 @@ export default {
   title: 'Miles/Components',
   tags: ['autodocs'],
   argTypes: {
-    // 👇 All Button stories expect a label arg
     selected: {
       control: 'boolean',
       description: 'select or unselect button',
@@ -22,5 +21,6 @@ export const ButtonAnchor = {
     href: 'https://archive.org/embed/NeverGonnaGiveYouUp',
     color: '#3F1221',
     selected: 'false',
+    count: 15,
   },
 };
