@@ -5,6 +5,7 @@ export default {
     selected: {
       control: 'boolean',
       description: 'select or unselect button',
+    }
   },
   render: args =>
     `<miles-button-anchor href="${args.href}" color="${args.color}" selected="${args.selected}" count="${args.count}">
