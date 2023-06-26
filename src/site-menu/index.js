@@ -62,12 +62,7 @@ class SiteMenu extends HTMLElement {
     this.burgerEl.addEventListener('keydown', this.handleKeys);
     this.burgerEl.addEventListener('click', this.openmenu);
 
-    function closeMenu(event) {
-      if (event.key === 'Escape') {
-        this.closemenu(event);
-      }
-    }
-    window.addEventListener('keydown', closeMenu);
+    window.addEventListener('keydown', this.handleEscapeKeydown);
   }
 
   disconnectedCallback() {
@@ -106,6 +101,12 @@ class SiteMenu extends HTMLElement {
       this.menuContent.classList.remove('open');
       // Move focus back to the hamburger menu
       this.burgerEl.focus();
+    }
+  };
+
+  handleEscapeKeydown = event => {
+    if (event.key === 'Escape') {
+      this.closemenu(event);
     }
   };
 }
