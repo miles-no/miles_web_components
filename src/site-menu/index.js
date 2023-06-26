@@ -99,7 +99,13 @@ class SiteMenu extends HTMLElement {
     }
   };
 
+  menuIsOpen = () => {
+    return this.burgerEl.getAttribute('aria-expanded') === 'true' || false;
+  };
+
   closemenu = event => {
+    if (!this.menuIsOpen()) return;
+
     // Clicks inside menu should not close menu -->
     // Only proceed if event target is not inside menuContent
     if (this.menuContent.contains(event.target)) return;
