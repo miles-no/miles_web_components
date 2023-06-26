@@ -62,6 +62,14 @@ class SiteMenu extends HTMLElement {
     this.burgerEl.addEventListener('keydown', this.handleKeys);
     this.burgerEl.addEventListener('click', this.openmenu);
 
+    // Add event listener for clicks outside the menu
+    document.addEventListener('click', this.closemenu);
+    // Prevent event propagation when clicking the menu
+    this.menuContent.addEventListener('click', event =>
+      event.stopPropagation()
+    );
+    this.burgerEl.addEventListener('click', event => event.stopPropagation());
+
     window.addEventListener('keydown', this.handleEscapeKeydown);
   }
 
@@ -91,6 +99,10 @@ class SiteMenu extends HTMLElement {
   };
 
   closemenu = event => {
+    // Clicks inside menu should not close menu -->
+    // Only proceed if event target is not inside menuContent
+    if (this.menuContent.contains(event.target)) return;
+
     event.preventDefault();
     // Close the menu
     const expanded =
