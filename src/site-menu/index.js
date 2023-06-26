@@ -62,16 +62,20 @@ class SiteMenu extends HTMLElement {
     this.burgerEl.addEventListener('keydown', this.handleKeys);
     this.burgerEl.addEventListener('click', this.openmenu);
 
-    function closeMenu(event) {
-      if (event.key === 'Escape') {
-        this.closemenu(event);
-      }
-    }
-    window.addEventListener('keydown', closeMenu);
+    // Add event listener for clicks outside the menu
+    document.addEventListener('click', this.closemenu);
+
+    // Prevent event propagation when clicking the menu
+    this.menuContent.addEventListener('click', this.stopEventPropagation);
+    this.burgerEl.addEventListener('click', this.stopEventPropagation);
+
+    window.addEventListener('keydown', this.handleEscapeKeydown);
   }
 
   disconnectedCallback() {
     this.burgerEl.removeEventListener('click', this.openmenu);
+    document.removeEventListener('click', this.closemenu);
+    window.removeEventListener('keydown', this.handleEscapeKeydown);
   }
 
   handleKeys = event => {
@@ -96,6 +100,10 @@ class SiteMenu extends HTMLElement {
   };
 
   closemenu = event => {
+    // Clicks inside menu should not close menu -->
+    // Only proceed if event target is not inside menuContent
+    if (this.menuContent.contains(event.target)) return;
+
     event.preventDefault();
     // Close the menu
     const expanded =
@@ -106,6 +114,16 @@ class SiteMenu extends HTMLElement {
       this.menuContent.classList.remove('open');
       // Move focus back to the hamburger menu
       this.burgerEl.focus();
+    }
+  };
+
+  stopEventPropagation = event => {
+    event.stopPropagation();
+  };
+
+  handleEscapeKeydown = event => {
+    if (event.key === 'Escape') {
+      this.closemenu(event);
     }
   };
 }
