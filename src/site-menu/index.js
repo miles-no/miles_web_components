@@ -64,17 +64,18 @@ class SiteMenu extends HTMLElement {
 
     // Add event listener for clicks outside the menu
     document.addEventListener('click', this.closemenu);
+
     // Prevent event propagation when clicking the menu
-    this.menuContent.addEventListener('click', event =>
-      event.stopPropagation()
-    );
-    this.burgerEl.addEventListener('click', event => event.stopPropagation());
+    this.menuContent.addEventListener('click', this.stopEventPropagation);
+    this.burgerEl.addEventListener('click', this.stopEventPropagation);
 
     window.addEventListener('keydown', this.handleEscapeKeydown);
   }
 
   disconnectedCallback() {
     this.burgerEl.removeEventListener('click', this.openmenu);
+    document.removeEventListener('click', this.closemenu);
+    window.removeEventListener('keydown', this.handleEscapeKeydown);
   }
 
   handleKeys = event => {
@@ -114,6 +115,10 @@ class SiteMenu extends HTMLElement {
       // Move focus back to the hamburger menu
       this.burgerEl.focus();
     }
+  };
+
+  stopEventPropagation = event => {
+    event.stopPropagation();
   };
 
   handleEscapeKeydown = event => {
