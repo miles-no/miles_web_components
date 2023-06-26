@@ -39,14 +39,15 @@ class MilesOverlapBlock extends HTMLElement {
 
   connectedCallback() {
     const areas = [
+      'Team as a service',
       'Systemutvikling',
       'Prosjektledelse',
       'Testledelse',
       'Smidig Coaching',
-      'Design',
+      'UX-design',
       'Arkitektur',
       'Rådgivning',
-      'Team as a service',
+      'AI',
     ];
     const listElement = document.createElement('ul');
 
