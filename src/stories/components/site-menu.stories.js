@@ -6,6 +6,7 @@ const headerStyles = `
 width: 100%;
 height: 100px;
 background-color: var(--miles_primary_dark);
+position: absolute;
 `;
 
 export default {
