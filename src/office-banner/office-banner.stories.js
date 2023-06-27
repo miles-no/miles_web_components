@@ -1,6 +1,6 @@
 import { propsToAttrs } from '../storybook.utils.js';
-import { Card } from './cards/contact-card.stories';
-import { BusinessCard } from './cards/business-card.stories';
+import { Card } from '../contact-card/contact-card.stories.js';
+import { BusinessCard } from '../business-card/business-card.stories.js';
 
 export default {
   title: 'Miles/Components',

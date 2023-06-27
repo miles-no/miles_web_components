@@ -13,7 +13,6 @@ export default {
     </miles-button-anchor>`,
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
 export const ButtonAnchor = {
   args: {
     children: 'Button text',

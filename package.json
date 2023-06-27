@@ -40,7 +40,6 @@
     "react-dom": "^18.2.0",
     "sass": "^1.63.4",
     "storybook": "^7.0.20",
-    "vite": "^4.2.0",
-    "@storybook/addon-a11y": "^7.0.22"
+    "vite": "^4.2.0"
   }
 }
