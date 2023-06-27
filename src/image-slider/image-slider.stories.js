@@ -1,5 +1,4 @@
 import { propsToAttrs } from '../storybook.utils.js';
-import { MilesImageSlider } from '../../image-slider/index.js';
 
 export default {
   title: 'Miles/Components',
@@ -103,7 +102,6 @@ export default {
     </miles-image-slider>`,
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
 export const ImageSlider = {
   args: {
     inview: '3',
