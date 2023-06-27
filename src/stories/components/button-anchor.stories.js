@@ -16,7 +16,6 @@ export default {
     )}>Miles Button Anchor</miles-button-anchor>`,
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
 export const ButtonAnchor = {
   args: {
     href: 'https://archive.org/embed/NeverGonnaGiveYouUp',
