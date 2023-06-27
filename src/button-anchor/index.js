@@ -1,3 +1,4 @@
+import styles from './button-anchor.scss?inline';
 import cssVariables from '../styles/variables.css?inline';
 import { isAttributeValueTruthy } from '../shared-component-utilities/customElementUtils.js';
 /**
@@ -7,43 +8,27 @@ import { isAttributeValueTruthy } from '../shared-component-utilities/customElem
 const MilesButtonAnchorTemplate = document.createElement('template');
 MilesButtonAnchorTemplate.innerHTML = `
         <style>
-          ${cssVariables}\n
-          :host {
-            display: inline-block;
-            color: var(--miles_primary_dark);
-            background-color: inherit;
-          }
-          a {
-            display: inline-block;
-            color: var(--color);
-            padding: 0.5rem 1rem;
-            border-radius: 3rem;
-            border: 2px solid var(--color);
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.5s ease;
-            white-space: nowrap;
-          }
-          a:hover, a.selected {
-            color: var(--miles_primary_light);
-            background-color: var(--color);
-          }
+          ${cssVariables}
+          ${styles}
         </style>
-        <a id="buttonTarget"">
-          <slot></slot>
+        <a id="buttonTarget">
+          <slot></slot><div class="count"></div>
         </a>
       `;
 
 class MilesButtonAnchor extends HTMLElement {
+  count = null;
   constructor() {
     super();
+
     const shadow = this.attachShadow({ mode: 'open' });
     shadow.append(MilesButtonAnchorTemplate.content.cloneNode(true));
     this.buttontarget = shadow.querySelector('#buttonTarget');
+    this.countEl = shadow.querySelector('.count');
   }
 
   static get observedAttributes() {
-    return ['href', 'color', 'selected'];
+    return ['href', 'color', 'selected', 'count'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -53,6 +38,14 @@ class MilesButtonAnchor extends HTMLElement {
 
     if (name === 'color') {
       this.style.setProperty('--color', newValue);
+    }
+
+    if (name === 'count') {
+      if (newValue > 0) {
+        this.countEl.textContent = newValue;
+      } else {
+        this.countEl.textContent = null;
+      }
     }
 
     if (name === 'selected') {

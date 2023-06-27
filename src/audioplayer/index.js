@@ -1,4 +1,4 @@
-import styles from './audioplayer.css?inline';
+import styles from './audioplayer.scss?inline';
 import cssVariables from '../styles/variables.css?inline';
 
 /**
@@ -8,23 +8,19 @@ import cssVariables from '../styles/variables.css?inline';
 const MilesAudioPlayerTemplate = document.createElement('template');
 MilesAudioPlayerTemplate.innerHTML = `
   <style>
-	${styles}\n
-  ${cssVariables}
+	${styles}
+    ${cssVariables}
     </style>
-	<div id="milesplayer">
-		<audio id="player" crossorigin controls></audio>
-    <div class="start">
-          <button id="backward" aria-label="seek" aria-description="seek 15 seconds backwards"><miles-seek direction="backward"></miles-seek></button>
-        <div class="progress-indicator">
-          <input type="range" max="100" value="0" id="progressbar">
+    <div id="milesplayer" class="player">
+      <audio id="player" crossorigin controls></audio>
+        <button class="button button--back" id="backward" aria-label="seek" aria-description="seek 15 seconds backwards"><miles-seek direction="backward"></miles-seek></button>
+        <div class="player__progress">
+          <input type="range" max="100" value="0" id="progressbar" class="input">
         </div>
-      <button id="forward" aria-label="seek" aria-description="seek 15 seconds forward"><miles-seek direction="forward"></miles-seek></button>
+        <button class="button button--forward" id="forward" aria-label="seek" aria-description="seek 15 seconds forward"><miles-seek direction="forward"></miles-seek></button>
+        <div class="player__time"><span id="current"></span><span id="length"></span></div>
+        <button class="button button--play-pause" id="play" aria-label="play" aria-description="Play and pause sound playback" data-playing="false"><miles-play></miles-play></button>
     </div>
-    <div class="end">
-      <div id="progresstime"></div>
-		  <button id="play" aria-label="play" aria-description="Play and pause sound playback" data-playing="false"><miles-play></miles-play></button>
-    </div>
-	</div>
 `;
 
 class MilesAudioPlayer extends HTMLElement {
@@ -35,7 +31,8 @@ class MilesAudioPlayer extends HTMLElement {
     this.audioEl = this.shadowRoot.querySelector('#milesplayer');
     this.audioPlayerEl = this.shadowRoot.querySelector('#player');
     this.playButtonEl = this.shadowRoot.querySelector('#play');
-    this.progresstimeEl = this.shadowRoot.querySelector('#progresstime');
+    this.progressCurrentEl = this.shadowRoot.querySelector('#current');
+    this.progressTotalLengthEl = this.shadowRoot.querySelector('#length');
     this.progressbarEl = this.shadowRoot.querySelector('#progressbar');
     this.backwardSeekEl = this.shadowRoot.querySelector('#backward');
     this.forwardSeekEl = this.shadowRoot.querySelector('#forward');
@@ -108,9 +105,9 @@ class MilesAudioPlayer extends HTMLElement {
   };
 
   timeUpdateHandler = () => {
-    this.progresstimeEl.textContent = `${this.getTimeString(
-      this.audioPlayerEl.currentTime
-    )} / ${this.getTimeString(this.audioPlayerEl.duration)}`;
+    this.progressCurrentEl.textContent = this.getTimeString(this.audioPlayerEl.currentTime);
+    this.progressTotalLengthEl.textContent = this.getTimeString(this.audioPlayerEl.duration);
+
     this.progressbarEl.setAttribute('value', this.audioPlayerEl.currentTime);
 
     this.updateProgress();
@@ -123,9 +120,10 @@ class MilesAudioPlayer extends HTMLElement {
 
   loadMetadataHandler = () => {
     this.progressbarEl.max = this.audioPlayerEl.duration;
-    this.progresstimeEl.textContent = `0:00 / ${this.getTimeString(
-      this.audioPlayerEl.duration
-    )}`;
+
+
+    this.progressCurrentEl.textContent = '0:00';
+    this.progressTotalLengthEl.textContent = this.getTimeString(this.audioPlayerEl.duration);
 
     this.updateProgress();
   };
