@@ -33,6 +33,7 @@ import { MilesPlay } from './icons/index.js';
 import { MilesPause } from './icons/index.js';
 import { MilesAudioSeek } from './icons/index.js';
 import { MilesImageBlock } from './image-block/index.js';
+import { MilesStickyBlock } from './sticky-block/index.js';
 export {
   MilesBulb,
   MilesCloud,
@@ -65,5 +66,6 @@ export {
   MilesPlay,
   MilesPause,
   MilesAudioSeek,
-  MilesImageBlock
+  MilesImageBlock,
+  MilesStickyBlock,
 };
