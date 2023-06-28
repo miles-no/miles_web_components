@@ -45,7 +45,7 @@ class MilesImageBlock extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'alt') {
       if (newValue) {
-        this.image.setAttribute('src', newValue);
+        this.image.setAttribute('alt', newValue);
       }
     }
 
