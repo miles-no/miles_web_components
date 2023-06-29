@@ -2,6 +2,7 @@
   display: block;
   width: 100%;
   --text-color: var(--miles_secondary_four);
+  --title-color: var(--miles_primary_dark);
   --background-color: var(--miles_default_bg);
 }
 
@@ -55,7 +56,7 @@
     }
 
     h3 {
-      color: var(--miles_primary_dark);
+      color: var(--title-color);
       font: {
         size: 28px;
         weight: 500;

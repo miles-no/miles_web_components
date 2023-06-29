@@ -31,7 +31,7 @@ class MilesStickyBlock extends HTMLElement {
 
 
   static get observedAttributes() {
-    return ['heading', 'color', 'background'];
+    return ['heading', 'color', 'background', 'heading-color'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -41,14 +41,20 @@ class MilesStickyBlock extends HTMLElement {
     }
 
     if (name === 'color') {
-      if(newValue) {
+      if(newValue && newValue !== 'undefined') {
         this.style.setProperty('--text-color', newValue);
       }
     }
 
     if (name === 'background') {
-      if(newValue) {
+      if(newValue && newValue !== 'undefined') {
         this.style.setProperty('--background-color', newValue);
+      }
+    }
+
+    if (name === 'heading-color') {
+      if(newValue && newValue !== 'undefined') {
+        this.style.setProperty('--title-color', newValue);
       }
     }
   }
