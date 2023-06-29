@@ -1,0 +1,69 @@
+:host {
+  display: block;
+  width: 100%;
+  --text-color: var(--miles_secondary_four);
+  --background-color: var(--miles_default_bg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.sticky-image {
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 1rem 0 2rem;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    padding: 4rem 0;
+  }
+
+  $this: &;
+
+  &__wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0 auto;
+    padding: 0 var(--mobile-horizontal-space);
+    position: relative;
+    width: var(--page-wrap);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 3rem;
+
+      #{$this}--reverse & {
+        flex-direction: row-reverse !important;
+      }
+    }
+  }
+
+  &__image {
+    background: var(--background-color);
+    padding-bottom: 1rem;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      position: sticky;
+      top: 0;
+      flex: 0 0 auto;
+      max-width: 35%;
+    }
+
+    img {
+      border-radius: 30px;
+      margin: 1.5rem 0 0;
+      max-width: 100%;
+      height: auto;
+
+      @media (min-width: 768px) {
+        margin: 1.5rem 0;
+      }
+    }
+  }
+}
