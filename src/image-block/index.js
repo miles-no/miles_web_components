@@ -20,6 +20,10 @@ MilesImageBlockTemplate.innerHTML = `
 `;
 
 class MilesImageBlock extends HTMLElement {
+  get href() {
+    return this.hasAttribute('href');
+  }
+
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
@@ -35,6 +39,9 @@ class MilesImageBlock extends HTMLElement {
     const button = document.createElement( 'a' );
     button.setAttribute("class", "button");
     button.textContent = text;
+    if(this.href) {
+      button.setAttribute("href", this.getAttribute('href'));
+    }
     this.contentElement.appendChild( button );
   }
 
