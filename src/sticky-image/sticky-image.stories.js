@@ -9,12 +9,9 @@ export default {
 		color: {
 			control: 'color'
 		},
-		'heading-color': {
-			control: 'color'
-		},
 	},
 	render: args => `<div>
-		<miles-sticky-block heading="${args.heading}" background="${args.background}" color="${args.color}" heading-color="${args['heading-color']}">
+		<miles-sticky-image-block background="${args.background}" color="${args.color}" image="${args.image}" reverse="${args.reverse}">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis elit nec purus dignissim bibendum. Nam nec rhoncus arcu. Donec vel convallis neque. Duis auctor ut dolor sed fringilla. Integer convallis posuere consequat. Pellentesque laoreet eget felis ut consectetur. Integer lobortis at metus ut congue. Nam nec diam at magna vulputate tempus ultrices tristique tortor. In blandit dui vestibulum tincidunt hendrerit.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis elit nec purus dignissim bibendum. Nam nec rhoncus arcu. Donec vel convallis neque. Duis auctor ut dolor sed fringilla. Integer convallis posuere consequat. Pellentesque laoreet eget felis ut consectetur. Integer lobortis at metus ut congue. Nam nec diam at magna vulputate tempus ultrices tristique tortor. In blandit dui vestibulum tincidunt hendrerit.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis elit nec purus dignissim bibendum. Nam nec rhoncus arcu. Donec vel convallis neque. Duis auctor ut dolor sed fringilla. Integer convallis posuere consequat. Pellentesque laoreet eget felis ut consectetur. Integer lobortis at metus ut congue. Nam nec diam at magna vulputate tempus ultrices tristique tortor. In blandit dui vestibulum tincidunt hendrerit.</p>
@@ -22,16 +19,17 @@ export default {
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis elit nec purus dignissim bibendum. Nam nec rhoncus arcu. Donec vel convallis neque. Duis auctor ut dolor sed fringilla. Integer convallis posuere consequat. Pellentesque laoreet eget felis ut consectetur. Integer lobortis at metus ut congue. Nam nec diam at magna vulputate tempus ultrices tristique tortor. In blandit dui vestibulum tincidunt hendrerit.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis elit nec purus dignissim bibendum. Nam nec rhoncus arcu. Donec vel convallis neque. Duis auctor ut dolor sed fringilla. Integer convallis posuere consequat. Pellentesque laoreet eget felis ut consectetur. Integer lobortis at metus ut congue. Nam nec diam at magna vulputate tempus ultrices tristique tortor. In blandit dui vestibulum tincidunt hendrerit.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis elit nec purus dignissim bibendum. Nam nec rhoncus arcu. Donec vel convallis neque. Duis auctor ut dolor sed fringilla. Integer convallis posuere consequat. Pellentesque laoreet eget felis ut consectetur. Integer lobortis at metus ut congue. Nam nec diam at magna vulputate tempus ultrices tristique tortor. In blandit dui vestibulum tincidunt hendrerit.</p>
-        </miles-sticky-block>
+        </miles-sticky-image-block>
     </div>`,
 };
 
 
-export const StickyBlock = {
+export const StickyImage = {
 	args: {
-		heading: 'This is the title',
+		image: 'https://loremflickr.com/960/1280/dog',
+		reverse: false,
 		background: '',
 		color: '',
-		'heading-color': null,
+		alt: '',
 	},
 };

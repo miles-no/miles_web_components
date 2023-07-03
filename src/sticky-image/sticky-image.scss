@@ -2,7 +2,6 @@
   display: block;
   width: 100%;
   --text-color: var(--miles_secondary_four);
-  --title-color: var(--miles_primary_dark);
   --background-color: var(--miles_default_bg);
 }
 
@@ -12,15 +11,14 @@
   box-sizing: border-box;
 }
 
-
-.sticky-block {
+.sticky-image {
   background: var(--background-color);
   color: var(--text-color);
-  padding: 4rem 0;
+  padding: 1rem 0 2rem;
   width: 100%;
 
   @media (min-width: 768px) {
-    padding: 6rem 0;
+    padding: 4rem 0;
   }
 
   $this: &;
@@ -37,35 +35,33 @@
 
     @media (min-width: 768px) {
       flex-direction: row;
-      gap: 2rem;
+      gap: 3rem;
+
+      #{$this}--reverse & {
+        flex-direction: row-reverse !important;
+      }
     }
   }
 
-  &__title {
+  &__image {
     background: var(--background-color);
     padding-bottom: 1rem;
-    position: sticky;
-    top: 0;
     width: 100%;
 
     @media (min-width: 768px) {
-      background: none;
-      flex: 0 0 40%;
-      padding-bottom: 0;
-      width: auto;
+      position: sticky;
+      top: 0;
+      flex: 0 0 auto;
+      max-width: 35%;
     }
 
-    h3 {
-      color: var(--title-color);
-      font: {
-        size: 28px;
-        weight: 500;
-      }
-      line-height: 1;
+    img {
+      border-radius: 30px;
       margin: 1.5rem 0 0;
+      max-width: 100%;
+      height: auto;
 
       @media (min-width: 768px) {
-        font-size: 48px;
         margin: 1.5rem 0;
       }
     }
