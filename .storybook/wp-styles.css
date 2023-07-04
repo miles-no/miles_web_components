@@ -50,6 +50,8 @@
     --mobile-horizontal-space: 1rem; /* 1rem = 16px (based on body font-size */
     --cv-filter-max-columns: 5; /* The maximum number of columns inside cv-filter (Folkene) */
     --profile-card-width: 16rem;
+
+    --default_focus: 2px solid var(--miles_secondary_two);
 }
 
 /*!

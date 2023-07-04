@@ -8,6 +8,10 @@
   top: calc(var(--header-height) * -1);
 }
 
+:focus {
+  outline: var(--default_focus);
+}
+
 #menu-content {
   display: none;
   position: absolute;
@@ -42,6 +46,7 @@
   margin-right: auto;
   width: 40px;
   height: 40px;
+  border: 2px solid transparent;
   position: absolute;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);

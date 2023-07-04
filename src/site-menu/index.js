@@ -2,22 +2,21 @@ import styles from './site-menu.css?inline';
 import cssVariables from '../styles/variables.css?inline';
 
 const SiteMenuTemplate = document.createElement('template');
-SiteMenuTemplate.innerHTML = `
-        <style>
-          	${styles}\n
-           ${cssVariables}
-        </style>
-        <div id="menu">
-  				<div id="nav-icon" class="menu-toggle-icon">
-    					<span></span>
-    					<span></span>
-    					<span></span>
-    					<span></span>
-  			  </div>
-          <div id="menu-content"></div>
-    			<slot></slot>
-        </div>  
-      `;
+SiteMenuTemplate.innerHTML = /* html */ `
+	<style>
+	    ${styles}\n ${cssVariables}
+	</style>
+	<div id="menu">
+	    <div id="nav-icon" class="menu-toggle-icon" tabindex="0" role="button" aria-haspopup="true" aria-label="Meny">
+	        <span></span>
+	        <span></span>
+	        <span></span>
+	        <span></span>
+	    </div>
+	    <div id="menu-content"></div>
+	    <slot></slot>
+	</div>
+	`;
 
 /**
  * Miles Site Menu
@@ -25,27 +24,15 @@ SiteMenuTemplate.innerHTML = `
 class SiteMenu extends HTMLElement {
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: 'open' });
+    const shadow = this.attachShadow({
+      mode: 'open',
+    });
     shadow.append(SiteMenuTemplate.content.cloneNode(true));
     this.burgerEl = shadow.querySelector('#nav-icon');
     this.menuContent = shadow.querySelector('#menu-content');
 
-    this.burgerEl.setAttribute('tabindex', '0');
-    this.burgerEl.setAttribute('role', 'button');
-    this.burgerEl.setAttribute('aria-haspopup', 'true');
     this.burgerEl.setAttribute('aria-expanded', 'false');
-    this.burgerEl.setAttribute('aria-label', 'Meny');
   }
-
-  /*
-  static get observedAttributes() {
-    return [];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-
-  }
-  */
 
   connectedCallback() {
     this.shadowRoot
