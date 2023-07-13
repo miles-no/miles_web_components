@@ -18,14 +18,13 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.8",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
-    "@storybook/addon-a11y": "^7.0.22",
-    "@storybook/addon-essentials": "^7.0.20",
-    "@storybook/addon-links": "^7.0.20",
-    "@storybook/blocks": "^7.0.20",
-    "@storybook/builder-vite": "^7.0.22",
-    "@storybook/html-vite": "^7.0.20",
-    "@storybook/web-components": "^7.0.20",
-    "@storybook/web-components-vite": "^7.0.20",
+    "@storybook/addon-a11y": "^7.0.27",
+    "@storybook/addon-essentials": "^7.0.27",
+    "@storybook/addon-links": "^7.0.27",
+    "@storybook/blocks": "^7.0.27",
+    "@storybook/html-vite": "^7.0.27",
+    "@storybook/web-components": "^7.0.27",
+    "@storybook/web-components-vite": "^7.0.27",
     "eslint": "^8.33.0",
     "eslint-mdx": "^2.0.5",
     "eslint-plugin-mdx": "^2.0.5",
@@ -39,7 +38,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.63.4",
-    "storybook": "^7.0.20",
+    "storybook": "^7.0.27",
     "vite": "^4.2.0"
   }
 }
