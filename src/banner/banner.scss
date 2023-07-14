@@ -33,7 +33,9 @@
 	}
 
 	&__content {
+		align-items: flex-end;
 		bottom: 0;
+		color: var(--miles_secondary_four);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -41,6 +43,10 @@
 		position: absolute;
 		width: 100%;
 		z-index: 1;
+
+		.reverse & {
+			align-items: flex-start;
+		}
 
 		&::before {
 			background-color: var(--miles_primary_light);
@@ -51,38 +57,30 @@
 			position: absolute;
 			top: 0;
 			width: 100%;
-			z-index: 0;
-		}
-
-		h1,
-		p {
-			color: var(--miles_secondary_four);
-			line-height: 120%;
-			margin-bottom: 0;
-			margin-left: 0;
-			max-width: 100%;
-			padding: 0;
-			position: relative;
-			z-index: 1;
-
-			@media (min-width: 900px) {
-				max-width: 50%;
-			}
+			z-index: -1;
 		}
 
 		h1 {
 			font-size: 32px;
-			line-height: 120%;
-			margin-top: 0;
+			line-height: 1.2;
+			margin: 0 0 1.5rem;
+			max-width: 100%;
+			padding: 0;
 
 			@media (min-width: 900px) {
 				font-size: 48px;
+				max-width: 50%;
 			}
 		}
 
 		p {
 			font-size: 1.5rem;
+			line-height: 1.2;
 			margin-top: 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 
 			@media (min-width: 900px) {
 				font-size: 2rem;
@@ -104,5 +102,9 @@
 				}
 			}
 		}
+	}
+
+	&__container {
+		max-width: calc((var(--content_width_max) / 2) - 4rem);
 	}
 }
