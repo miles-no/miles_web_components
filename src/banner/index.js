@@ -13,8 +13,12 @@ template.innerHTML = `
 	</style>
 	<div class="banner">
 		<div class="banner__content">
-			<h1 id="title"></h1>
-			<p id="slogan"></p>
+          <div class="banner__container">
+              <h1 id="title"></h1>
+              <div class="banner__inner">
+                  <slot></slot>
+              </div>
+          </div>
 		</div>
 		<div class="banner__image"></div>
 	</div>
@@ -24,15 +28,31 @@ class MilesBanner extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: 'open' });
+
     shadow.appendChild(template.content.cloneNode(true));
+
     this.banner = shadow.querySelector('.banner');
     this.bannerImage = shadow.querySelector('.banner__image');
     this.titleEl = shadow.querySelector('#title');
-    this.sloganEl = shadow.querySelector('#slogan');
   }
 
   static get observedAttributes() {
-    return ['image', 'title', 'slogan', 'variant', 'reverse'];
+    return ['image', 'title', 'variant', 'reverse'];
+  }
+
+  connectedCallback() {
+    const container = this.shadowRoot.querySelector('.banner__inner');
+    const children = this.childNodes;
+    if (children.length > 0 && container) {
+
+      while(container.firstChild) {
+        container.removeChild(container.firstChild);
+      }
+
+      for (let i = 0; i < children.length; i++) {
+        container.appendChild(children[i].cloneNode(true));
+      }
+    }
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -42,10 +62,6 @@ class MilesBanner extends HTMLElement {
 
     if (name === 'title') {
       this.titleEl.textContent = newValue;
-    }
-
-    if (name === 'slogan') {
-      this.sloganEl.textContent = newValue;
     }
 
     if (name === 'reverse' && newValue === 'true') {
