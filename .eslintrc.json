@@ -16,7 +16,8 @@
     // override default options
     "no-unused-vars": 1,
     "wc/no-invalid-element-name": "error",
-    "wc/no-typos": "warn"
+    "wc/no-typos": "warn",
+    "xss/no-mixed-html": 1
   },
   "overrides": [],
   "plugins": ["xss", "wc"],

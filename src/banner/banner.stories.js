@@ -1,5 +1,3 @@
-import { propsToAttrs } from '../storybook.utils.js';
-
 export default {
   title: 'Miles/Components',
   tags: ['autodocs'],
