@@ -56,7 +56,7 @@ class MilesFagbloggTeaser extends HTMLElement {
   disconnectedCallback() {}
 
   goToPost = e => {
-    window.location.href = escape(e.target.dataset.post);
+    window.location.href = encodeURI(e.target.dataset.post);
   };
 }
 
