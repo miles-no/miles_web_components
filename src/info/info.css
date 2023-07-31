@@ -3,7 +3,7 @@
   color: var(--miles_primary_light);
 }
 
-:focus {
+.info:focus {
   outline: var(--default_focus);
   outline-width: 4px;
 }
