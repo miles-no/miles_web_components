@@ -3,13 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 :root {
-    --miles_primary_dark: #b72318; /* Miles-rød */
-    --miles_primary_light: #fbf0e5; /* Krem */
-    --miles_secondary_one: #004047; /* Sjøgrønn */
-    --miles_secondary_two: #78e8db; /* Turkis */
-    --miles_secondary_three: #000000; /* Sort */
-    --miles_secondary_four: #450d21; /* Burgunder */
-    --miles_secondary_five: #ff303b; /* korall */
+    --miles_primary_dark: #b72318;
+    /* Miles-rød */
+    --miles_primary_light: #fbf0e5;
+    /* Krem */
+    --miles_secondary_one: #004047;
+    /* Sjøgrønn */
+    --miles_secondary_two: #78e8db;
+    /* Turkis */
+    --miles_secondary_three: #000000;
+    /* Sort */
+    --miles_secondary_four: #450d21;
+    /* Burgunder */
+    --miles_secondary_five: #ff303b;
+    /* korall */
 
     --miles_link_color: #183f46;
     --miles_link_color_hover: #94e5db;
@@ -47,9 +54,13 @@
     --halve_margin_offset_large: calc(100vw - var(--content_width));
 
     --page-wrap: clamp(320px, 100%, var(--content_width_max));
-    --mobile-horizontal-space: 1rem; /* 1rem = 16px (based on body font-size */
-    --cv-filter-max-columns: 5; /* The maximum number of columns inside cv-filter (Folkene) */
+    --mobile-horizontal-space: 1rem;
+    /* 1rem = 16px (based on body font-size */
+    --cv-filter-max-columns: 5;
+    /* The maximum number of columns inside cv-filter (Folkene) */
     --profile-card-width: 16rem;
+
+    --default_focus: 2px solid var(--miles_secondary_two);
 }
 
 /*!
@@ -574,6 +585,7 @@ h2 {
   */
     /* margin: 42px 0; */
 }
+
 /* line 64, sass/base/_typography.scss */
 /*
 h2.entry-title {
@@ -590,12 +602,14 @@ h3 {
     font-size: var(--miles-h3);
     line-height: var(--miles-h3-lineheight);
 }
+
 /* line 79, sass/base/_typography.scss */
 h2.banner-title.banner-title,
 h3.banner-title {
     margin-top: 0;
     margin-bottom: 0;
 }
+
 @media (min-width: 768px) {
     /* line 83, sass/base/_typography.scss */
     h2.banner-title.feature-title,
@@ -612,6 +626,7 @@ h4 {
     margin-top: 28px;
     margin-bottom: 28px;
 }
+
 /* line 99, sass/base/_typography.scss */
 h4.widget-title {
     margin: 0;
@@ -643,6 +658,7 @@ p,
 .banner_text {
     line-height: var(--miles-line-height);
 }
+
 /* line 130, sass/base/_typography.scss */
 p.has-large-font-size,
 .banner_text.has-large-font-size {
@@ -731,6 +747,7 @@ ol {
 ul {
     list-style: disc;
 }
+
 /* line 19, sass/base/_elements.scss */
 .wp-block-pb-accordion-item ul {
     padding-left: 0;
@@ -792,6 +809,13 @@ table {
     width: 100%;
 }
 
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+:focus {
+    outline: var(--default_focus);
+}
+
 /**
  * Mixin transition cross browser
  */
@@ -851,14 +875,17 @@ table {
 .site-footer a:visited {
     color: white !important;
 }
+
 /* line 13, sass/layout/_footer.scss */
 .site-footer a:hover {
     text-decoration: underline;
 }
+
 /* line 15, sass/layout/_footer.scss */
 .site-footer .footer-widgetarea-container {
     /* margin: 0 28px; */
 }
+
 @media screen and (min-width: 768px) {
     /* line 15, sass/layout/_footer.scss */
     .site-footer .footer-widgetarea-container {
@@ -866,10 +893,12 @@ table {
         margin: 0 auto;
     }
 }
+
 /* line 24, sass/layout/_footer.scss */
 .site-footer .footer-wrapper {
     display: block;
 }
+
 @media screen and (min-width: 1025px) {
     /* line 24, sass/layout/_footer.scss */
     .site-footer .footer-wrapper {
@@ -877,6 +906,7 @@ table {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
 @media screen and (min-width: 768px) {
     /* line 33, sass/layout/_footer.scss */
     .site-footer .footer-contact-wrapper {
@@ -885,40 +915,48 @@ table {
         grid-column: span 3;
     }
 }
+
 /* line 43, sass/layout/_footer.scss */
 .site-footer .footer-socials-widgetarea {
     display: flex;
     margin-top: 28px;
     align-items: center;
 }
+
 @media screen and (min-width: 1025px) {
     /* line 43, sass/layout/_footer.scss */
     .site-footer .footer-socials-widgetarea {
         margin-top: 0;
     }
 }
+
 /* line 51, sass/layout/_footer.scss */
 .site-footer .footer-info-widgetarea {
     margin-top: 28px;
 }
+
 /* line 57, sass/layout/_footer.scss */
 .site-footer a {
     color: white;
     text-decoration: none;
 }
+
 /* line 62, sass/layout/_footer.scss */
 .site-footer ul.mks_social_widget_ul {
     margin: 0;
     padding-left: 0;
 }
+
 /* line 66, sass/layout/_footer.scss */
 .site-footer ul.mks_social_widget_ul a {
     background-color: white;
 }
+
 /* line 70, sass/layout/_footer.scss */
 .site-footer ul.mks_social_widget_ul a:before {
     color: var(--miles_primary_dark);
 }
+
 /* line 1, sass/layout/_header.scss */
 .site-header {
     background-color: var(--miles_primary_dark);
@@ -949,11 +987,13 @@ table {
         margin: auto;
     }
 }
+
 /* line 22, sass/layout/_header.scss */
 .site-header .site-branding {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
+
 /* line 30, sass/layout/_header.scss */
 .site-header .site-description,
 .site-header .site-title {
@@ -974,10 +1014,12 @@ table {
 .open-menu .fixed {
     mix-blend-mode: normal;
 }
+
 /* line 49, sass/layout/_header.scss */
 .open-menu .fixed .miles-logo .st0 {
     fill: white;
 }
+
 #wpadminbar {
     position: fixed !important;
 }
@@ -996,6 +1038,7 @@ table {
 .fixed .miles-logo .st0 {
     fill: var(--miles_primary_dark) !important;
 }
+
 @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
     /* line 79, sass/layout/_header.scss */
     .fixed .miles-logo .st0 {
@@ -1024,6 +1067,7 @@ table {
     max-width: 100svw;
     padding: 0 var(--mobile-horizontal-space);
 }
+
 @media (min-width: 768px) {
     .search-container,
     .error-404,
@@ -1089,6 +1133,7 @@ table {
     padding-top: 28px;
     padding-bottom: 28px;
 }
+
 @media (min-width: 768px) {
     /* line 95, sass/layout/_grid.scss */
     .has-background *[class*='__inner-container'],
@@ -1097,6 +1142,7 @@ table {
         padding-bottom: 56px;
     }
 }
+
 @media (min-width: 1025px) {
     /* line 95, sass/layout/_grid.scss */
     .has-background *[class*='__inner-container'],
@@ -1130,6 +1176,7 @@ table {
 .top-padding {
     padding-top: 28px;
 }
+
 @media (min-width: 768px) {
     /* line 133, sass/layout/_grid.scss */
     .top-padding {
@@ -1141,6 +1188,7 @@ table {
 .bottom-padding {
     padding-bottom: 28px;
 }
+
 @media (min-width: 768px) {
     /* line 140, sass/layout/_grid.scss */
     .bottom-padding {
@@ -1207,6 +1255,7 @@ Push / Pull grid classes
     margin-top: 28px;
     margin-bottom: 28px;
 }
+
 /* line 197, sass/layout/_grid.scss */
 .wp-block-group > h1.collapse,
 .wp-block-group > h2.collapse,
@@ -1230,6 +1279,7 @@ Push / Pull grid classes
 *[class*='__inner-container']:first-child > h5 {
     margin-top: 0;
 }
+
 /* line 211, sass/layout/_grid.scss */
 *[class*='__inner-container']:first-child > h1.top-padding,
 *[class*='__inner-container']:first-child > h2.top-padding,
@@ -1250,6 +1300,7 @@ Push / Pull grid classes
     /* margin-top: 2rem; */
     /* margin-bottom: 2rem; */
 }
+
 @media (min-width: 768px) {
     /* line 9, sass/layout/_front-end-only.scss */
     *[class*='wp-block'],
@@ -1260,6 +1311,7 @@ Push / Pull grid classes
         /* margin-bottom: 56px; */
     }
 }
+
 @media (min-width: 1025px) {
     /* line 9, sass/layout/_front-end-only.scss */
     *[class*='wp-block'],
@@ -1270,6 +1322,7 @@ Push / Pull grid classes
         /* margin-bottom: 8em; */
     }
 }
+
 /* line 25, sass/layout/_front-end-only.scss */
 *[class*='wp-block']:nth-child(1),
 *[class^='wp-block']:nth-child(1),
@@ -1311,6 +1364,7 @@ Push / Pull grid classes
     float: none;
     /* margin-left: 0; */
 }
+
 @media (min-width: 768px) {
     /* line 31, sass/layout/_utilities.scss */
     .custom-block-feature-block.alignright {
@@ -1324,6 +1378,7 @@ Push / Pull grid classes
     float: none;
     margin-right: 0;
 }
+
 @media (min-width: 768px) {
     /* line 41, sass/layout/_utilities.scss */
     .custom-block-feature-block.alignleft {
@@ -1354,6 +1409,7 @@ Push / Pull grid classes
     width: 1px;
     word-wrap: normal !important;
 }
+
 /* line 74, sass/layout/_utilities.scss */
 .screen-reader-text:focus {
     background-color: #f1f1f1;
@@ -1410,25 +1466,30 @@ Push / Pull grid classes
 a {
     color: var(--miles_primary_dark);
 }
+
 /* line 4, sass/navigation/_nav-links.scss */
 a:visited {
     color: var(--miles_link_color);
 }
+
 /* line 8, sass/navigation/_nav-links.scss */
 a:hover,
 a:focus,
 a:active {
     background-color: var(--miles_link_color_hover);
 }
+
 /* line 14, sass/navigation/_nav-links.scss */
 a:focus {
-    outline: thin dotted #2b353f;
+    outline: 2px solid var(--miles_link_color_hover);
 }
+
 /* line 18, sass/navigation/_nav-links.scss */
 a:hover,
 a:active {
     outline: 0;
 }
+
 /* line 22, sass/navigation/_nav-links.scss */
 .has-miles-red-background-color a,
 .has-black-background-color a,
@@ -1436,6 +1497,7 @@ a:active {
     color: white !important;
     text-decoration: none;
 }
+
 @media (min-width: 1025px) {
     /* line 22, sass/navigation/_nav-links.scss */
     .has-miles-red-background-color a,
@@ -1444,6 +1506,7 @@ a:active {
         font-size: 23px;
     }
 }
+
 /* line 30, sass/navigation/_nav-links.scss */
 .has-miles-red-background-color a:hover,
 .has-black-background-color a:hover,
@@ -1456,6 +1519,7 @@ a.fagblogg-thumbnail {
     color: #2b353f;
     text-decoration: none;
 }
+
 /* line 41, sass/navigation/_nav-links.scss */
 a.fagblogg-thumbnail:hover {
     color: var(--miles_primary_dark);
@@ -1468,12 +1532,14 @@ a.fagblogg-thumbnail:hover {
     margin-top: 42px;
     margin-bottom: 28px;
 }
+
 /* line 53, sass/navigation/_nav-links.scss */
 .single-menneskene .comment-navigation,
 .single-menneskene .posts-navigation,
 .single-menneskene .post-navigation {
     margin-top: 0;
 }
+
 /* line 57, sass/navigation/_nav-links.scss */
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
@@ -1483,6 +1549,7 @@ a.fagblogg-thumbnail:hover {
     margin-right: auto;
     margin-left: auto;
 }
+
 @media (min-width: 768px) {
     /* line 57, sass/navigation/_nav-links.scss */
     .comment-navigation .nav-links,
@@ -1491,6 +1558,7 @@ a.fagblogg-thumbnail:hover {
         max-width: var(--content_width);
     }
 }
+
 /* line 65, sass/navigation/_nav-links.scss */
 .single-menneskene .comment-navigation .nav-links,
 .single-menneskene .posts-navigation .nav-links,
@@ -1499,6 +1567,7 @@ a.fagblogg-thumbnail:hover {
     background-size: 27px;
     padding-left: 36px;
 }
+
 @media (min-width: 1025px) {
     /* line 65, sass/navigation/_nav-links.scss */
     .single-menneskene .comment-navigation .nav-links,
@@ -1507,6 +1576,7 @@ a.fagblogg-thumbnail:hover {
         max-width: calc((var(--content_width) / 3) * 2);
     }
 }
+
 /* line 78, sass/navigation/_nav-links.scss */
 .comment-navigation .nav-links .nav-previous,
 .posts-navigation .nav-links .nav-previous,
@@ -1515,6 +1585,7 @@ a.fagblogg-thumbnail:hover {
     background-size: 27px;
     padding-left: 36px;
 }
+
 /* line 84, sass/navigation/_nav-links.scss */
 .comment-navigation .nav-links .nav-next,
 .posts-navigation .nav-links .nav-next,
@@ -1525,18 +1596,21 @@ a.fagblogg-thumbnail:hover {
     background-size: 27px;
     padding-right: 36px;
 }
+
 /* line 92, sass/navigation/_nav-links.scss */
 .comment-navigation .nav-links .nav-subtitle,
 .posts-navigation .nav-links .nav-subtitle,
 .post-navigation .nav-links .nav-subtitle {
     display: none;
 }
+
 /* line 94, sass/navigation/_nav-links.scss */
 .comment-navigation .nav-links a,
 .posts-navigation .nav-links a,
 .post-navigation .nav-links a {
     text-decoration: none;
 }
+
 /* line 97, sass/navigation/_nav-links.scss */
 .comment-navigation .nav-links a:hover,
 .posts-navigation .nav-links a:hover,
@@ -1554,11 +1628,13 @@ Other menus
     align-items: center;
     justify-content: flex-end;
 }
+
 /* line 17, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu {
     display: flex;
     flex-flow: row wrap;
 }
+
 /* line 20, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li:after {
     content: '—';
@@ -1569,26 +1645,32 @@ Other menus
     font-weight: 700;
     background: transparent;
 }
+
 /* line 35, sass/navigation/_other-menus.scss */
 .open-menu .cities-navigation ul.menu li:after {
     color: rgba(255, 255, 255, 0.5);
 }
+
 /* line 37, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu > li a {
     color: #999;
 }
+
 /* line 41, sass/navigation/_other-menus.scss */
 .open-menu .cities-navigation ul.menu > li a {
     color: rgba(255, 255, 255, 0.5);
 }
+
 /* line 50, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li:last-child:after {
     display: none;
 }
+
 /* line 55, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li:last-child ul {
     right: 0;
 }
+
 /* line 59, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li > ul.sub-menu {
     min-width: 200px;
@@ -1600,20 +1682,24 @@ Other menus
     padding: 21px;
     padding-left: 0;
 }
+
 /* line 69, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li > ul.sub-menu a {
     color: white;
     text-transform: initial;
     font-size: 17.5px;
 }
+
 /* line 76, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li > ul.sub-menu li:focus {
     outline: thin dotted;
 }
+
 /* line 83, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li > ul.sub-menu li:after {
     display: none;
 }
+
 /* line 87, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li > ul.sub-menu li > ul.sub-menu {
     right: 100%;
@@ -1621,18 +1707,22 @@ Other menus
     transition: all 200ms ease-in-out 0s;
     opacity: 0;
 }
+
 /* line 93, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li > ul.sub-menu li:hover > ul.sub-menu {
     opacity: 1;
 }
+
 /* line 107, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu a:hover {
     color: #2b353f;
 }
+
 /* line 110, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu .city-menu-image {
     display: none;
 }
+
 /* line 114, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu .current_page_item > a,
 .cities-navigation ul.menu .current-menu-item > a,
@@ -1640,6 +1730,7 @@ Other menus
 .cities-navigation ul.menu .current-menu-ancestor > a {
     color: #2b353f;
 }
+
 /* line 122, sass/navigation/_other-menus.scss */
 .open-menu .cities-navigation ul.menu .current_page_item > a,
 .open-menu .cities-navigation ul.menu .current-menu-item > a,
@@ -1647,6 +1738,7 @@ Other menus
 .open-menu .cities-navigation ul.menu .current-menu-ancestor > a {
     color: white;
 }
+
 /* line 128, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu .current_page_item > a:focus,
 .cities-navigation ul.menu .current-menu-item > a:focus,
@@ -1654,6 +1746,7 @@ Other menus
 .cities-navigation ul.menu .current-menu-ancestor > a:focus {
     outline: thin dotted;
 }
+
 /* line 133, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li.focus > ul,
 .cities-navigation ul.menu li:hover > ul {
@@ -1663,6 +1756,7 @@ Other menus
     opacity: 1;
     display: block;
 }
+
 /* line 141, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li.focus > ul li,
 .cities-navigation ul.menu li:hover > ul li {
@@ -1670,17 +1764,20 @@ Other menus
     padding-top: 14px;
     padding-left: 21px;
 }
+
 /* line 145, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li.focus > ul li:nth-child(1),
 .cities-navigation ul.menu li:hover > ul li:nth-child(1) {
     padding-top: 0;
 }
+
 /* line 147, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li.focus > ul li:before,
 .cities-navigation ul.menu li:hover > ul li:before {
     content: '»';
     padding-right: 7px;
 }
+
 /* line 152, sass/navigation/_other-menus.scss */
 .cities-navigation ul.menu li.focus > ul a,
 .cities-navigation ul.menu li:hover > ul a {
@@ -1704,6 +1801,7 @@ Other menus
     outline: none;
     padding-right: 0;
 }
+
 /* line 13, sass/navigation/_mega-menu.scss */
 .menu-toggle:hover {
     background-color: transparent;
@@ -1722,6 +1820,7 @@ Other menus
     transition: 0.25s ease-in-out;
     cursor: pointer;
 }
+
 /* line 40, sass/navigation/_mega-menu.scss */
 .fixed #nav-icon {
     /* color: #fff; */
@@ -1741,18 +1840,22 @@ Other menus
     transform: rotate(0deg);
     transition: 0.25s ease-in-out;
 }
+
 /* line 71, sass/navigation/_mega-menu.scss */
 .mega-menu-open #nav-icon span {
     background: #fff;
 }
+
 /* line 75, sass/navigation/_mega-menu.scss */
 .fixed #nav-icon span {
     background: black;
 }
+
 /* line 78, sass/navigation/_mega-menu.scss */
 .mega-menu-open .fixed #nav-icon span {
     background: #fff;
 }
+
 @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
     /* line 75, sass/navigation/_mega-menu.scss */
     .fixed #nav-icon span {
@@ -1782,16 +1885,19 @@ Other menus
     width: 0%;
     left: 50%;
 }
+
 /* line 111, sass/navigation/_mega-menu.scss */
 .main-navigation .open-menu #nav-icon span:nth-child(2) {
     top: 1em;
     transform: rotate(45deg);
 }
+
 /* line 118, sass/navigation/_mega-menu.scss */
 .main-navigation .open-menu #nav-icon span:nth-child(3) {
     top: 1em;
     transform: rotate(-45deg);
 }
+
 /* line 125, sass/navigation/_mega-menu.scss */
 .main-navigation .open-menu #nav-icon span:nth-child(4) {
     top: 18px;
@@ -1805,6 +1911,7 @@ Other menus
         display: none;
     }
 }
+
 /*===============================
   TURN ON MEGA MENU
 ==================================*/
@@ -1833,12 +1940,14 @@ Other menus
     column-gap: 28px;
     row-gap: 28px;
 }
+
 @media (min-width: 600px) {
     /* line 149, sass/navigation/_mega-menu.scss */
     .menu-topmenu .mega-menu-grid {
         grid-template-columns: repeat(2, auto);
     }
 }
+
 @media (min-width: 1025px) {
     /* line 149, sass/navigation/_mega-menu.scss */
     .menu-topmenu .mega-menu-grid {
@@ -1856,20 +1965,24 @@ Other menus
     display: inline-block;
     margin-right: 1.5em;
 }
+
 /* line 174, sass/navigation/_mega-menu.scss */
 .menu-topmenu > .menu-item:last-child {
     margin-right: 0;
 }
+
 /* line 175, sass/navigation/_mega-menu.scss */
 .menu-topmenu > .menu-item > a {
     color: var(--miles_primary_dark);
     font-size: 18px;
     line-height: 1;
 }
+
 /* line 179, sass/navigation/_mega-menu.scss */
 .menu-topmenu > .menu-item > a:hover {
     text-decoration: none;
 }
+
 /* line 180, sass/navigation/_mega-menu.scss */
 .open-menu .menu-topmenu > .menu-item > a {
     color: #fff;
@@ -1892,10 +2005,12 @@ Other menus
         right: 2rem;
     }
 }
+
 /* line 191, sass/navigation/_mega-menu.scss */
 .menu-topmenu > .menu-item.has-hamburger .item-title {
     margin-right: 8px;
 }
+
 @media (max-width: 768px) {
     /* line 191, sass/navigation/_mega-menu.scss */
     .menu-topmenu > .menu-item.has-hamburger .item-title {
@@ -1926,6 +2041,7 @@ Other menus
     padding: 0 20px;
     margin-left: 0;
 }
+
 @media screen and (min-width: 768px) {
     /* line 205, sass/navigation/_mega-menu.scss */
     .mega-menu-block {
@@ -1933,6 +2049,7 @@ Other menus
         padding: 0 5em;
     }
 }
+
 .sticky-menu .mega-menu-block {
     top: 4.6em;
 }
@@ -2018,21 +2135,25 @@ Other menus
         opacity: 0;
         /* cs-removed this:  transform: translateY(40px); */
     }
+
     100% {
         opacity: 1;
         /* cs-removed this: transform: translateY(0px); */
     }
 }
+
 /* line 267, sass/navigation/_mega-menu.scss */
 .widget_nav_menu {
     margin-bottom: 1em;
 }
+
 @media (min-width: 768px) {
     /* line 267, sass/navigation/_mega-menu.scss */
     .widget_nav_menu {
         margin-bottom: 1.5em;
     }
 }
+
 /* line 274, sass/navigation/_mega-menu.scss */
 .widget_nav_menu h3.widget-title {
     margin: 0;
@@ -2042,6 +2163,7 @@ Other menus
     font-weight: 600;
     color: white;
 }
+
 /* line 285, sass/navigation/_mega-menu.scss */
 .widget_nav_menu .menu-item > a {
     color: white;
@@ -2050,31 +2172,38 @@ Other menus
     transition: all 120ms ease-in-out 0s;
     text-decoration: none;
 }
+
 /* line 295, sass/navigation/_mega-menu.scss */
 .widget_nav_menu .menu-item > a:hover {
     border-bottom: solid 1px white;
 }
+
 /* line 298, sass/navigation/_mega-menu.scss */
 .widget_nav_menu .sub-menu {
     display: flex;
     flex-flow: wrap column;
 }
+
 /* line 301, sass/navigation/_mega-menu.scss */
 .widget_nav_menu .sub-menu .menu-item {
     margin-left: 1em;
 }
+
 /* line 302, sass/navigation/_mega-menu.scss */
 .widget_nav_menu .sub-menu .menu-item a {
     font-weight: normal;
 }
+
 /* line 303, sass/navigation/_mega-menu.scss */
 .widget_nav_menu .sub-menu .menu-item:last-child > a {
     padding-bottom: 0;
 }
+
 /* line 311, sass/navigation/_mega-menu.scss */
 .widget_nav_menu:nth-child(1) {
     animation: widget-anim 0.12s forwards;
 }
+
 /* line 311, sass/navigation/_mega-menu.scss */
 .widget_nav_menu:nth-child(2) {
     animation: widget-anim 0.24s forwards;
@@ -2084,6 +2213,7 @@ Other menus
 .widget_nav_menu:nth-child(3) {
     animation: widget-anim 0.36s forwards;
 }
+
 /* line 311, sass/navigation/_mega-menu.scss */
 .widget_nav_menu:nth-child(4) {
     animation: widget-anim 0.48s forwards;
@@ -2131,6 +2261,7 @@ Other menus
 .has-miles-red-background-color {
     background-color: var(--miles_primary_dark);
 }
+
 /* line 46, sass/blocks/_base.scss */
 .large-banner-block .has-miles-red-background-color {
     background-color: rgba(183, 35, 24, 0.9);
@@ -2145,6 +2276,7 @@ Other menus
 .has-dark-blue-background-color {
     background-color: #051d34;
 }
+
 /* line 57, sass/blocks/_base.scss */
 .custom-block-large-banner .has-dark-blue-background-color {
     background-color: rgba(5, 29, 52, 0.9);
@@ -2179,6 +2311,7 @@ Other menus
 .has-white-background-color {
     background-color: #fff;
 }
+
 /* line 81, sass/blocks/_base.scss */
 .large-banner-block .has-white-background-color {
     background-color: rgba(255, 255, 255, 0.9);
@@ -2200,10 +2333,12 @@ Other menus
 .wp-block-button__link:hover {
     text-decoration: none;
 }
+
 /* line 106, sass/blocks/_base.scss */
 .wp-block-button__link:not(.has-text-color) {
     color: white;
 }
+
 /* line 108, sass/blocks/_base.scss */
 .wp-block-button__link:not(.has-text-color):hover {
     color: white;
@@ -2271,12 +2406,14 @@ article.has-post-thumbnail img {
         margin-left: 0;
     }
 }
+
 @media (min-width: 600px) and (max-width: 768px) {
     /* line 44, sass/blocks/_core-blocks.scss */
     .wp-block-column:nth-child(2n) {
         margin-left: 0;
     }
 }
+
 /* line 51, sass/blocks/_core-blocks.scss */
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
     max-width: 100%;
@@ -2309,6 +2446,7 @@ article.has-post-thumbnail img {
 .block-editor-rich-text__editable a {
     text-decoration: none;
 }
+
 /* line 81, sass/blocks/_core-blocks.scss */
 .block-editor-rich-text__editable a:hover {
     text-decoration: underline;
@@ -2330,6 +2468,7 @@ blockquote.wp-block-quote {
     margin: 28px 0 !important;
     padding: 84px 28px;
 }
+
 /* line 105, sass/blocks/_core-blocks.scss */
 blockquote.floatleft,
 blockquote.wp-block-quote.floatleft {
@@ -2337,6 +2476,7 @@ blockquote.wp-block-quote.floatleft {
     float: left;
     margin-right: 28px;
 }
+
 /* line 111, sass/blocks/_core-blocks.scss */
 blockquote.floatright,
 blockquote.wp-block-quote.floatright {
@@ -2344,6 +2484,7 @@ blockquote.wp-block-quote.floatright {
     float: right;
     margin-left: 28px;
 }
+
 /* line 117, sass/blocks/_core-blocks.scss */
 blockquote p,
 blockquote.wp-block-quote p {
@@ -2354,6 +2495,7 @@ blockquote.wp-block-quote p {
     font-weight: 700;
     color: black;
 }
+
 /* line 126, sass/blocks/_core-blocks.scss */
 blockquote cite,
 blockquote .wp-block-quote__citation,
@@ -2368,6 +2510,7 @@ blockquote.wp-block-quote .wp-block-quote__citation {
     text-transform: uppercase;
     font-style: normal;
 }
+
 /* line 138, sass/blocks/_core-blocks.scss */
 blockquote.is-style-large,
 blockquote.wp-block-quote.is-style-large {
@@ -2376,6 +2519,7 @@ blockquote.wp-block-quote.is-style-large {
     padding: 0;
     background: transparent;
 }
+
 /* line 144, sass/blocks/_core-blocks.scss */
 blockquote.is-style-large p,
 blockquote.wp-block-quote.is-style-large p {
@@ -2384,6 +2528,7 @@ blockquote.wp-block-quote.is-style-large p {
     font-style: normal;
     color: black;
 }
+
 /* line 152, sass/blocks/_core-blocks.scss */
 blockquote.is-style-large cite,
 blockquote.is-style-large .wp-block-quote__citation,
@@ -2391,6 +2536,7 @@ blockquote.wp-block-quote.is-style-large cite,
 blockquote.wp-block-quote.is-style-large .wp-block-quote__citation {
     font-size: 14px;
 }
+
 /* line 160, sass/blocks/_core-blocks.scss */
 blockquote p:last-of-type,
 blockquote.wp-block-quote p:last-of-type {
@@ -2408,6 +2554,7 @@ hr {
     height: 32px;
     position: relative;
 }
+
 /* line 177, sass/blocks/_core-blocks.scss */
 .wp-block-separator::before,
 hr::before {
@@ -2429,16 +2576,19 @@ img {
     max-width: 100%;
     height: auto;
 }
+
 /* line 197, sass/blocks/_core-blocks.scss */
 img.alignleft {
     float: left;
     margin: 0 56px 56px 0;
 }
+
 /* line 202, sass/blocks/_core-blocks.scss */
 img.alignright {
     float: right;
     margin: 0 0 56px 56px;
 }
+
 /* line 207, sass/blocks/_core-blocks.scss */
 img.aligncenter {
     margin-left: auto;
@@ -2449,6 +2599,7 @@ img.aligncenter {
 .wp-block-image img {
     width: 100%;
 }
+
 /* line 218, sass/blocks/_core-blocks.scss */
 .wp-block-image figcaption {
     text-align: left;
@@ -2475,6 +2626,7 @@ img.aligncenter {
     border-collapse: collapse;
     width: 100%;
 }
+
 /* line 245, sass/blocks/_core-blocks.scss */
 .wp-block-table td,
 .wp-block-table th {
@@ -2523,12 +2675,14 @@ img.aligncenter {
         margin-right: 28px;
     }
 }
+
 /* line 292, sass/blocks/_core-blocks.scss */
 .wp-block-group.has-miles-red-background-color,
 .wp-block-group.has-dark-blue-background-color,
 .wp-block-group.has-black-background-color {
     color: white;
 }
+
 /* line 298, sass/blocks/_core-blocks.scss */
 .wp-block-group.has-miles-red-background-color h1,
 .wp-block-group.has-miles-red-background-color h2,
@@ -2553,18 +2707,21 @@ img.aligncenter {
 .wp-block-group.has-black-background-color p {
     color: white;
 }
+
 /* line 302, sass/blocks/_core-blocks.scss */
 .wp-block-group.has-miles-red-background-color .plus-icon .st0,
 .wp-block-group.has-dark-blue-background-color .plus-icon .st0,
 .wp-block-group.has-black-background-color .plus-icon .st0 {
     stroke: white;
 }
+
 /* line 305, sass/blocks/_core-blocks.scss */
 .wp-block-group.has-miles-red-background-color .accordion-content,
 .wp-block-group.has-dark-blue-background-color .accordion-content,
 .wp-block-group.has-black-background-color .accordion-content {
     border-top: solid 1px white;
 }
+
 /* line 307, sass/blocks/_core-blocks.scss */
 .wp-block-group.has-miles-red-background-color .accordion-content:last-child,
 .wp-block-group.has-dark-blue-background-color .accordion-content:last-child,
@@ -2581,18 +2738,21 @@ img.aligncenter {
         flex-grow: initial;
     }
 }
+
 /* Embed blocks
 --------------------------------------------- */
 /* line 326, sass/blocks/_core-blocks.scss */
 .wp-block-embed__wrapper {
     position: relative;
 }
+
 /* line 328, sass/blocks/_core-blocks.scss */
 .wp-block-embed__wrapper:before {
     content: '';
     display: block;
     padding-top: 50%;
 }
+
 /* line 334, sass/blocks/_core-blocks.scss */
 .wp-block-embed__wrapper iframe {
     position: absolute;
@@ -2616,6 +2776,7 @@ img.aligncenter {
 .custom-block-large-banner {
     position: relative;
 }
+
 /* line 10, sass/blocks/_custom-blocks.scss */
 .custom-block-large-banner .large-banner-image {
     background: rgba(63, 18, 33, 0.8);
@@ -2687,6 +2848,7 @@ img.aligncenter {
         line-height: 84px;
         margin: 56px 0;
     }
+
     .front-slogan h1 span {
         margin: 0 0 3rem 0;
         width: 100%;
@@ -2713,27 +2875,32 @@ img.aligncenter {
         min-height: 700px;
     }
 }
+
 @media (min-width: 768px) {
     /* line 19, sass/blocks/_custom-blocks.scss */
     .custom-block-large-banner .large-banner-image.image-desktop {
         min-height: 70vh;
     }
 }
+
 @media (min-width: 768px) {
     /* line 24, sass/blocks/_custom-blocks.scss */
     .custom-block-large-banner .large-banner-image.image-mobile {
         display: none;
     }
 }
+
 /* line 30, sass/blocks/_custom-blocks.scss */
 .custom-block-large-banner .banner-title {
     margin-top: 0;
 }
+
 /* line 33, sass/blocks/_custom-blocks.scss */
 .custom-block-large-banner .large-banner-content {
     padding: 28px;
     text-align: left;
 }
+
 @media (min-width: 768px) {
     /* line 33, sass/blocks/_custom-blocks.scss */
     .custom-block-large-banner .large-banner-content {
@@ -2748,15 +2915,18 @@ img.aligncenter {
         bottom: 0;
     }
 }
+
 /* line 49, sass/blocks/_custom-blocks.scss */
 .custom-block-large-banner .large-banner-content.content-left {
     left: 0;
 }
+
 /* line 51, sass/blocks/_custom-blocks.scss */
 .custom-block-large-banner .large-banner-content.content-right {
     overflow: hidden;
     right: 0;
 }
+
 .custom-block-large-banner .large-banner-content.content-right:after {
     top: 50%;
     right: calc(0em - 7.5em);
@@ -2768,6 +2938,7 @@ img.aligncenter {
     content: ' ';
     font-size: 10px;
 }
+
 /* line 54, sass/blocks/_custom-blocks.scss */
 .custom-block-large-banner .link_wrapper {
     margin-top: calc(28em / 19);
@@ -2783,7 +2954,6 @@ img.aligncenter {
     clear: both;
 }
 
-
 .feature-wrapper {
     display: flex;
     flex-direction: column;
@@ -2794,6 +2964,7 @@ img.aligncenter {
 .feature-image {
     margin: 0;
 }
+
 @media screen and (min-width: 768px) {
     /* line 88, sass/blocks/_custom-blocks.scss */
     .feature-image {
@@ -2803,6 +2974,7 @@ img.aligncenter {
     */
     }
 }
+
 @media screen and (min-width: 768px) {
     /* line 98, sass/blocks/_custom-blocks.scss */
     .alignright .feature-image {
@@ -2811,6 +2983,7 @@ img.aligncenter {
     */
     }
 }
+
 @media screen and (min-width: 768px) {
     /* line 105, sass/blocks/_custom-blocks.scss */
     .alignleft .feature-image {
@@ -2819,6 +2992,7 @@ img.aligncenter {
     */
     }
 }
+
 /* line 110, sass/blocks/_custom-blocks.scss */
 .feature-image img {
     width: 100%;
@@ -2829,6 +3003,7 @@ img.aligncenter {
     margin: 0;
     text-align: left;
 }
+
 @media screen and (max-width: 768px) {
     /* line 115, sass/blocks/_custom-blocks.scss */
     .feature-content {
@@ -2836,6 +3011,7 @@ img.aligncenter {
         margin-left: 14px;
     }
 }
+
 @media screen and (min-width: 768px) {
     /* line 115, sass/blocks/_custom-blocks.scss */
     .feature-content {
@@ -2845,6 +3021,7 @@ img.aligncenter {
     */
     }
 }
+
 @media screen and (min-width: 768px) {
     /* line 127, sass/blocks/_custom-blocks.scss */
     .alignright .feature-content {
@@ -2853,6 +3030,7 @@ img.aligncenter {
     */
     }
 }
+
 @media screen and (min-width: 768px) {
     /* line 133, sass/blocks/_custom-blocks.scss */
     .alignleft .feature-content {
@@ -2861,6 +3039,7 @@ img.aligncenter {
     */
     }
 }
+
 /* line 139, sass/blocks/_custom-blocks.scss */
 .feature-content a.feature-button__link {
     display: inline-block;
@@ -2874,11 +3053,13 @@ img.aligncenter {
     line-height: 28px;
     border-radius: 42px;
 }
+
 /* line 151, sass/blocks/_custom-blocks.scss */
 .feature-content a.feature-button__link:hover,
 .feature-content a.feature-button__link:visited {
     color: white;
 }
+
 /* line 155, sass/blocks/_custom-blocks.scss */
 .has-miles-red-background-color .feature-content a.feature-button__link,
 .has-dark-blue-background-color .feature-content a.feature-button__link,
@@ -2886,6 +3067,7 @@ img.aligncenter {
     background: white;
     color: var(--miles_primary_dark) !important;
 }
+
 /* line 165, sass/blocks/_custom-blocks.scss */
 .feature-content .link_wrapper a.link {
     display: inline-block;
@@ -2893,20 +3075,24 @@ img.aligncenter {
     color: #183f46;
     text-decoration: none;
 }
+
 @media (min-width: 1350px) {
     /* line 165, sass/blocks/_custom-blocks.scss */
     .feature-content .link_wrapper a.link {
         font-size: 23px;
     }
 }
+
 /* line 173, sass/blocks/_custom-blocks.scss */
 .feature-content .link_wrapper a.link:hover {
     text-decoration: underline;
 }
+
 /* line 175, sass/blocks/_custom-blocks.scss */
 .feature-content .link_wrapper a.link:last-child {
     margin-right: 0;
 }
+
 /* line 177, sass/blocks/_custom-blocks.scss */
 .has-miles-red-background-color .feature-content .link_wrapper a.link,
 .has-dark-blue-background-color .feature-content .link_wrapper a.link {
@@ -2923,6 +3109,7 @@ img.aligncenter {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-column-gap: 14px;
 }
+
 @media (min-width: 768px) {
     /* line 188, sass/blocks/_custom-blocks.scss */
     .custom-block-people {
@@ -2931,20 +3118,24 @@ img.aligncenter {
         grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 }
+
 @media (min-width: 1350px) {
     /* line 188, sass/blocks/_custom-blocks.scss */
     .custom-block-people {
         grid-template-columns: repeat(7, minmax(0, 1fr));
     }
 }
+
 /* line 204, sass/blocks/_custom-blocks.scss */
 .custom-block-people .block-title {
     grid-column: 1 / -1;
 }
+
 /* line 208, sass/blocks/_custom-blocks.scss */
 .custom-block-people figure {
     margin: 28px 0 14px;
 }
+
 /* line 211, sass/blocks/_custom-blocks.scss */
 .custom-block-people figure img {
     width: 100%;
@@ -2955,12 +3146,14 @@ img.aligncenter {
     filter: grayscale(1);
     /* Microsoft Edge and Firefox 35+ */
 }
+
 /* line 219, sass/blocks/_custom-blocks.scss */
 .custom-block-people article {
     width: 100%;
     clear: both;
     margin-left: 0;
 }
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     /* line 219, sass/blocks/_custom-blocks.scss */
     .custom-block-people article {
@@ -2969,6 +3162,7 @@ img.aligncenter {
         width: 22.9452054795%;
     }
 }
+
 /* line 237, sass/blocks/_custom-blocks.scss */
 .custom-block-people a {
     text-decoration: none;
@@ -2981,6 +3175,7 @@ img.aligncenter {
    font-size: 18px;
   } */
 }
+
 /* line 249, sass/blocks/_custom-blocks.scss */
 .custom-block-people a:hover {
     color: var(--miles_primary_dark);
@@ -2994,6 +3189,7 @@ img.aligncenter {
     outline: none;
     border-top: solid 1px #2b353f;
 }
+
 @media (min-width: 768px) {
     /* line 259, sass/blocks/_custom-blocks.scss */
     .wp-block-pb-accordion-item {
@@ -3001,6 +3197,7 @@ img.aligncenter {
         max-width: 66.6666vw;
     }
 }
+
 /* line 267, sass/blocks/_custom-blocks.scss */
 .wp-block-pb-accordion-item .c-accordion__title {
     outline: none;
@@ -3008,6 +3205,7 @@ img.aligncenter {
     padding-left: 28px;
     margin: 14px 14px;
 }
+
 @media (min-width: 768px) {
     /* line 267, sass/blocks/_custom-blocks.scss */
     .wp-block-pb-accordion-item .c-accordion__title {
@@ -3015,12 +3213,14 @@ img.aligncenter {
         padding-left: 70px;
     }
 }
+
 @media (max-width: 768px) {
     /* line 267, sass/blocks/_custom-blocks.scss */
     .wp-block-pb-accordion-item .c-accordion__title {
         line-height: 1.3;
     }
 }
+
 /* line 283, sass/blocks/_custom-blocks.scss */
 .wp-block-pb-accordion-item .c-accordion__title:after {
     content: '+';
@@ -3033,15 +3233,18 @@ img.aligncenter {
     font-family: verdana;
     transition: 250ms cubic-bezier(1, 0.5, 0.2, 0.7);
 }
+
 /* line 296, sass/blocks/_custom-blocks.scss */
 .wp-block-pb-accordion-item.is-open .c-accordion__title:after {
     transform: translateY(4px) rotate(135deg);
 }
+
 /* line 301, sass/blocks/_custom-blocks.scss */
 .wp-block-pb-accordion-item .c-accordion__content {
     margin: 18px 28px;
     padding-left: 14px;
 }
+
 @media (min-width: 768px) {
     /* line 301, sass/blocks/_custom-blocks.scss */
     .wp-block-pb-accordion-item .c-accordion__content {
@@ -3049,15 +3252,18 @@ img.aligncenter {
         padding-left: 70px;
     }
 }
+
 /* line 311, sass/blocks/_custom-blocks.scss */
 .wp-block-pb-accordion-item:last-child {
     border-bottom: solid 1px #2b353f;
 }
+
 /* line 315, sass/blocks/_custom-blocks.scss - edited 27.02.23 HL */
 .wp-block-pb-accordion-item p {
     margin-block-start: 28px;
     margin-block-end: 28px;
 }
+
 /* line 322, sass/blocks/_custom-blocks.scss */
 .has-miles-red-background-color .wp-block-pb-accordion-item,
 .has-dark-blue-background-color .wp-block-pb-accordion-item,
@@ -3065,28 +3271,31 @@ img.aligncenter {
     border-top: solid 1px white;
     color: white;
 }
+
 /* line 328, sass/blocks/_custom-blocks.scss */
 .has-miles-red-background-color .wp-block-pb-accordion-item:last-child,
 .has-dark-blue-background-color .wp-block-pb-accordion-item:last-child,
 .has-black-background-color .wp-block-pb-accordion-item:last-child {
     border-bottom: solid 1px white;
 }
+
 /* line 332, sass/blocks/_custom-blocks.scss */
 .has-miles-red-background-color .wp-block-pb-accordion-item h2,
 .has-dark-blue-background-color .wp-block-pb-accordion-item h2,
 .has-black-background-color .wp-block-pb-accordion-item h2 {
     color: white;
 }
+
 /* line 335, sass/blocks/_custom-blocks.scss */
 .has-miles-red-background-color
-.wp-block-pb-accordion-item
-.c-accordion__title:after,
+    .wp-block-pb-accordion-item
+    .c-accordion__title:after,
 .has-dark-blue-background-color
-.wp-block-pb-accordion-item
-.c-accordion__title:after,
+    .wp-block-pb-accordion-item
+    .c-accordion__title:after,
 .has-black-background-color
-.wp-block-pb-accordion-item
-.c-accordion__title:after {
+    .wp-block-pb-accordion-item
+    .c-accordion__title:after {
     color: white;
 }
 
@@ -3099,6 +3308,7 @@ img.aligncenter {
     padding-left: 0;
     list-style: none;
 }
+
 /* line 356, sass/blocks/_custom-blocks.scss */
 .custom-block-menu-city-block li.menu-item {
     position: relative;
@@ -3113,10 +3323,12 @@ img.aligncenter {
     background-color: rgba(184, 38, 28, 0.8);
     transition: background-color 0.3s ease;
 }
+
 /* line 371, sass/blocks/_custom-blocks.scss */
 .custom-block-menu-city-block li.menu-item:hover {
     background-color: transparent;
 }
+
 /* line 375, sass/blocks/_custom-blocks.scss */
 .custom-block-menu-city-block a {
     position: absolute;
@@ -3129,16 +3341,19 @@ img.aligncenter {
     text-decoration: none;
     font-size: 23px;
 }
+
 @media (min-width: 768px) {
     /* line 375, sass/blocks/_custom-blocks.scss */
     .custom-block-menu-city-block a {
         padding: 28px;
     }
 }
+
 /* line 389, sass/blocks/_custom-blocks.scss */
 .custom-block-menu-city-block a:before {
     content: '/';
 }
+
 /* line 394, sass/blocks/_custom-blocks.scss */
 .custom-block-menu-city-block figure {
     margin: 0;
@@ -3148,6 +3363,7 @@ img.aligncenter {
     height: 100%;
     width: 100%;
 }
+
 /* line 402, sass/blocks/_custom-blocks.scss */
 .custom-block-menu-city-block figure img {
     position: absolute;
@@ -3156,6 +3372,7 @@ img.aligncenter {
     z-index: -100 !important;
     width: 100%;
 }
+
 @media (min-width: 600px) and (max-width: 768px) {
     /* line 402, sass/blocks/_custom-blocks.scss */
     .custom-block-menu-city-block figure img {
@@ -3172,6 +3389,7 @@ img.aligncenter {
     padding-bottom: 56.25%;
     height: 0;
 }
+
 /* line 426, sass/blocks/_custom-blocks.scss */
 .custom-block-aventia-video .video-hero-container iframe {
     position: absolute;
@@ -3213,6 +3431,7 @@ img.aligncenter {
     background-image: url('/wp-content/themes/miles/image/icon-socials-instagram.svg');
   }  */
 }
+
 /* line 3, sass/components/_icons.scss */
 .icon a {
     display: inline-block;
@@ -3228,14 +3447,17 @@ img.aligncenter {
     text-decoration: none;
     letter-spacing: normal;
 }
+
 /* line 16, sass/components/_icons.scss */
 .person-socials-wrapper .icon a {
     background-color: var(--miles_primary_dark);
 }
+
 /* line 20, sass/components/_icons.scss */
 .icon a:last-child {
     margin-right: 0;
 }
+
 /* line 23, sass/components/_icons.scss */
 .icon a:before {
     color: white;
@@ -3249,18 +3471,22 @@ img.aligncenter {
     -webkit-font-smoothing: antialiased;
     font-size: 18px;
 }
+
 /* line 36, sass/components/_icons.scss */
 .icon a.icon-blog:before {
     content: '\e012';
 }
+
 /* line 39, sass/components/_icons.scss */
 .icon a.icon-linkedin:before {
     content: '\e04c';
 }
+
 /* line 42, sass/components/_icons.scss */
 .icon a.icon-twitter:before {
     content: '\e08d';
 }
+
 /* line 45, sass/components/_icons.scss */
 .icon a.icon-github:before {
     content: '\e032';
@@ -3336,6 +3562,7 @@ input[type='file']::file-selector-button {
 .single-post .post-thumbnail .entry-content {
     text-align: left;
 }
+
 /* line 57, sass/components/_posts-and-pages.scss */
 .single-post .entry-meta,
 .single-post .entry-content,
@@ -3343,6 +3570,7 @@ input[type='file']::file-selector-button {
     margin: 28px 14px;
     text-align: left;
 }
+
 @media (min-width: 768px) {
     /* line 57, sass/components/_posts-and-pages.scss */
     .single-post .entry-meta,
@@ -3352,6 +3580,7 @@ input[type='file']::file-selector-button {
         margin: 42px auto;
     }
 }
+
 /* line 69, sass/components/_posts-and-pages.scss */
 .single-post .entry-footer {
     display: none;
@@ -3390,6 +3619,7 @@ footer.entry-footer {
   grid-template-areas: "header image" "content" "footer";
   */
 }
+
 @media screen and (min-width: 768px) {
     /* line 78, sass/components/_posts-and-pages.scss */
     .menneskene {
@@ -3399,6 +3629,7 @@ footer.entry-footer {
     */
     }
 }
+
 @media screen and (min-width: 768px) {
     /* line 92, sass/components/_posts-and-pages.scss */
     .menneskene .person-header {
@@ -3409,6 +3640,7 @@ footer.entry-footer {
     */
     }
 }
+
 @media screen and (min-width: 1025px) {
     /* line 92, sass/components/_posts-and-pages.scss */
     .menneskene .person-header {
@@ -3419,6 +3651,7 @@ footer.entry-footer {
     */
     }
 }
+
 /* line 106, sass/components/_posts-and-pages.scss */
 .menneskene .person-header .person-meta-data {
     font-size: 23px;
@@ -3426,22 +3659,26 @@ footer.entry-footer {
     margin-block-start: calc(28em / 19 - 7px);
     margin-left: 14px;
 }
+
 @media (min-width: 768px) {
     /* line 106, sass/components/_posts-and-pages.scss */
     .menneskene .person-header .person-meta-data {
         margin-left: 0;
     }
 }
+
 /* line 115, sass/components/_posts-and-pages.scss */
 .menneskene .person-header .person-socials-wrapper {
     margin-left: 14px;
 }
+
 @media (min-width: 768px) {
     /* line 115, sass/components/_posts-and-pages.scss */
     .menneskene .person-header .person-socials-wrapper {
         margin-left: 0;
     }
 }
+
 /* line 122, sass/components/_posts-and-pages.scss */
 .menneskene .person-thumbnail {
     min-height: 280px;
@@ -3459,6 +3696,7 @@ footer.entry-footer {
     filter: grayscale(1);
     /* Microsoft Edge and Firefox 35+ */
 }
+
 @media screen and (min-width: 1025px) {
     /* line 122, sass/components/_posts-and-pages.scss */
     .menneskene .person-thumbnail {
@@ -3467,12 +3705,14 @@ footer.entry-footer {
         grid-row: 1 / span 1;
     }
 }
+
 /* line 141, sass/components/_posts-and-pages.scss */
 .menneskene .entry-content {
     grid-area: content;
     grid-column: 1 / span 12;
     grid-row: 3 / span 1;
 }
+
 @media screen and (min-width: 768px) {
     /* line 141, sass/components/_posts-and-pages.scss */
     .menneskene .entry-content {
@@ -3480,6 +3720,7 @@ footer.entry-footer {
         grid-row: 2 / span 1;
     }
 }
+
 @media screen and (min-width: 1025px) {
     /* line 141, sass/components/_posts-and-pages.scss */
     .menneskene .entry-content {
@@ -3487,12 +3728,14 @@ footer.entry-footer {
         grid-row: 2 / span 1;
     }
 }
+
 /* line 156, sass/components/_posts-and-pages.scss */
 .menneskene footer {
     grid-area: content;
     grid-column: 1 / span 6;
     grid-row: 4 / span 1;
 }
+
 @media screen and (min-width: 768px) {
     /* line 156, sass/components/_posts-and-pages.scss */
     .menneskene footer {
@@ -3500,6 +3743,7 @@ footer.entry-footer {
         grid-row: 4 / span 1;
     }
 }
+
 /* line 169, sass/components/_posts-and-pages.scss */
 .menneskene .person-socials-wrapper {
     padding-left: 0;
@@ -3539,7 +3783,10 @@ footer.entry-footer {
     margin: auto;
     width: var(--page-wrap);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(260px,(100% - 3 * 1.5rem) / 4), 1fr));
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(max(260px, (100% - 3 * 1.5rem) / 4), 1fr)
+    );
     gap: 1.5rem;
     padding-left: var(--mobile-horizontal-space);
     padding-right: var(--mobile-horizontal-space);
@@ -3575,11 +3822,13 @@ footer.entry-footer {
     aspect-ratio: 4 / 5;
     margin: 0;
 }
+
 /* line 29, sass/components/_archives.scss */
 .archive .site-main figure img,
 .blog .site-main figure img {
     width: 100%;
 }
+
 /* line 33, sass/components/_archives.scss */
 .archive article,
 .blog article {
@@ -3590,6 +3839,7 @@ footer.entry-footer {
     background-color: var(--miles_secondary_five);
     margin-left: 0;
 }
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     /* line 33, sass/components/_archives.scss */
     .archive article,
@@ -3604,6 +3854,7 @@ footer.entry-footer {
 .widget {
     margin: 0 0 1.5em;
 }
+
 /* line 5, sass/components/_widgets.scss */
 .widget select {
     max-width: 100%;
@@ -3638,18 +3889,21 @@ textarea {
     margin-top: 20px;
     grid-gap: 0;
 }
+
 @media (min-width: 600px) {
     /* line 12, sass/components/_forms.scss */
     .wpcf7-form .wpcf7-checkbox {
         grid-template: repeat(2, 1fr) / repeat(2, 1fr);
     }
 }
+
 @media (min-width: 768px) {
     /* line 12, sass/components/_forms.scss */
     .wpcf7-form .wpcf7-checkbox {
         grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     }
 }
+
 /* line 26, sass/components/_forms.scss */
 .wpcf7-form span.wpcf7-list-item {
     margin-left: 0;
@@ -3657,15 +3911,18 @@ textarea {
     align-items: center;
     position: relative;
 }
+
 /* line 33, sass/components/_forms.scss */
 .wpcf7-form .wpcf7-list-item-label {
     margin-left: 7px;
 }
+
 /* line 37, sass/components/_forms.scss */
 .wpcf7-form label {
     font-size: 18.6666px;
     line-height: 28px;
 }
+
 /* line 42, sass/components/_forms.scss */
 .wpcf7-form p {
     margin: 28px 0;
@@ -3700,6 +3957,7 @@ textarea {
     font-size: 18.6666px;
     line-height: 28px;
 }
+
 /* line 76, sass/components/_forms.scss */
 input[type='text']:focus,
 input[type='email']:focus,
@@ -3721,6 +3979,7 @@ textarea:focus {
     border-radius: 42px;
     border-color: #2b353f;
 }
+
 /* line 83, sass/components/_forms.scss */
 .wpcf7-form input[type='text'],
 .wpcf7-form input[type='email'],
@@ -3824,6 +4083,7 @@ textarea {
         border-radius: 42px;
     }
 }
+
 @supports (-moz-appearance: none) {
     /* line 173, sass/components/_forms.scss */
     input[type='file']::file-selector-button {
@@ -3837,6 +4097,7 @@ textarea {
         border-radius: 42px;
     }
 }
+
 /* line 187, sass/components/_forms.scss */
 button,
 input[type='button'],
@@ -3856,6 +4117,7 @@ input[type='submit'] {
     color: white;
     border-radius: 42px;
 }
+
 /* line 201, sass/components/_forms.scss */
 button:disabled,
 input[type='button']:disabled,
@@ -3863,6 +4125,7 @@ input[type='reset']:disabled,
 input[type='submit']:disabled {
     background: #b5bbc4;
 }
+
 /* line 204, sass/components/_forms.scss */
 button:disabled:hover,
 input[type='button']:disabled:hover,
@@ -3870,6 +4133,7 @@ input[type='reset']:disabled:hover,
 input[type='submit']:disabled:hover {
     background: #b5bbc4;
 }
+
 /* line 211, sass/components/_forms.scss */
 button:hover,
 input[type='button']:hover,
@@ -3878,6 +4142,7 @@ input[type='submit']:hover {
     border-color: var(--miles_primary_dark);
     background-color: var(--miles_primary_dark);
 }
+
 /* line 216, sass/components/_forms.scss */
 button:active,
 button:focus,
@@ -3895,6 +4160,7 @@ input[type='submit']:focus {
     display: flex;
     justify-content: space-between;
 }
+
 /* line 226, sass/components/_forms.scss */
 .search-form label {
     width: 100%;
@@ -3904,7 +4170,17 @@ input[type='submit']:focus {
 .cv-filter {
     margin: 4em auto;
     gap: 3rem 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(max(var(--profile-card-width), (100% - (var(--cv-filter-max-columns) - 1) * 2rem) / var(--cv-filter-max-columns)), 1fr));
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(
+            max(
+                var(--profile-card-width),
+                (100% - (var(--cv-filter-max-columns) - 1) * 2rem) /
+                    var(--cv-filter-max-columns)
+            ),
+            1fr
+        )
+    );
     display: grid;
 }
 
@@ -3914,6 +4190,7 @@ input[type='submit']:focus {
         gap: 1rem;
         flex-wrap: wrap;
     }
+
     .cv-filter > miles-profile-card {
         flex: 1 1 calc(50% - 1rem);
     }
@@ -3924,6 +4201,7 @@ input[type='submit']:focus {
         display: flex;
         flex-wrap: wrap;
     }
+
     .cv-filter > miles-profile-card {
         flex: 1 1 100%;
     }
@@ -4069,6 +4347,7 @@ miles-podcast-teaser {
 /*For kompteansesiden */
 @media (min-width: 600px) {
 }
+
 @media (min-width: 1025px) {
 }
 
@@ -4094,33 +4373,57 @@ miles-fagblogg-teaser .wp-block-latest-posts__list {
     }
 }
 
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-title,
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-author,
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-date {
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-title,
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-author,
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-date {
     padding: 0 2rem;
     color: var(--miles_primary_light);
     background-color: var(--miles_secondary_four);
     display: block;
 }
 
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-date {
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-date {
     border-radius: 0 0 30px 30px;
     padding-bottom: 2rem;
 }
 
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-title {
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-title {
     padding-top: 1.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
     line-clamp: 2;
     -webkit-box-orient: vertical;
-    height: 4rem;
+    height: 4.66rem;
 }
 
 miles-fagblogg-teaser .wp-block-latest-posts__list li {
     padding-bottom: 2rem;
+}
+
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li:focus-within
+    > *:not(:first-child) {
+    color: var(--miles_link_color_ondark);
+    background-color: var(--miles_link_color_ondark_hover);
 }
 
 miles-fagblogg-teaser .wp-block-latest-posts__list li img {
@@ -4138,6 +4441,10 @@ miles-fagblogg-teaser .wp-block-latest-posts__list li a {
     font-weight: 600;
     text-decoration: none;
     color: var(--miles_secondary_three);
+}
+
+miles-fagblogg-teaser .wp-block-latest-posts__list li a:focus {
+    outline: none;
 }
 
 .home.page-template-default .site-main .entry-content {

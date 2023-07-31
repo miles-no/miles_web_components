@@ -2,6 +2,12 @@
   display: inline-block;
   color: var(--miles_primary_light);
 }
+
+.info:focus {
+  outline: var(--default_focus);
+  outline-width: 4px;
+}
+
 .info {
   background-color: var(--miles_secondary_four);
   border-radius: 0 99rem 99rem 99rem;

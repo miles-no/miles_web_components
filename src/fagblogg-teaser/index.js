@@ -56,8 +56,16 @@ class MilesFagbloggTeaser extends HTMLElement {
   disconnectedCallback() {}
 
   goToPost = e => {
-    window.location.href = escape(e.target.dataset.post);
+    window.location.href = escape(encodeURI(e.target.dataset.post));
   };
+}
+
+function escape(url) {
+  // Only allow absolute URLs starting with https://www.miles.no and relative URLs
+  if (url && url.startsWith('https://www.miles.no' || url.startsWith('/'))) {
+    return url;
+  }
+  throw new Error('Invalid URL.');
 }
 
 const MilesFagbloggTeaserName = 'miles-fagblogg-teaser';

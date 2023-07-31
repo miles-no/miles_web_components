@@ -5,5 +5,13 @@
   "singleQuote": true,
   "bracketSpacing": true,
   "bracketSameLine": true,
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": "wp-styles.css",
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
 }
