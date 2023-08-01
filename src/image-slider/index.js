@@ -93,8 +93,6 @@ class MilesImageSlider extends HTMLElement {
         try {
           const slottedElementsArray = Array.from(slottedElements);
           this.numberOfSlides = slottedElements.length;
-
-          console.log(slottedElementsArray);
           slottedElementsArray.forEach((element, index) => {
             const figure = document.createElement('figure');
             const overlay = document.createElement('div');
@@ -120,13 +118,6 @@ class MilesImageSlider extends HTMLElement {
               this.controls.appendChild(navDot);
             }
           });
-
-          // Create copies of images for infinite loop
-          Array.from(this.slides.children).map(e => {
-            const clone = e.cloneNode(true);
-            clone.setAttribute('aria-hidden', true);
-            this.slides.appendChild(clone);
-          });
         } catch (error) {
           console.log(slottedElements);
         }
@@ -146,32 +137,23 @@ class MilesImageSlider extends HTMLElement {
   goRight = () => {
     this.startAutoPlay(false);
     if (Math.abs(this.index) === 0) {
-      this.index = -this.numberOfSlides + 1;
+      return;
     } else {
       this.index++;
     }
     this.setActiveDot(this.index);
     this.slides.style.setProperty('--slides-offset', this.index);
-    console.log(this.index);
   };
 
   goLeft = () => {
     this.startAutoPlay(false);
     if (Math.abs(this.index) === this.numberOfSlides - 1) {
-      this.slides.style.setProperty('transition', 'none');
-      this.slides.style.setProperty('--slides-offset', this.index - 1);
-
-      this.slides.style.setProperty(
-        'transition',
-        'transform 1s cubic-bezier(0.46, 0.03, 0.52, 0.96)'
-      );
-      this.index = 0;
+      return;
     } else {
       this.index--;
     }
     this.setActiveDot(this.index);
     this.slides.style.setProperty('--slides-offset', this.index);
-    console.log(this.index);
   };
 
   goToSlide = e => {
