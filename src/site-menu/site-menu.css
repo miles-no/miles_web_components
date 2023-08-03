@@ -2,6 +2,10 @@
   display: inline-block;
 }
 
+:host(:focus) {
+  outline: none !important;
+}
+
 ::slotted(nav) {
   z-index: 2000;
   position: relative;
@@ -19,11 +23,19 @@ a:focus {
   height: fit-content;
   background-color: var(--miles_primary_dark);
   z-index: 2000;
-  top: calc(var(--header-height) - 1px);
-  right: 0;
   transform: translateX(500px);
   transition: transform 0.5s cubic-bezier(0.46, 0.03, 0.52, 0.96);
   padding: 0 2rem 2rem 2rem;
+  max-height: calc(100dvh - var(--header-height));
+  overflow-y: scroll;
+  right: 0;
+  width: max(
+    calc(
+      (100dvw - min(var(--content_width), var(--content_width_max))) / 2 -
+        2.5rem
+    ),
+    16rem
+  );
 }
 
 @media screen and (min-width: 768px) {
@@ -41,14 +53,11 @@ a:focus {
 #nav-icon {
   display: inline-block;
   z-index: 2000;
-  right: 2rem;
-  top: 1rem;
   margin-left: auto;
   margin-right: auto;
   width: 40px;
   height: 40px;
   border: 2px solid transparent;
-  position: absolute;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -163,16 +172,6 @@ a:active {
 .mega-menu-grid {
   display: flex;
   flex-direction: column;
-}
-
-@media screen and (max-width: 900px) and (orientation: landscape) {
-  .mega-menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
 }
 
 ul.menu {
