@@ -4,8 +4,9 @@
 }
 
 .info:focus {
-  outline: var(--default_focus);
-  outline-width: 4px;
+  outline: none;
+  color: var(--miles_link_color_ondark);
+  background-color: var(--miles_link_color_ondark_hover);
 }
 
 .info {
