@@ -171,7 +171,8 @@ a {
 a:hover,
 a:focus,
 a:active {
-  background-color: var(--miles_link_color_hover);
+  color: var(--miles_link_color_ondark_hover);
+  background-color: var(--miles_link_color_ondark_hover_bg);
 }
 
 .mega-menu-grid {
