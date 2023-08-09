@@ -18,7 +18,7 @@
 .inner {
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 80%;
   margin: auto;
   align-items: center;
@@ -36,7 +36,6 @@ miles-info {
 
 @media (min-width: 768px) {
   .inner {
-    flex-direction: row;
     padding-top: 0em;
   }
 
@@ -47,16 +46,13 @@ miles-info {
 
 @media (max-width: 1024px) and (min-width: 769px) {
   miles-info {
-    width: 28%;
     left: unset;
     top: -1em;
-    right: var(--halve_margin_offset_large);
   }
 }
 
 @media (min-width: 1025px) {
   miles-info {
-    max-width: 250px;
     left: unset;
     width: unset;
     top: 1em;

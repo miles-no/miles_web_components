@@ -26,7 +26,6 @@ template.innerHTML = `
                 <p id="date">22. Mars - MilesPodden</p>
               </div>
             </div>
-            <a class="more" href="/newsite/milespodden">Hør alle episodene</a>
           </div>
         </div>
           <miles-info link="/newsite/milespodden">

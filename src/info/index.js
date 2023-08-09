@@ -87,7 +87,10 @@ class MilesInfo extends HTMLElement {
 
 function escape(url) {
   // Only allow absolute URLs starting with https://www.miles.no and relative URLs
-  if (url && url.startsWith('https://www.miles.no' || url.startsWith('/'))) {
+  if (
+    (url && url.length > 0 && url.startsWith('https://www.miles.no')) ||
+    url.startsWith('/')
+  ) {
     return url;
   }
   throw new Error('Invalid URL.');

@@ -31,6 +31,6 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
 export const Info = {
   args: {
-    link: 'www.vg.no',
+    link: 'https://www.miles.no/newsite/milespodden/',
   },
 };
