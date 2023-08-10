@@ -9,8 +9,7 @@
 
   background-color: #f8ebe8;
   height: 100%;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 2rem;
 
   overflow: hidden;
 }
@@ -18,6 +17,8 @@
 @media (min-width: 768px) {
   :host {
     --slide-container-height: 500px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 }
 
