@@ -9,12 +9,12 @@ export default {
 	    <ul class="wp-block-latest-posts__list has-dates has-author miles-fagblogg-teaser wp-block-latest-posts">
 	        <li>
 	            <div class="wp-block-latest-posts__featured-image aligncenter">
-	                <img loading="lazy" width="260" height="260" src="https://www.miles.no/newsite/wp-content/uploads/2023/06/Kopi-av-_D__0061-260x260.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="height: auto; cursor: pointer;" srcset="
-		              https://www.miles.no/newsite/wp-content/uploads/2023/06/Kopi-av-_D__0061-260x260.jpg  260w,
-		              https://www.miles.no/newsite/wp-content/uploads/2023/06/Kopi-av-_D__0061-550x550.jpg  550w,
-		              https://www.miles.no/newsite/wp-content/uploads/2023/06/Kopi-av-_D__0061-768x768.jpg  768w,
-		              https://www.miles.no/newsite/wp-content/uploads/2023/06/Kopi-av-_D__0061.jpg         1200w
-		            " sizes="(max-width: 260px) 100vw, 260px" data-post="https://www.miles.no/newsite/sertifisering-i-innovasjonsledelse/" />
+	                <img loading="lazy" width="260" height="260" src="https://loremflickr.com/960/1280/dog" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" style="height: auto; cursor: pointer;" srcset="
+					              https://loremflickr.com/960/1280/dog  260w,
+					              https://loremflickr.com/960/1280/dog  550w,
+					              https://loremflickr.com/960/1280/dog  768w,
+					              https://loremflickr.com/960/1280/dog  1200w
+					            " sizes="(max-width: 260px) 100vw, 260px" data-post="https://www.miles.no/newsite/sertifisering-i-innovasjonsledelse/" />
 	            </div>
 	            <a class="wp-block-latest-posts__post-title" href="https://www.miles.no/newsite/sertifisering-i-innovasjonsledelse/">Sertifisering i innovasjonsledelse
 	            </a>
@@ -24,7 +24,7 @@ export default {
 	        </li>
 	        <li>
 	            <div class="wp-block-latest-posts__featured-image aligncenter">
-	                <img width="260" height="260" src="https://www.miles.no/newsite/wp-content/uploads/2023/06/Midjourney-change-management-260x260.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" style="height: auto; cursor: pointer;" data-post="https://www.miles.no/newsite/smidig-samspill-hvordan-it-prosjektledelse-og-endringsledelse-utfyller-hverandre/" />
+	                <img width="260" height="260" src="https://loremflickr.com/960/1280/dog" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" style="height: auto; cursor: pointer;" data-post="https://www.miles.no/newsite/smidig-samspill-hvordan-it-prosjektledelse-og-endringsledelse-utfyller-hverandre/" />
 	            </div>
 	            <a class="wp-block-latest-posts__post-title" href="https://www.miles.no/newsite/smidig-samspill-hvordan-it-prosjektledelse-og-endringsledelse-utfyller-hverandre/">Smidig samspill: Hvordan IT-prosjektledelse og endringsledelse
 	                utfyller hverandre
@@ -35,7 +35,7 @@ export default {
 	        </li>
 	        <li>
 	            <div class="wp-block-latest-posts__featured-image aligncenter">
-	                <img width="260" height="260" src="https://www.miles.no/newsite/wp-content/uploads/2023/06/Karsten_IMG_0915-1-260x260.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" style="height: auto; cursor: pointer;" data-post="https://www.miles.no/newsite/lyset-i-den-digitale-tunnelen/" />
+	                <img width="260" height="260" src="https://loremflickr.com/960/1280/dog" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" style="height: auto; cursor: pointer;" data-post="https://www.miles.no/newsite/lyset-i-den-digitale-tunnelen/" />
 	            </div>
 	            <a class="wp-block-latest-posts__post-title" href="https://www.miles.no/newsite/lyset-i-den-digitale-tunnelen/">Lyset i den digitale tunnelen
 	            </a>
