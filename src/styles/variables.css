@@ -12,8 +12,8 @@
   --miles_secondary_five: #ff303b; /* korall */
 
   --miles_link_color: #183f46;
-  --miles_link_color_hover: --var(--miles_secondary_two);
-  --miles_link_color_hover_bg: --var(--miles_secondary_one);
+  --miles_link_color_hover: var(--miles_secondary_two);
+  --miles_link_color_hover_bg: var(--miles_secondary_one);
 
   --miles_link_color_ondark: #94e5db;
   --miles_link_color_ondark_hover: var(--miles_secondary_one);
