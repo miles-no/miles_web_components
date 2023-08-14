@@ -91,35 +91,4 @@
       align-self: center;
     }
   }
-  /*
-  .button {
-    background: var(--miles_primary_dark);
-    border-radius: 2rem;
-    border: 2px solid var(--miles_primary_dark);
-    bottom: 0;
-    color: white;
-    left: 0;
-    margin: 0 1rem;
-    padding: 0.75rem 1.5rem;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    transform: translateY(calc(100% - 1.5rem));
-    width: calc(100% - 2rem);
-    transition: all 0.5s ease;
-
-    &:hover,
-    &.selected {
-      background: var(--miles_secondary_four);
-      border: 2px solid var(--miles_primary_light);
-    }
-
-    @media (min-width: 768px) {
-      width: auto;
-      margin: 0;
-      left: 1.5rem;
-      transform: translateY(50%);
-    }
-  }
-  */
 }
