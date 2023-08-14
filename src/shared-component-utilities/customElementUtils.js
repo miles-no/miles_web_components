@@ -20,8 +20,7 @@ export const debounce = (callback, delay = 20) => {
 export const safeUrl = url => {
   // Only allow absolute URLs starting with https://www.miles.no and relative URLs
   if (url && url.startsWith('https://www.miles.no' || url.startsWith('/'))) {
-    console.log(encodeURI(url));
-    return encodeURI(url);
+    return escape(encodeURI(url));
   }
   throw new Error('Invalid URL.');
 };
