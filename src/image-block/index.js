@@ -1,6 +1,7 @@
 import styles from './image-block.scss?inline';
 import cssVariables from '../styles/variables.css?inline';
 import { safeUrl } from '../shared-component-utilities/customElementUtils.js';
+import '../button/index.js';
 
 const MilesImageBlockTemplate = document.createElement('template');
 MilesImageBlockTemplate.innerHTML = `
@@ -57,9 +58,6 @@ class MilesImageBlock extends HTMLElement {
         .querySelector('.image-block')
         .getClientRects()[0].height;
 
-      console.log('1', contentHeight);
-      console.log('2', imageHeight);
-
       if (contentHeight > imageHeight && imageHeight > 0) {
         this.imageBlockElement.style.setProperty(
           '--textblock-height',
@@ -108,24 +106,24 @@ class MilesImageBlock extends HTMLElement {
     if (name === 'button') {
       if (newValue) {
         this.createButton(newValue);
-      }
-    }
 
-    if (name === 'href') {
-      const buttonElement = this.shadowRoot.querySelector('miles-button');
+        const buttonElement = this.shadowRoot.querySelector('miles-button');
 
-      if (newValue && buttonElement) {
-        buttonElement.setAttribute('value', newValue);
+        if (buttonElement && this.getAttribute('href').length > 0) {
+          buttonElement.setAttribute('value', this.getAttribute('href'));
+        }
       }
     }
   }
 
   connectedCallback() {
     const buttonElement = this.shadowRoot.querySelector('miles-button');
-    buttonElement.addEventListener('click', () => {
-      // eslint-disable-next-line xss/no-location-href-assign
-      window.location.href = safeUrl(buttonElement.getAttribute('value'));
-    });
+    if (buttonElement) {
+      buttonElement.addEventListener('click', () => {
+        // eslint-disable-next-line xss/no-location-href-assign
+        window.location.href = safeUrl(buttonElement.getAttribute('value'));
+      });
+    }
 
     this.resizeObserver = new ResizeObserver(this.adjustImageHeight);
     this.resizeObserver.observe(this.contentElement);

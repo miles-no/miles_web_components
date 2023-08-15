@@ -21,11 +21,11 @@
   /* margin-bottom: 3.5rem; */
   position: relative;
   width: 100%;
-  height: var(--textblock-height);
 
   $this: &;
 
   @media (min-width: 768px) {
+    height: var(--textblock-height);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
