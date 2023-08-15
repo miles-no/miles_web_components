@@ -1510,11 +1510,21 @@ a.fagblogg-thumbnail:hover {
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
+    flex-direction: row;
+    width: var(--page-wrap);
     display: flex;
-    max-width: 91.6666%;
+    /* max-width: 80%; */
     margin-right: auto;
     margin-left: auto;
 }
+
+.comment-navigation .nav-links a,
+.posts-navigation .nav-links a,
+.post-navigation .nav-links a {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
 @media (min-width: 768px) {
     /* line 57, sass/navigation/_nav-links.scss */
     .comment-navigation .nav-links,
@@ -2287,7 +2297,6 @@ article.has-post-thumbnail img {
 
 @media (min-width: 768px) {
     article.has-post-thumbnail img {
-        /* edited 13.03.2023 HL */
         margin-right: auto;
         margin-left: auto;
         object-fit: cover;

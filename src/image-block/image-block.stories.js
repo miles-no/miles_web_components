@@ -1,22 +1,23 @@
+import '../button/index.js';
 
 export default {
-	title: 'Miles/Components',
-	tags: ['autodocs'],
-	argTypes: {
-		image: {
-			required: true
-		},
-		reverse: {
-			control: 'boolean',
-		},
-		background: {
-			control: 'color'
-		},
-		color: {
-			control: 'color'
-		},
-	},
-	render: args => `<div style="width: 100%;max-width: 1440px;">
+  title: 'Miles/Components',
+  tags: ['autodocs'],
+  argTypes: {
+    image: {
+      required: true,
+    },
+    reverse: {
+      control: 'boolean',
+    },
+    background: {
+      control: 'color',
+    },
+    color: {
+      control: 'color',
+    },
+  },
+  render: args => `<div style="width: 100%;max-width: 1440px;">
 		<miles-image-block background="${args.background}" color="${args.color}" reverse="${args.reverse}" image="${args.image}" button="${args.button}" href="${args.href}" alt="${args.alt}">
 			<h2>Lorem ipsum</h2>
 			<p>Donec sagittis tellus mi, sed consequat nisi luctus et. Donec porttitor dignissim leo in euismod. Pellentesque egestas volutpat tristique. Praesent dolor arcu, fermentum vel scelerisque eu, efficitur ac ex. Proin lacus est, venenatis id feugiat ut, molestie a neque.</p>
@@ -25,15 +26,14 @@ export default {
     </div>`,
 };
 
-
 export const ImageBlock = {
-	args: {
-		image: 'https://loremflickr.com/540/420/dog',
-		alt: '',
-		reverse: false,
-		button: '',
-		href: '',
-		background: '',
-		color: '',
-	},
+  args: {
+    image: 'https://loremflickr.com/540/420/dog',
+    alt: '',
+    reverse: false,
+    button: "Don't panic",
+    href: 'https://www.miles.no/newsite/vi-er-miles/',
+    background: '',
+    color: '',
+  },
 };

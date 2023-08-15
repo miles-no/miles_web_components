@@ -1,0 +1,51 @@
+:host {
+  display: inline-block;
+}
+
+button {
+  border-radius: 3rem;
+  display: inline-flex;
+  font-weight: bold;
+  line-height: 21px;
+  padding: 13px 1.5rem 11px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--miles_secondary_three);
+  background-color: transparent;
+
+  &.primary {
+    background-color: var(--miles_primary_dark);
+    color: var(--miles_primary_light);
+  }
+
+  &.primary:hover {
+    color: var(--miles_primary_dark);
+    background-color: var(--miles_primary_light);
+  }
+
+  &.secondary {
+    background-color: var(--miles_primary_dark);
+    color: var(--miles_primary_light);
+  }
+
+  &.secondary:hover {
+    color: var(--miles_primary_dark);
+    background-color: var(--miles_primary_light);
+  }
+
+  &:hover {
+    color: var(--miles_primary_light);
+    background-color: var(--miles_secondary_three);
+  }
+}
+
+button:enabled:active,
+button:enabled:focus {
+  outline: none;
+  border-color: var(--miles_secondary_three);
+}

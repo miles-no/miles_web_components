@@ -12,14 +12,16 @@
   box-sizing: border-box;
 }
 
-
 .image-block {
+  --textblock-height: 100%;
+
   background: var(--background-color);
   border-radius: var(--border-radius);
   color: var(--text-color);
-  margin-bottom: 3.5rem;
+  /* margin-bottom: 3.5rem; */
   position: relative;
   width: 100%;
+  height: var(--textblock-height);
 
   $this: &;
 
@@ -44,6 +46,7 @@
       display: block;
       height: 100%;
       object-fit: cover;
+      object-position: center center;
       width: 100%;
 
       @media (min-width: 768px) {
@@ -70,7 +73,7 @@
 
     @media (min-width: 768px) {
       display: flex;
-      height: 100%;
+      min-height: 100%;
       left: 0;
       margin: 0;
       padding: 1.5rem;
@@ -86,27 +89,6 @@
 
     .centering {
       align-self: center;
-    }
-  }
-  .button {
-    background: var(--miles_primary_dark);
-    border-radius: 2rem;
-    bottom: 0;
-    color: white;
-    left: 0;
-    margin: 0 1rem;
-    padding: 0.75rem 1.5rem;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    transform: translateY(calc(100% - 1.5rem));
-    width: calc(100% - 2rem);
-
-    @media (min-width: 768px) {
-      width: auto;
-      margin: 0;
-      left: 1.5rem;
-      transform: translateY(50%);
     }
   }
 }

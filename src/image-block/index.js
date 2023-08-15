@@ -1,5 +1,6 @@
 import styles from './image-block.scss?inline';
 import cssVariables from '../styles/variables.css?inline';
+import { safeUrl } from '../shared-component-utilities/customElementUtils.js';
 
 const MilesImageBlockTemplate = document.createElement('template');
 MilesImageBlockTemplate.innerHTML = `
@@ -31,19 +32,44 @@ class MilesImageBlock extends HTMLElement {
 
     this.imageBlockElement = this.shadowRoot.querySelector('.image-block');
     this.image = this.shadowRoot.querySelector('#image');
-    this.contentElement = this.shadowRoot.querySelector('.image-block__content');
+    this.contentElement = this.shadowRoot.querySelector(
+      '.image-block__content'
+    );
 
+    this.resizeObserver;
   }
 
   createButton(text) {
-    const button = document.createElement( 'a' );
-    button.setAttribute("class", "button");
+    const button = document.createElement('miles-button');
+    button.setAttribute('type', 'button');
+    button.setAttribute('variant', 'secondary');
     button.textContent = text;
-    if(this.href) {
-      button.setAttribute("href", this.getAttribute('href'));
+    if (this.href) {
+      button.setAttribute('value', this.getAttribute('href'));
     }
-    this.contentElement.appendChild( button );
+    this.contentElement.querySelector('.centering').appendChild(button);
   }
+
+  adjustImageHeight = () => {
+    try {
+      const contentHeight = this.contentElement.getClientRects()[0].height;
+      const imageHeight = this.shadowRoot
+        .querySelector('.image-block')
+        .getClientRects()[0].height;
+
+      console.log('1', contentHeight);
+      console.log('2', imageHeight);
+
+      if (contentHeight > imageHeight && imageHeight > 0) {
+        this.imageBlockElement.style.setProperty(
+          '--textblock-height',
+          this.contentElement.getClientRects()[0].height + 'px'
+        );
+      }
+    } catch (error) {
+      console.warn(error);
+    }
+  };
 
   static get observedAttributes() {
     return ['image', 'color', 'background', 'reverse', 'alt', 'href', 'button'];
@@ -68,35 +94,54 @@ class MilesImageBlock extends HTMLElement {
     }
 
     if (name === 'color') {
-      if(newValue) {
+      if (newValue) {
         this.style.setProperty('--text-color', newValue);
       }
     }
 
     if (name === 'background') {
-      if(newValue) {
+      if (newValue) {
         this.style.setProperty('--background-color', newValue);
       }
     }
 
     if (name === 'button') {
-      if(newValue) {
+      if (newValue) {
         this.createButton(newValue);
       }
     }
 
     if (name === 'href') {
-      const buttonElement = this.shadowRoot.querySelector('.button');
+      const buttonElement = this.shadowRoot.querySelector('miles-button');
 
-      if(newValue && buttonElement) {
-        buttonElement.setAttribute("href", newValue);
+      if (newValue && buttonElement) {
+        buttonElement.setAttribute('value', newValue);
       }
     }
   }
 
-  connectedCallback() {}
+  connectedCallback() {
+    const buttonElement = this.shadowRoot.querySelector('miles-button');
+    buttonElement.addEventListener('click', () => {
+      // eslint-disable-next-line xss/no-location-href-assign
+      window.location.href = safeUrl(buttonElement.getAttribute('value'));
+    });
 
-  disconnectedCallback() {}
+    this.resizeObserver = new ResizeObserver(this.adjustImageHeight);
+    this.resizeObserver.observe(this.contentElement);
+
+    this.image.addEventListener('load', this.adjustImageHeight);
+  }
+
+  disconnectedCallback() {
+    try {
+      this.resizeObserver.disconnect();
+    } catch (error) {
+      console.warn(error);
+    }
+
+    this.image.removeEventListener('load', this.adjustImageHeight);
+  }
 }
 
 const MilesImageBlockName = 'miles-image-block';
