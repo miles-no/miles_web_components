@@ -13,7 +13,7 @@ MilesBlogCardTemplate.innerHTML = `
      ${cssVariables}
   </style>
   <div id="blog-card-container">
-    <a href="#">
+    <a href="#" tabindex="-1">
       <figure id="image-container">
         <slot name="image"></slot>
       </figure>
