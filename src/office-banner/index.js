@@ -73,7 +73,6 @@ class MilesOfficeBanner extends HTMLElement {
   toggleMenu = () => {
     this.banner.classList.toggle('office-banner--open');
     if (this.banner.classList.contains('office-banner--open')) {
-      console.log('hepp');
       this.detailsEl.style.display = 'block';
     } else {
       this.detailsEl.style.display = 'none';
