@@ -9,11 +9,9 @@ MilesProfileCardTemplate.innerHTML = `
         </style>
        
         <div class="profile-card">
-          <a href="">  
-            <figure>
-              <img class="profile-card__image" id="profileimage" /> 
-            </figure>
-          </a>
+          <figure>
+            <img class="profile-card__image" id="profileimage" /> 
+          </figure>
           <div class="profile-card__info">
             <h3 id="name"></h3>
             <div class="description jobtitle">
@@ -54,10 +52,8 @@ class MilesProfileCard extends HTMLElement {
         const dummyUrl =
           'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png';
         this.profileImageEl.setAttribute('src', dummyUrl);
-        this.profileImageEl.setAttribute('alt', 'Miles Profile Card Image');
       } else {
         this.profileImageEl.setAttribute('src', newValue);
-        this.profileImageEl.setAttribute('alt', 'Miles Profile Card Image');
       }
     }
 
@@ -70,10 +66,7 @@ class MilesProfileCard extends HTMLElement {
     }
 
     if (name === 'name') {
-      this.shadowRoot
-        .querySelector('a')
-        .setAttribute('href', newValue.split(' ').join('-').toLowerCase());
-
+      this.profileImageEl.setAttribute('alt', newValue);
       this.consultantNameEl.textContent = newValue;
     }
   }
