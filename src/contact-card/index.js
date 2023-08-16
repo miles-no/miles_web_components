@@ -17,7 +17,7 @@ MilesContactCardTemplate.innerHTML = `
       <a id="email"></a>
       <a id="phone"></a>
       <div id="orgnrlabel">Organisasjonsnummer:</div>
-      <div aria-describedby="ordnrlabel" id="orgnr"></div>
+      <div aria-describedby="orgnrlabel" id="orgnr"></div>
     </div>
     `;
 class MilesContactCard extends HTMLElement {

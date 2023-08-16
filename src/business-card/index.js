@@ -56,6 +56,14 @@ class MilesBusinessCard extends HTMLElement {
     return ['email', 'name', 'phone', 'jobtitle', 'image', 'variant'];
   }
 
+  connectedCallback() {
+    if (this.hasAttribute('name')) {
+      this.firgureEl
+        .querySelector('img')
+        .setAttribute('alt', `Profile picture ${this.getAttribute('name')}`);
+    }
+  }
+
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'email') {
       this.mailAnchor.setAttribute('href', `mailto:${newValue}`);
@@ -80,6 +88,7 @@ class MilesBusinessCard extends HTMLElement {
     if (name === 'image') {
       const image = document.createElement('img');
       image.setAttribute('src', newValue);
+
       this.firgureEl.append(image);
     }
 

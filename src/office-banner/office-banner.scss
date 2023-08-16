@@ -2,12 +2,14 @@
   --headerHeight: 200px;
   --max-banner-height: 620px;
   --banner-border-radius: 30px;
-  --banner-animation: .47s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-  --banner-animation-fast: .27s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  --banner-animation: 0.47s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  --banner-animation-fast: 0.27s cubic-bezier(0.46, 0.03, 0.52, 0.96);
   color: #fcf8f3;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   font-family: 'Manrope', sans-serif;
 }
@@ -21,6 +23,22 @@
 
   @media (min-width: 811px) {
     height: var(--max-banner-height);
+  }
+
+  button {
+    border: 2px solid transparent;
+    outline: none;
+    font-weight: 700;
+    background: transparent;
+    font-size: 3rem;
+    line-height: 60px;
+    margin: 0;
+    padding: 0 1rem;
+    color: var(--miles_primary_light);
+  }
+
+  button:focus {
+    border: 2px solid var(--miles_primary_light);
   }
 
   $this: &;
@@ -55,8 +73,8 @@
 
     &::before {
       background: var(--miles_secondary_four);
-	  border-top-left-radius: var(--banner-border-radius);
-	  border-top-right-radius: var(--banner-border-radius);
+      border-top-left-radius: var(--banner-border-radius);
+      border-top-right-radius: var(--banner-border-radius);
       content: '';
       width: 100%;
       height: 100%;
@@ -64,13 +82,13 @@
       top: 0;
       transition: opacity var(--banner-animation);
       position: absolute;
-      opacity: .7;
+      opacity: 0.7;
       z-index: -1;
 
-	    @media (min-width: 811px) {
-		    border-top-left-radius: 0;
-		    border-top-right-radius: 0;
-	    }
+      @media (min-width: 811px) {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
     }
   }
 
@@ -96,7 +114,7 @@
 
     @media (min-width: 811px) {
       max-height: calc(100% - 60px - 2rem);
-      padding: 0 3rem
+      padding: 0 3rem;
     }
   }
 
@@ -154,7 +172,10 @@
 
     @media (min-width: 811px) {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100% / 2, max(200px, 100% / 3)), 1fr));
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100% / 2, max(200px, 100% / 3)), 1fr)
+      );
     }
   }
 
@@ -170,8 +191,8 @@
 
       &::before {
         opacity: 1;
-	    border-bottom-left-radius: var(--banner-border-radius);
-	    border-bottom-right-radius: var(--banner-border-radius);
+        border-bottom-left-radius: var(--banner-border-radius);
+        border-bottom-right-radius: var(--banner-border-radius);
       }
     }
 
@@ -200,7 +221,7 @@
 
   @media (min-width: 811px) {
     &:hover {
-      &:not(#{$this}--open){
+      &:not(#{$this}--open) {
         #{$this}__content {
           transform: translateY(calc(100% - 60px - 7rem));
         }
