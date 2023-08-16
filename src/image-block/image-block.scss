@@ -6,6 +6,10 @@
   --border-radius: 30px;
 }
 
+:host(:focus) {
+  outline: none !important;
+}
+
 *,
 *::before,
 *::after {
