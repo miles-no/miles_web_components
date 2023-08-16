@@ -30,8 +30,6 @@ a:focus {
   outline: 2px solid var(--miles_link_color_hover_bg);
 }
 
-}
-
 #address,
 #phone {
   margin-bottom: 1rem;
