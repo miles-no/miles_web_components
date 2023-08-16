@@ -67,7 +67,8 @@ class MilesBusinessCard extends HTMLElement {
     }
 
     if (name === 'phone') {
-      this.phoneAnchor.setAttribute('href', `tel:${newValue}`);
+      const telWithoutSpaces = newValue.replace(/\s/g, '');
+      this.phoneAnchor.setAttribute('href', `tel:${telWithoutSpaces}`);
       this.shadowRoot.querySelector('#phone').style.display = 'block';
       this.phoneAnchor.textContent = newValue;
     }
