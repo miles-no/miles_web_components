@@ -7,10 +7,13 @@
 :host(:focus) a {
   color: var(--miles_primary_light);
   background-color: var(--color);
+  border: 2px solid var(--color);
 }
 
-:host(:focus) {
-  outline: none !important;
+:host(:focus),
+a:focus-visible {
+  outline: transparent !important;
+  outline-width: 0 !important;
 }
 
 a {
