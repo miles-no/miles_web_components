@@ -35,6 +35,7 @@ class MilesOverlapBlock extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.append(MilesOverlapBlockTemplate.content.cloneNode(true));
     this.list = this.shadowRoot.querySelector('#list');
+    this.featureBlockEl = this.shadowRoot.querySelector('#feature-block');
   }
 
   connectedCallback() {
@@ -57,6 +58,9 @@ class MilesOverlapBlock extends HTMLElement {
       listElement.append(listItemEl);
     });
     this.list.append(listElement);
+
+    // Move slotted content to shadowDOM
+    this.featureBlockEl.append(...this.childNodes);
   }
 
   disconnectedCallback() {}
