@@ -70,7 +70,7 @@ class MilesBlogCard extends HTMLElement {
     }
 
     if (name === 'posted') {
-      // If . is used as sperator, replace with /
+      // If . is used as separators, replace with /
       const dateWithSlash = newValue.replace(/\./g, '/');
       this.posted.textContent = `${this.timeFormat(new Date(dateWithSlash))}`;
     }
