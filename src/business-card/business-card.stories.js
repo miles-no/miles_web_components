@@ -1,5 +1,12 @@
 import { propsToAttrs } from '../storybook.utils.js';
 
+const businessCardWrapperStyles = `
+  position: relative;
+  margin: 20px;
+  width: 100%;
+  max-width: 800px;
+`;
+
 export default {
   title: 'Miles/Components/Cards/Business',
   tags: ['autodocs'],
@@ -12,7 +19,9 @@ export default {
     },
   },
   render: args =>
-    `<miles-business-card  ${propsToAttrs(args)}></miles-business-card>`,
+    /* html */ `<div style="${businessCardWrapperStyles}"><miles-business-card  ${propsToAttrs(
+      args
+    )}></miles-business-card></div>`,
 };
 
 //
@@ -25,7 +34,6 @@ export const BusinessCard = {
     phone: '917 12 345',
     variant: 'default',
     jobtitle: 'Pressekontakt / markedstjener',
-    image:
-      'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png',
+    image: 'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png',
   },
 };
