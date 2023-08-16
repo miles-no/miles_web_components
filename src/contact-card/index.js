@@ -56,7 +56,8 @@ class MilesContactCard extends HTMLElement {
     }
 
     if (name === 'phone') {
-      this.phoneEl.setAttribute('href', `tel:${newValue}`);
+      const telWithoutSpaces = newValue.replace(/\s/g, '');
+      this.phoneEl.setAttribute('href', `tel:${telWithoutSpaces}`);
       this.phoneEl.textContent = newValue;
     }
 
