@@ -167,6 +167,12 @@ a:hover {
   min-width: fit-content;
 }
 
+@media (max-width: 767px) {
+  #list {
+    border-radius: 0 0 30px 30px;
+  }
+}
+
 #list ul {
   position: relative;
   top: calc(-1 * var(--topOffset));
