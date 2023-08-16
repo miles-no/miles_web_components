@@ -4,6 +4,10 @@
   background-color: inherit;
 }
 
+:host(:focus) {
+  outline: none !important;
+}
+
 #wrapper {
   background-color: inherit;
   display: flex;
@@ -17,6 +21,15 @@ h2 {
 
 a {
   color: inherit;
+}
+
+a:hover,
+a:focus {
+  color: var(--miles_link_color_hover);
+  background-color: var(--miles_link_color_hover_bg);
+  outline: 2px solid var(--miles_link_color_hover_bg);
+}
+
 }
 
 #address,
