@@ -12,20 +12,16 @@ MilesBlogCardTemplate.innerHTML = `
 
      ${cssVariables}
   </style>
-  <div id="blog-card-container">
-    <a href="#" tabindex="-1">
-      <figure id="image-container">
-        <slot name="image"></slot>
-      </figure>
-    </a>
+  <a href="#" id="blog-card-container">
+    <figure id="image-container">
+      <slot name="image"></slot>
+    </figure>
     <div id="group">
-      <a href="#">
         <h2 id="title">Sertifisering i innovasjonsledelse</h2>
-      </a>
       <div>Publisert <span id="posted"></span></div>
       <div>Av <span id="author"></span></div>
     </div>
-  </div>
+  </a>
 `;
 
 class MilesBlogCard extends HTMLElement {

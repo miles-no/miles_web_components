@@ -32,8 +32,6 @@ h2 {
 }
 
 a {
-  display: block;
-  width: 100%;
   text-decoration: none;
   color: inherit;
 }
@@ -49,13 +47,13 @@ a {
   box-sizing: border-box;
 }
 
-#group:focus-within {
-  color: var(--miles_link_color_hover);
-  background-color: var(--miles_link_color_hover_bg);
+#blog-card-container:focus {
+  outline: none;
 }
 
-#group:focus-within a {
-  outline: none;
+#blog-card-container:focus-within #group {
+  color: var(--miles_link_color_hover);
+  background-color: var(--miles_link_color_hover_bg);
 }
 
 figure {
