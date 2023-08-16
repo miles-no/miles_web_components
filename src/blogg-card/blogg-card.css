@@ -5,6 +5,10 @@
   height: inherit;
 }
 
+:host(:focus) {
+  outline: none !important;
+}
+
 #blog-card-container {
   display: flex;
   flex-direction: column;
@@ -28,8 +32,6 @@ h2 {
 }
 
 a {
-  display: block;
-  width: 100%;
   text-decoration: none;
   color: inherit;
 }
@@ -43,6 +45,15 @@ a {
   color: var(--miles_secondary_four);
   height: 12rem;
   box-sizing: border-box;
+}
+
+#blog-card-container:focus {
+  outline: none;
+}
+
+#blog-card-container:focus-within #group {
+  color: var(--miles_link_color_hover);
+  background-color: var(--miles_link_color_hover_bg);
 }
 
 figure {
