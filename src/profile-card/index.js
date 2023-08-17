@@ -10,7 +10,7 @@ MilesProfileCardTemplate.innerHTML = `
        
         <div class="profile-card">
           <figure>
-            <img class="profile-card__image" id="profileimage" /> 
+            <img class="profile-card__image" id="profileimage" loading="lazy" /> 
           </figure>
           <div class="profile-card__info">
             <h3 id="name"></h3>

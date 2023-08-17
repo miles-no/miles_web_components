@@ -11,7 +11,7 @@ MilesImageBlockTemplate.innerHTML = `
   </style>
   <div class="image-block">
     <div class="image-block__image">
-      <img id="image" alt="Miles image card image" /> 
+      <img id="image" alt="Miles image card image" loading="lazy" /> 
     </div>
     <div class="image-block__content">
       <div class="centering">

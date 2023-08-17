@@ -46,7 +46,7 @@ class MilesFagbloggTeaser extends HTMLElement {
 
       Array.from(images).forEach((image, index) => {
         image.setAttribute('style', 'height: auto; cursor: pointer;');
-
+        image.setAttribute('loading', 'lazy');
         image.setAttribute('data-post', links[index].href);
         image.addEventListener('click', this.goToPost);
       });

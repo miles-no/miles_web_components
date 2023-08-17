@@ -65,6 +65,7 @@ class MilesBlogCard extends HTMLElement {
     if (name === 'image') {
       const image = document.createElement('img');
       image.setAttribute('src', newValue);
+      image.setAttribute('loading', 'lazy');
       image.setAttribute('alt', 'Image for blog card'); // possible to set via WP?
       this.firgureEl.append(image);
     }

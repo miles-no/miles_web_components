@@ -60,7 +60,8 @@ class MilesBusinessCard extends HTMLElement {
     if (this.hasAttribute('name')) {
       this.firgureEl
         .querySelector('img')
-        .setAttribute('alt', `Profile picture ${this.getAttribute('name')}`);
+        .setAttribute('alt', `Profile picture ${this.getAttribute('name')}`)
+        .setAttribute('loading', 'lazy');
     }
   }
 
