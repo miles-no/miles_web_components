@@ -2,7 +2,7 @@
   "name": "miles_wc",
   "private": false,
   "description": "Miles Web Components. Written for miles.no, but could be used for other projects as well.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "web components",
     "miles.no",
@@ -44,8 +44,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static",
-    "publish": "npm run build && npm publish --access public"
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.8",
