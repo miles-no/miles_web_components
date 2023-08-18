@@ -1,9 +1,40 @@
 {
   "name": "miles-wc",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "description": "Miles Web Components. Written for miles.no, but could be used for other projects as well.",
+  "version": "1.0.0",
+  "keywords": [
+    "web components",
+    "miles.no",
+    "W3C",
+    "css",
+    "javascript"
+  ],
   "type": "module",
   "homepage": "https://skaihigh.github.com/miles-no/miles_web_components",
+  "license": "ISC",
+  "author": {
+    "name": "Christian Skaiaa",
+    "email": "christian.skaiaa@miles.no"
+  },
+  "contributors": [
+    {
+      "name": "Christian Skaiaa",
+      "email": "christian.skaiaa@miles.no"
+    },
+    {
+      "name": "Lukas Juodikis",
+      "email": "lukas.juodikis@komponent.no"
+    },
+    {
+      "name": "Paal Kristian Minne",
+      "email": "paal.kristian.minne@miles.no"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miles-no/miles_web_components.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
