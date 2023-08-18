@@ -3,6 +3,7 @@ name: Miles Web Components package release
 on:
   release:
     types: [created]
+  workflow_dispatch:
 
 jobs:
   build:

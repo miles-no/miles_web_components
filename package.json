@@ -1,5 +1,5 @@
 {
-  "name": "miles_wc",
+  "name": "@miles-no/miles_wc",
   "private": false,
   "description": "Miles Web Components. Written for miles.no, but could be used for other projects as well.",
   "version": "1.0.1",
@@ -31,6 +31,10 @@
       "email": "paal.kristian.minne@miles.no"
     }
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/miles-no/miles_web_components.git"
