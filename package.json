@@ -42,6 +42,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-production": "vite build --mode production",
+    "build-development": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.js\"",
     "prettier-watch": "onchange -v 'src/**/*.js' 'src/**/*.css' -- npm run build",
@@ -75,5 +77,10 @@
     "sass": "^1.63.4",
     "storybook": "^7.0.27",
     "vite": "^4.2.0"
+  },
+  "dependencies": {
+    "postcss": "^8.4.28",
+    "postcss-css-variables": "^0.19.0",
+    "rollup-plugin-postcss": "^4.0.2"
   }
 }

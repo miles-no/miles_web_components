@@ -1,5 +1,7 @@
 import { propsToAttrs } from '../storybook.utils.js';
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const siteHeader = `
 background-color: var(--miles_primary_dark);
 color: white;
@@ -38,11 +40,11 @@ export default {
 	                                            <h3 class="widget-title">Hvem er vi</h3>
 	                                            <div class="menu-hvem-er-vi-container">
 	                                                <ul id="menu-hvem-er-vi" class="menu">
-	                                                    <li id="menu-item-9733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9733"><a href="https://www.miles.no/newsite/vi-er-miles/">Vi er Miles</a></li>
-	                                                    <li id="menu-item-9744" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9744"><a href="https://www.miles.no/newsite/vi-er-miles/om-miles/">Historien vår</a></li>
-	                                                    <li id="menu-item-9736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9736"><a href="https://www.miles.no/newsite/cv-kompetanse/">Folkene</a></li>
-	                                                    <li id="menu-item-9870" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9870"><a href="https://www.miles.no/newsite/vi-er-miles/samfunnsengasjement/">Samfunnsengasjement</a></li>
-	                                                    <li id="menu-item-9754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9754"><a href="https://www.miles.no/newsite/team-as-a-service-komponent/">Team as a service</a></li>
+	                                                    <li id="menu-item-9733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9733"><a href="${BASE_URL}vi-er-miles/">Vi er Miles</a></li>
+	                                                    <li id="menu-item-9744" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9744"><a href="${BASE_URL}vi-er-miles/om-miles/">Historien vår</a></li>
+	                                                    <li id="menu-item-9736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9736"><a href="${BASE_URL}cv-kompetanse/">Folkene</a></li>
+	                                                    <li id="menu-item-9870" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9870"><a href="${BASE_URL}vi-er-miles/samfunnsengasjement/">Samfunnsengasjement</a></li>
+	                                                    <li id="menu-item-9754" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9754"><a href="${BASE_URL}team-as-a-service-komponent/">Team as a service</a></li>
 	                                                </ul>
 	                                            </div>
 	                                        </li>
@@ -50,8 +52,8 @@ export default {
 	                                            <h3 class="widget-title">Hva gjør vi</h3>
 	                                            <div class="menu-hva-gjor-vi-container">
 	                                                <ul id="menu-hva-gjor-vi" class="menu">
-	                                                    <li id="menu-item-9757" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9757"><a href="https://www.miles.no/newsite/fagomrader/">Kompetansen vår</a></li>
-	                                                    <li id="menu-item-9738" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9738"><a href="https://www.miles.no/newsite/pafyll/">Faglige verktøy</a></li>
+	                                                    <li id="menu-item-9757" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9757"><a href="${BASE_URL}fagomrader/">Kompetansen vår</a></li>
+	                                                    <li id="menu-item-9738" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9738"><a href="${BASE_URL}pafyll/">Faglige verktøy</a></li>
 	                                                </ul>
 	                                            </div>
 	                                        </li>
@@ -59,7 +61,7 @@ export default {
 	                                            <h3 class="widget-title">Kontakt oss</h3>
 	                                            <div class="menu-kontakt-oss-container">
 	                                                <ul id="menu-kontakt-oss" class="menu">
-	                                                    <li id="menu-item-9758" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9350 current_page_item menu-item-9758"><a href="https://www.miles.no/newsite/vare-kontorer/" aria-current="page">Våre kontorer</a></li>
+	                                                    <li id="menu-item-9758" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9350 current_page_item menu-item-9758"><a href="${BASE_URL}vare-kontorer/" aria-current="page">Våre kontorer</a></li>
 	                                                </ul>
 	                                            </div>
 	                                        </li>
@@ -79,9 +81,9 @@ export default {
 	                                            <h3 class="widget-title">Faglig inspirasjon</h3>
 	                                            <div class="menu-faglig-inspirasjon-container">
 	                                                <ul id="menu-faglig-inspirasjon" class="menu">
-	                                                    <li id="menu-item-9796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9796"><a href="https://www.miles.no/newsite/fagblogg/">Vår egen blogg</a></li>
-	                                                    <li id="menu-item-9740" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9740"><a href="https://www.miles.no/newsite/milespodden/">MilesPodden</a></li>
-	                                                    <li id="menu-item-9739" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9739"><a href="https://www.miles.no/newsite/se-hva-som-skjer/">Aktivitetskalenderen</a></li>
+	                                                    <li id="menu-item-9796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9796"><a href="${BASE_URL}fagblogg/">Vår egen blogg</a></li>
+	                                                    <li id="menu-item-9740" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9740"><a href="${BASE_URL}milespodden/">MilesPodden</a></li>
+	                                                    <li id="menu-item-9739" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9739"><a href="${BASE_URL}se-hva-som-skjer/">Aktivitetskalenderen</a></li>
 	                                                </ul>
 	                                            </div>
 	                                        </li>
@@ -89,8 +91,8 @@ export default {
 	                                            <h3 class="widget-title">Mediesenter</h3>
 	                                            <div class="menu-mediesenter-container">
 	                                                <ul id="menu-mediesenter" class="menu">
-	                                                    <li id="menu-item-9756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9756"><a href="https://www.miles.no/newsite/nyhetssaker/">Nyhetssaker</a></li>
-	                                                    <li id="menu-item-9755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9755"><a href="https://www.miles.no/newsite/logo/">Logo</a></li>
+	                                                    <li id="menu-item-9756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9756"><a href="${BASE_URL}nyhetssaker/">Nyhetssaker</a></li>
+	                                                    <li id="menu-item-9755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9755"><a href="${BASE_URL}logo/">Logo</a></li>
 	                                                </ul>
 	                                            </div>
 	                                        </li>

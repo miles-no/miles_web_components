@@ -105,8 +105,12 @@ class MilesAudioPlayer extends HTMLElement {
   };
 
   timeUpdateHandler = () => {
-    this.progressCurrentEl.textContent = this.getTimeString(this.audioPlayerEl.currentTime);
-    this.progressTotalLengthEl.textContent = this.getTimeString(this.audioPlayerEl.duration);
+    this.progressCurrentEl.textContent = this.getTimeString(
+      this.audioPlayerEl.currentTime
+    );
+    this.progressTotalLengthEl.textContent = this.getTimeString(
+      this.audioPlayerEl.duration
+    );
 
     this.progressbarEl.setAttribute('value', this.audioPlayerEl.currentTime);
 
@@ -121,15 +125,15 @@ class MilesAudioPlayer extends HTMLElement {
   loadMetadataHandler = () => {
     this.progressbarEl.max = this.audioPlayerEl.duration;
 
-
     this.progressCurrentEl.textContent = '0:00';
-    this.progressTotalLengthEl.textContent = this.getTimeString(this.audioPlayerEl.duration);
+    this.progressTotalLengthEl.textContent = this.getTimeString(
+      this.audioPlayerEl.duration
+    );
 
     this.updateProgress();
   };
 
   updateProgress = () => {
-    console.log('progress');
     let target = this.progressbarEl;
 
     const min = 0;

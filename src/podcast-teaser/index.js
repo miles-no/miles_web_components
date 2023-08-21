@@ -15,7 +15,7 @@ template.innerHTML = `
         <div class="bg">
           <div class="inner">
             <div class="left">
-              <a href="/newsite/milespodden">
+              <a href="">
                 <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="46" cy="46" r="46" fill="#EB4645"/>
                 <path d="M32 27V65L70 46L32 27Z" fill="#FCF8F3"/>
@@ -28,7 +28,7 @@ template.innerHTML = `
             </div>
           </div>
         </div>
-          <miles-info link="/newsite/milespodden">
+          <miles-info link="">
           <miles-pod slot="icon"></miles-pod>
              <div>Interessert i faglig påfyll?</div>
             <div>Sjekk ut podcasten vår! </div>
@@ -43,6 +43,15 @@ class MilesPodcastTeaser extends HTMLElement {
     shadow.appendChild(template.content.cloneNode(true));
     this.titlEl = this.shadowRoot.querySelector('#title');
     this.dateEl = this.shadowRoot.querySelector('#date');
+  }
+
+  connectedCallback() {
+    this.shadowRoot
+      .querySelector('miles-info')
+      .setAttribute('link', import.meta.env.VITE_BASE_URL);
+    this.shadowRoot
+      .querySelector('a')
+      .setAttribute('href', import.meta.env.VITE_BASE_URL);
   }
 
   static get observedAttributes() {

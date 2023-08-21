@@ -23,7 +23,8 @@ export const Card = {
     phone: '917 12 345',
     variant: 'wide',
     jobtitle: 'tjener',
-    image:
-      'https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png',
+    image: `${
+      import.meta.env.VITE_BASE_URL
+    }wp-content/uploads/2019/06/miles_smile.png`,
   },
 };

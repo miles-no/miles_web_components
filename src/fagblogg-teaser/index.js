@@ -14,7 +14,7 @@ MilesFagbloggTeaserTemplate.innerHTML = `
     <div class="bg">
       <div id="header">
         <h2>Miles fagblogg</h2>
-        <miles-info link="/newsite/milespodden">
+        <miles-info link="">
         <miles-pod id="mic" slot="icon"></miles-pod>
           <div>Interessert i faglig påfyll?</div>
           <div>Sjekk ut podcasten vår! </div>
@@ -51,6 +51,10 @@ class MilesFagbloggTeaser extends HTMLElement {
         image.addEventListener('click', this.goToPost);
       });
     }
+
+    this.shadowRoot
+      .querySelector('miles-info')
+      .setAttribute('link', import.meta.env.VITE_BASE_URL);
   }
 
   disconnectedCallback() {}

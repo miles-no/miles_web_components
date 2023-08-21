@@ -1,5 +1,5 @@
 import { propsToAttrs } from '../storybook.utils.js';
-
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 export default {
   title: 'Miles/Components',
   tags: ['autodocs'],
@@ -13,7 +13,7 @@ export default {
 				          Miles er et IT-konsulentselskap der gleden over faget og hverandre er de viktigste ledestjernene. Kjernekompetansen vår ligger i utvikling, design, prosjetledelse og rådgivning.
               </p>
               <div class="link_wrapper">
-				        <a href="https://www.miles.no/newsite/dette-kan-vi-i-miles/" class="link">Les mer om vår kompetanse </a>
+				        <a href="${BASE_URL}}dette-kan-vi-i-miles/" class="link">Les mer om vår kompetanse </a>
               </div>
 				</div>
 		</div>       			
