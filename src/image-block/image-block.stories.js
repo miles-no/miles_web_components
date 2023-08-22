@@ -1,5 +1,7 @@
 import '../button/index.js';
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 export default {
   title: 'Miles/Components',
   tags: ['autodocs'],
@@ -32,7 +34,7 @@ export const ImageBlock = {
     alt: '',
     reverse: false,
     button: "Don't panic",
-    href: 'https://www.miles.no/newsite/vi-er-miles/',
+    href: `${BASE_URL}vi-er-miles/`,
     background: '',
     color: '',
   },

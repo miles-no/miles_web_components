@@ -29,7 +29,7 @@ export default {
 
 export const Button = {
   args: {
-    value: 'https://www.miles.no/newsite/vi-er-miles/',
+    value: `${import.meta.env.VITE_BASE_URL}vi-er-miles/`,
     name: 'button-1',
     variant: 'blank',
   },

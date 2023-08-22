@@ -1,4 +1,5 @@
 import { propsToAttrs } from '../../../storybook.utils.js';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export default {
   title: 'Miles/Components/Cards/Profile',
@@ -13,7 +14,6 @@ export const Card = {
     name: 'Ola Nordmann',
     location: 'Oslo',
     jobtitle: 'tjener',
-    image:
-      'https://www.miles.no/newsite/wp-content/uploads/2019/06/miles_smile.png',
+    image: `${BASE_URL}wp-content/uploads/2019/06/miles_smile.png`,
   },
 };

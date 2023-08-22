@@ -1,5 +1,7 @@
 /** @type { import('@storybook/web-components-vite').StorybookConfig } */
 
+let BASE_URL = 'https://miles.no/newsite/';
+
 const config = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -14,5 +16,9 @@ const config = {
   docs: {
     autodocs: 'tag',
   },
+  env: config => ({
+    ...config,
+    VITE_BASE_URL: BASE_URL,
+  }),
 };
 export default config;

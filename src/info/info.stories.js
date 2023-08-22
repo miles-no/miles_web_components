@@ -1,4 +1,5 @@
 import { propsToAttrs } from '../storybook.utils.js';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const decoratorStyles = `
     width: 90vw;
@@ -31,6 +32,6 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/web-components/writing-stories/args
 export const Info = {
   args: {
-    link: 'https://www.miles.no/newsite/milespodden/',
+    link: `${BASE_URL}milespodden/`,
   },
 };
