@@ -43,6 +43,14 @@ class MilesBlogCard extends HTMLElement {
     }).format(date);
   };
 
+  parseDate = value => {
+    const dateComponents = value.replaceAll('.', '/').split('/');
+    const day = dateComponents[0];
+    const month = dateComponents[1] - 1; // month is zero indexed
+    const year = dateComponents[2];
+    return new Date(year, month, day);
+  };
+
   static get observedAttributes() {
     return ['url', 'author', 'posted', 'image', 'title'];
   }
@@ -71,9 +79,9 @@ class MilesBlogCard extends HTMLElement {
     }
 
     if (name === 'posted') {
-      // If . is used as separators, replace with /
-      const dateWithSlash = newValue.replace(/\./g, '/');
-      this.posted.textContent = `${this.timeFormat(new Date(dateWithSlash))}`;
+      this.posted.textContent = `${this.timeFormat(
+        new Date(this.parseDate(newValue))
+      )}`;
     }
   }
 }
