@@ -1,4 +1,4 @@
-/** @type { import('@storybook/web-components').Preview } */
+/** @type { import('@storybook/html-vite').Preview } */
 
 /**
  * Load all buuildt component from main file.
@@ -9,7 +9,7 @@ import './wp-styles.css';
 
 const preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    actions: { argTypesRegex: '^on.*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,

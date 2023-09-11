@@ -10,8 +10,13 @@ const config = {
     '@storybook/addon-a11y',
   ],
   framework: {
-    name: '@storybook/web-components-vite',
+    name: '@storybook/html-vite',
     options: {},
+  },
+  core: {},
+  features: {
+    storyStoreV7: true,
+    interactionsDebugger: true,
   },
   docs: {
     autodocs: 'tag',

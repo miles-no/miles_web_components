@@ -84,3 +84,28 @@ if (!customElements.get(MilesProfileCardName)) {
 
 export default MilesProfileCard;
 export { MilesProfileCard };
+
+/* 
+
+document.querySelectorAll('miles-profile-card[location^=Komponent]').forEach((card)=>{
+  card.setAttribute('hidden', true)
+})
+
+document.querySelectorAll('miles-profile-card').forEach((card)=>{
+  card.removeAttribute('hidden')
+})
+
+
+document.querySelectorAll('miles-profile-card:not([location^=Bergen])').forEach((card)=>{
+  card.setAttribute('hidden', true)
+})
+
+document.querySelectorAll('miles-profile-card:not([location^=Trondheim])').forEach((card)=>{
+  card.setAttribute('hidden', true)
+})
+
+document.querySelectorAll('miles-profile-card:not([location^=Ålesund])').forEach((card)=>{
+  card.setAttribute('hidden', true)
+})
+
+*/

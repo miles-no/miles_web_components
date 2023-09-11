@@ -22,8 +22,36 @@ class MilesButton extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['color', 'selected', 'name', 'disabled', 'value', 'variant'];
+    return [
+      'filter',
+      'color',
+      'selected',
+      'name',
+      'disabled',
+      'value',
+      'variant',
+    ];
   }
+
+  connectedCallback() {
+    this.button.addEventListener('click', this.clickHandler);
+  }
+
+  disconnectedCallback() {
+    this.button.removeEventListener('click', this.clickHandler);
+  }
+
+  clickHandler = () => {
+    this.dispatchEvent(
+      new CustomEvent('change', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          value: this.getAttribute('filter'),
+        },
+      })
+    );
+  };
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'color') {

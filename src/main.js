@@ -35,6 +35,7 @@ import { MilesAudioSeek } from './icons/index.js';
 import { MilesImageBlock } from './image-block/index.js';
 import { MilesStickyBlock } from './sticky-block/index.js';
 import { MilesStickyImageBlock } from './sticky-image/index.js';
+import { MilesCardFilter } from './cv-filter/index.js';
 export {
   MilesBulb,
   MilesCloud,
@@ -69,5 +70,6 @@ export {
   MilesAudioSeek,
   MilesImageBlock,
   MilesStickyBlock,
-  MilesStickyImageBlock
+  MilesStickyImageBlock,
+  MilesCardFilter,
 };
