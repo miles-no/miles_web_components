@@ -12,10 +12,12 @@
     --miles_secondary_five: #ff303b; /* korall */
 
     --miles_link_color: #183f46;
-    --miles_link_color_hover: #94e5db;
+    --miles_link_color_hover: var(--miles_secondary_two);
+    --miles_link_color_hover_bg: var(--miles_secondary_one);
 
     --miles_link_color_ondark: #94e5db;
-    --miles_link_color_ondark_hover: #183f46;
+    --miles_link_color_ondark_hover: var(--miles_secondary_one);
+    --miles_link_color_ondark_hover_bg: var(--miles_secondary_two);
 
     --miles_default_bg: #fcf8f3;
 
@@ -60,7 +62,7 @@ Theme URI: http://underscores.me/
 Author: ignitas.no and Miles
 Author URI: http://www.ignitas.no, www.miles.no
 Description: Description
-Version: 1.0.0
+Version: 1.0.9
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -543,11 +545,8 @@ h1.has-large-font-size {
 
 /* line 49, sass/base/_typography.scss */
 h1 {
-    width: 33%;
-    /* color: var(--miles_primary_light); */
     font-size: var(--miles-h1);
     line-height: var(--miles-h1-lineheight);
-    /* margin: 56px 0; */
     font-weight: 700;
 }
 
@@ -726,7 +725,14 @@ p {
 /* line 12, sass/base/_elements.scss */
 ul,
 ol {
-    margin: 0 0 1.5em 3em;
+    margin: 0;
+}
+
+@media (min-width: 1025px) {
+    ul,
+    ol {
+        margin: 0 0 1.5em 3em;
+    }
 }
 
 /* line 17, sass/base/_elements.scss */
@@ -855,11 +861,17 @@ table {
 
 /* line 8, sass/layout/_footer.scss */
 .site-footer a:link,
-.site-footer a:hover,
-.site-footer a:focus,
 .site-footer a:visited {
-    color: white !important;
+    color: white;
 }
+
+.site-footer a:hover,
+.site-footer a:focus {
+    color: var(--miles_link_color_ondark_hover);
+    background-color: var(--miles_link_color_ondark_hover_bg);
+    outline: var(--miles_link_color_ondark_hover_bg);
+}
+
 /* line 13, sass/layout/_footer.scss */
 .site-footer a:hover {
     text-decoration: underline;
@@ -928,6 +940,11 @@ table {
 .site-footer ul.mks_social_widget_ul a:before {
     color: var(--miles_primary_dark);
 }
+
+.site-footer ul.mks_social_widget_ul a:focus {
+    outline: var(--default_focus);
+}
+
 /* line 1, sass/layout/_header.scss */
 .site-header {
     background-color: var(--miles_primary_dark);
@@ -972,12 +989,7 @@ table {
 .site-header .site-branding a[rel='home'] {
     display: flex;
     z-index: 50;
-}
-
-@media screen and (max-width: 900px) and (orientation: landscape) {
-    .site-header .site-branding a[rel='home'] {
-        position: absolute;
-    }
+    outline-offset: 3px;
 }
 
 .open-menu .fixed {
@@ -1015,7 +1027,7 @@ table {
 /* line 1, sass/layout/_grid.scss */
 .site-main {
     margin-bottom: 6rem;
-    min-height: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -1450,7 +1462,8 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-    background-color: var(--miles_link_color_hover);
+    color: var(--miles_link_color_hover);
+    background-color: var(--miles_link_color_hover_bg);
 }
 /* line 14, sass/navigation/_nav-links.scss */
 a:focus {
@@ -1513,7 +1526,7 @@ a.fagblogg-thumbnail:hover {
     flex-direction: row;
     width: var(--page-wrap);
     display: flex;
-    /* max-width: 80%; */
+    max-width: calc(100% - 2rem);
     margin-right: auto;
     margin-left: auto;
 }
@@ -1525,19 +1538,11 @@ a.fagblogg-thumbnail:hover {
     line-height: 1.5;
 }
 
-@media (min-width: 768px) {
-    /* line 57, sass/navigation/_nav-links.scss */
-    .comment-navigation .nav-links,
-    .posts-navigation .nav-links,
-    .post-navigation .nav-links {
-        max-width: var(--content_width);
-    }
-}
 /* line 65, sass/navigation/_nav-links.scss */
 .single-menneskene .comment-navigation .nav-links,
 .single-menneskene .posts-navigation .nav-links,
 .single-menneskene .post-navigation .nav-links {
-    background: url('image/arrow-back-red-1.svg') no-repeat left 8px;
+    background: url('image/arrow-back-red-1.svg') no-repeat left center;
     background-size: 27px;
     padding-left: 36px;
 }
@@ -1553,7 +1558,7 @@ a.fagblogg-thumbnail:hover {
 .comment-navigation .nav-links .nav-previous,
 .posts-navigation .nav-links .nav-previous,
 .post-navigation .nav-links .nav-previous {
-    background: url('image/arrow-back-red-1.svg') no-repeat left 8px;
+    background: url('image/arrow-back-red-1.svg') no-repeat left center;
     background-size: 27px;
     padding-left: 36px;
 }
@@ -1563,7 +1568,7 @@ a.fagblogg-thumbnail:hover {
 .post-navigation .nav-links .nav-next {
     margin-left: auto;
     text-align: right;
-    background: url('image/arrow-next-red.svg') no-repeat right 8px;
+    background: url('image/arrow-next-red.svg') no-repeat right center;
     background-size: 27px;
     padding-right: 36px;
 }
@@ -2295,6 +2300,7 @@ article.has-post-thumbnail img {
     aspect-ratio: 5 / 4;
 }
 
+/*
 @media (min-width: 768px) {
     article.has-post-thumbnail img {
         margin-right: auto;
@@ -2303,6 +2309,7 @@ article.has-post-thumbnail img {
         aspect-ratio: 16 / 9;
     }
 }
+*/
 
 /* Nested columns - reusable block
 --------------------------------------------- */
@@ -2936,7 +2943,12 @@ img.aligncenter {
     }
 }
 /* line 173, sass/blocks/_custom-blocks.scss */
+.feature-content .link_wrapper a.link:focus,
+.feature-content .link_wrapper a.link:active,
 .feature-content .link_wrapper a.link:hover {
+    color: var(--miles_link_color_hover);
+    background-color: var(--miles_link_color_hover_bg);
+    outline: 0.2em solid var(--miles_link_color_hover_bg);
     text-decoration: underline;
 }
 /* line 175, sass/blocks/_custom-blocks.scss */
@@ -3034,7 +3046,6 @@ img.aligncenter {
     /* line 259, sass/blocks/_custom-blocks.scss */
     .wp-block-pb-accordion-item {
         margin: 0 auto;
-        max-width: 66.6666vw;
     }
 }
 /* line 267, sass/blocks/_custom-blocks.scss */
@@ -3047,7 +3058,7 @@ img.aligncenter {
 @media (min-width: 768px) {
     /* line 267, sass/blocks/_custom-blocks.scss */
     .wp-block-pb-accordion-item .c-accordion__title {
-        margin: 21px 105px;
+        margin: 21px;
         padding-left: 70px;
     }
 }
@@ -3081,7 +3092,7 @@ img.aligncenter {
 @media (min-width: 768px) {
     /* line 301, sass/blocks/_custom-blocks.scss */
     .wp-block-pb-accordion-item .c-accordion__content {
-        margin: 0 105px 42px;
+        margin: 0 21px;
         padding-left: 70px;
     }
 }
@@ -3926,7 +3937,7 @@ input[type='reset']:active,
 input[type='reset']:focus,
 input[type='submit']:active,
 input[type='submit']:focus {
-    outline: thin dotted;
+    outline: var(--default_focus);
 }
 
 /* line 223, sass/components/_forms.scss */
@@ -4115,12 +4126,6 @@ miles-podcast-teaser {
     object-fit: cover;
 }
 
-/*For kompteansesiden */
-@media (min-width: 600px) {
-}
-@media (min-width: 1025px) {
-}
-
 /**
   Fagblog teaser slot
 */
@@ -4259,7 +4264,8 @@ miles-office-banner {
   MILES PAGES
   */
 
-.page-fagomrader miles-info-block {
+.page-fagomrader miles-info-block,
+.page-vi-er-miles miles-image-block {
     margin-bottom: 4rem;
 }
 
@@ -4277,9 +4283,44 @@ miles-office-banner {
 
 .page-vare-kontorer .wp-block-group miles-button-anchor {
     margin-left: 1rem;
+    margin-top: 1rem;
 }
 
 .page-vare-kontorer h3 {
     font-weight: 400;
     font-size: 2rem;
+}
+
+/* WP CONTACT FORMS 7 */
+form.wpcf7-form {
+    width: 100%;
+    padding: 32px 16px;
+    border-radius: 30px;
+    background: #f8ebe8;
+    color: var(--miles_secondary_four);
+}
+
+form.wpcf7-form > * {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form.wpcf7-form input[type='text'] {
+    border-color: #fff;
+    background-color: #fff;
+}
+
+form.wpcf7-form input.wpcf7-submit {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    form.wpcf7-form {
+        padding: 60px 32px;
+    }
+
+    form.wpcf7-form input.wpcf7-submit {
+        width: auto;
+    }
 }
