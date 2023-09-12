@@ -5,7 +5,7 @@
 :host {
   --miles_base_url: var(--miles-base-url);
   --miles_primary_dark: #b72318; /* Miles-rød */
-  --miles_primary_light: #fbf0e5; /* Krem */
+  --miles_primary_light: #fcf8f3; /* Krem */
   --miles_secondary_one: #004047; /* Sjøgrønn */
   --miles_secondary_two: #78e8db; /* Turkis */
   --miles_secondary_three: #000000; /* Sort */
@@ -20,7 +20,7 @@
   --miles_link_color_ondark_hover: var(--miles_secondary_one);
   --miles_link_color_ondark_hover_bg: var(--miles_secondary_two);
 
-  --miles_default_bg: #f5f5f5;
+  --miles_default_bg: var(--miles_primary_light);
 
   --miles_effect_shadow_low: 0 0 4px 0 #00000033;
   --miles_effect_shadow_high: 0 0 16px 0 #00000033;
