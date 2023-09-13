@@ -36,6 +36,7 @@ import { MilesImageBlock } from './image-block/index.js';
 import { MilesStickyBlock } from './sticky-block/index.js';
 import { MilesStickyImageBlock } from './sticky-image/index.js';
 import { MilesCardFilter } from './cv-filter/index.js';
+import { MilesFilterButton } from './filter-button/index.js';
 export {
   MilesBulb,
   MilesCloud,
@@ -72,4 +73,5 @@ export {
   MilesStickyBlock,
   MilesStickyImageBlock,
   MilesCardFilter,
+  MilesFilterButton,
 };
