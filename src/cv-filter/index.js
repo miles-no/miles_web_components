@@ -41,6 +41,15 @@ class MilesCardFilter extends HTMLElement {
   };
 
   resetFilter = () => {
+    document.querySelectorAll('miles-filter-button').forEach(button => {
+      const shadowRoot = button.shadowRoot;
+      if (shadowRoot) {
+        const btn = shadowRoot.querySelector('button.selected');
+        if (btn) {
+          btn.classList.toggle('selected');
+        }
+      }
+    })
     document.querySelectorAll('miles-profile-card').forEach(card => {
       card.removeAttribute('hidden');
     });
