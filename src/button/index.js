@@ -22,7 +22,14 @@ class MilesButton extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['color', 'selected', 'name', 'disabled', 'value', 'variant'];
+    return [
+      'color',
+      'selected',
+      'name',
+      'disabled',
+      'value',
+      'variant',
+    ];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {

@@ -1,0 +1,38 @@
+:host {
+  display: inline-block;
+  color: var(--miles_primary_dark);
+  background-color: transparent;
+}
+
+:host(:focus) button {
+  color: var(--miles_primary_light);
+  background-color: var(--color);
+  border: 2px solid var(--color);
+}
+
+:host(:focus),
+button:focus-visible {
+  outline: transparent !important;
+  outline-width: 0 !important;
+}
+
+button {
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3rem;
+  border: 2px solid var(--color);
+  color: var(--color);
+  display: inline-flex;
+  font-weight: bold;
+  line-height: 21px;
+  padding: 13px 1.5rem 11px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+
+  &:hover,
+  &.selected {
+    color: var(--miles_primary_light);
+    background-color: var(--color);
+  }
+}
