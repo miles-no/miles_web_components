@@ -31,6 +31,7 @@ class MilesContactCard extends HTMLElement {
     this.emailEl = this.shadowRoot.querySelector('#email');
     this.phoneEl = this.shadowRoot.querySelector('#phone');
     this.orgnrEl = this.shadowRoot.querySelector('#orgnr');
+    this.orgnrLabelEl = this.shadowRoot.querySelector('#orgnrlabel');
   }
 
   static get observedAttributes() {
@@ -62,7 +63,13 @@ class MilesContactCard extends HTMLElement {
     }
 
     if (name === 'orgnr') {
-      this.orgnrEl.textContent = newValue;
+      if (newValue) {
+        this.orgnrEl.textContent = newValue;
+      } else {
+        // remove elements if we dont recieve orgnr
+        this.orgnrEl.remove();
+        this.orgnrLabelEl.remove();
+      }
     }
   }
 
