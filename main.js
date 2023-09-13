@@ -25,7 +25,7 @@ document.querySelector('#app').innerHTML = `
         draggable="false" />
     </figure>
     <figure data-slide-image="1">
-      <div class="overlay equinor"></div>
+      <div class="overlay ruter"></div>
       <img
         decoding="async"
         loading="lazy"
