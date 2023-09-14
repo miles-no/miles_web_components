@@ -74,6 +74,7 @@ class MilesBanner extends HTMLElement {
     if (name === 'icon') {
       if (newValue && newValue.length > 0) {
         const IconElement = document.createElement(newValue);
+        IconElement.setAttribute('part', 'icon');
         this.bannerImage.appendChild(IconElement);
       }
     }
