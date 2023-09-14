@@ -14,3 +14,14 @@ export const Curve = {
     height: '100',
   },
 };
+
+/*
+bottom: 45%;
+transform: rotate(90deg);
+display: block;
+position: absolute;
+right: 25px;
+height: 200px;
+width: 200px;
+
+*/
