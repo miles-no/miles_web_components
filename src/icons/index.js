@@ -134,7 +134,14 @@ templateCurve.innerHTML = `
       ${cssVariables}\n
         :host {
           display: inline-block;
-        } 
+        }
+        .curve {
+          transform: inherit;
+        }
+        
+        svg {
+          color: inherit;
+        }
     </style>
     <div class="curve">
       <svg fill="#b8261c" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 171.16 85.58">
