@@ -8,8 +8,7 @@ export default {
   render: args =>
     `<miles-image-slider  ${propsToAttrs(args)}>
         <figure class="is-layout-flex wp-block-gallery-1 wp-block-gallery has-nested-images columns-default is-cropped miles-image-slider">
-            <figure data-slide-image="0" class="altibox">
-              <div class="overlay altibox"></div>
+            <figure data-slide-image="0" class="dnb">
               <img
                 decoding="async"
                 loading="lazy"
@@ -28,8 +27,7 @@ export default {
                 sizes="(max-width: 825px) 100vw, 825px"
                 draggable="false" />
             </figure>
-            <figure data-slide-image="1" class="equinor">
-              <div class="overlay equinor"></div>
+            <figure data-slide-image="1" class="politiet">
               <img
                 decoding="async"
                 loading="lazy"
@@ -46,8 +44,7 @@ export default {
                 sizes="(max-width: 463px) 100vw, 463px"
                 draggable="false" />
             </figure>
-            <figure data-slide-image="2" class="dnb">
-              <div class="overlay dnb"></div>
+            <figure data-slide-image="2" class="ifforsikring">
               <img
                 decoding="async"
                 loading="lazy"
@@ -64,8 +61,7 @@ export default {
                 sizes="(max-width: 508px) 100vw, 508px"
                 draggable="false" />
             </figure>
-            <figure data-slide-image="3" class="storebrand">
-              <div class="overlay stp"></div>
+            <figure data-slide-image="3" class="ruter">
               <img
                 decoding="async"
                 loading="lazy"
@@ -82,8 +78,7 @@ export default {
                 sizes="(max-width: 796px) 100vw, 796px"
                 draggable="false" />
             </figure>
-            <figure data-slide-image="4" class="politiet">
-              <div class="overlay"></div>
+            <figure data-slide-image="4" class="telenor">
               <img
                 decoding="async"
                 loading="lazy"
