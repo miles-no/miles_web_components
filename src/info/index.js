@@ -34,6 +34,8 @@ class MilesInfo extends HTMLElement {
       this.link = newValue;
 
       let infoElement = this.shadowRoot.querySelector('.info');
+      infoElement.addEventListener('click', this.goTo);
+      infoElement.addEventListener('keydown', this.handleKeydown);
       infoElement.classList.add('info--link');
       infoElement.setAttribute('role', 'link');
       infoElement.setAttribute('aria-label', 'Gå til ' + newValue);

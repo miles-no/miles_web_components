@@ -48,10 +48,10 @@ class MilesPodcastTeaser extends HTMLElement {
   connectedCallback() {
     this.shadowRoot
       .querySelector('miles-info')
-      .setAttribute('link', import.meta.env.VITE_BASE_URL);
+      .setAttribute('link', `${import.meta.env.VITE_BASE_URL}milespodden`);
     this.shadowRoot
       .querySelector('a')
-      .setAttribute('href', import.meta.env.VITE_BASE_URL);
+      .setAttribute('href', `${import.meta.env.VITE_BASE_URL}milespodden`);
   }
 
   static get observedAttributes() {
