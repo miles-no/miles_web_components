@@ -18,8 +18,7 @@ Prosjektet har også linting og prettier. Se package.json
 
 ## Deployment
 
-There is no pipelines fpr build and deployment pr 31/08/23, so the way
-you deploy this components is that you copy them into this path via sftp
+The project is set up with a Github Action that bundle and upload the web components to the WP Hosting server.
 
 `/wp-newsite/wp-content/plugins/miles-wp-web-components-plugin/miles-wc-new`
 
