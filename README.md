@@ -20,7 +20,5 @@ Prosjektet har også linting og prettier. Se package.json
 
 The project is set up with a Github Action that bundle and upload the web components to the WP Hosting server.
 
-`/wp-newsite/wp-content/plugins/miles-wp-web-components-plugin/miles-wc-new`
-
-You will find the web components used in miles in thos storybook:
+You will find the web components used in miles in this storybook:
 https://miles-no.github.io/miles_web_components/?path=/docs/miles-components--docs
