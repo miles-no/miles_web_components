@@ -20,7 +20,7 @@ template.innerHTML = `
               </div>
           </div>
 		</div>
-		<div class="banner__image"></div>
+		<div part="banner-image" class="banner__image"></div>
 	</div>
 `;
 
@@ -37,15 +37,14 @@ class MilesBanner extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['image', 'title', 'variant', 'reverse'];
+    return ['image', 'title', 'variant', 'reverse', 'icon'];
   }
 
   connectedCallback() {
     const container = this.shadowRoot.querySelector('.banner__inner');
     const children = this.childNodes;
     if (children.length > 0 && container) {
-
-      while(container.firstChild) {
+      while (container.firstChild) {
         container.removeChild(container.firstChild);
       }
 
@@ -70,6 +69,14 @@ class MilesBanner extends HTMLElement {
 
     if (name === 'variant' && newValue === 'split') {
       this.banner.classList.add('split');
+    }
+
+    if (name === 'icon') {
+      if (newValue && newValue.length > 0) {
+        const IconElement = document.createElement(newValue);
+        IconElement.setAttribute('part', 'icon');
+        this.bannerImage.appendChild(IconElement);
+      }
     }
   }
 }
