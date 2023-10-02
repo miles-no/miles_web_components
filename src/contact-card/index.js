@@ -16,10 +16,16 @@ MilesContactCardTemplate.innerHTML = `
       <div id="address"></div>
       <a id="email"></a>
       <a id="phone"></a>
-      <div id="orgnrlabel">Organisasjonsnummer:</div>
-      <div aria-describedby="orgnrlabel" id="orgnr"></div>
+      <slot name="orgnr"></slot>
     </div>
     `;
+
+const OrganizationNumberField = document.createElement('div');
+OrganizationNumberField.innerHTML = `
+  <div id="orgnrlabel">Organisasjonsnummer:</div>
+  <div aria-describedby="orgnrlabel" id="orgnr"></div>
+`;
+
 class MilesContactCard extends HTMLElement {
   constructor() {
     super();
@@ -30,8 +36,7 @@ class MilesContactCard extends HTMLElement {
     this.adresseEl = this.shadowRoot.querySelector('#address');
     this.emailEl = this.shadowRoot.querySelector('#email');
     this.phoneEl = this.shadowRoot.querySelector('#phone');
-    this.orgnrEl = this.shadowRoot.querySelector('#orgnr');
-    this.orgnrLabelEl = this.shadowRoot.querySelector('#orgnrlabel');
+    this.orgnrSlot = this.shadowRoot.querySelector('slot[name="orgnr"]');
   }
 
   static get observedAttributes() {
@@ -62,13 +67,14 @@ class MilesContactCard extends HTMLElement {
       this.phoneEl.textContent = newValue;
     }
 
+    // only add orgnr field if orgnr is set
     if (name === 'orgnr') {
       if (newValue) {
-        this.orgnrEl.textContent = newValue;
+        this.orgnrSlot.innerHTML = OrganizationNumberField.innerHTML;
+        const orgnrEl = this.shadowRoot.querySelector('#orgnr');
+        orgnrEl.textContent = newValue;
       } else {
-        // remove elements if we dont recieve orgnr
-        this.orgnrEl.remove();
-        this.orgnrLabelEl.remove();
+        this.orgnrSlot.innerHTML = '';
       }
     }
   }
