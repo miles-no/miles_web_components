@@ -1,6 +1,6 @@
 # Miles W3C Web Components
 
-Dette prosjektet er et forsøk på å lage rammeverk agnostiske webkomponenter for nettsider og andre web baserte applikasjoner hos Miles.
+Dette prosjektet er et forsøk på å lage rammeverk-agnostiske webkomponenter for nettsider og andre web baserte applikasjoner hos Miles.
 
 ## Teknologi
 
