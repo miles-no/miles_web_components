@@ -69,7 +69,7 @@ class MilesContactCard extends HTMLElement {
 
     // only add orgnr field if orgnr is set
     if (name === 'orgnr') {
-      if (newValue) {
+      if (newValue && newValue.length > 0) {
         this.orgnrSlot.innerHTML = OrganizationNumberField.innerHTML;
         const orgnrEl = this.shadowRoot.querySelector('#orgnr');
         orgnrEl.textContent = newValue;
