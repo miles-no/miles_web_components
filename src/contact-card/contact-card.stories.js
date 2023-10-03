@@ -14,7 +14,7 @@ export const Card = {
     address: 'Norgeveien 1',
     email: 'ola.miles.no',
     phone: '917 12 345',
-    orgnr: '123456789',
+    orgnr: undefined,
     map: '',
   },
 };
