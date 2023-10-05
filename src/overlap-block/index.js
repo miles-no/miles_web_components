@@ -40,7 +40,7 @@ class MilesOverlapBlock extends HTMLElement {
 
   connectedCallback() {
     const areas = {
-      'Team as a service': '/team-as-a-service',
+      'Team as a service': '/team-as-a-service-komponent',
       'Systemutvikling': '/fagomrader/#system',
       'Prosjektledelse': '/fagomrader/#prosjekt',
       'Testledelse': '/fagomrader/#test',
