@@ -1,4 +1,5 @@
 import { propsToAttrs } from '../storybook.utils.js';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export default {
   title: 'Miles/Components/Cards/Author',
@@ -23,8 +24,6 @@ export const Card = {
     phone: '917 12 345',
     variant: 'wide',
     jobtitle: 'tjener',
-    image: `${
-      import.meta.env.VITE_BASE_URL
-    }wp-content/uploads/2019/06/miles_smile.png`,
+    image: `${BASE_URL}wp-content/uploads/2019/06/miles_smile.png`,
   },
 };

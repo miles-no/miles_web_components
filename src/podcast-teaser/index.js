@@ -1,5 +1,6 @@
 import styles from './podcast-teaser.css?inline';
 import cssVariables from '../styles/variables.css?inline';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 /**
  * Miles Podcast teaser
@@ -48,10 +49,10 @@ class MilesPodcastTeaser extends HTMLElement {
   connectedCallback() {
     this.shadowRoot
       .querySelector('miles-info')
-      .setAttribute('link', `${import.meta.env.VITE_BASE_URL}milespodden`);
+      .setAttribute('link', `${BASE_URL}milespodden`);
     this.shadowRoot
       .querySelector('a')
-      .setAttribute('href', `${import.meta.env.VITE_BASE_URL}milespodden`);
+      .setAttribute('href', `${BASE_URL}milespodden`);
   }
 
   static get observedAttributes() {

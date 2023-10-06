@@ -1,5 +1,6 @@
 import styles from './fagblogg-teaser.css?inline';
 import cssVariables from '../styles/variables.css?inline';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 /**
   Miles Fagblogg teaser
@@ -54,7 +55,7 @@ class MilesFagbloggTeaser extends HTMLElement {
 
     this.shadowRoot
       .querySelector('miles-info')
-      .setAttribute('link', import.meta.env.VITE_BASE_URL);
+      .setAttribute('link', BASE_URL);
   }
 
   disconnectedCallback() {}
