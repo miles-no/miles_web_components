@@ -52,9 +52,9 @@ class MilesOverlapBlock extends HTMLElement {
     };
     const listElement = document.createElement('ul');
 
-    Object.entries(areas).forEach(([text, href]) => {
+    Object.entries(areas).forEach(([text, path]) => {
       const listItemEl = document.createElement('li');
-      listItemEl.innerHTML = `<miles-curve color="currentColor" width="1em"></miles-curve><a href="${href}" style="color:white; text-decoration: underline;">${text}</a>`;
+      listItemEl.innerHTML = `<miles-curve color="currentColor" width="1em"></miles-curve><a href="${path}" style="color:white;">${text}</a>`;
       listElement.append(listItemEl);
     });
     this.list.append(listElement);
