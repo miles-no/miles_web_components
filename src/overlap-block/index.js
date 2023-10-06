@@ -39,22 +39,22 @@ class MilesOverlapBlock extends HTMLElement {
   }
 
   connectedCallback() {
-    const areas = [
-      'Team as a service',
-      'Systemutvikling',
-      'Prosjektledelse',
-      'Testledelse',
-      'Smidig Coaching',
-      'UX-design',
-      'Arkitektur',
-      'Rådgivning',
-      'AI',
-    ];
+    const areas = {
+      'Team as a service': '/team-as-a-service-komponent',
+      'Systemutvikling': '/fagomrader/#system',
+      'Prosjektledelse': '/fagomrader/#prosjekt',
+      'Testledelse': '/fagomrader/#test',
+      'Smidig Coaching': '/fagomrader/#smidig',
+      'UX-design': '/fagomrader/#design',
+      'Arkitektur': '/fagomrader/#system',
+      'Rådgivning': '/fagomrader/#radgivning',
+      'AI': '/fagomrader/#ai',
+    };
     const listElement = document.createElement('ul');
 
-    areas.forEach(text => {
+    Object.entries(areas).forEach(([text, path]) => {
       const listItemEl = document.createElement('li');
-      listItemEl.innerHTML = `<miles-curve color="currentColor" width="1em"></miles-curve><span>${text}</span>`;
+      listItemEl.innerHTML = `<miles-curve color="currentColor" width="1em"></miles-curve><a href="${path}" style="color:white;">${text}</a>`;
       listElement.append(listItemEl);
     });
     this.list.append(listElement);
