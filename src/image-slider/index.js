@@ -1,8 +1,9 @@
 import styles from './image-slider.css?inline';
+import splideStyles from './splide.css?inline';
 import cssVariables from '../styles/variables.css?inline';
-import splideDefaultTheme from '@splidejs/splide/css?inline';
 import Splide from '@splidejs/splide';
 import { Transition } from './Transition';
+/* import splideTheme from '@splidejs/splide/css?inline'; */ // TODO: See issue #101 in GitHub
 
 /**
  * Miles Image Slider
@@ -10,7 +11,7 @@ import { Transition } from './Transition';
 const ImageSliderTemplate = document.createElement('template');
 ImageSliderTemplate.innerHTML = `
 <style>
-${splideDefaultTheme}\n
+${splideStyles}\n
 ${styles}\n
 ${cssVariables}
 </style>
@@ -38,7 +39,7 @@ class MilesImageSlider extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
     shadow.appendChild(ImageSliderTemplate.content.cloneNode(true));
 
-    /* this.logos = [
+    this.logos = [
       'fjordkraft',
       'tv2',
       'cutters',
@@ -48,9 +49,9 @@ class MilesImageSlider extends HTMLElement {
       'dnb',
       'ifforsikring',
       'politiet',
-    ]; */
+    ];
 
-    this.createSlides();
+    this.addSlides();
     this.initializeSplide();
   }
 
@@ -59,12 +60,24 @@ class MilesImageSlider extends HTMLElement {
     return [...figures];
   }
 
-  createSlides() {
+  addSlides() {
     const ul = this.shadowRoot.querySelector('ul');
     this.figures.forEach(figure => {
+      this.addOverlay(figure);
+
       const slide = ul.appendChild(ImageSliderSlide.cloneNode(true));
       const container = slide.querySelector('.splide__slide__container');
       container.appendChild(figure);
+    });
+  }
+
+  addOverlay(figure) {
+    figure.classList.forEach(className => {
+      if (this.logos.includes(className)) {
+        const overlay = document.createElement('div');
+        overlay.className = `overlay ${className}`;
+        figure.prepend(overlay);
+      }
     });
   }
 

@@ -69,7 +69,7 @@ document.querySelector('#app').innerHTML = `
       " sizes="(max-width: 463px) 100vw, 463px" draggable="false" />
   </figure>
   <figure data-slide-image="6">
-    <div class="overlay"></div>
+    <div class="overlay politiet"></div>
     <img decoding="async" loading="lazy" width="508" height="550"
       src="${BASE_URL}wp-content/uploads/2023/05/Trondheim-3-508x550.jpg" alt="" class="wp-image-9825" srcset="
         ${BASE_URL}wp-content/uploads/2023/05/Trondheim-3-508x550.jpg  508w,

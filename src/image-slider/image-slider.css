@@ -26,3 +26,58 @@ figure img {
   filter: opacity(60%);
   animation: fadeIn 1s cubic-bezier(0.46, 0.03, 0.05, 0.99);
 }
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent;
+  transform: scale(1.5);
+  pointer-events: none;
+  z-index: 10;
+  filter: drop-shadow(1px 1px 0px black);
+}
+
+.overlay.telenor {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/Telenor-logo.png');
+}
+
+.overlay.fjordkraft {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/fjordkraft-logo.png');
+  background-position: center;
+}
+
+.overlay.tv2 {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/tv2-logo-1.png');
+}
+
+.overlay.ruter {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/Ruter-logo.png');
+  transform: scale(0.8);
+}
+
+.overlay.cutters {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/cutters-logo.png');
+}
+
+.overlay.scaleaq {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png');
+  transform: scale(1.2);
+}
+
+.overlay.ifforsikring {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/IF-logo.png');
+  transform: scale(1.5);
+}
+
+.overlay.dnb {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/DNB-logo.png');
+}
+
+.overlay.politiet {
+  background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/PolitietIKT-logo.png');
+  transform: translateY(-2%);
+}
