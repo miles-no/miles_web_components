@@ -20,7 +20,10 @@ template.innerHTML = `
               </div>
           </div>
 		</div>
-		<div part="banner-image" class="banner__image"></div>
+		<div part="banner-image" class="banner__image">
+      <slot name="right__banner__content">
+      </slot>
+    </div>
 	</div>
 `;
 
@@ -38,20 +41,6 @@ class MilesBanner extends HTMLElement {
 
   static get observedAttributes() {
     return ['image', 'title', 'variant', 'reverse', 'icon'];
-  }
-
-  connectedCallback() {
-    const container = this.shadowRoot.querySelector('.banner__inner');
-    const children = this.childNodes;
-    if (children.length > 0 && container) {
-      while (container.firstChild) {
-        container.removeChild(container.firstChild);
-      }
-
-      for (let i = 0; i < children.length; i++) {
-        container.appendChild(children[i].cloneNode(true));
-      }
-    }
   }
 
   attributeChangedCallback(name, oldValue, newValue) {

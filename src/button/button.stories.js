@@ -1,6 +1,7 @@
 import { propsToAttrs } from '../storybook.utils.js';
 import { withActions } from '@storybook/addon-actions/decorator';
 import '../button/index.js';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export default {
   title: 'Miles/Components',
@@ -36,7 +37,7 @@ export default {
 
 export const Button = {
   args: {
-    value: `${import.meta.env.VITE_BASE_URL}vi-er-miles/`,
+    value: `${BASE_URL}vi-er-miles/`,
     name: 'button-1',
     variant: 'primary',
   },

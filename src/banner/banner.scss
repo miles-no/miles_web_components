@@ -35,7 +35,7 @@
   }
 
   &__content {
-    align-items: flex-end;
+    align-items: center;
     bottom: 0;
     color: var(--miles_secondary_four);
     display: flex;
@@ -71,7 +71,7 @@
 
       @media (min-width: 900px) {
         font-size: 48px;
-        max-width: 50%;
+        
       }
     }
 
@@ -99,9 +99,6 @@
         justify-content: center;
         position: relative;
 
-        h1 {
-          max-width: 80%;
-        }
       }
     }
   }
