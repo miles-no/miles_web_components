@@ -1,49 +1,44 @@
 import styles from './image-slider.css?inline';
+import splideStyles from './splide.css?inline';
 import cssVariables from '../styles/variables.css?inline';
+import Splide from '@splidejs/splide';
+import { Transition } from './Transition';
+/* import splideTheme from '@splidejs/splide/css?inline'; */ // TODO: See issue #101 in GitHub
 
 /**
  * Miles Image Slider
  */
-
 const ImageSliderTemplate = document.createElement('template');
 ImageSliderTemplate.innerHTML = `
-  <style>
-	${styles}\n
-  ${cssVariables}
-  </style>
-  <div id="slide-wrapper">
-    <h2>Noen av våre kunder</h2>
-    <section>
-      <div id="leftnav">
-        <div id="nav-overlay-left"></div>
-        <button  aria-label="Previous" aria-description="go to previous image">
-          <miles-arrow-nav color="#3F1221"></miles-arrow-nav>
-        </button>
-      </div>
-      <div class="slides"></div>
-      <div id="rightnav">
-        <div id="nav-overlay-right"></div>
-        <button aria-description="go to next image"  aria-label="Next">
-          <miles-arrow-nav color="#3F1221"></miles-arrow-nav>
-        </button>
-      </div>
-      <slot></slot>
-      <nav class="controls"> </nav>
-    </section>
+<style>
+${splideStyles}\n
+${styles}\n
+${cssVariables}
+</style>
+<section class="splide" aria-label="Splide Basic HTML Example">
+  <div class="splide__slider">
+    <div class="splide__track">
+      <ul class="splide__list">
+      </ul>
+    </div>
   </div>
-    `;
+</section>
+`;
+
+// Reuse the same slide element for all slides
+const ImageSliderSlide = document.createElement('li');
+ImageSliderSlide.className = 'splide__slide';
+ImageSliderSlide.innerHTML = `
+  <div class="splide__slide__container">
+  </div>
+`;
 
 class MilesImageSlider extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: 'open' });
     shadow.appendChild(ImageSliderTemplate.content.cloneNode(true));
-    this.slides = shadow.querySelector('.slides');
-    this.controls = shadow.querySelector('.controls');
-    this.wrapper = shadow.querySelector('#slide-wrapper');
-    this.numberOfSlides = 0;
-    this.autoPlay = 0;
-    this.index = 0;
+
     this.logos = [
       'fjordkraft',
       'tv2',
@@ -55,165 +50,51 @@ class MilesImageSlider extends HTMLElement {
       'ifforsikring',
       'politiet',
     ];
-    this.rightNav = shadow.querySelector('#rightnav');
-    this.leftNav = shadow.querySelector('#leftnav');
+
+    this.addSlides();
+    this.initializeSplide();
   }
 
-  connectedCallback() {
-    let options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1.0,
+  get figures() {
+    const figures = this.querySelectorAll('figure');
+    return [...figures];
+  }
+
+  addSlides() {
+    const ul = this.shadowRoot.querySelector('ul');
+    this.figures.forEach(figure => {
+      this.addOverlay(figure);
+
+      const slide = ul.appendChild(ImageSliderSlide.cloneNode(true));
+      const container = slide.querySelector('.splide__slide__container');
+      container.appendChild(figure);
+    });
+  }
+
+  addOverlay(figure) {
+    figure.classList.forEach(className => {
+      if (this.logos.includes(className)) {
+        const overlay = document.createElement('div');
+        overlay.className = `overlay ${className}`;
+        figure.prepend(overlay);
+      }
+    });
+  }
+
+  initializeSplide() {
+    const options = {
+      type: 'loop',
+      focus: 'center',
+      drag: 'free',
+      snap: true,
+      fixedWidth: '468px',
+      fixedHeight: '468px',
     };
 
-    this.observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.startAutoPlay(true);
-        } else {
-          this.startAutoPlay(false);
-        }
-      });
-    }, options);
-
-    this.observer.observe(this.wrapper);
-
-    this.controls.addEventListener('click', this.goToSlide);
-    this.rightNav.addEventListener('click', this.goLeft);
-    this.leftNav.addEventListener('click', this.goRight);
-
-    const slot = this.shadowRoot.querySelector('slot');
-    if (slot) {
-      let slottedElements =
-        slot.assignedElements().length === 1
-          ? slot.assignedElements()[0].children
-          : slot.assignedElements();
-
-      if (typeof slottedElements === 'object') {
-        try {
-          const slottedElementsArray = Array.from(slottedElements);
-          this.numberOfSlides = slottedElements.length;
-          slottedElementsArray.forEach((element, index) => {
-            const figure = document.createElement('figure');
-            const overlay = document.createElement('div');
-            overlay.setAttribute('class', 'overlay');
-
-            element.classList.forEach(className => {
-              if (this.logos.includes(className)) {
-                overlay.classList.add(className);
-              }
-            });
-            figure.setAttribute('data-slide-image', index);
-            figure.appendChild(overlay);
-
-            if (element.querySelector('img')) {
-              const image = element.querySelector('img');
-              image.setAttribute('draggable', false);
-              figure.appendChild(image);
-              this.slides.appendChild(figure);
-
-              const navDot = document.createElement('span');
-              navDot.setAttribute('class', 'nav-dot');
-              navDot.setAttribute('data-slide', index);
-              this.controls.appendChild(navDot);
-            }
-          });
-        } catch (error) {
-          console.log(slottedElements);
-        }
-      }
-    }
-
-    this.setActiveDot(this.index);
-  }
-
-  disconnectedCallback() {
-    this.controls.removeEventListener('click', this.goToSlide);
-    this.observer.unobserve(this.wrapper);
-    this.rightNav.removeEventListener('click', this.goLeft);
-    this.leftNav.removeEventListener('click', this.goRight);
-  }
-
-  goRight = () => {
-    this.startAutoPlay(false);
-    if (Math.abs(this.index) === 0) {
-      return;
-    } else {
-      this.index++;
-    }
-    this.setActiveDot(this.index);
-    this.slides.style.setProperty('--slides-offset', this.index);
-  };
-
-  goLeft = () => {
-    this.startAutoPlay(false);
-    if (Math.abs(this.index) === this.numberOfSlides - 1) {
-      return;
-    } else {
-      this.index--;
-    }
-    this.setActiveDot(this.index);
-    this.slides.style.setProperty('--slides-offset', this.index);
-  };
-
-  goToSlide = e => {
-    let index = parseInt(e.target.dataset.slide) * -1;
-    if (this.numberOfSlides - 1 === parseInt(e.target.dataset.slide)) {
-      index = 0;
-    }
-
-    this.startAutoPlay(false);
-
-    this.slides.style.setProperty('--slides-offset', index);
-    this.setActiveDot(index);
-  };
-
-  startAutoPlay = autoplay => {
-    if (autoplay) {
-      this.autoPlay = setInterval(() => {
-        if (Math.abs(this.index) === this.numberOfSlides - 2) {
-          this.index = 0;
-        } else {
-          this.index--;
-        }
-        this.setActiveDot(this.index);
-        this.slides.style.setProperty('--slides-offset', this.index);
-      }, 5000);
-    } else {
-      clearInterval(this.autoPlay);
-    }
-  };
-
-  setActiveDot = index => {
-    const allDots = this.controls.querySelectorAll('.nav-dot');
-
-    allDots.forEach(dot => {
-      dot.classList.remove('active');
-    });
-
-    allDots.forEach(dot => {
-      if (parseInt(dot.getAttribute('data-slide')) === Math.abs(index)) {
-        dot.classList.add('active');
-      }
-    });
-  };
-
-  static get observedAttributes() {
-    return ['inview', 'autoplay'];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'inview') {
-      // this.style.setProperty('--slide-container-width', `calc(var(--slide-container-height) * ${parseInt(newValue)})`)
-    }
-
-    if (name === 'autoplay') {
-      if (newValue === 'true') {
-        // this.startAutoPlay(true)
-      } else {
-        // this.startAutoPlay(false)
-      }
-    }
+    new Splide(this.shadowRoot.querySelector('.splide'), options).mount(
+      {},
+      Transition
+    );
   }
 }
 

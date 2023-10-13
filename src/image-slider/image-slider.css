@@ -1,108 +1,30 @@
-:host {
-  --slide-container-height: calc(100vw - 2rem);
-  --slide-container-width: 100vw;
-  --slides-offset: 0;
+.splide {
+  padding-bottom: 4rem;
+}
+.splide__pagination__page {
+  scale: 1.9;
+  background-color: var(--miles_secondary_four);
+  margin: 12px;
+  opacity: 1;
+}
+.splide__pagination .is-active {
+  background-color: var(--miles_secondary_five);
+}
 
-  display: block;
-  width: var(--slide-container-width);
-  height: var(--slide-container-height);
-
-  background-color: #f8ebe8;
+figure {
   height: 100%;
-  padding-bottom: 2rem;
-
-  overflow: hidden;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-@media (min-width: 768px) {
-  :host {
-    --slide-container-height: 500px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-}
-
-section {
-  width: var(--slide-container-width);
-  height: calc(var(--slide-container-height) + 3rem);
-  position: relative;
-}
-
-button {
-  border: 0;
-  background: transparent;
-}
-
-#leftnav,
-#rightnav {
-  cursor: pointer;
-  height: calc(500px - 2rem);
-  top: 1rem;
-  width: 80px;
-  position: absolute;
-  z-index: 10;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#nav-overlay-left,
-#nav-overlay-right {
-  transition: opacity 0.5s ease-in-out;
-  width: 80px;
-  top: 1rem;
-  z-index: 10;
-  position: absolute;
-  height: calc(500px - 2rem);
-  top: 0rem;
-  opacity: 0;
-  background-color: #ffffff;
-  /* border-radius: 0 30px 30px 0; */
-}
-
-#nav-overlay-left:hover,
-#nav-overlay-right:hover {
-  opacity: 0.6;
-}
-
-miles-arrow-nav {
-  z-index: 15;
-  opacity: 0.9;
-}
-
-#nav-overlay-right {
-  right: 0;
-}
-
-#rightnav {
-  transform: rotate(180deg);
-  right: 0em;
-}
-
-@media (min-width: 768px) {
-  #rightnav {
-    right: 1em;
-  }
-}
-
-section .slides {
-  transform: translateX(
-    calc(var(--slides-offset) * var(--slide-container-height))
-  );
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  transition: transform 1s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-}
-
-section .slides figure {
-  position: relative;
-  box-sizing: border-box;
-  padding: 1rem;
-  height: var(--slide-container-height);
-  aspect-ratio: 1 / 1;
-  margin: 0;
+figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  -webkit-app-region: no-drag;
+  filter: opacity(60%);
+  animation: fadeIn 1s cubic-bezier(0.46, 0.03, 0.05, 0.99);
 }
 
 .overlay {
@@ -158,74 +80,4 @@ section .slides figure {
 .overlay.politiet {
   background-image: url('https://www.miles.no/newsite/wp-content/uploads/2021/06/PolitietIKT-logo.png');
   transform: translateY(-2%);
-}
-
-/* https://www.miles.no/newsite/wp-content/uploads/2021/06/scale-aq-logo.png
-https://www.miles.no/newsite/wp-content/uploads/2021/06/DNB-logo.png
-*/
-
-section .slides figure img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 30px;
-  app-region: no-drag;
-  filter: opacity(60%);
-  animation: fadeIn 1s cubic-bezier(0.46, 0.03, 0.05, 0.99);
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-nav {
-  max-width: 100vw;
-  position: absolute;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  bottom: 0;
-  height: 3rem;
-}
-
-.nav-dot {
-  border-radius: 50%;
-  display: inline-block;
-  height: 0.5em;
-  width: 0.5em;
-  background-color: var(--miles_secondary_four);
-  cursor: pointer;
-}
-
-#slide-wrapper {
-  width: 100vw;
-}
-
-h2 {
-  font-size: 2rem;
-  margin: 3rem auto;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  h2 {
-    font-size: 3rem;
-  }
-
-  .nav-dot {
-    height: 1em;
-    width: 1em;
-  }
-}
-
-.active {
-  background-color: var(--miles_secondary_five);
 }
