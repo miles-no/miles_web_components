@@ -1,6 +1,8 @@
 import styles from './info.css?inline';
 import cssVariables from '../styles/variables.css?inline';
 
+const BASE_URL = import.meta.VITE_BASE_URL;
+
 /**
  * Miles info
  */
@@ -8,20 +10,20 @@ class MilesInfo extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: 'open' });
-    this.link = null;
+    this._link = "";
     shadow.innerHTML = `
         <style>
       	${styles}\n
         ${cssVariables}
         </style>
-        <div class="info">
+        <a href="${this._link}" class="info">
           <span class="info__icon">
             <slot name="icon"></slot>
           </span>
           <span class="info__description">
             <slot></slot>
           </span>
-        </div>
+        </a>
       `;
   }
 
@@ -30,16 +32,23 @@ class MilesInfo extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'link') {
-      this.link = newValue;
+    this.anchorEl = this.shadowRoot.querySelector('a'); 
 
-      let infoElement = this.shadowRoot.querySelector('.info');
-      infoElement.addEventListener('click', this.goTo);
-      infoElement.addEventListener('keydown', this.handleKeydown);
-      infoElement.classList.add('info--link');
-      infoElement.setAttribute('role', 'link');
-      infoElement.setAttribute('aria-label', 'Gå til ' + newValue);
-      infoElement.setAttribute('tabindex', '0');
+    if (name === 'link' && oldValue !== newValue) {
+      this._link = newValue;
+      this.anchorEl.setAttribute('href', newValue); 
+    }
+  }
+
+  connectedCallback() {
+    if (this._link) {
+      this.anchorEl.setAttribute("href", this._link);
+      this.anchorEl.addEventListener('click', this.goTo);
+      this.anchorEl.addEventListener('keydown', this.handleKeydown);
+      this.anchorEl.classList.add('info--link');
+      this.anchorEl.setAttribute('role', 'link');
+      this.anchorEl.setAttribute('aria-label', 'Gå til ' + this._link);
+      this.anchorEl.setAttribute('tabindex', '0');
 
       this.mic = this.shadowRoot
         .querySelector('slot[name="icon"]')
@@ -47,25 +56,13 @@ class MilesInfo extends HTMLElement {
     }
   }
 
-  connectedCallback() {
-    if (this.link) {
-      this.addEventListener('click', this.goTo);
-      this.addEventListener('keydown', this.handleKeydown);
-      this.addEventListener('mouseenter', this.addColor);
-      this.addEventListener('focus', this.addColor);
-
-      this.addEventListener('mouseleave', this.removeColor);
-      this.addEventListener('focusout', this.removeColor);
-    }
-  }
-
   disconnectedCallback() {
-    this.removeEventListener('click', this.goTo);
-    this.removeEventListener('keydown', this.handleKeydown);
-    this.removeEventListener('mouseenter', this.addColor);
-    this.removeEventListener('focus', this.addColor);
-    this.removeEventListener('mouseleave', this.removeColor);
-    this.removeEventListener('focusout', this.removeColor);
+    this.anchorEl.removeEventListener('click', this.goTo);
+    this.anchorEl.removeEventListener('keydown', this.handleKeydown);
+    this.anchorEl.removeEventListener('mouseenter', this.addColor);
+    this.anchorEl.removeEventListener('focus', this.addColor);
+    this.anchorEl.removeEventListener('mouseleave', this.removeColor);
+    this.anchorEl.removeEventListener('focusout', this.removeColor);
   }
 
   removeColor = () => {
@@ -83,14 +80,14 @@ class MilesInfo extends HTMLElement {
   };
 
   goTo = () => {
-    window.location.href = escape(encodeURI(this.link));
+    window.location.href = escape(encodeURI(this._link));
   };
 }
 
 function escape(url) {
   // Only allow absolute URLs starting with https://www.miles.no and relative URLs
   if (
-    (url && url.length > 0 && url.startsWith('https://www.miles.no')) ||
+    (url && url.length > 0 && url.startsWith(BASE_URL)) ||
     url.startsWith('/')
   ) {
     return url;
