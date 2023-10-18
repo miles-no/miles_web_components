@@ -24,10 +24,17 @@ class MilesCardFilter extends HTMLElement {
   }
 
   filterHandler = e => {
+    this.resetFilter();
+    if (e.detail.value === '') {
+      document.querySelectorAll('miles-profile-card').forEach(card => {
+        card.removeAttribute('hidden');
+      });
+      return;
+    }
+
     const regexp = new RegExp(/^[A-Za-z_-]+$/, 'g');
     const isArea = regexp.test(e.detail.value);
     const currentParam = isArea ? 'area' : 'office';
-    this.resetFilter();
 
     const selector = isArea
       ? `miles-profile-card:not([roles*="${e.detail.value}"])`
@@ -41,6 +48,7 @@ class MilesCardFilter extends HTMLElement {
   };
 
   resetFilter = () => {
+    this.resetUrlParams();
     document.querySelectorAll('miles-filter-button').forEach(button => {
       const shadowRoot = button.shadowRoot;
       if (shadowRoot) {
