@@ -46,16 +46,24 @@ a:hover {
 
 li > a {
   font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+li:hover > a, li:hover > miles-curve {
+  transform: translateX(5px); 
+}
+
+li:hover > miles-curve {
+  transform: rotate(-45deg); 
 }
 
 li > a:hover {
-  text-decoration: underline;
   background-color: unset;
 }
 
 @media (min-width: 768px) {
   :host {
-    --topOffset: 16rem;
+    --topOffset: 7rem;
   }
 
   #overlap-block {
@@ -97,7 +105,6 @@ li > a:hover {
     border-radius: 30px 30px;
     background-color: #f8ebe8;
     padding: 5rem;
-    /* width: var(--width); */
     position: relative;
   }
 
@@ -205,4 +212,6 @@ miles-bulb {
 
 miles-curve {
   margin-right: 0.5em;
+  margin-top: 0.15em;
+  transition: transform 0.3s ease;
 }
