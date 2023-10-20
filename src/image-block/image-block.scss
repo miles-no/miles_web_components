@@ -45,7 +45,6 @@
     z-index: 1;
 
     img {
-      aspect-ratio: 2 / 1;
       border-top-left-radius: var(--border-radius);
       border-top-right-radius: var(--border-radius);
       display: block;
@@ -55,6 +54,7 @@
       width: 100%;
 
       @media (min-width: 768px) {
+        aspect-ratio: 2 / 1;
         border-top-left-radius: 0;
         border-top-right-radius: var(--border-radius);
         border-bottom-right-radius: var(--border-radius);
