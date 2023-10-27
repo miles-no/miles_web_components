@@ -43,7 +43,7 @@ class MilesProfileCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['image', 'name', 'jobtitle', 'location'];
+    return ['image', 'name', 'jobtitle', 'location', 'preloadimage'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -68,6 +68,10 @@ class MilesProfileCard extends HTMLElement {
     if (name === 'name') {
       this.profileImageEl.setAttribute('alt', newValue);
       this.consultantNameEl.textContent = newValue;
+    }
+
+    if (name === 'preloadimage') {
+      this.profileImageEl.removeAttribute('loading');
     }
   }
 
