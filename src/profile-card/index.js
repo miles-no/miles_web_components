@@ -10,10 +10,14 @@ MilesProfileCardTemplate.innerHTML = `
        
         <div class="profile-card">
           <figure>
-            <img class="profile-card__image" id="profileimage" loading="lazy" /> 
+            <a id="profile-image-url" href="#">
+              <img class="profile-card__image" id="profileimage" loading="lazy" /> 
+            </a>
           </figure>
           <div class="profile-card__info">
-            <h3 id="name"></h3>
+            <a id="profile-name-url" href="#">
+              <h3 id="name" ></h3>
+            </a>
             <div class="description jobtitle">
               <p id="jobtitle"></p>
             </div>
@@ -40,18 +44,21 @@ class MilesProfileCard extends HTMLElement {
     this.jobTitleEl = this.shadowRoot.querySelector('#jobtitle');
     this.consultantNameEl = this.shadowRoot.querySelector('#name');
     this.profileImageEl = this.shadowRoot.querySelector('#profileimage');
+
+    this.profileImageUrl = this.shadowRoot.querySelector("#profile-image-url");
+    this.profileNameUrl = this.shadowRoot.querySelector("#profile-name-url");
   }
 
   static get observedAttributes() {
-    return ['image', 'name', 'jobtitle', 'location', 'preloadimage'];
+    return ['image', 'name', 'jobtitle', 'location', 'preloadimage', "profileurl"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'image') {
       if (newValue === '' || newValue === null) {
-        const dummyUrl =
+        const fallbackAvatar =
           'https://www.miles.no/wp-content/uploads/2019/06/miles_smile.png';
-        this.profileImageEl.setAttribute('src', dummyUrl);
+        this.profileImageEl.setAttribute('src', fallbackAvatar);
       } else {
         this.profileImageEl.setAttribute('src', newValue);
       }
@@ -73,11 +80,16 @@ class MilesProfileCard extends HTMLElement {
     if (name === 'preloadimage') {
       this.profileImageEl.removeAttribute('loading');
     }
+
+    if (name === 'profileurl') {
+      this.profileImageUrl.setAttribute('href', newValue);
+      this.profileNameUrl.setAttribute('href', newValue);
+    }
   }
 
-  connectedCallback() {}
+  connectedCallback() { }
 
-  disconnectedCallback() {}
+  disconnectedCallback() { }
 }
 
 const MilesProfileCardName = 'miles-profile-card';
@@ -88,28 +100,3 @@ if (!customElements.get(MilesProfileCardName)) {
 
 export default MilesProfileCard;
 export { MilesProfileCard };
-
-/* 
-
-document.querySelectorAll('miles-profile-card[location^=Komponent]').forEach((card)=>{
-  card.setAttribute('hidden', true)
-})
-
-document.querySelectorAll('miles-profile-card').forEach((card)=>{
-  card.removeAttribute('hidden')
-})
-
-
-document.querySelectorAll('miles-profile-card:not([location^=Bergen])').forEach((card)=>{
-  card.setAttribute('hidden', true)
-})
-
-document.querySelectorAll('miles-profile-card:not([location^=Trondheim])').forEach((card)=>{
-  card.setAttribute('hidden', true)
-})
-
-document.querySelectorAll('miles-profile-card:not([location^=Ålesund])').forEach((card)=>{
-  card.setAttribute('hidden', true)
-})
-
-*/
