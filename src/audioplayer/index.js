@@ -15,7 +15,7 @@ MilesAudioPlayerTemplate.innerHTML = `
       <audio id="player" crossorigin controls></audio>
         <button class="button button--back" id="backward" aria-label="seek" aria-description="seek 15 seconds backwards"><miles-seek direction="backward"></miles-seek></button>
         <div class="player__progress">
-          <input type="range" max="100" value="0" id="progressbar" class="input">
+          <input type="range" max="100" value="0" id="progressbar" class="input" aria-label="Progress Bar">
         </div>
         <button class="button button--forward" id="forward" aria-label="seek" aria-description="seek 15 seconds forward"><miles-seek direction="forward"></miles-seek></button>
         <div class="player__time"><span id="current"></span><span id="length"></span></div>
