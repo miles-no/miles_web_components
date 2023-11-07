@@ -16,7 +16,7 @@ MilesProfileCardTemplate.innerHTML = `
           </figure>
           <div class="profile-card__info">
             <a id="profile-name-url" href="#">
-              <h3 id="name" ></h3>
+              <p id="name"></p>
             </a>
             <div class="description jobtitle">
               <p id="jobtitle"></p>

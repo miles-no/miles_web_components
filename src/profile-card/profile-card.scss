@@ -76,10 +76,19 @@
     margin-top: auto;
   }
 
-  h3,
-  p {
+p {
     color: var(--miles_primary_light);
     margin: 0;
+  }
+p#name 
+  {
+    display: block;
+    font-size: 1.17em;
+    font-weight: bold;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
 }
 
