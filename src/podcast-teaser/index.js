@@ -16,7 +16,7 @@ template.innerHTML = `
         <div class="bg">
           <div class="inner">
             <div class="left">
-              <a href="">
+              <a href="" aria-label="Miles Podcast Link">
                 <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="46" cy="46" r="46" fill="#EB4645"/>
                 <path d="M32 27V65L70 46L32 27Z" fill="#FCF8F3"/>

@@ -49,10 +49,6 @@ class MilesButtonAnchor extends HTMLElement {
     }
 
     if (name === 'selected') {
-      this.buttontarget.setAttribute(
-        'aria-selected',
-        isAttributeValueTruthy(newValue)
-      );
       this.buttontarget.classList.toggle(
         'selected',
         isAttributeValueTruthy(newValue)
