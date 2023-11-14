@@ -604,6 +604,13 @@ h3.banner-title {
         margin-top: 0;
         margin-bottom: 0;
     }
+
+    .feature-content > h2.feature-title {
+        font-size: 40px;
+    }
+    .feature-content > .link_wrapper {
+        text-align: end;
+    }
 }
 
 /* line 93, sass/base/_typography.scss */
