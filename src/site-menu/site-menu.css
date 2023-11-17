@@ -180,3 +180,15 @@ ul.menu {
   flex-direction: column;
   gap: 0.5rem;
 }
+
+/* A11y tap target. See https://web.dev/articles/accessible-tap-targets */
+@media (any-pointer: coarse) {
+  a {
+    padding: 8px 0.2rem;
+    display: inline-block; /* to make the padding work */
+  }
+
+  ul.menu {
+    gap: 0;
+  }
+}
