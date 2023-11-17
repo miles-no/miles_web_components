@@ -1,4 +1,4 @@
-import styles from './overlap-block.css?inline';
+import styles from './overlap-block.scss?inline';
 import cssVariables from '../styles/variables.css?inline';
 /**
  * Miles Overlap Block
@@ -11,21 +11,14 @@ MilesOverlapBlockTemplate.innerHTML = `
   ${cssVariables}
   </style>
   <div id="overlap-block">
-    <div class="parent">
-      <div class="div1"> </div>
-      <div class="div2"> </div>
-      <div class="inner">
-        <div id="content_grid">
-          <div id="feature-block">
-          <slot></slot>
-          </div>
-          <div id="list"></div>
-        </div>
-      </div>
-      <div class="div3"> </div>
-      <div class="div4"> </div>
+    <div class="content-block">
+      <slot></slot>
     </div>
-   <!-- <miles-bulb color="var(--miles_secondary_two)" width="3rem"></miles-bulb> -->
+    <div class="overlap"></div>
+    <div class="list-block">
+      <div id="list"></div>
+    </div>
+    <!-- <miles-bulb color="var(--miles_secondary_two)" width="3rem"></miles-bulb> -->
   </div>
 `;
 
@@ -41,14 +34,14 @@ class MilesOverlapBlock extends HTMLElement {
   connectedCallback() {
     const areas = {
       'Team as a service': '/team-as-a-service',
-      'Systemutvikling': '/fagomrader/#system',
-      'Prosjektledelse': '/fagomrader/#prosjekt',
-      'Testledelse': '/fagomrader/#test',
+      Systemutvikling: '/fagomrader/#system',
+      Prosjektledelse: '/fagomrader/#prosjekt',
+      Testledelse: '/fagomrader/#test',
       'Smidig Coaching': '/fagomrader/#smidig',
       'UX-design': '/fagomrader/#design',
-      'Arkitektur': '/fagomrader/#system',
-      'Rådgivning': '/fagomrader/#radgivning',
-      'AI': '/fagomrader/#ai',
+      Arkitektur: '/fagomrader/#system',
+      Rådgivning: '/fagomrader/#radgivning',
+      AI: '/fagomrader/#ai',
     };
     const listElement = document.createElement('ul');
 
